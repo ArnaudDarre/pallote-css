@@ -1,0 +1,107 @@
+// —————————————————————————————————————————————————————————————————
+// general
+// focused
+// —————————————————————————————————————————————————————————————————
+
+textarea {
+	resize: vertical;
+}
+
+// —————————————————————————————————————————————————————————————————
+// general
+// —————————————————————————————————————————————————————————————————
+
+.form {
+	width: 100%;
+
+	@include responsive(down, mobile) {
+		@include clamp(margin-left, -$spacing-xl, -4vw, -$spacing-md);
+		@include clamp(margin-right, -$spacing-xl, -4vw, -$spacing-md);
+		width: 100vw;
+		
+		&.card {
+			@include clamp(padding, $spacing-md, 4vw, $spacing-xl);
+			padding-top: 0;
+			padding-bottom: 0;
+			border-radius: 0;
+			background-color: white;
+		}
+	}
+
+	&__group {
+		text-align: left;
+		position: relative;
+
+		&:not(:first-child) {
+			margin-top: $spacing-md;
+		}
+
+		&--select {
+
+			&:after {
+				content: "\2039";
+				transform: rotate(-90deg);
+				position: absolute;
+				right: $spacing-md;
+				top: $spacing-md*2;
+				font-size: 1.75rem;
+				line-height: 1;
+			}
+		}
+	}
+
+	&__label {
+		@extend %caption;
+		@include transition($transition-md, color);
+		text-overflow: ellipsis;
+		cursor: pointer;
+		display: block;
+		overflow: hidden;
+		white-space: nowrap;
+		position: relative;
+		margin-bottom: $spacing-xs;
+	}
+
+	&__input {
+		@include font-size(1, $font-regular, normal);
+		@include transition($transition-md, border-color);
+		font-family: $font;
+		text-overflow: ellipsis;
+		width: 100%;
+    border: $spacing-xs solid transparent;
+    border-radius: $border-radius-md !important;
+    padding: $spacing-xs $spacing-sm;
+		background-color: $background-default;
+		
+		@include responsive(down, mobile) {
+			background-color: $background-paper;
+		}
+
+		.form__group--select & {
+			cursor: pointer;
+			padding-right: $spacing-md*1.5;
+		}
+	}
+
+	&__button {
+		margin-top: $spacing-md;
+	}
+}
+
+@include placeholder {
+	color: $text-alt;
+	opacity: 1;
+}
+
+// —————————————————————————————————————————————————————————————————
+// focused
+// —————————————————————————————————————————————————————————————————
+
+.form__group.focused {
+
+	.form {
+
+		&__label { color: $primary; }
+		&__input { border-color: $primary; }
+	}
+}

@@ -2,7 +2,7 @@
 title: Palotte CSS
 description: >-
   Lightweight CSS component library
-url: "htts://palotte.com"
+url: "https://palotte.com"
 
 # Additional settings
 timezone: Europe/London
@@ -10,8 +10,7 @@ permalink: /:title
 
 # Build settings
 plugins:
-  - jekyll-autoprefixer
-  - jekyll-coffeescript
+  - jekyll-feed
   - jekyll-inline-svg
 # jekyll-inline-svg
 svg:
@@ -27,10 +26,6 @@ compress_html:
   blanklines: true
   profile: false
   startings: []
-# autoprefixer
-autoprefixer:
-  browsers:
-  - last 10 versions
 # sass
 sass:
   sass_dir: assets/_sass

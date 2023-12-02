@@ -1,0 +1,207 @@
+// ——————————————————————————————————————————————————
+// navbar
+// nav
+// ——————————————————————————————————————————————————
+
+$navbar-height: 4rem;
+
+// ——————————————————————————————————————————————————
+// navbar
+// ——————————————————————————————————————————————————
+
+.navbar {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: $background-default;
+  box-shadow: $box-shadow;
+
+  @include responsive(up, tablet) {
+    height: $navbar-height;
+  }
+
+  &.section {
+    position: sticky;
+  }
+
+  .section__container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $spacing-xs;
+    padding-bottom: 0;
+
+    @include responsive(up, tablet) {
+      height: 100%;
+    }
+
+    @include responsive(down, tablet) {
+      flex-direction: column;
+      align-items: stretch;
+      padding-top: 0;
+    }
+  }
+
+  &__button {
+    top: $spacing-md*1.5;
+    position: absolute;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+
+    @include responsive(down, tablet) {
+      justify-content: space-between;
+      padding-left: $spacing-lg;
+      height: $spacing-xl - $spacing-md;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: baseline;
+    font-weight: $font-bold;
+
+    > * {
+      margin-right: $spacing-xs;
+    }
+  }
+
+  &__nav.nav {
+
+    @include responsive(down, tablet) {
+      @include transition($transition-md, max-height);
+      align-items: flex-start;
+      max-height: 0;
+      overflow: hidden;
+
+      .js-opened & {
+        max-height: 50vh;
+      }
+    }
+  }
+}
+
+// ——————————————————————————————————————————————————
+// nav
+// ——————————————————————————————————————————————————
+
+.nav {
+
+  @include responsive(up, tablet) {
+    height: 100%;
+  }
+
+  &__container {
+    display: flex;
+    list-style: none;
+
+    @include responsive(up, tablet) {
+      height: 100%;
+      align-items: center;
+    }
+
+    @include responsive(down, tablet) {
+      @include calc(max-height, '100vh - '$spacing-xl*3);
+      align-items: flex-start;
+      // overflow: scroll;
+      width: 100%;
+      padding-bottom: $spacing-md;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__item {
+    // override ul & li styling
+    margin-left: 0;
+
+    & + & {
+      padding-top: 0;
+    }
+
+    @include responsive(up, tablet) {
+      margin-left: $spacing-sm;
+    }
+
+    @include responsive(down, tablet) {
+      width: 100%;
+      display: flex;
+    }
+  }
+
+  &__trigger {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    line-height: 1;
+    height: $spacing-md*2;
+    color: inherit;
+    padding-right: $spacing-md;
+    padding-left: $spacing-md;
+    font-weight: $font-bold;
+
+    @include responsive(down, tablet) {
+      width: 100%;
+      margin-bottom: $spacing-xs;
+      padding: $spacing-md - $spacing-xs;
+      align-items: flex-start;
+      border-radius: $border-radius-sm;
+
+      @include hover {
+        background-color: $background-paper;
+      }
+    }
+
+    @include responsive(up, tablet) {
+
+      &:before {
+        @include transition($transition-md, opacity);
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $background-paper;
+        border-radius: $border-radius-sm;
+        z-index: -1;
+        opacity: 0;
+      }
+
+      @include hover {
+
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--active {
+      color: $primary;
+
+      @include responsive(up, tablet) {
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -14px;
+          left: 0;
+          width: 100%;
+          height: $spacing-sm;
+          background-color: $primary;
+          border-top-left-radius: $border-radius-sm;
+          border-top-right-radius: $border-radius-sm;
+        }
+      }
+
+      @include responsive(down, tablet) {
+        background-color: $background-paper;
+      }
+    }
+  }
+}
