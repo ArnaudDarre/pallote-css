@@ -1,4 +1,4 @@
-# Palotte CSS
+# Pallote CSS
 
 Lightweight CSS component library
 
