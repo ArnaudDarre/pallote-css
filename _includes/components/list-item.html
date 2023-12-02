@@ -1,0 +1,15 @@
+{% assign label = include.label %}
+{% assign icon = include.icon %}
+{% assign type = include.type %}
+{% assign url = include.url %}
+
+<p class="list__item">
+  {% if icon != null %}
+  {% svg "assets/icons/phosphor/skills/{{ icon }}.svg" class="list__itemIcon" %}
+  {% endif %}
+  {% if url == null %}
+  {{ label }}
+  {% else %}
+  {% include components/link.html label=label type=type url=url %}
+  {% endif %}
+</p>
