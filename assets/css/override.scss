@@ -1,0 +1,15 @@
+---
+---
+
+// This file is meant to override some of the components styling specifically for this website.
+// The goal is to leave the compponent CSS files free of specific overriding styles.
+
+// ——————————————————————————————————————————————————
+// alert
+// ——————————————————————————————————————————————————
+
+.alert {
+  position: relative;
+  top: 0;
+  right: 0;
+}

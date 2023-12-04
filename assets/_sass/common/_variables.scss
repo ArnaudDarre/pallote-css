@@ -30,38 +30,64 @@ $grey-5: #F2F3F4;
 
 // text
 
-$text: $black;
-$text-alt: rgba($black, 0.5);
+$text: $white;
+$text-alt: rgba($white, 0.5);
 
-$text-contrast: $white;
-$text-contrast-alt: rgba($white, 0.6);
+$text-contrast: $black;
+$text-contrast-alt: rgba($black, 0.6);
 
 // brand
 
-$primary-light: #A6FCDE;
-$primary: #138651;
-$primary-dark: #0B4C2E;
+$primary-light: #B3FFED;
+$primary: #00FFC4;
+$primary-dark: #00DBA9;
 $primary-text: $text-contrast;
 
-$secondary-light: #FFD0BD;
-$secondary: #D93F00;
-$secondary-dark: #8A2800;
-$secondary-text: $text-contrast;
+$secondary-light: #B1B9D4;
+$secondary: #4D5C8D;
+$secondary-dark: #3D4971;
+$secondary-text: $text;
 
-//  background
+$highlight-light: #F9D7B8;
+$highlight: #F2994A;
+$highlight-dark: #EF7910;
+$highlight-text: $text-contrast;
 
-$background-default: $white;
-$background-paper: $grey-5;
-$background-footer: $primary-light;
+// background
+
+$success-light: #E7F9EE;
+$success: #27AE60;
+$success-dark: #1C7C44;
+$success-text: #155F34;
+$success-contrast: $text;
+
+$info-light: #E9F8FD;
+$info: #17A0CC;
+$info-dark: #117798;
+$info-text: #0D5A72;
+$info-contrast: $text;
+
+$warning-light: #FFFAE5;
+$warning: #FFDC46;
+$warning-dark: #E5BA00;
+$warning-text: #685400;
+$warning-contrast: $text-contrast;
+
+$error-light: #FCE7E7;
+$error: #EB5757;
+$error-dark: #D31919;
+$error-text: #9C1212;
+$error-contrast: $text;
+
+// feedback
+
+$background-default: $black;
+$background-paper: $grey-90;
 
 // others
 
-$border: 1px solid rgba($black, 0.2);
-$overlay: rgba($white, 0.8);
-
-// social
-
-$linkedin: #0077B5;
+$border: 1px solid rgba($white, 0.2);
+$overlay: rgba($black, 0.8);
 
 // —————————————————————————————————————————————————————————————————
 // spacing
@@ -70,12 +96,15 @@ $linkedin: #0077B5;
 // misc
 $col: calc(100%/12);
 
+$spacing-xxs: 0.125rem; // 4px
 $spacing-xs: 0.25rem; // 4px
 $spacing-sm: 0.5rem; // 8px
 $spacing-md: 1rem; // 16px
 $spacing-lg: 2.5rem; // 40px
 $spacing-xl: 5rem; // 80px
 $spacing-xxl: 7.5rem; // 120px
+
+$max-width-subtitle: $spacing-xxl*4;
 
 // —————————————————————————————————————————————————————————————————
 // font

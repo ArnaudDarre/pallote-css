@@ -13,20 +13,12 @@
 
 .section {
   overflow: hidden; // prevent horizontal scroll on mobile
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
   @include clamp(padding-right, $spacing-md, 4vw, $spacing-xl);
   @include clamp(padding-left, $spacing-md, 4vw, $spacing-xl);
-  text-align: center;
 
-  &__container,
-  &__header,
-  &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  & + & .section__container {
+    border-top: $border;
   }
 
   &__container {
@@ -53,18 +45,27 @@
   }
 
   &__title {
-    @extend %h2;
+    @extend %h3;
     color: $primary;
     max-width: $desktop-up*0.75;
   }
   
   &__subtitle {
-    @extend %subtitle;
-    margin-top: $spacing-lg - $spacing-md;
-    max-width: $desktop-up*0.5;
+    @extend %body;
+    max-width: $max-width-subtitle;
+    
+    .section__title + & {
+      margin-top: $spacing-lg - $spacing-md;
+    }
   }
 
-  &__actions { margin-top: $spacing-lg; }
+  &__actions {
+
+    .section__title + &,
+    .section__subtitle + & {
+      margin-top: $spacing-lg;
+    }
+  }
 }
 
 // —————————————————————————————————————————————————————————————————
@@ -92,10 +93,6 @@
       padding-top: 0;
     }
   }
-
-  & + .footer .separator--top {
-    fill: $background-color;
-  } 
 
   .section__title {
     color: $color-title;
@@ -144,8 +141,8 @@
 // first section of the page for page title
 .section--header {
 
-  .section__title { @extend %h1; }
-  .section__subtitle { @extend %h5; }
+  .section__title { @extend %h2; }
+  .section__subtitle { @extend %subtitle; }
 }
 
 // —————————————————————————————————————————————————————————————————

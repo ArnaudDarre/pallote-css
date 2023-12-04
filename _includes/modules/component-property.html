@@ -1,0 +1,17 @@
+{% assign title = include.title %}
+{% assign subtitle = include.subtitle %}
+{% assign content = include.content %}
+
+<div class="grid__item">
+  <h3 class="h5 mb-2">{{ title }}</h3>
+  {% if subtitle %}
+  <div class="grid grid--spacing5 grid--wrap">
+    <div class="grid__item">
+      <p class="section__subtitle">{{ subtitle }}</p>
+    </div>
+    <div class="grid__item">
+      {{ content }}
+    </div>
+  </div>
+  {% endif %}
+</div>

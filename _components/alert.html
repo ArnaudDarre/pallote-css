@@ -1,0 +1,138 @@
+---
+layout: "component"
+label: "Feedback"
+title: "Alert"
+subtitle: "An alert (or snackbar, toast message, etc.) component. Used to display feedback to the user after an action, but also to emphasise an element on a page (for a notice for instance)."
+description: |-
+  The alert component is composed of several elements:
+
+  - `alert` the wrapper
+    - `alert__title` main text of the alert
+    - `alert__subtitle` smaller text below the title (optional)
+    - `alert__close` close icon (use only for toast messages)
+
+example: |-
+  <div class="alert alert--success">
+    <p class="alert__title">Success</p>
+    <p class="alert__subtitle">Alert content</p>
+    <button type="button" class="alert__close"></button>
+  </div>
+---
+
+<!-------------------------------------------------->
+<!-- color -->
+<!-------------------------------------------------->
+
+{% capture alert-color %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md6">
+    {% include modules/component-class.html code='class="alert alert--success"'
+      component = '
+        <div class="alert alert--success">
+          <p class="alert__title">Success</p>
+          <p class="alert__subtitle">Alert content</p>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6">
+    {% include modules/component-class.html code='class="alert alert--info"'
+      component = '
+        <div class="alert alert--info">
+          <p class="alert__title">Info</p>
+          <p class="alert__subtitle">Alert content</p>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6">
+    {% include modules/component-class.html code='class="alert alert--warning"'
+      component = '
+        <div class="alert alert--warning">
+          <p class="alert__title">Warning</p>
+          <p class="alert__subtitle">Alert content</p>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6">
+    {% include modules/component-class.html code='class="alert alert--error"'
+      component = '
+        <div class="alert alert--error">
+          <p class="alert__title">Error</p>
+          <p class="alert__subtitle">Alert content</p>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Color'
+  subtitle = 'Changes the color to convey the severity of the alert.'
+  content = alert-color
+%}
+
+<!-------------------------------------------------->
+<!-- notice -->
+<!-------------------------------------------------->
+
+{% capture alert-notice %}
+{% include modules/component-class.html code='class="alert alert--success alert--notice"'
+  component = '
+    <div class="alert alert--success alert--notice">
+      <p class="alert__title">Notice</p>
+      <p class="alert__subtitle">Alert content</p>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Notice'
+  subtitle = 'Add the following class to override the default absolute positioning to display the alert as a notice at the bottom of the page. The notice alert does not have an icon.'
+  content = alert-notice
+%}
+
+<!-------------------------------------------------->
+<!-- dense -->
+<!-------------------------------------------------->
+
+{% capture alert-dense %}
+{% include modules/component-class.html code='class="alert alert--success alert--dense"'
+  component = '
+    <div class="alert alert--success alert--dense">
+      <p class="alert__title">Dense</p>
+      <p class="alert__subtitle">Alert content</p>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Dense'
+  subtitle = 'Make the alert component smaller (eg. if it is used for a form notice).'
+  content = alert-dense
+%}
+
+<!-------------------------------------------------->
+<!-- noIcon -->
+<!-------------------------------------------------->
+
+{% capture alert-noIcon %}
+{% include modules/component-class.html code='class="alert alert--success alert--noIcon"'
+  component = '
+    <div class="alert alert--success alert--noIcon">
+      <p class="alert__title">No icon</p>
+      <p class="alert__subtitle">Alert content</p>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'No icon'
+  subtitle = 'Remove the icon left of the alert.'
+  content = alert-noIcon
+%}

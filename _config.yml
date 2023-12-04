@@ -8,6 +8,13 @@ url: "https://Pallote.com"
 timezone: Europe/London
 permalink: /:title
 
+# permalinks config
+permalink: /:path
+collections:
+  components:
+    output: true
+    permalink: /components/:path
+
 # Build settings
 plugins:
   - jekyll-feed

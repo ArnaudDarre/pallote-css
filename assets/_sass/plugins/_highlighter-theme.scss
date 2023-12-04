@@ -1,0 +1,54 @@
+.highlight,
+.highlighter-rouge {
+  font-family: monospace;
+  font-size: 0.75rem;
+  background-color: $background-paper;
+  color: #EFF0F2;
+  padding: $spacing-md;
+  border-radius: $spacing-sm;
+  width: 100%;
+  
+  &.language-plaintext {
+    color: $text;
+    border-radius: $spacing-xs;
+    padding: $spacing-xs $spacing-sm;
+
+    a & {
+      color: #D29132;
+    }
+  }
+
+  pre {
+    margin: 0;
+  }
+
+  p &, 
+  ul &, 
+  ol &, 
+  table & {
+    width: auto;
+  }
+}
+
+.highlight {
+
+  .ge { font-style: italic; }
+
+  .hll { background-color: #49483e; }
+  .err { background-color: #1e0010; }
+
+  .err { color: #960050; }
+  .k, .kd, .kt, .no { color: #66d9ef; }
+  // css properties values
+  .il, .l, .m, .mo, .se { color: #D29132; }
+  // ponctuation
+  .n, .nb, .ni, .nn, .nv, .p, .py, .vi, .w { color: #EFF0F2; }
+  // tags in html
+  .gd, .nt, .kn, .o, .ow { color: #B1B9D4; }
+  // comments
+  .c, .cm, .cp, .c1, .cs { color: #636B7B; }
+  // classes in css
+  .kc, .kp, .kr, .ld, .mf, .mh, .mi, .s, .sb, .sc, .sd, .s2, .sh, .si, .sx, .sr, .s1, .ss { color: #EDD3AD; }
+  .na, .nc, .nd, .ne, .nf, .nl, .nx, .gi { color: #FFDC46; }
+  .bp, .vc, .vg, .gu { color: #75715e; }
+}

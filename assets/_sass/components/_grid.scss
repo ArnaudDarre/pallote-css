@@ -51,10 +51,8 @@
   &--wrap {
     justify-content: center;
 
-    .grid__item {
+    > .grid__item {
       flex: 1 0 0;
-      min-width: 20rem;
-      max-width: 30rem;
     }
   }
 }
