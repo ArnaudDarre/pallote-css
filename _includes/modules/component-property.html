@@ -2,16 +2,16 @@
 {% assign subtitle = include.subtitle %}
 {% assign content = include.content %}
 
-<div class="grid__item">
-  <h3 class="h5 mb-2">{{ title }}</h3>
-  {% if subtitle %}
-  <div class="grid grid--spacing5 grid--wrap">
+<div class="box__property">
+  <div class="grid grid--spacing5 grid--wrap grid--aiBaseline">
     <div class="grid__item">
+      <h3 class="h5 mb-2">{{ title }}</h3>
+      {% if subtitle %}
       <p class="section__subtitle">{{ subtitle }}</p>
+      {% endif %}
     </div>
-    <div class="grid__item">
+    <div class="grid__item grid--aiStart">
       {{ content }}
     </div>
   </div>
-  {% endif %}
 </div>

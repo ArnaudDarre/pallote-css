@@ -2,7 +2,6 @@
 // media queries
 // font
 // form
-// button
 // misc
 // —————————————————————————————————————————————————————————————————
 
@@ -84,32 +83,6 @@
 	::-moz-placeholder { @content; }
 	:-ms-input-placeholder { @content; }
 	::-webkit-input-placeholder { @content; } 
-}
-
-// —————————————————————————————————————————————————————————————————
-// button
-// —————————————————————————————————————————————————————————————————
-
-@mixin button-fill-color($prefix, $colors...) {
-	@each $i in $colors {
-		.#{$prefix}#{nth($i, 1)} {
-			background-color: nth($i, 2);
-			color: nth($i, 3);
-			
-			svg {
-				stroke: nth($i, 3);
-			}
-			
-			&.button--transparent {
-				background-color: transparent;
-				color: nth($i, 2);
-				
-				svg {
-					stroke: nth($i, 2);
-				}
-			}
-		}
-	}
 }
 
 // —————————————————————————————————————————————————————————————————

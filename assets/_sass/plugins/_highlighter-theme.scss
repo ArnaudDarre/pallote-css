@@ -1,16 +1,17 @@
 .highlight,
 .highlighter-rouge {
+  position: relative;
   font-family: monospace;
   font-size: 0.75rem;
   background-color: $background-paper;
   color: #EFF0F2;
   padding: $spacing-md;
-  border-radius: $spacing-sm;
+  border-radius: $border-radius-md;
   width: 100%;
   
   &.language-plaintext {
     color: $text;
-    border-radius: $spacing-xs;
+    border-radius: $border-radius-sm;
     padding: $spacing-xs $spacing-sm;
 
     a & {
@@ -27,6 +28,13 @@
   ol &, 
   table & {
     width: auto;
+  }
+
+  .tag {
+    font-family: $font;
+    position: absolute;
+    right: 5px;
+    top: 5px;
   }
 }
 

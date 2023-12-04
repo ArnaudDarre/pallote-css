@@ -1,0 +1,64 @@
+// ——————————————————————————————————————————————————
+// elements
+// color
+// size
+// ——————————————————————————————————————————————————
+
+// ——————————————————————————————————————————————————
+// elements
+// ——————————————————————————————————————————————————
+
+.tags {
+  display: flex;
+  
+  .tag:not(:last-child) {
+    margin-right: $spacing-xs;
+  }
+
+  &--portrait {
+    flex-direction: column;
+    align-items: flex-start;
+  
+    .tag:not(:last-child) {
+      margin-bottom: $spacing-xs;
+      margin-right: 0;
+    }
+  }
+}
+
+.tag {
+  @include font-size(0.75, $font-bold, 1);
+  padding: $spacing-xs $spacing-sm*1.5;
+  border-radius: $border-radius-md*0.5;
+  display: inline-block;
+  white-space: nowrap; // prevent text to go on multiple lines
+  line-height: 1;
+}
+
+// ——————————————————————————————————————————————————
+// color
+// ——————————————————————————————————————————————————
+
+@mixin color($background-color, $color) {
+  background-color: $background-color;
+  color: $color;
+}
+
+.tag {
+
+  &--primary { @include color($primary, $primary-text); }
+  &--secondary { @include color($secondary, $secondary-text); }
+  &--grey { @include color($text-disabled, $text); }
+  &--success { @include color($success-light, $success-text); }
+  &--info { @include color($info-light, $info-text); }
+  &--warning { @include color($warning-light, $warning-text); }
+  &--error { @include color($error-light, $error-text); }
+}
+
+// ——————————————————————————————————————————————————
+// dense
+// ——————————————————————————————————————————————————
+
+.tag--dense {
+  padding: $spacing-xxs $spacing-xs;
+}

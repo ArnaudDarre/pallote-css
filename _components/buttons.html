@@ -1,0 +1,57 @@
+---
+layout: "component"
+label: "Interactions"
+title: "Buttons"
+subtitle: "Wrap several buttons inside a self-contained element to ensure consistent spacing, sufficient spacing on smaller devices, and define responsive wrapping behaviour."
+description: |-
+  The buttons component is composed of two element:
+
+  - `buttons` the wrapper
+    - its child `button` elements. Can also be nested `buttons` elements.
+
+example: |-
+  <div class="buttons">
+    <a href="#" class="button button--error">Cancel</a>
+    <div class="buttons">
+      <a href="#" class="button button--grey">Skip</a>
+      <a href="#" class="button">Next</a>
+    </div>
+  </div>
+---
+
+<!-------------------------------------------------->
+<!-- direction -->
+<!-------------------------------------------------->
+
+{% capture button-direction %}
+  <div class="grid grid--spacing2">
+    <div class="grid__item grid__item--md6 grid--aiStart">
+      {% include modules/component-class.html code='class="buttons"' isDefault=true
+        component = '
+          <div class="buttons">
+            <a href="#" class="button">Button</a>
+            <a href="#" class="button">Button</a>
+            <a href="#" class="button">Button</a>
+          </div>
+        '
+        %}
+      </div>
+      <div class="grid__item grid__item--md6 grid--aiStart">
+        {% include modules/component-class.html code='class="buttons button--portrait"'
+        component = '
+          <div class="buttons buttons--portrait">
+            <a href="#" class="button">Button</a>
+            <a href="#" class="button">Button</a>
+            <a href="#" class="button">Button</a>
+          </div>
+        '
+      %}
+    </div>
+  </div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Direction'
+  subtitle = 'Change the direction of the component.'
+  content = button-direction
+%}

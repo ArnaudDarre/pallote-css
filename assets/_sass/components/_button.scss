@@ -1,10 +1,12 @@
 // —————————————————————————————————————————————————————————————————
 // elements
+// kind
+// variant
 // size
-// animate
 // color
+// disabled
+// animate
 // menu
-// overrides
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
@@ -12,79 +14,69 @@
 // —————————————————————————————————————————————————————————————————
 
 .button {
-	cursor: pointer;
-	overflow: hidden;
-  border: 0;
+  cursor: pointer;
+  overflow: hidden;
   display: inline-flex;
-  border-radius: $border-radius-sm;
-  position: relative;
   align-items: center;
   justify-content: center;
+  border-radius: $border-radius-md;
+  position: relative;
   line-height: 0;
   text-transform: uppercase;
-  font-weight: $font-bold;
-  padding-top: 0.1em;
-  @include transition($transition-md, background-color);
+  font-weight: $font-bold !important;
+  padding-bottom: 0.15em;
   white-space: nowrap;
-
-  &.disabled,
-  &:disabled {
-    opacity: .65;
-    cursor: not-allowed;
-  }
-
-  &:hover {
-		text-decoration: none;
-	}
 }
 
-.buttons {
-  margin: -$spacing-xs;
+// —————————————————————————————————————————————————————————————————
+// kind
+// —————————————————————————————————————————————————————————————————
 
-  .button {
-    margin: $spacing-xs
-  }
-}
+// This property is handled by the size mixin
+
+// —————————————————————————————————————————————————————————————————
+// variant
+// —————————————————————————————————————————————————————————————————
+
+// This property is handled by the color mixin
 
 // —————————————————————————————————————————————————————————————————
 // size
 // —————————————————————————————————————————————————————————————————
 
 @mixin size($proportion, $size) {
-	height: $size;
-  padding-right: calc($size/2.5);
-  padding-left: calc($size/2.5);	
-  @if $proportion == sm { font-size: 0.875rem; }
-  @else if $proportion == md { font-size: 1rem; }
-  @else if $proportion == lg { font-size: 1.125rem; }
+  height: $size;
+  padding-right: $size*.33;
+  padding-left: $size*.33;
+
+  @if $proportion == sm { @extend %caption; }
+  @else if $proportion == lg { @extend %subtitle; }
 
   svg {
     width: calc($size/1.75);
     height: calc($size/1.75);
+  }
 
-    &:first-child {
-      margin-right: calc($size/4);
-      margin-left: calc(-1 * $size/8);
-    }
+  &:not(.button--icon) {
 
-    &:last-child {
-      margin-right: calc(-1 * $size/8);
-      margin-left: calc($size/4);
+    svg {
+      margin-top: 0.15em;
+  
+      &:first-child {
+        margin-right: calc($size/4);
+        margin-left: calc(-1 * $size/10);
+      }
+  
+      &:last-child {
+        margin-right: calc(-1 * $size/10);
+        margin-left: calc($size/4);
+      }
     }
   }
 
   &.button--icon {
-    font-size: calc($size/1.75);
     width: $size;
-    height: $size;
-    padding: calc($size/4);
-
-    svg {
-      width: calc($size/1.75);
-      height: calc($size/1.75);
-      margin-right: 0;
-      margin-left: 0;
-    }
+    padding: 0;
   }
 }
 
@@ -96,39 +88,77 @@
 }
 
 // —————————————————————————————————————————————————————————————————
-// animate
-// —————————————————————————————————————————————————————————————————
-
-.button--animate {
-
-	.button__inner,
-	svg {
-    @include transition($transition-md, transform);
-	}
-
-	svg {
-		position: absolute;
-		margin: 0 !important;
-		transform: translateX(-800%);
-	}
-
-	@include hover {
-
-		.button__inner { transform: translateX(140%); }
-		svg { transform: translateX(0); }
-	}
-}
-
-// —————————————————————————————————————————————————————————————————
 // color
 // —————————————————————————————————————————————————————————————————
 
-@include button-fill-color('button--',
-  'default' $background-default $primary,
-  'grey' $background-paper $text,
-	'primary' $primary $primary-text,
-	'secondary' $secondary $secondary-text
+@mixin color($prefix, $colors...) {
+
+  @each $i in $colors {
+    .#{$prefix}#{nth($i, 1)} {
+      background-color: nth($i, 2);
+      color: nth($i, 3);
+
+      @include hover {
+
+        &:not(.button--disabled) {
+          background-color: mix(black, nth($i, 2), 20%);
+        }
+      }
+
+      svg { fill: nth($i, 3); }
+      
+      &.button--stroke {
+        background-color: transparent;
+        border: 1px solid nth($i, 2);
+        color: $text;
+
+        @include hover {
+
+          &:not(.button--disabled) {
+            background-color: $hover;
+          }
+        }
+
+        svg { fill: $text; }
+      }
+      
+      &.button--transparent {
+        background-color: transparent;
+        color: nth($i, 2);
+
+        @include hover { background-color: $hover; }
+        svg { fill: nth($i, 2); }
+      }
+    }
+  }
+}
+
+
+@include color('button',
+  '' $primary $primary-text,
+  '--secondary' $secondary $secondary-text,
+  '--highlight' $highlight $highlight-text,
+  '--default' $background-default $primary,
+  '--grey' $text-disabled $text,
+  '--success' $success $success-contrast,
+  '--info' $info $info-contrast,
+  '--warning' $warning $warning-contrast,
+  '--error' $error $error-contrast
 );
+
+// —————————————————————————————————————————————————————————————————
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+button {
+
+  &.button--disabled,
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    outline: none;
+  }
+}
 
 // —————————————————————————————————————————————————————————————————
 // menu
@@ -181,20 +211,11 @@
 
   &.button--menu--open {
 
-    &:before {
-      animation: button-menu-open-before $transition-lg forwards;
-    }
-
-    &:after {
-      animation: button-menu-open-after $transition-lg forwards;
-    }
+    &:before { animation: button-menu-open-before $transition-lg forwards; }
+    &:after { animation: button-menu-open-after $transition-lg forwards; }
 
     .button__inner {
       opacity: 0;
     }
   }
 }
-
-// —————————————————————————————————————————————————————————————————
-// overrides
-// —————————————————————————————————————————————————————————————————

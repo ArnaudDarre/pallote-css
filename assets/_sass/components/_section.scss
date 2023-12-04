@@ -17,10 +17,6 @@
   @include clamp(padding-right, $spacing-md, 4vw, $spacing-xl);
   @include clamp(padding-left, $spacing-md, 4vw, $spacing-xl);
 
-  & + & .section__container {
-    border-top: $border;
-  }
-
   &__container {
     @include clamp(padding-top, $spacing-lg, 8vw, $spacing-xl);
     @include clamp(padding-bottom, $spacing-lg, 8vw, $spacing-xl);

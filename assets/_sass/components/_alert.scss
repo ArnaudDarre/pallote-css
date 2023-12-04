@@ -21,6 +21,7 @@ $spacing-alert: $spacing-md*0.75;
   top: $spacing-md;
   right: $spacing-md;
   max-width: $spacing-xxl*3;
+  min-width: $spacing-xxl*2;
   z-index: 200;
 
   &:not(.alert--notice) {

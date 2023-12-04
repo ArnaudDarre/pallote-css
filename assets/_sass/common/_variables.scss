@@ -32,9 +32,11 @@ $grey-5: #F2F3F4;
 
 $text: $white;
 $text-alt: rgba($white, 0.5);
+$text-disabled: rgba($white, 0.25);
 
 $text-contrast: $black;
 $text-contrast-alt: rgba($black, 0.6);
+$text-contrast-disabled: rgba($black, 0.3);
 
 // brand
 
@@ -87,6 +89,7 @@ $background-paper: $grey-90;
 // others
 
 $border: 1px solid rgba($white, 0.2);
+$hover: rgba($white, 0.12);
 $overlay: rgba($black, 0.8);
 
 // —————————————————————————————————————————————————————————————————

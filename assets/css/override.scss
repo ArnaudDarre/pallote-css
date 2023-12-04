@@ -4,6 +4,26 @@
 // This file is meant to override some of the components styling specifically for this website.
 // The goal is to leave the compponent CSS files free of specific overriding styles.
 
+@import
+  "common/_variables"
+;
+
+// ——————————————————————————————————————————————————
+// library specific styles
+// ——————————————————————————————————————————————————
+
+.box {
+
+  &__property {
+
+    & + & {
+      border-top: $border;
+      margin-top: $spacing-lg;
+      padding-top: $spacing-lg;
+    }
+  }
+}
+
 // ——————————————————————————————————————————————————
 // alert
 // ——————————————————————————————————————————————————
@@ -12,4 +32,19 @@
   position: relative;
   top: 0;
   right: 0;
+}
+
+// ——————————————————————————————————————————————————
+// section
+// ——————————————————————————————————————————————————
+
+.section {
+
+  & + & .section__container {
+    border-top: $border;
+  }
+  
+  &.footer .section__container {
+    border-top: 0;
+  }
 }
