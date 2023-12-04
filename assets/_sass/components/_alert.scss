@@ -59,6 +59,7 @@ $spacing-alert: $spacing-md*0.75;
 
   &__subtitle {
     @extend .caption;
+    padding-bottom: 0.2em;
   }
 
   &__close {

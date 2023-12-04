@@ -18,9 +18,11 @@
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
-// baloo
+// barlow
 // —————————————————————————————————————————————————————————————————
 
-@include fontface('Baloo', baloo/baloo-regular, $font-regular, normal);
-@include fontface('Baloo', baloo/baloo-bold, $font-bold, normal);
-@include fontface('Baloo', baloo/baloo-black, $font-black, normal);
+@include fontface('Barlow', barlow/barlow-regular, $font-regular, normal);
+@include fontface('Barlow', barlow/barlow-italic, $font-regular, italic);
+
+@include fontface('Barlow', barlow/barlow-semibold, $font-bold, normal);
+@include fontface('Barlow', barlow/barlow-semibold-italic, $font-bold, italic);
