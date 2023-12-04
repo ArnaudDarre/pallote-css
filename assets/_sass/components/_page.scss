@@ -1,46 +1,24 @@
----
----
-
-// This file is meant to override some of the components styling specifically for this website.
-// The goal is to leave the compponent CSS files free of specific overriding styles.
-
-@import
-  "common/_variables"
-;
-
 // ——————————————————————————————————————————————————
-// library specific styles
+// elements
+// withSidebar
 // ——————————————————————————————————————————————————
 
-.box {
+// ——————————————————————————————————————————————————
+// elements
+// ——————————————————————————————————————————————————
 
-  &__property {
-
-    & + & {
-      border-top: $border;
-      margin-top: $spacing-lg;
-      padding-top: $spacing-lg;
-    }
+.page {
+  
+  &__content {
+    background-color: $background-default; // override browser default color
+    width: 100%;
   }
 }
 
 // ——————————————————————————————————————————————————
-// alert
+// withSidebar
 // ——————————————————————————————————————————————————
 
-.alert {
-  position: relative;
-  top: 0;
-  right: 0;
-}
-
-// ——————————————————————————————————————————————————
-// section
-// ——————————————————————————————————————————————————
-
-.section {
-
-  & + & {
-    border-top: $border;
-  }
+.page--withSidebar {
+  display: flex;
 }

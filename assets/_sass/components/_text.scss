@@ -11,32 +11,44 @@
 // —————————————————————————————————————————————————————————————————
 
 .h1, %h1 {
-	@include font-size(3, $font-black, normal, 1.25);
+	@include font-size(3, normal, 1.25);
+	font-weight: $font-black;
 	@include responsive (down, tablet) { font-size: 2.5rem; }
+
 }
 
 .h2, %h2 {
-	@include font-size(2.5, $font-black, normal, 1.25);
+	@include font-size(2.5, normal, 1.25);
+	font-weight: $font-black;
 	@include responsive (down, tablet) { font-size: 2.25rem; }
+
 }
 
 .h3, %h3 {
-	@include font-size(2, $font-bold, normal, 1.25);
+	@include font-size(2, normal, 1.25);
+	font-weight: $font-bold;
 	@include responsive (down, tablet) { font-size: 2rem; }
+
 }
 
 .h4, %h4 {
-	@include font-size(1.75, $font-bold, normal, 1.25);
+	@include font-size(1.75, normal, 1.25);
+	font-weight: $font-bold;
 	@include responsive (down, tablet) { font-size: 1.75rem; }
+
 }
 
 .h5, %h5 {
-	@include font-size(1.5, $font-bold, normal, 1.25);
+	@include font-size(1.5, normal, 1.25);
+	font-weight: $font-bold;
 }
 
+
 .h6, %h6 {
-	@include font-size(1.25, $font-bold, normal, 1.25);
+	@include font-size(1.25, normal, 1.25);
+	font-weight: $font-bold;
 }
+
 
 .subtitle, %subtitle {
 	@include font-size(1.125);

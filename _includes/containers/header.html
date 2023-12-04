@@ -21,6 +21,10 @@
 
 </head>
 
-<body class="page page--{{ page.title | downcase | replace: " ", "-" }}">
+<body>
 
 {% include components/navbar.html %}
+
+<div class="page page--withSidebar page--{{ page.title | downcase | replace: " ", "-" }}">
+{% include components/sidebar.html %}
+<main class="page__content">

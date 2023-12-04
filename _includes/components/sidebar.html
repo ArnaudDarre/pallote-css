@@ -1,0 +1,26 @@
+<aside class="sidebar">
+  <div class="sidebar__container">
+    <div class="sidebar__nav nav nav--dense">
+      <ul class="nav__group">
+        <li class="nav__title">Getting started</li>
+        <li class="nav__item">
+          <a href=""
+            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
+            Introduction
+          </a>
+        </li>
+      </ul>
+      <ul class="nav__group">
+        <li class="nav__title">Components</li>
+        {% for item in site.components %}
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}"
+            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</aside>

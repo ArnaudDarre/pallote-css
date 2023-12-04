@@ -1,0 +1,74 @@
+// ——————————————————————————————————————————————————
+// elements
+// dense
+// ——————————————————————————————————————————————————
+
+// ——————————————————————————————————————————————————
+// elements
+// ——————————————————————————————————————————————————
+
+.nav {
+  display: flex;
+
+  // override ul & li styling
+  ul { list-style: none; }
+
+  li { margin-left: 0; }
+  li + li { padding-top: 0; }
+
+  &__group {
+    display: flex;
+
+    & + & {
+      margin-top: $spacing-md;
+    }
+  }
+
+  &__title {
+    @extend %subtitle;
+    font-weight: $font-bold;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__item {
+    cursor: pointer;
+    font-weight: $font-bold;
+    position: relative;
+    display: inline-flex;
+
+    & + & {
+      margin-top: $spacing-sm;
+    }
+  }
+
+  &__trigger {
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-sm;
+    @extend %caption;
+
+    @include hover { background-color: $hover; }
+
+    &--active {
+      color: $primary;
+      background-color: $hover;
+    }
+  }
+}
+
+// ——————————————————————————————————————————————————
+// dense
+// ——————————————————————————————————————————————————
+
+.nav--dense {
+
+  .nav {
+
+    &__item + .nav__item {
+      margin-top: $spacing-xs;
+    }
+
+    &__trigger {
+      padding: $spacing-xs $spacing-sm;
+    }
+  }
+}

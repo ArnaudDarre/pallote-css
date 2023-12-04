@@ -40,10 +40,19 @@
     }
   }
 
+  &__label {
+    color: $text-alt;
+    font-weight: $font-bold;
+  }
+  
   &__title {
     @extend %h3;
     color: $primary;
     max-width: $desktop-up*0.75;
+
+    .section__label + & {
+      margin-top: $spacing-sm;
+    }
   }
   
   &__subtitle {
@@ -144,3 +153,7 @@
 // —————————————————————————————————————————————————————————————————
 // overrides
 // —————————————————————————————————————————————————————————————————
+
+.footer {
+  border-top: $border;
+}

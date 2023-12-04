@@ -13,11 +13,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-body.js-freeze {
-	overflow: hidden;
-}
-
-.page {
+body {
 	font-family: $font;
 	font-size: 16px;
 	line-height: 1.5;
@@ -28,6 +24,10 @@ body.js-freeze {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	
+	&.js-freeze {
+		overflow: hidden;
+	}
 }
 
 // stick to bottom of page when page height smaller than viewport height

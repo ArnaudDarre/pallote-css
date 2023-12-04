@@ -1,0 +1,25 @@
+.sidebar {
+  @include calc(height, '100vh - '$navbar-height);
+  position: sticky;
+  flex-shrink: 0;
+  border-right: $border;
+  width: 200px;
+  top: $navbar-height;
+  padding: $spacing-lg $spacing-md;
+
+  &__nav {
+    flex-direction: column;
+    
+    .nav {
+
+      &__group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      &__trigger {
+        width: 100%;
+      }
+    }
+  }
+}
