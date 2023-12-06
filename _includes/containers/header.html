@@ -16,15 +16,18 @@
 	<link rel="preload" href="{% link assets/fonts/barlow/barlow-semibold-italic.woff2 %}" as="font" type="font/woff2" crossorigin>
 
 	<!-- CSS -->
+	<link rel="stylesheet" href="{% link assets/css/pallote.scss %}">
 	<link rel="stylesheet" href="{% link assets/css/style.scss %}">
-	<link rel="stylesheet" href="{% link assets/css/override.scss %}">
 
 </head>
 
 <body>
 
+<div class="page page--withSidebar page--{{ page.title | downcase | replace: " ", "-" }}">
+
 {% include components/navbar.html %}
 
-<div class="page page--withSidebar page--{{ page.title | downcase | replace: " ", "-" }}">
+<div class="page__container">
 {% include components/sidebar.html %}
 <main class="page__content">
+

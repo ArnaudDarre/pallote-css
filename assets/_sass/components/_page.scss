@@ -20,5 +20,12 @@
 // ——————————————————————————————————————————————————
 
 .page--withSidebar {
-  display: flex;
+
+  .page__container {
+    display: flex;
+  }
+
+  .section__container {
+    max-width: none;
+  }
 }
