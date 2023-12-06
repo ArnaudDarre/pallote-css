@@ -12,10 +12,13 @@
 // —————————————————————————————————————————————————————————————————
 
 .section {
-  overflow: hidden; // prevent horizontal scroll on mobile
-  position: relative;
   @include clamp(padding-right, $spacing-md, 4vw, $spacing-xl);
   @include clamp(padding-left, $spacing-md, 4vw, $spacing-xl);
+  overflow: hidden; // prevent horizontal scroll on mobile
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__container {
     @include clamp(padding-top, $spacing-lg, 8vw, $spacing-xl);

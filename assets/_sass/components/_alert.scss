@@ -6,7 +6,7 @@
 // noIcon
 // ——————————————————————————————————————————————————
 
-$spacing-alert: $spacing-md*0.75;
+$spacing-alert: $spacing-sm;
 
 // ——————————————————————————————————————————————————
 // elements
@@ -16,7 +16,7 @@ $spacing-alert: $spacing-md*0.75;
   border-radius: $spacing-sm;
   background-color: $info-light;
   color: $info-text;
-  padding: $spacing-alert $spacing-md;
+  padding: $spacing-alert;
   position: fixed;
   top: $spacing-md;
   right: $spacing-md;
@@ -50,12 +50,7 @@ $spacing-alert: $spacing-md*0.75;
   }
 
   &__title {
-    font-weight: $font-bold !important;
-    
-    + .alert__title,
-    + .alert__subtitle {
-      margin-top: $spacing-xxs;
-    }
+    font-weight: $font-bold;
   }
 
   &__subtitle {
@@ -135,7 +130,7 @@ $spacing-alert: $spacing-md*0.75;
 // ——————————————————————————————————————————————————
 
 .alert--dense {
-  padding: $spacing-alert*0.5 $spacing-sm;
+  padding: $spacing-alert*0.5;
 
   &:before {
     top: $spacing-alert*0.5;
@@ -145,7 +140,7 @@ $spacing-alert: $spacing-md*0.75;
   }
 
   &:not(.alert--notice) {
-    padding-left: $spacing-md*2;
+    padding-left: $spacing-md*1.75;
   }
 
   .alert__title {

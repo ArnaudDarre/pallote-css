@@ -200,6 +200,4 @@ header { z-index: 11; }
 
 .background-cover {
 	@include background(50% 50%, cover);
-	width: 100%;
-	height: 100%;
 }
