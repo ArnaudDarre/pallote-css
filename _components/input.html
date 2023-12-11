@@ -1,0 +1,102 @@
+---
+layout: component
+label: Form
+title: Input
+description: |-
+  Handle a complete form field with a label, placeholder and optional notice (which can also be used to display error messages).
+
+  - `input` the wrapper
+    - `input__label` the field label
+    - `input__control` the input
+    - `input__notice` an optional notice (which can also be used to display error messages)
+
+example: |-
+  <div class="input">
+    <label for="label" class="input__label">Label</label>
+    <input type="text" id="label" class="input__control">
+  </div>
+---
+
+<!-------------------------------------------------->
+<!-- focused -->
+<!-------------------------------------------------->
+
+{% capture input-focused %}
+{% include modules/component-class.html code='class="input input--focused"'
+  component = '
+    <div class="input input--focused">
+      <label for="focused" class="input__label">Label</label>
+      <input type="text" id="focused" class="input__control">
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Focused'
+  subtitle = 'Focus a specific input on page load.'
+  content = input-focused
+%}
+
+<!-------------------------------------------------->
+<!-- error -->
+<!-------------------------------------------------->
+
+{% capture input-error %}
+{% include modules/component-class.html code='class="input js--error"'
+  component = '
+    <div class="input js-error">
+      <label for="error" class="input__label">Label</label>
+      <input type="text" id="error" class="input__control">
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Error'
+  subtitle = 'Notify users that the field has an error.'
+  content = input-error
+%}
+
+<!-------------------------------------------------->
+<!-- disabled -->
+<!-------------------------------------------------->
+
+{% capture input-disabled %}
+{% include modules/component-class.html code='class="input input--disabled"'
+  component = '
+    <div class="input input--disabled">
+      <label for="disabled" class="input__label">Label</label>
+      <input type="text" id="disabled" class="input__control">
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Disabled'
+  subtitle = 'Add this class to signal users the field is disabled. Include `pallote.js` file to your project to automatically add the disabled attribute to the input.'
+  content = input-disabled
+%}
+
+<!-------------------------------------------------->
+<!-- required -->
+<!-------------------------------------------------->
+
+{% capture input-required %}
+{% include modules/component-class.html code='class="input input--required"'
+  component = '
+    <div class="input input--required">
+      <label for="required" class="input__label">Label</label>
+      <input type="text" id="required" class="input__control">
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Required'
+  subtitle = 'Add this class to signal users the field is required. Include `pallote.js` file to your project to automatically add the required attribute to the input.'
+  content = input-required
+%}

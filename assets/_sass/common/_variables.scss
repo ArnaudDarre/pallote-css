@@ -103,9 +103,9 @@ $spacing-xxs: 0.125rem; // 4px
 $spacing-xs: 0.25rem; // 4px
 $spacing-sm: 0.5rem; // 8px
 $spacing-md: 1rem; // 16px
-$spacing-lg: 2.5rem; // 40px
-$spacing-xl: 5rem; // 80px
-$spacing-xxl: 7.5rem; // 120px
+$spacing-lg: 2rem; // 40px
+$spacing-xl: 4rem; // 80px
+$spacing-xxl: 7rem; // 120px
 
 $max-width-subtitle: $spacing-xxl*4;
 
@@ -153,7 +153,7 @@ $mobile-sm-down: 349.98px;
 
 // box-shadow
 
-$box-shadow: 0 0 $spacing-sm 0 rgba($black, 0.2);
+$box-shadow: 0 0 $spacing-sm 0 rgba($text, 0.2);
 
 // transition
 

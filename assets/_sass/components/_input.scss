@@ -1,0 +1,140 @@
+// —————————————————————————————————————————————————————————————————
+// elements / default
+// elements / select
+// elements / textarea
+// elements / radio and checkbox
+// active
+// error
+// disabled
+// required
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements / default
+// —————————————————————————————————————————————————————————————————
+
+.input {
+  text-align: left;
+  position: relative;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: $spacing-md;
+  }
+
+  &__label {
+		@include transition($transition-md, color);
+		@extend %caption;
+		font-weight: $font-bold;
+		color: $text-alt;
+		text-overflow: ellipsis;
+		cursor: pointer;
+		display: block;
+		overflow: hidden;
+		white-space: nowrap;
+		position: relative;
+		margin-bottom: $spacing-xs;
+  }
+
+  &__control {
+		@include font-size(1, $font-regular, normal);
+		@include transition($transition-md, border-color);
+		font-family: $font;
+		text-overflow: ellipsis;
+		width: 100%;
+    border-radius: $border-radius-md !important;
+    padding: $spacing-xs*1.5 $spacing-sm;
+		background-color: $background-paper;
+    height: $spacing-lg;
+		
+		@include responsive(down, mobile) {
+			background-color: $background-paper;
+		}
+  }
+
+  &__notice {
+		@extend %caption;
+		margin-top: $spacing-xs;
+  }
+}
+
+@include placeholder {
+  color: $text-alt;
+  opacity: 1;
+}
+
+// —————————————————————————————————————————————————————————————————
+// elements / select
+// —————————————————————————————————————————————————————————————————
+
+.input--select {
+
+  &:after {
+    content: "\2039";
+    transform: rotate(-90deg);
+    position: absolute;
+    right: $spacing-md;
+    top: $spacing-lg;
+    font-size: 1.75rem;
+    line-height: 1;
+
+    .form__control {
+      cursor: pointer;
+			padding-right: $spacing-md*1.5;
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// elements / textarea
+// —————————————————————————————————————————————————————————————————
+
+textarea {
+  resize: vertical;
+}
+
+// —————————————————————————————————————————————————————————————————
+// elements / radio and checkbox
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// error
+// —————————————————————————————————————————————————————————————————
+
+.input.js-error {
+
+  .input {
+ 
+    &__label { color: $error; }
+    &__control { border: 1px solid $error; }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+.input--disabled {
+
+  .input {
+    opacity: 0.5;
+
+    &__label,
+    &__control {
+      cursor: not-allowed;
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// required
+// —————————————————————————————————————————————————————————————————
+
+.input--required {
+
+  .input__label:after {
+    content: "*";
+    color: $error;
+    margin-left: $spacing-xs;
+  }
+}

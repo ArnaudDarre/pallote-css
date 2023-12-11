@@ -7,7 +7,7 @@
     <div class="grid__item">
       <h3 class="h5 mb-2">{{ title }}</h3>
       {% if subtitle %}
-      <p class="section__subtitle">{{ subtitle }}</p>
+      <div class="section__subtitle editor">{{ subtitle | markdownify }}</div>
       {% endif %}
     </div>
     <div class="grid__item grid--aiStart">

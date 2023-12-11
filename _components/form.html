@@ -1,0 +1,106 @@
+---
+layout: component
+label: Form
+title: Form
+description: |-
+  The form component is composed of several elements:
+
+  - `form` the wrapper
+    - `form__title` an optionnal title or titles
+    - `form__content` the form fields, composed of multiple `input` components
+    - `form__action` the form submit actions, composed of one or multiple button components
+
+example: |-
+  <form action="" class="form">
+    <p class="form__title">Optional form title</p>
+    <div class="form__content">
+      <div class="input">
+        <label for="name" class="input__label">Label</label>
+        <input type="text" id="name" class="input__control">
+      </div>
+      <div class="input input--select">
+        <label for="object" class="input__label">Label</label>
+        <select name="object" id="object" class="input__control">
+          <option value=""></option>
+          <option value="Option 1">Option 1</option>
+          <option value="Option 2">Option 2</option>
+        </select>
+      </div>
+    </div>
+    <div class="form__actions">
+      <button class="button">Submit</button>
+    </div>
+  </form>
+---
+
+<!-------------------------------------------------->
+<!-- dense -->
+<!-------------------------------------------------->
+
+{% capture form-dense %}
+{% include modules/component-class.html code='class="form form--dense"'
+  component = '
+    <form action="" class="form form--dense">
+      <div class="form__content">
+        <div class="input">
+          <label for="name" class="input__label">Label</label>
+          <input type="text" id="name" class="input__control">
+        </div>
+        <div class="input input--select">
+          <label for="object" class="input__label">Label</label>
+          <select name="object" id="object" class="input__control">
+            <option value=""></option>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+          </select>
+        </div>
+      </div>
+      <div class="form__actions">
+        <button class="button">Submit</button>
+      </div>
+    </form>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Dense'
+  subtitle = 'Make the margins and paddings of the form component smaller.'
+  content = form-dense
+%}
+
+<!-------------------------------------------------->
+<!-- card -->
+<!-------------------------------------------------->
+
+{% capture form-card %}
+{% include modules/component-class.html code='class="form form--card"'
+  component = '
+    <form action="" class="form form--card">
+      <div class="form__content">
+        <div class="input">
+          <label for="name" class="input__label">Label</label>
+          <input type="text" id="name" class="input__control">
+        </div>
+        <div class="input input--select">
+          <label for="object" class="input__label">Label</label>
+          <select name="object" id="object" class="input__control">
+            <option value=""></option>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+          </select>
+        </div>
+      </div>
+      <div class="form__actions">
+        <button class="button">Submit</button>
+      </div>
+    </form>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Card'
+  subtitle = 'Add a background color and a box-shadow to the form, as if it was in a card component. This special styling disappears on small devices.'
+  content = form-card
+%}

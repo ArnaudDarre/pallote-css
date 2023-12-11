@@ -82,9 +82,9 @@
 
 .button {
 
-  @include size(md, $spacing-md*2);
+  @include size(md, $spacing-lg);
   &--sm { @include size(sm, $spacing-md*1.5); }
-  &--lg { @include size(lg, $spacing-lg); }
+  &--lg { @include size(lg, $spacing-lg*1.25); }
 }
 
 // —————————————————————————————————————————————————————————————————
