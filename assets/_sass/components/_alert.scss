@@ -25,7 +25,7 @@ $spacing-alert: $spacing-sm;
   z-index: 200;
 
   &:not(.alert--notice) {
-    padding-left: $spacing-lg;
+    padding-left: $spacing-lg + $spacing-sm;
   }
 
   @include responsive(down, mobile) {

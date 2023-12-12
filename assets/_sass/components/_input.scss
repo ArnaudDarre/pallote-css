@@ -123,7 +123,7 @@ textarea {
 
   &--portrait {
     flex-direction: column;
-    height: auto;
+    height: auto !important;
 
     .checkbox + .checkbox,
     .radio + .radio {  
