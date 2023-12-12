@@ -2,12 +2,14 @@
 // elements / default
 // elements / select
 // elements / textarea
-// elements / radio and checkbox
+// elements / checkbox & radio
 // active
 // error
 // disabled
 // required
 // —————————————————————————————————————————————————————————————————
+
+$checkbox-width: $spacing-md*1.25;
 
 // —————————————————————————————————————————————————————————————————
 // elements / default
@@ -37,19 +39,24 @@
   }
 
   &__control {
-		@include font-size(1, $font-regular, normal);
 		@include transition($transition-md, border-color);
+    font-size: 1rem;
 		font-family: $font;
-		text-overflow: ellipsis;
 		width: 100%;
     border-radius: $border-radius-md !important;
     padding: $spacing-xs*1.5 $spacing-sm;
 		background-color: $background-paper;
-    height: $spacing-lg;
 		
 		@include responsive(down, mobile) {
-			background-color: $background-paper;
+      background-color: $background-paper;
 		}
+    
+    &:not(textarea) {
+      white-space: nowrap;
+		  text-overflow: ellipsis;
+      line-height: 1;
+      height: $spacing-lg;
+    }
   }
 
   &__notice {
@@ -67,21 +74,26 @@
 // elements / select
 // —————————————————————————————————————————————————————————————————
 
-.input--select {
+.select {
 
   &:after {
     content: "\2039";
     transform: rotate(-90deg);
     position: absolute;
-    right: $spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: $spacing-sm*1.5;
     top: $spacing-lg;
+    height: $spacing-md;
+    width: $spacing-md;
     font-size: 1.75rem;
     line-height: 1;
+  }
 
-    .form__control {
-      cursor: pointer;
-			padding-right: $spacing-md*1.5;
-    }
+  .input__control {
+    cursor: pointer;
+    padding-right: $spacing-md*1.5;
   }
 }
 
@@ -94,8 +106,100 @@ textarea {
 }
 
 // —————————————————————————————————————————————————————————————————
-// elements / radio and checkbox
+// elements / checkbox & radio
 // —————————————————————————————————————————————————————————————————
+
+.checkboxes,
+.radios {
+  background-color: transparent;
+  padding-right: 0;
+  padding-left: 0;
+  display: flex;
+
+  .checkbox + .checkbox,
+  .radio + .radio {
+    margin-left: $spacing-md;
+  }
+
+  &--portrait {
+    flex-direction: column;
+    height: auto;
+
+    .checkbox + .checkbox,
+    .radio + .radio {  
+      margin-top: $spacing-sm;
+      margin-left: 0;
+    }  
+  }
+}
+  
+.checkbox,
+.radio {
+
+  &__control {
+    position: absolute;
+  }
+
+  &__label {
+    cursor: pointer;
+
+    &:before {
+      @include transition($transition-md, border);
+      content: "✔";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: $checkbox-width;
+      height: $checkbox-width;
+      margin-right: $spacing-sm;
+      border: $border;
+      color: transparent;
+    }
+  }
+}
+
+.checkbox {
+
+  &__control {
+
+    &:checked {
+
+      ~ .checkbox__label:before {
+        border-color: $primary;
+        border-width: $checkbox-width*0.5;
+        color: $text-contrast;
+      }
+    }
+  }
+
+  &__label {
+
+    &:before {
+      border-radius: $spacing-xs;
+    }
+  }
+}
+
+.radio {
+
+  &__control {
+
+    &:checked {
+
+      ~ .radio__label:before {
+        border-color: $primary;
+        border-width: $spacing-xs*1.5;
+      }
+    }
+  }
+
+  &__label {
+
+    &:before {
+      border-radius: 50%;
+    }
+  }
+}
 
 // —————————————————————————————————————————————————————————————————
 // error
@@ -115,14 +219,37 @@ textarea {
 // —————————————————————————————————————————————————————————————————
 
 .input--disabled {
+  opacity: 0.5;
 
   .input {
-    opacity: 0.5;
 
     &__label,
     &__control {
       cursor: not-allowed;
     }
+  }
+
+  &.select:after {
+    opacity: 0.5;
+  }
+
+  .checkbox,
+  .radio {
+
+    &__control,
+    &__label {
+      pointer-events: none;
+    }
+  }
+}
+
+.checkbox--disabled,
+.radio--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  > * {
+    pointer-events: none;
   }
 }
 

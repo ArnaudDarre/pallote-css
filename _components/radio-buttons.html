@@ -1,0 +1,146 @@
+---
+layout: component
+label: Form
+title: Radio buttons
+subtitle: This component is the component for a form field with multiple radio elements.
+description: |-
+  This component is composed of two elements:
+
+  - `radios` the wrapper
+    - its child `radio` elements
+
+  You can wrap it inside an `input` component (see [input](/components/input) components) when used as a form field. The `radios` class is associated with `input__control`.
+
+  - `input` the wrapper
+    - `input__label` field label
+    - `input__control radios` the component
+    - `input__notice` optional notice (which can also be used to display error messages)
+
+example: |-
+  <fieldset class="input">
+    <legend class="input__label">Label</legend>
+    <div class="input__control radios">
+      <div class="radio">
+        <input type="radio" name="example" id="example_1" value="example_1" class="radio__control" />
+        <label for="example_1" class="radio__label">Radio 1</label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="example" id="example_2" value="example_2" class="radio__control" />
+        <label for="example_2" class="radio__label">Radio 2</label>
+      </div>
+    </div>
+  </fieldset>
+---
+
+<!-- ---------------------------------------------- -->
+<!-- direction -->
+<!-- ---------------------------------------------- -->
+
+{% capture radios-direction %}
+  <div class="grid grid--spacing2">
+    <div class="grid__item grid__item--md6 grid--aiStart">
+      {% include modules/component-class.html code='class="radios"' isDefault=true
+        component = '
+          <fieldset class="input">
+            <legend class="input__label">Landscape</legend>
+            <div class="input__control radios">
+              <div class="radio">
+                <input type="radio" name="landscape" id="landscape_1" value="landscape_1" class="radio__control" />
+                <label for="landscape_1" class="radio__label">Landscape 1</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="landscape" id="landscape_2" value="landscape_2" class="radio__control" />
+                <label for="landscape_2" class="radio__label">Landscape 2</label>
+              </div>
+            </div>
+          </fieldset>
+        '
+      %}
+    </div>
+    <div class="grid__item grid__item--md6 grid--aiStart">
+      {% include modules/component-class.html code='class="radios radios--portrait"'
+        component = '
+          <fieldset class="input">
+            <legend class="input__label">Portrait</legend>
+            <div class="input__control radios radios--portrait">
+              <div class="radio">
+                <input type="radio" name="portrait" id="portrait_1" value="portrait_1" class="radio__control" />
+                <label for="portrait_1" class="radio__label">Portrait 1</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="portrait" id="portrait_2" value="portrait_2" class="radio__control" />
+                <label for="portrait_2" class="radio__label">Portrait 2</label>
+              </div>
+            </div>
+          </fieldset>
+        '
+      %}
+    </div>
+  </div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Direction'
+  subtitle = 'Change the direction of the component.'
+  content = radios-direction
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- disabled -->
+<!-- ---------------------------------------------- -->
+
+{% capture radios-disabled %}
+{% include modules/component-class.html code='class="input select input--disabled"'
+  component = '
+    <fieldset class="input input--disabled">
+      <legend class="input__label">Disabled</legend>
+      <div class="input__control radios">
+        <div class="radio">
+          <input type="radio" name="disabled" id="disabled_1" value="disabled_1" class="radio__control" />
+          <label for="disabled_1" class="radio__label">Disabled 1</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="disabled" id="disabled_2" value="disabled_2" class="radio__control" />
+          <label for="disabled_2" class="radio__label">Disabled 2</label>
+        </div>
+      </div>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Disabled'
+  subtitle = 'When used as a form field, you can add the `input--disabled` to the wrapper like you would for an [input](/components/input) component to disabled the whole field.'
+  content = radios-disabled
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- required -->
+<!-- ---------------------------------------------- -->
+
+{% capture radios-required %}
+{% include modules/component-class.html code='class="input select input--required"'
+  component = '
+    <fieldset class="input input--required">
+      <legend class="input__label">Required</legend>
+      <div class="input__control radios">
+        <div class="radio">
+          <input type="radio" name="required" id="required_1" value="required_1" class="radio__control" />
+          <label for="required_1" class="radio__label">Required 1</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="required" id="required_2" value="required_2" class="radio__control" />
+          <label for="required_2" class="radio__label">Required 2</label>
+        </div>
+      </div>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Required'
+  subtitle = 'When used as a form field, you can add the `input--required` to the wrapper like you would for an [input](/components/input) component.'
+  content = radios-required
+%}

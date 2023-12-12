@@ -35,6 +35,11 @@
     &:not(:first-child) { margin-top: 0.75em; }
   }
 
+  a {
+    color: $primary;
+    text-decoration: underline;
+  }
+
   ol,
   ul {
     margin-left: $spacing-md;

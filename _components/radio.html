@@ -1,0 +1,39 @@
+---
+layout: component
+label: Form
+title: Radio
+subtitle: This component is a standalone radio. It is against guidelines to use it by itself. See [radio buttons](/components/radio-buttons) component for the wrapper component.
+description: |-
+  The component is composed of multiple elements:
+
+  - `radio` the wrapper
+    - `radio__control` tick box
+    - `radio__label` clickable label
+
+example: |-
+  <div class="radio">
+    <input type="radio" id="example" value="example" class="radio__control" />
+    <label for="example" class="radio__label">Radio</label>
+  </div>
+---
+
+<!-- ---------------------------------------------- -->
+<!-- disabled -->
+<!-- ---------------------------------------------- -->
+
+{% capture radio-disabled %}
+{% include modules/component-class.html code='class="radio radio--disabled"'
+  component = '
+    <div class="radio radio--disabled">
+      <input type="radio" id="disabled" value="disabled" class="radio__control" />
+      <label for="disabled" class="radio__label">Radio</label>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Disabled'
+  subtitle = 'Add this class to signal users the field is disabled. Include `pallote.js` file to your project to automatically add the `disabled` attribute.'
+  content = radio-disabled
+%}

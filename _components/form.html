@@ -6,21 +6,21 @@ description: |-
   The form component is composed of several elements:
 
   - `form` the wrapper
-    - `form__title` an optionnal title or titles
-    - `form__content` the form fields, composed of multiple `input` components
-    - `form__action` the form submit actions, composed of one or multiple button components
+    - `form__title` optionnal title or titles
+    - `form__content` wrapper for form fields, composed of multiple `input` components
+    - `form__action` form submit actions, composed of one or multiple button components
 
 example: |-
   <form action="" class="form">
     <p class="form__title">Optional form title</p>
     <div class="form__content">
       <div class="input">
-        <label for="name" class="input__label">Label</label>
-        <input type="text" id="name" class="input__control">
+        <label for="input" class="input__label">Label</label>
+        <input type="text" id="input" class="input__control">
       </div>
-      <div class="input input--select">
-        <label for="object" class="input__label">Label</label>
-        <select name="object" id="object" class="input__control">
+      <div class="input select">
+        <label for="select" class="input__label">Label</label>
+        <select name="select" id="select" class="input__control">
           <option value=""></option>
           <option value="Option 1">Option 1</option>
           <option value="Option 2">Option 2</option>
@@ -33,9 +33,9 @@ example: |-
   </form>
 ---
 
-<!-------------------------------------------------->
+<!-- ---------------------------------------------- -->
 <!-- dense -->
-<!-------------------------------------------------->
+<!-- ---------------------------------------------- -->
 
 {% capture form-dense %}
 {% include modules/component-class.html code='class="form form--dense"'
@@ -43,12 +43,12 @@ example: |-
     <form action="" class="form form--dense">
       <div class="form__content">
         <div class="input">
-          <label for="name" class="input__label">Label</label>
-          <input type="text" id="name" class="input__control">
+          <label for="dense-input" class="input__label">Label</label>
+          <input type="text" id="dense-input" class="input__control">
         </div>
-        <div class="input input--select">
-          <label for="object" class="input__label">Label</label>
-          <select name="object" id="object" class="input__control">
+        <div class="input select">
+          <label for="dense-select" class="input__label">Label</label>
+          <select name="dense-select" id="dense-select" class="input__control">
             <option value=""></option>
             <option value="Option 1">Option 1</option>
             <option value="Option 2">Option 2</option>
@@ -69,9 +69,9 @@ example: |-
   content = form-dense
 %}
 
-<!-------------------------------------------------->
+<!-- ---------------------------------------------- -->
 <!-- card -->
-<!-------------------------------------------------->
+<!-- ---------------------------------------------- -->
 
 {% capture form-card %}
 {% include modules/component-class.html code='class="form form--card"'
@@ -79,12 +79,12 @@ example: |-
     <form action="" class="form form--card">
       <div class="form__content">
         <div class="input">
-          <label for="name" class="input__label">Label</label>
-          <input type="text" id="name" class="input__control">
+          <label for="card-input" class="input__label">Label</label>
+          <input type="text" id="card-input" class="input__control">
         </div>
-        <div class="input input--select">
-          <label for="object" class="input__label">Label</label>
-          <select name="object" id="object" class="input__control">
+        <div class="input select">
+          <label for="card-select" class="input__label">Label</label>
+          <select name="card-select" id="card-select" class="input__control">
             <option value=""></option>
             <option value="Option 1">Option 1</option>
             <option value="Option 2">Option 2</option>
