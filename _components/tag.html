@@ -1,9 +1,9 @@
 ---
 layout: component
-label: Feedback
+label: Data
 title: Tag
 description: |-
-  The tag component is composed of one `tag` element.
+  The component is composed of one `tag` element with a string inside.
 
 example: |-
   <p class="tag tag--success">Tag</p>
@@ -60,7 +60,7 @@ example: |-
 
 {% include modules/component-property.html
   title = 'Color'
-  subtitle = 'Changes the color to convey the severity of the tag.'
+  subtitle = 'Changes the color of the tag.'
   content = tag-color
 %}
 
@@ -76,6 +76,6 @@ example: |-
 
 {% include modules/component-property.html
   title = 'Dense'
-  subtitle = 'Make the tag component smaller (eg. if it is used for a form notice).'
+  subtitle = 'Make the tag component smaller.'
   content = tag-dense
 %}

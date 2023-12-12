@@ -1,8 +1,16 @@
+// ——————————————————————————————————————————————————
+// elements
+// color
+// ——————————————————————————————————————————————————
+
+// ——————————————————————————————————————————————————
+// elements
+// ——————————————————————————————————————————————————
+
 .link {
   display: inline-flex;
   align-items: center;
   font-weight: $font-regular;
-  color: $primary;
   text-decoration: underline;
   white-space: nowrap;
 
@@ -14,3 +22,27 @@
     stroke-width: 2;
   }
 }
+
+// ——————————————————————————————————————————————————
+// color
+// ——————————————————————————————————————————————————
+
+@mixin color($prefix, $colors...) {
+
+  @each $i in $colors {
+    .#{$prefix}#{nth($i, 1)} {
+      color: nth($i, 2);
+      text-decoration: underline rgba(nth($i, 2), 0.5);
+      
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@include color('link',
+  '' $primary,
+  '--secondary' $secondary,
+  '--highlight' $highlight,
+);
