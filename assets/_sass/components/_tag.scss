@@ -27,38 +27,52 @@
 }
 
 .tag {
-  @include font-size(0.75, $font-bold, 1);
-  padding: $spacing-xs $spacing-sm*1.5;
-  border-radius: $border-radius-md*0.5;
-  display: inline-block;
+  @extend %caption;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-bold;
+  border-radius: $border-radius-sm;
   white-space: nowrap; // prevent text to go on multiple lines
-  line-height: 1;
+  height: $spacing-md*1.5;
+  padding-right: $spacing-sm*0.75;
+  padding-bottom: 0.2em;
+  padding-left: $spacing-sm*0.75;
 }
 
 // ——————————————————————————————————————————————————
 // color
 // ——————————————————————————————————————————————————
 
-@mixin color($background-color, $color) {
-  background-color: $background-color;
-  color: $color;
+@mixin color($prefix, $colors...) {
+
+  @each $i in $colors {
+    .#{$prefix}#{nth($i, 1)} {
+      background-color: nth($i, 2);
+      color: nth($i, 3);
+    }
+  }
 }
 
-.tag {
-
-  &--primary { @include color($primary, $primary-text); }
-  &--secondary { @include color($secondary, $secondary-text); }
-  &--grey { @include color($text-disabled, $text); }
-  &--success { @include color($success-light, $success-text); }
-  &--info { @include color($info-light, $info-text); }
-  &--warning { @include color($warning-light, $warning-text); }
-  &--error { @include color($error-light, $error-text); }
-}
+@include color('tag',
+  '' $primary $primary-text,
+  '--secondary' $secondary $secondary-text,
+  '--highlight' $highlight $highlight-text,
+  '--grey' $text-disabled $text,
+  '--success' $success $success-contrast,
+  '--info' $info $info-contrast,
+  '--warning' $warning $warning-contrast,
+  '--error' $error $error-contrast
+);
 
 // ——————————————————————————————————————————————————
 // dense
 // ——————————————————————————————————————————————————
 
 .tag--dense {
-  padding: $spacing-xxs $spacing-xs;
+  @extend %overline;
+  height: $spacing-md;
+  padding-right: $spacing-xs;
+  padding-left: $spacing-xs;
+  padding-bottom: 0.1em;
 }
