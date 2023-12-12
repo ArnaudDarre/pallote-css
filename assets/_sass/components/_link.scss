@@ -18,6 +18,7 @@
     @include transition($transition-md, stroke-width);
     height: 1em;
     width: 1em;
+    margin-top: 0.3em;
     margin-left: 0.25em;
     stroke-width: 2;
   }

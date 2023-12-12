@@ -19,6 +19,7 @@ collections:
 plugins:
   - jekyll-feed
   - jekyll-inline-svg
+  - jekyll-liquify
 # jekyll-inline-svg
 svg:
   optimize: true

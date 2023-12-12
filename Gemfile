@@ -15,8 +15,9 @@ gem "jekyll", "~> 4.3.2"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-inline-svg" # include svgs with liquid code
-  gem 'jekyll-autoprefixer'
+  gem "jekyll-autoprefixer"
   gem "execjs", "= 2.7" # fix autoprefixer bug
+  gem "jekyll-liquify", "= 0.0.2" # parse Liquid in front matter
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
