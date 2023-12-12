@@ -11,6 +11,28 @@
         </li>
       </ul>
       <ul class="nav__group">
+        <li class="nav__title">Styles</li>
+        {% for item in site.styles %}
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}"
+            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="nav__group">
+        <li class="nav__title">Utilities</li>
+        {% for item in site.utilities %}
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}"
+            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="nav__group">
         <li class="nav__title">Components</li>
         {% for item in site.components %}
         <li class="nav__item">

@@ -6,6 +6,8 @@
   width: 200px;
   top: $navbar-height;
   padding: $spacing-lg $spacing-md;
+  overflow-y: scroll;
+  scrollbar-color: light;
 
   &__nav {
     flex-direction: column;

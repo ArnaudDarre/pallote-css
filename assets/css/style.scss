@@ -32,6 +32,21 @@
   }
 }
 
+.swatch {
+  width: 160px;
+  
+  &__color {
+    width: 100%;
+    height: $spacing-lg;
+    border-radius: $border-radius-sm;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 $spacing-sm;
+    padding-bottom: 0.2em;
+    margin-bottom: $spacing-xs;
+  }
+}
+
 // ——————————————————————————————————————————————————
 // alert
 // ——————————————————————————————————————————————————

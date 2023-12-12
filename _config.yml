@@ -9,8 +9,13 @@ timezone: Europe/London
 permalink: /:title
 
 # permalinks config
-permalink: /:path
 collections:
+  styles:
+    output: true
+    permalink: /styles/:path
+  utilities:
+    output: true
+    permalink: /utilities/:path
   components:
     output: true
     permalink: /components/:path

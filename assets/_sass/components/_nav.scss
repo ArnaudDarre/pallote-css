@@ -25,9 +25,10 @@
   }
 
   &__title {
-    @extend %subtitle;
+    @extend %overline;
+    color: $text-alt;
     font-weight: $font-bold;
-    margin-bottom: $spacing-sm;
+    margin-bottom: $spacing-xs;
   }
 
   &__item {
@@ -64,7 +65,7 @@
   .nav {
 
     &__item + .nav__item {
-      margin-top: $spacing-xs;
+      margin-top: $spacing-xxs;
     }
 
     &__trigger {

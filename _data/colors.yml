@@ -1,0 +1,186 @@
+- title: Common
+  has_classes: true
+  subcategories:
+    - colors:
+      - name: white
+        class: white
+        value: "#ffffff"
+      - name: black
+        class: black
+        value: "#000a1e"
+- title: Greys
+  has_classes: true
+  subcategories:
+    - colors:
+      - name: grey-90
+        class: grey90
+        value: "#1A2335"
+      - name: grey-80
+        class: grey80
+        value: "#333B4B"
+      - name: grey-70
+        class: grey70
+        value: "#4D5462"
+      - name: grey-60
+        class: grey60
+        value: "#666C78"
+      - name: grey-50
+        class: grey50
+        value: "#7F848E"
+      - name: grey-40
+        class: grey40
+        value: "#999DA5"
+      - name: grey-30
+        class: grey30
+        value: "#B2B5BB"
+      - name: grey-20
+        class: grey20
+        value: "#CCCED2"
+      - name: grey-10
+        class: grey10
+        value: "#E5E6E8"
+      - name: grey-5
+        class: grey5
+        value: "#F2F3F4"
+- title: Text
+  subcategories:
+    - title: Text default
+      colors:
+        - name: text
+          value: "$white"
+        - name: text-alt
+          value: "rgba($white, 0.5)"
+        - name: text-disabled
+          value: "rgba($white, 0.25)"
+    - title: Text contrast
+      colors:
+        - name: text-contrast
+          value: "$black"
+        - name: text-contrast-alt
+          value: "rgba($black, 0.6)"
+        - name: text-contrast-disabled
+          value: "rgba($black, 0.3)"
+- title: Brand
+  has_classes: true
+  subcategories:
+    - title: Primary
+      colors: 
+        - name: primary-light
+          class: primaryLight
+          value: "#B3FFED"
+        - name: primary
+          class: primary
+          value: "#00FFC4"
+        - name: primary-dark
+          class: primaryDark
+          value: "#00DBA9"
+        - name: primary-text
+          value: "$text-contrast"
+    - title: Secondary
+      colors:
+        - name: secondary-light
+          class: secondaryLight
+          value: "#B1B9D4"
+        - name: secondary
+          class: secondary
+          value: "#4D5C8D"
+        - name: secondary-dark
+          class: secondaryDark
+          value: "#3D4971"
+        - name: secondary-text
+          value: "$text"
+    - title: Highlight
+      colors:
+        - name: highlight-light
+          class: highlightLight
+          value: "#F9D7B8"
+        - name: highlight
+          class: highlight
+          value: "#F2994A"
+        - name: highlight-dark
+          class: highlightDark
+          value: "#EF7910"
+        - name: highlight-text
+          value: "$text-contrast"
+- title: Feedback
+  has_classes: true
+  subcategories:
+    - title: Success
+      colors:
+        - name: success-light
+          class: successLight
+          value: "#E7F9EE"
+        - name: success
+          class: success
+          value: "#27AE60"
+        - name: success-dark
+          class: successDark
+          value: "#1C7C44"
+        - name: success-text
+          value: "#155F34"
+        - name: success-contrast
+          value: "$text"
+    - title: Info
+      colors:
+        - name: info-light
+          class: infoLight
+          value: "#E9F8FD"
+        - name: info
+          class: info
+          value: "#17A0CC"
+        - name: info-dark
+          class: infoDark
+          value: "#117798"
+        - name: info-text
+          value: "#0D5A72"
+        - name: info-contrast
+          value: "$text"
+    - title: Warning
+      colors:
+        - name: warning-light
+          class: warningLight
+          value: "#FFFAE5"
+        - name: warning
+          class: warning
+          value: "#FFDC46"
+        - name: warning-dark
+          class: warningDark
+          value: "#E5BA00"
+        - name: warning-text
+          value: "#685400"
+        - name: warning-contrast
+          value: "$text-contrast"
+    - title: Error
+      colors:
+        - name: error-light
+          class: errorLight
+          value: "#FCE7E7"
+        - name: error
+          class: error
+          value: "#EB5757"
+        - name: error-dark
+          class: errorDark
+          value: "#D31919"
+        - name: error-text
+          value: "#9C1212"
+        - name: error-contrast
+          value: "$text"
+- title: Background
+  has_classes: true
+  subcategories:
+    - colors:
+      - name: background-default
+        class: default
+        value: "$black"
+      - name: background-paper
+        class: paper
+        value: "$grey-90"
+- title: Misc
+  subcategories:
+    - colors:
+      - name: border
+        value: "1px solid rgba($white, 0.2)"
+      - name: hover
+        value: "rgba($white, 0.12)"
+      - name: overlay
+        value: "rgba($black, 0.8)"

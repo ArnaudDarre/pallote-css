@@ -1,0 +1,24 @@
+- title: Headings
+  styles:
+    - name: h1
+      content: Heading 1
+    - name: h2
+      content: Heading 2
+    - name: h3
+      content: Heading 3
+    - name: h4
+      content: Heading 4
+    - name: h5
+      content: Heading 5
+    - name: h6
+      content: Heading 6
+- title: Body styles
+  styles:
+    - name: subtitle
+      content: This is an emphasised text style, usually used for lead text in section header.
+    - name: body
+      content: This is the default text size
+    - name: caption
+      content: This is a smaller text style, usually used for form labels or captions.
+    - name: overline
+      content: This is the smallest text style, used with caution.

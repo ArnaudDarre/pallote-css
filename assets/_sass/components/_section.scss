@@ -30,9 +30,8 @@
 
   &__header {
 
-    & + .section__content {
-      @include clamp(padding-top, $spacing-lg, 8vw, $spacing-xl);
-    }
+    & + .section__content { @include clamp(padding-top, $spacing-lg, 8vw, $spacing-xl); }
+    &--dense + .section__content { padding-top: $spacing-lg; }
   }
 
   &__content {
@@ -52,9 +51,14 @@
     @extend %h3;
     color: $primary;
     max-width: $desktop-up*0.75;
-
+    
     .section__label + & {
       margin-top: $spacing-sm;
+    }
+
+    .section__header--dense & {
+      color: inherit;
+      @extend %h4;
     }
   }
   
