@@ -1,5 +1,54 @@
 ---
 layout: styles
 title: Global
-subtitle: Use classes to apply properties to an element.
+subtitle: "Use classes to apply properties to an element. Like the rest of the framework, it uses BEM terminology: the block (first word of the class) is the property is the
+block, and the second word is the modifier."
 ---
+
+{% for category in site.data.global %}
+<div class="box">
+  <div class="section__header section__header--dense">
+    <h2 class="section__title">{{ category.title }}</h2>
+    {% if category.subtitle %}
+    <div class="section__subtitle editor">{{ category.subtitle | markdownify }}</div>
+    {% endif %}
+  </div>
+  <div class="section__content">
+    <div class="grid grid--spacing3">
+      {% for subcategory in category.subcategories %}
+      <div class="grid grid--spacing2 grid__item">
+        {% if subcategory.title %}
+        <div class="grid__item grid__item--12">
+          <h3 class="subtitle text--bold">{{ subcategory.title }}</h3>
+          {% if subcategory.subtitle %}
+          <div class="editor mt-1">
+            {{ subcategory.subtitle | markdownify }}
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="grid__item editor">
+          <table>
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for property in subcategory.properties %}
+              <tr>
+                {% capture property_class %}`{{ property.class }}`{% endcapture %}
+                <td>{{ property_class | markdownify }}</td>
+                <td>{{ property.description | markdownify }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endfor %}

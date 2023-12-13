@@ -9,7 +9,7 @@ lead: |-
 {% for category in site.data.typography %}
 <div class="box">
   <div class="section__header section__header--dense">
-    <h3 class="section__title">{{ category.title }}</h3>
+    <h2 class="section__title">{{ category.title }}</h2>
     {% if category.subtitle %}
     <div class="section__subtitle editor">{{ category.subtitle | markdownify }}</div>
     {% endif %}

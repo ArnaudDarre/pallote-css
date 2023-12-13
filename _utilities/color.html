@@ -6,7 +6,7 @@ subtitle: Use these classes to apply a custom background color or stroke colour 
 
 <div class="box">
   <div class="section__header section__header--dense">
-    <h3 class="section__title">Fill</h3>
+    <h2 class="section__title">Fill</h2>
     <div class="section__subtitle editor">Add the following classes to an element to override the background color. The test color will also update automatically.</div>
   </div>
   <div class="section__content">
@@ -14,7 +14,7 @@ subtitle: Use these classes to apply a custom background color or stroke colour 
       {% for category in site.data.colors %}
       {% if category.has_classes == true %}
       <div class="grid grid--spacing2 grid__item">
-        <h4 class="grid__item grid__item--12 subtitle text--bold">{{ category.title }}</h4>
+        <h3 class="grid__item grid__item--12 subtitle text--bold">{{ category.title }}</h3>
         {% for subcategory in category.subcategories %}
         <div class="grid grid--spacing2 grid__item">
           {% for color in subcategory.colors %}
@@ -36,16 +36,16 @@ subtitle: Use these classes to apply a custom background color or stroke colour 
 </div>
 <div class="box">
   <div class="section__header section__header--dense">
-    <h3 class="section__title">Stroke</h3>
+    <h2 class="section__title">Stroke</h2>
     <div class="section__subtitle editor">Add the following classes to an element to override the background color. The
-      test color will also update automatically.</div>
+      text color will also change accordingly.</div>
   </div>
   <div class="section__content">
     <div class="grid grid--spacing3">
       {% for category in site.data.colors %}
       {% if category.has_classes == true %}
       <div class="grid grid--spacing2 grid__item">
-        <h4 class="grid__item grid__item--12 subtitle text--bold">{{ category.title }}</h4>
+        <h3 class="grid__item grid__item--12 subtitle text--bold">{{ category.title }}</h3>
         {% for subcategory in category.subcategories %}
         <div class="grid grid--spacing2 grid__item">
           {% for color in subcategory.colors %}

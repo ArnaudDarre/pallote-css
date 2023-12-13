@@ -1,8 +1,10 @@
 // —————————————————————————————————————————————————————————————————
 // general
+// responsive
+// spacing and size
+// position
+// display
 // misc
-// containers
-// logo
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
@@ -127,11 +129,47 @@ strong {
 	font-weight: $font-bold;
 }
 
+// z-index
+
+@for $i from 0 through 9 {
+	.z-index--#{$i} { z-index: $i; }
+}
+
+.cookie { z-index: 10; }
+header { z-index: 11; }
+
+// background
+
+.background-cover {
+	@include background(50% 50%, cover);
+}
+
 // —————————————————————————————————————————————————————————————————
-// misc
+// responsive
 // —————————————————————————————————————————————————————————————————
 
-// margins & paddings
+.hide {
+	
+	&-desktop { @include responsive(down, desktop) { display: none !important; } }
+	&-laptop { @include responsive(down, laptop) { display: none !important; } }
+	&-tablet { @include responsive(down, tablet) { display: none !important; } }
+	&-mobile { @include responsive(down, mobile) { display: none !important; } }
+	&-touch { @include responsive-touch { display: none !important; } }
+}
+
+.show {
+
+	&-desktop { @include responsive(up, desktop) { display: none !important; } }
+	&-laptop { @include responsive(up, laptop) { display: none !important; } }
+	&-tablet { @include responsive(up, tablet) { display: none !important; } }
+	&-mobile { @include responsive(up, mobile) { display: none !important; } }
+}
+
+// —————————————————————————————————————————————————————————————————
+// spacing and size
+// —————————————————————————————————————————————————————————————————
+
+// margin and padding
 
 .m-05 { margin: $spacing-sm !important; }
 .mt-05 { margin-top: $spacing-sm !important; }
@@ -145,7 +183,7 @@ strong {
 .pb-05 { padding-bottom: $spacing-sm !important; }
 .pl-05 { padding-left: $spacing-sm !important; }
 
-@for $i from 0 through 20 {
+@for $i from 1 through 20 {
 
   .m-#{$i} { margin: $i*$spacing-sm !important; }
   .mt-#{$i} { margin-top: $i*$spacing-sm !important; }
@@ -169,39 +207,50 @@ $step: 5;
   $value: $i * $step;
 
   .w-percent-#{$value} { width: $value + 0% !important; }
-  .w-rem-#{$value} { width: $value*$spacing-sm !important; }
 }
 
-// responsive
+@for $i from 1 through 20 {
 
-.hide {
-	
-	&-desktop { @include responsive(down, desktop) { display: none !important; } }
-	&-laptop { @include responsive(down, laptop) { display: none !important; } }
-	&-tablet { @include responsive(down, tablet) { display: none !important; } }
-	&-mobile { @include responsive(down, mobile) { display: none !important; } }
-	&-touch { @include responsive-touch { display: none !important; } }
+	.w-rem-#{$i} { width: $i*$spacing-sm !important; }
 }
 
-.show {
+// —————————————————————————————————————————————————————————————————
+// position
+// —————————————————————————————————————————————————————————————————
 
-	&-desktop { @include responsive(up, desktop) { display: none !important; } }
-	&-laptop { @include responsive(up, laptop) { display: none !important; } }
-	&-tablet { @include responsive(up, tablet) { display: none !important; } }
-	&-mobile { @include responsive(up, mobile) { display: none !important; } }
+// —————————————————————————————————————————————————————————————————
+// display
+// —————————————————————————————————————————————————————————————————
+
+// general display
+
+.d-flex { display: flex; }
+.d-inlineFlex { display: inline-flex; }
+.d-block { display: block; }
+.d-inlineBlock { display: inline-block; }
+
+// flexbox
+
+.fb {
+
+  &-content { flex-basis: content !important; }
+  &-0 { flex-basis: 0 !important; }
+  &-1 { flex-basis: 1 !important; }
 }
 
-// z-index
+.fg {
 
-@for $i from 0 through 9 {
-	.z-index--#{$i} { z-index: $i; }
+  &-0 { flex-grow: 0 !important; }
+  &-1 { flex-grow: 1 !important; }
 }
 
-.cookie { z-index: 10; }
-header { z-index: 11; }
+.fs {
 
-// background
-
-.background-cover {
-	@include background(50% 50%, cover);
+  &-0 { flex-shrink: 0 !important; }
+  &-1 { flex-shrink: 1 !important; }
 }
+
+// —————————————————————————————————————————————————————————————————
+// misc
+// —————————————————————————————————————————————————————————————————
+

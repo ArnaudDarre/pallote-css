@@ -1,13 +1,14 @@
 // ——————————————————————————————————————————————————
-// general
-// misc
-// ——————————————————————————————————————————————————
-
-// ——————————————————————————————————————————————————
-// general
+// text
+// lists
+// table
 // ——————————————————————————————————————————————————
 
 .editor, %editor {
+
+  // ——————————————————————————————————————————————————
+  // text
+  // ——————————————————————————————————————————————————
 
   h2 { @extend %h3; }
   h3 { @extend %h4; }
@@ -40,6 +41,37 @@
     text-decoration: underline;
   }
 
+  strong {
+    font-weight: $font-bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  blockquote {
+    position: relative;
+
+    &:before {
+      @include pseudo-element('”', -$spacing-md, auto, auto, -$spacing-sm, auto, auto);
+      z-index: -1;
+      font-size: 20rem;
+      color: rgba($primary, 0.1);
+    }
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+
+    p:not(.caption) {
+      font-size: 1.5rem;
+    }
+  }
+
+  // ——————————————————————————————————————————————————
+  // lists
+  // ——————————————————————————————————————————————————
+
   ol,
   ul {
     margin-left: $spacing-md;
@@ -67,51 +99,62 @@
     }
   }
 
-  strong {
-    font-weight: $font-bold;
-  }
+  // ——————————————————————————————————————————————————
+  // table
+  // ——————————————————————————————————————————————————
 
-  em {
-    font-style: italic;
-  }
+  table {
+    border-collapse: separate;
+    border: $border;
+    border-radius: $border-radius-sm;
 
-  blockquote {
-    position: relative;
+    &.table--dense {
 
-    &:before {
-      @include pseudo-element('”', -$spacing-md, auto, auto, -$spacing-sm, auto, auto);
-      z-index: -1;
-      font-size: 20rem;
-      color: rgba($primary, 0.1);
+      th { font-size: 0.65rem; }
+      td { font-size: 0.75rem;; }
+      td, th { padding: 1px $spacing-xs; }
     }
+  }
+
+  thead {
+    background-color: $background-paper;
+
+    tr:first-child {
+
+      th {
+        border-top: none;
+
+        &:first-of-type { border-top-left-radius: $border-radius-sm; }
+        &:last-of-type { border-top-right-radius: $border-radius-sm; }
+      }
+    }
+  }
+
+  tbody {
+
+    tr:last-child {
+
+      th, td {
+
+        &:first-of-type { border-bottom-left-radius: $border-radius-sm; }
+        &:last-of-type { border-bottom-right-radius: $border-radius-sm; }
+      }
+    }
+  }
+
+  td,
+  th {
+    padding: $spacing-xs $spacing-sm;
+    border-top: $border;
 
     &:not(:first-child) {
-      margin-top: 1rem;
-    }
-
-    p:not(.caption) {
-      font-size: 1.5rem;
-    }
-  }
-}
-
-// ——————————————————————————————————————————————————
-// misc
-// ——————————————————————————————————————————————————
-
-.editor {
-
-  .section__content {
-
-    + h2, + h3, + p, + ol, + ul, + a, + blockquote {
-      margin-top: $spacing-md - $spacing-xs !important;
+      border-left: $border;
     }
   }
 
-  h2, h3, p, ol, ul, a, blockquote {
-
-    & + .section__content {
-      margin-top: $spacing-md - $spacing-xs;
-    }
+  th {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: $text-alt;
   }
 }
