@@ -20,7 +20,7 @@ subtitle: Use these classes to apply a custom background color or stroke colour 
           {% for color in subcategory.colors %}
           {% if color.class %}
           <div class="grid__item swatch">
-            <p class="swatch__color caption fill--{{ color.class }}"">{{ color.name | replace: "-", " " }}</p>
+            <p class="swatch__color caption fill--{{ color.class }}{% if color.hasContrast == true %} stroke--border{% endif %}">{{ color.name | replace: "-", " " }}</p>
             {% capture color_class %}`fill--{{ color.class }}`{% endcapture %}
             <div>{{ color_class | markdownify }}</div>
           </div>

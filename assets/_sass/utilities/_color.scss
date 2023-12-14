@@ -60,7 +60,9 @@
   "errorDark" $error-dark $error-contrast,
 
   "default" $background-default $text,
-  "paper" $background-paper $text
+  "paper" $background-paper $text,
+
+  "border" $border-color $text
 );
 
 // —————————————————————————————————————————————————————————————————
@@ -114,5 +116,7 @@
   "errorDark" $error-dark,
 
   "default" $background-default,
-  "paper" $background-paper
+  "paper" $background-paper,
+  
+  "border" $border-color
 );

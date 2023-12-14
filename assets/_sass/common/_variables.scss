@@ -88,7 +88,8 @@ $background-paper: $grey-90;
 
 // others
 
-$border: 1px solid rgba($white, 0.2);
+$border-color: rgba($white, 0.2);
+$border: 1px solid $border-color;
 $hover: rgba($white, 0.12);
 $overlay: rgba($black, 0.8);
 

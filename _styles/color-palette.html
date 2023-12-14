@@ -21,7 +21,7 @@ subtitle: These are the color variables used in the framework. You can override 
         {% endif %}
         {% for color in subcategory.colors %}
         <div class="grid__item swatch">
-          <div class="swatch__color" style="background-color: {{ color.value }};"></div>
+          <div class="swatch__color{% if color.hasContrast == true %} stroke--border{% endif %}" style="background-color: {{ color.value }};"></div>
           {% capture color_name %}`${{ color.name }}`{% endcapture %}
           <div>{{ color_name | markdownify }}</div>
         </div>
