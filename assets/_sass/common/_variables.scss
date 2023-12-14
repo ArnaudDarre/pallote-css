@@ -12,105 +12,104 @@
 
 // main
 
-$white: #ffffff;
-$black: #000a1e;
+$white: #ffffff !default;
+$black: #000a1e !default;
 
 // grey
 
-$grey-90: #1A2335;
-$grey-80: #333B4B;
-$grey-70: #4D5462;
-$grey-60: #666C78;
-$grey-50: #7F848E;
-$grey-40: #999DA5;
-$grey-30: #B2B5BB;
-$grey-20: #CCCED2;
-$grey-10: #E5E6E8;
-$grey-5: #F2F3F4;
+$grey-90: #1A2335 !default;
+$grey-80: #333B4B !default;
+$grey-70: #4D5462 !default;
+$grey-60: #666C78 !default;
+$grey-50: #7F848E !default;
+$grey-40: #999DA5 !default;
+$grey-30: #B2B5BB !default;
+$grey-20: #CCCED2 !default;
+$grey-10: #E5E6E8 !default;
+$grey-5: #F2F3F4 !default;
 
 // text
 
-$text: $white;
-$text-alt: rgba($white, 0.5);
-$text-disabled: rgba($white, 0.25);
+$text: $white !default;
+$text-alt: rgba($white, 0.5) !default;
+$text-disabled: rgba($white, 0.25) !default;
 
-$text-contrast: $black;
-$text-contrast-alt: rgba($black, 0.6);
-$text-contrast-disabled: rgba($black, 0.3);
+$text-contrast: $black !default;
+$text-contrast-alt: rgba($black, 0.6) !default;
+$text-contrast-disabled: rgba($black, 0.3) !default;
 
 // brand
 
-$primary-light: #B3FFED;
-$primary: #00FFC4;
-$primary-dark: #00DBA9;
-$primary-text: $text-contrast;
+$primary-light: #B3FFED !default;
+$primary: #00FFC4 !default;
+$primary-dark: #00DBA9 !default;
+$primary-text: $text-contrast !default;
 
-$secondary-light: #B1B9D4;
-$secondary: #4D5C8D;
-$secondary-dark: #3D4971;
-$secondary-text: $text;
+$secondary-light: #B1B9D4 !default;
+$secondary: #4D5C8D !default;
+$secondary-dark: #3D4971 !default;
+$secondary-text: $text !default;
 
-$highlight-light: #F9D7B8;
-$highlight: #F2994A;
-$highlight-dark: #EF7910;
-$highlight-text: $text-contrast;
+$highlight-light: #F9D7B8 !default;
+$highlight: #F2994A !default;
+$highlight-dark: #EF7910 !default;
+$highlight-text: $text-contrast !default;
 
 // feedback
 
-$success-light: #E7F9EE;
-$success: #27AE60;
-$success-dark: #1C7C44;
-$success-text: #155F34;
-$success-contrast: $text;
+$success-light: #E7F9EE !default;
+$success: #27AE60 !default;
+$success-dark: #1C7C44 !default;
+$success-text: #155F34 !default;
+$success-contrast: $text !default;
 
-$info-light: #E9F8FD;
-$info: #17A0CC;
-$info-dark: #117798;
-$info-text: #0D5A72;
-$info-contrast: $text;
+$info-light: #E9F8FD !default;
+$info: #17A0CC !default;
+$info-dark: #117798 !default;
+$info-text: #0D5A72 !default;
+$info-contrast: $text !default;
 
-$warning-light: #FFFAE5;
-$warning: #FFDC46;
-$warning-dark: #E5BA00;
-$warning-text: #685400;
-$warning-contrast: $text-contrast;
+$warning-light: #FFFAE5 !default;
+$warning: #FFDC46 !default;
+$warning-dark: #E5BA00 !default;
+$warning-text: #685400 !default;
+$warning-contrast: $text-contrast !default;
 
-$error-light: #FCE7E7;
-$error: #EB5757;
-$error-dark: #D31919;
-$error-text: #9C1212;
-$error-contrast: $text;
+$error-light: #FCE7E7 !default;
+$error: #EB5757 !default;
+$error-dark: #D31919 !default;
+$error-text: #9C1212 !default;
+$error-contrast: $text !default;
 
 // background
 
-$background-default: $black;
-$background-paper: $grey-90;
+$background-default: $black !default;
+$background-paper: $grey-90 !default;
 
 // others
 
-$border-color: rgba($white, 0.2);
-$border: 1px solid $border-color;
-$hover: rgba($white, 0.12);
-$overlay: rgba($black, 0.8);
+$border-color: rgba($white, 0.2) !default;
+$border: 1px solid $border-color !default;
+$hover: rgba($white, 0.12) !default;
+$overlay: rgba($black, 0.8) !default;
 
 // —————————————————————————————————————————————————————————————————
 // spacing
 // —————————————————————————————————————————————————————————————————
 
-// misc
 $col: calc(100%/12);
 
-$spacing-xxs: 0.125rem; // 4px
-$spacing-xs: 0.25rem; // 4px
-$spacing-sm: 0.5rem; // 8px
-$spacing-md: 1rem; // 16px
-$spacing-lg: 2rem; // 40px
-$spacing-xl: 4rem; // 80px
-$spacing-xxl: 7rem; // 120px
+$spacing-xxs: 0.125rem !default;
+$spacing-xs: 0.25rem !default;
+$spacing-sm: 0.5rem !default;
+$spacing-md: 1rem !default;
+$spacing-lg: 2rem !default;
+$spacing-xl: 4rem !default;
+$spacing-xxl: 7rem !default;
 
-$max-width-subtitle: $spacing-xxl*4;
+$max-width-subtitle: $spacing-xxl*4 !default;
 
-$navbar-height: 4rem;
+$navbar-height: 4rem !default;
 
 // —————————————————————————————————————————————————————————————————
 // font
@@ -118,35 +117,77 @@ $navbar-height: 4rem;
 
 // typefaces
 
-$font: "Barlow", Arial, sans-serif;
+$font: "Barlow", Arial, sans-serif !default;
 
 // weight
 
-$font-regular: 400;
-$font-bold: 700;
-$font-black: 900;
+$font-regular: 400 !default;
+$font-bold: 700 !default;
+$font-black: 900 !default;
+
+// styles
+
+$h1-size: 3rem !default;
+$h1-weight: $font-black !default;
+$h1-line-height: 1.25 !default;
+
+$h2-size: 2.5rem !default;
+$h2-weight: $font-black !default;
+$h2-line-height: 1.25 !default;
+
+$h3-size: 2rem !default;
+$h3-weight: $font-bold !default;
+$h3-line-height: 1.25 !default;
+
+$h4-size: 1.75rem !default;
+$h4-weight: $font-bold !default;
+$h4-line-height: 1.25 !default;
+
+$h5-size: 1.5rem !default;
+$h5-weight: $font-bold !default;
+$h5-line-height: 1.25 !default;
+
+$h6-size: 1.25rem !default;
+$h6-weight: $font-bold !default;
+$h6-line-height: 1.25 !default;
+
+$subtitle-size: 1.125rem !default;
+$subtitle-weight: $font-regular !default;
+$subtitle-line-height: 1.5 !default;
+
+$body-size: 1rem !default;
+$body-weight: $font-regular !default;
+$body-line-height: 1.5 !default;
+
+$caption-size: 0.875rem !default;
+$caption-weight:$font-regular !default;
+$caption-line-height:  1.5 !default;
+
+$overline-size: 0.75rem !default;
+$overline-weight: $font-regular !default;
+$overline-line-height: 1.5 !default;
 
 // —————————————————————————————————————————————————————————————————
 // anchor points
 // —————————————————————————————————————————————————————————————————
 
-$desktop-lg-up: 1440px;
-$desktop-lg-down: 1439.98px;
+$desktop-lg-up: 1440px !default;
+$desktop-lg-down: $desktop-lg-up '- 0.02px';
 
-$desktop-up: 1280px;
-$desktop-down: 1279.98px;
+$desktop-up: 1280px !default;
+$desktop-down: $desktop-up '- 0.02px';
 
-$laptop-up: 1024px;
-$laptop-down: 1023.98px;
+$laptop-up: 1024px !default;
+$laptop-down: $laptop-up '- 0.02px';
 
-$tablet-up: 768px;
-$tablet-down: 767.98px;
+$tablet-up: 768px !default;
+$tablet-down: $tablet-up '- 0.02px';
 
-$mobile-up: 568px;
-$mobile-down: 567.98px;
+$mobile-up: 568px !default;
+$mobile-down: $mobile-up '- 0.02px';
 
-$mobile-sm-up: 350px;
-$mobile-sm-down: 349.98px;
+$mobile-sm-up: 350px !default;
+$mobile-sm-down: $mobile-sm-up '- 0.02px';
 
 // —————————————————————————————————————————————————————————————————
 // misc
@@ -154,15 +195,15 @@ $mobile-sm-down: 349.98px;
 
 // box-shadow
 
-$box-shadow: 0 0 $spacing-sm 0 rgba($text, 0.2);
+$box-shadow: 0 0 $spacing-sm 0 rgba($text, 0.2) !default;
 
 // transition
 
-$transition-md: 0.4s ease 0s;
-$transition-lg: 0.8s ease 0s;
+$transition-md: 0.4s ease 0s !default;
+$transition-lg: 0.8s ease 0s !default;
 
 // border-radius
 
-$border-radius-sm: $spacing-xs;
-$border-radius-md: $spacing-sm;
-$border-radius-lg: $spacing-md;
+$border-radius-sm: $spacing-xs !default;
+$border-radius-md: $spacing-sm !default;
+$border-radius-lg: $spacing-md !default;

@@ -43,9 +43,10 @@
   }
 
   &__trigger {
+    @extend %caption;
+    font-weight: $font-bold;
     padding: $spacing-sm $spacing-md;
     border-radius: $border-radius-sm;
-    @extend %caption;
 
     @include hover { background-color: $hover; }
 

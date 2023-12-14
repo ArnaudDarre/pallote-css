@@ -42,22 +42,22 @@
 // alignement
 // ——————————————————————————————————————————————————
 
-.text--left, %text--left { text-align: left; }
-.text--center, %text--center { text-align: center; }
-.text--right, %text--right { text-align: right; }
+.text--left, %text--left { text-align: left !important; }
+.text--center, %text--center { text-align: center !important; }
+.text--right, %text--right { text-align: right !important; }
 
 // ——————————————————————————————————————————————————
 // style
 // ——————————————————————————————————————————————————
 
-.text--italic, %text--italic { font-style: italic; }
-.text--underline, %text--underline { text-decoration: underline; }
-.text--strikeThrough, %text--strikeThrough { text-decoration: line-through; }
+.text--italic, %text--italic { font-style: italic !important; }
+.text--underline, %text--underline { text-decoration: underline !important; }
+.text--strikeThrough, %text--strikeThrough { text-decoration: line-through !important; }
 
 // ——————————————————————————————————————————————————
 // weight
 // ——————————————————————————————————————————————————
 
-.text--regular, %text--regular { font-weight: $font-regular; }
-.text--bold, %text--bold { font-weight: $font-bold; }
-.text--black, %text--black { font-weight: $font-black; }
+.text--regular, %text--regular { font-weight: $font-regular !important; }
+.text--bold, %text--bold { font-weight: $font-bold !important; }
+.text--black, %text--black { font-weight: $font-black !important; }
