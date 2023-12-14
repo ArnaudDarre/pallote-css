@@ -1,0 +1,63 @@
+// —————————————————————————————————————————————————————————————————
+// color
+// alignement
+// style
+// weight
+// —————————————————————————————————————————————————————————————————
+
+// ——————————————————————————————————————————————————
+// color
+// ——————————————————————————————————————————————————
+
+@mixin color($prefix, $colors...) {
+	@each $i in $colors {
+		.#{$prefix}#{nth($i, 1)} {
+			color: nth($i, 2);
+
+			.h1, .h2, .h3, .h4, .h5, .h6 {
+				color: nth($i, 2) !important;
+			}
+		}
+	}
+}
+
+@include color('text--',
+	'default' $text,
+	'alt' $text-alt,
+	'disabled' $text-disabled,
+	'contrast' $text-contrast,
+	'contrastAlt' $text-contrast-alt,
+	'contrastDisabled' $text-contrast-disabled,
+	'primary' $primary,
+	'secondary' $secondary,
+	'primary' $primary,
+	'highlight' $highlight,
+	'success' $success,
+	'info' $info,
+	'warning' $warning,
+	'error' $error,
+);
+
+// ——————————————————————————————————————————————————
+// alignement
+// ——————————————————————————————————————————————————
+
+.text--left, %text--left { text-align: left; }
+.text--center, %text--center { text-align: center; }
+.text--right, %text--right { text-align: right; }
+
+// ——————————————————————————————————————————————————
+// style
+// ——————————————————————————————————————————————————
+
+.text--italic, %text--italic { font-style: italic; }
+.text--underline, %text--underline { text-decoration: underline; }
+.text--strikeThrough, %text--strikeThrough { text-decoration: line-through; }
+
+// ——————————————————————————————————————————————————
+// weight
+// ——————————————————————————————————————————————————
+
+.text--regular, %text--regular { font-weight: $font-regular; }
+.text--bold, %text--bold { font-weight: $font-bold; }
+.text--black, %text--black { font-weight: $font-black; }

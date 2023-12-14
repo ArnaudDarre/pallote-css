@@ -14,7 +14,10 @@
       <ul class="nav__container">
         {% for item in site.data.nav %}
         <li class="nav__item">
-          <a href="{% link {{ item.url }} %}" class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">{{ item.title }}</a>
+          <a href="{% if item.url %}{% link {{ item.url }} %}{% endif %}" 
+            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </a>
         </li>
         {% endfor %}
       </ul>

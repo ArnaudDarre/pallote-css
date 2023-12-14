@@ -1,41 +1,25 @@
-// —————————————————————————————————————————————————————————————————
-// elements
-// style
-// weight
-// alignement
-// color
-// —————————————————————————————————————————————————————————————————
-
-// —————————————————————————————————————————————————————————————————
-// elements
-// —————————————————————————————————————————————————————————————————
-
 .h1, %h1 {
 	@include font-size(3, normal, 1.25);
 	font-weight: $font-black;
 	@include responsive (down, tablet) { font-size: 2.5rem; }
-
 }
 
 .h2, %h2 {
 	@include font-size(2.5, normal, 1.25);
 	font-weight: $font-black;
 	@include responsive (down, tablet) { font-size: 2.25rem; }
-
 }
 
 .h3, %h3 {
 	@include font-size(2, normal, 1.25);
 	font-weight: $font-bold;
 	@include responsive (down, tablet) { font-size: 2rem; }
-
 }
 
 .h4, %h4 {
 	@include font-size(1.75, normal, 1.25);
 	font-weight: $font-bold;
 	@include responsive (down, tablet) { font-size: 1.75rem; }
-
 }
 
 .h5, %h5 {
@@ -48,7 +32,6 @@
 	@include font-size(1.25, normal, 1.25);
 	font-weight: $font-bold;
 }
-
 
 .subtitle, %subtitle {
 	@include font-size(1.125);
@@ -65,51 +48,3 @@
 .overline, %overline {
 	@include font-size(0.75);
 }
-
-// ——————————————————————————————————————————————————
-// style
-// ——————————————————————————————————————————————————
-
-.text--italic, %text--italic { font-style: italic; }
-.text--underline, %text--underline { text-decoration: underline; }
-.text--strikeThrough, %text--strikeThrough { text-decoration: line-through; }
-
-// ——————————————————————————————————————————————————
-// weight
-// ——————————————————————————————————————————————————
-
-.text--regular, %text--regular { font-weight: $font-regular; }
-.text--bold, %text--bold { font-weight: $font-bold; }
-.text--black, %text--black { font-weight: $font-black; }
-
-// ——————————————————————————————————————————————————
-// alignement
-// ——————————————————————————————————————————————————
-
-.text--left, %text--left { text-align: left; }
-.text--center, %text--center { text-align: center; }
-.text--right, %text--right { text-align: right; }
-
-// ——————————————————————————————————————————————————
-// color
-// ——————————————————————————————————————————————————
-
-@mixin color($prefix, $colors...) {
-	@each $i in $colors {
-		.#{$prefix}#{nth($i, 1)} {
-			color: nth($i, 2);
-
-			.h1, .h2, .h3, .h4, .h5, .h6 {
-				color: nth($i, 2) !important;
-			}
-		}
-	}
-}
-
-@include color('text--',
-	'default' 			$text								$text-contrast,
-	'alt' 					$text-alt						$text-contrast-alt,
-	'contrast' 			$text-contrast 			$text,
-	'contrastAlt' 	$text-contrast-alt 	$text-alt,
-	'primary' 			$primary 						$primary
-);
