@@ -218,7 +218,8 @@ textarea {
 // disabled
 // —————————————————————————————————————————————————————————————————
 
-.input--disabled {
+.input--disabled,
+.input:disabled {
   opacity: 0.5;
 
   .input {
