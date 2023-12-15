@@ -24,7 +24,7 @@
     @include clamp(padding-top, $spacing-lg, 8vw, $spacing-xl);
     @include clamp(padding-bottom, $spacing-lg, 8vw, $spacing-xl);
     width: 100%;
-    max-width: $desktop-up;
+    max-width: $desktop;
     position: relative; // needed to have the content over section--landing:before
   }
 
@@ -50,7 +50,7 @@
   &__title {
     @extend %h3;
     color: $primary;
-    max-width: $desktop-up*0.75;
+    max-width: $desktop*0.75;
     
     .section__label + & {
       margin-top: $spacing-sm;
@@ -125,7 +125,7 @@
 
 .section__content {
 
-  &--mobile { max-width: $mobile-up; }
+  &--mobile { max-width: $mobile; }
 }
 
 // —————————————————————————————————————————————————————————————————
@@ -146,7 +146,7 @@
 		background-color: rgba($primary, 0.7);
 	}
 
-  .section__title { @extend %h1; color: inherit; max-width: $desktop-up*0.5; }
+  .section__title { @extend %h1; color: inherit; max-width: $desktop*0.5; }
   .section__subtitle { @extend %h5; }
 }
 

@@ -2,7 +2,7 @@
 // color
 // spacing
 // font
-// anchor points
+// breakpoints
 // misc
 // —————————————————————————————————————————————————————————————————
 
@@ -168,26 +168,26 @@ $overline-weight: $font-regular !default;
 $overline-line-height: 1.5 !default;
 
 // —————————————————————————————————————————————————————————————————
-// anchor points
+// breakpoints
 // —————————————————————————————————————————————————————————————————
 
-$desktop-lg-up: 1440px !default;
-$desktop-lg-down: $desktop-lg-up '- 0.02px';
+$desktop-lg: 1440px !default;
+$desktop-lg-down: calc(#{$desktop-lg} - 0.02px);
 
-$desktop-up: 1280px !default;
-$desktop-down: $desktop-up '- 0.02px';
+$desktop: 1280px !default;
+$desktop-down: calc(#{$desktop} - 0.02px);
 
-$laptop-up: 1024px !default;
-$laptop-down: $laptop-up '- 0.02px';
+$laptop: 1024px !default;
+$laptop-down: calc(#{$laptop} - 0.02px);
 
-$tablet-up: 768px !default;
-$tablet-down: $tablet-up '- 0.02px';
+$tablet: 768px !default;
+$tablet-down: calc(#{$tablet} - 0.02px);
 
-$mobile-up: 568px !default;
-$mobile-down: $mobile-up '- 0.02px';
+$mobile: 568px !default;
+$mobile-down: calc(#{$mobile} - 0.02px);
 
-$mobile-sm-up: 350px !default;
-$mobile-sm-down: $mobile-sm-up '- 0.02px';
+$mobile-sm: 350px !default;
+$mobile-sm-down: calc(#{$mobile-sm} - 0.02px);
 
 // —————————————————————————————————————————————————————————————————
 // misc
