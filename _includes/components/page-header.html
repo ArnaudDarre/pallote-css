@@ -1,6 +1,7 @@
 {% assign label = include.label %}
 {% assign title = include.title %}
 {% assign subtitle = include.subtitle %}
+{% assign content = include.content %}
 
 <div class="section section--header">
   <div class="section__container">
@@ -13,5 +14,10 @@
       <div class="section__subtitle editor">{{ subtitle | markdownify }}</div>
       {% endif %}
     </div>
+    {% if content %}
+    <div class="section__content">
+      {{ content }}
+    </div>
+    {% endif %}
   </div>
 </div>
