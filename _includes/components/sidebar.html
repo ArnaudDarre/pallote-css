@@ -3,25 +3,21 @@
     <div class="sidebar__nav nav nav--dense">
       <ul class="nav__group">
         <li class="nav__title">Getting started</li>
+        {% for item in site.doc %}
         <li class="nav__item">
-          <a href=""
-            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
-            Introduction
+          <a href="{% link {{ item.path }} %}"
+            class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
+            {{ item.title }}
           </a>
         </li>
-        <li class="nav__item">
-          <a href=""
-            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
-            Customise
-          </a>
-        </li>
+        {% endfor %}
       </ul>
       <ul class="nav__group">
         <li class="nav__title">Styles</li>
         {% for item in site.styles %}
         <li class="nav__item">
           <a href="{% link {{ item.path }} %}"
-            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
+            class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </a>
         </li>
@@ -32,7 +28,7 @@
         {% for item in site.utilities %}
         <li class="nav__item">
           <a href="{% link {{ item.path }} %}"
-            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
+            class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </a>
         </li>
@@ -43,7 +39,7 @@
         {% for item in site.components %}
         <li class="nav__item">
           <a href="{% link {{ item.path }} %}"
-            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
+            class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </a>
         </li>

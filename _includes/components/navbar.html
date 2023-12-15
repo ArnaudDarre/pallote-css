@@ -14,8 +14,9 @@
       <ul class="nav__container">
         {% for item in site.data.nav %}
         <li class="nav__item">
-          <a href="{% if item.url %}{% link {{ item.url }} %}{% endif %}" 
-            class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">
+          <a href="{% if item.url %}{% if item.external == true %}{{ item.url }}{% else %}{% link {{ item.url }} %}{% endif %}{% endif %}" 
+            {% if item.external == true %}target="_blank" rel="external"{% endif %}
+            class="nav__trigger{% if page.path == item.url or page.url contains item.slug %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </a>
         </li>

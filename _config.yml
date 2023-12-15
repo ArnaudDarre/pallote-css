@@ -10,15 +10,21 @@ permalink: /:title
 
 # permalinks config
 collections:
+  doc:
+    output: true
+    permalink: /doc/:path
+    order:
+      - introduction.html
+      - customise.html
   styles:
     output: true
-    permalink: /styles/:path
+    permalink: /doc/styles/:path
   utilities:
     output: true
-    permalink: /utilities/:path
+    permalink: /doc/utilities/:path
   components:
     output: true
-    permalink: /components/:path
+    permalink: /doc/components/:path
 
 # Build settings
 plugins:
