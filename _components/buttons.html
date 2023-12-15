@@ -10,7 +10,7 @@ description: |-
     - its child `button` elements. Can also be nested `buttons` elements.
 
 example: |-
-  <div class="buttons">
+  <div class="buttons buttons--wide">
     <a href="#" class="button button--error">Cancel</a>
     <div class="buttons">
       <a href="#" class="button button--grey">Skip</a>
@@ -52,4 +52,25 @@ example: |-
   title = 'Direction'
   subtitle = 'Change the direction of the component.'
   content = button-direction
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- wide -->
+<!-- ---------------------------------------------- -->
+
+{% capture buttons-wide %}
+{% include modules/component-class.html code='class="buttons buttons--wide"'
+  component = '
+    <div class="buttons buttons--wide w-percent-100">
+      <a href="#" class="button">Wide</a>
+      <a href="#" class="button">Wide</a>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Wide'
+  subtitle = 'Uses the flexbox property `align-items: space-between` to place the children on both side of the parent container. Only works with the default landscape direction.'
+  content = buttons-wide
 %}

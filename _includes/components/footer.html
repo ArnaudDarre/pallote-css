@@ -1,7 +1,30 @@
 <footer class="section section--paper footer">
   <div class="section__container">
     <div class="section__content">
-      <p>© Copyright {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      <div class="grid grid--spacing3 grid--aiBaseline">
+        <div class="grid__item grid__item--lg3">
+          <p class="caption">© Copyright {{ site.time | date: '%Y' }} {{ site.title }}.
+            <br>All rights reserved.
+          </p>
+        </div>
+        <div class="grid__item grid__item--lg6 grid__item--md8">
+          <p>Pallote is a passion project. It is free and open-source, licensed under MIT. If you enjoy it, please support me with a donation.</p>
+          <div class="buttons mt-2">
+            <a href="" class="button">
+              Buy me a coffee
+              {% svg assets/icons/phosphor/coffee.svg %}
+            </a>
+            <a href="" class="button button--stroke">
+              Become a patron
+              {% svg assets/icons/logos/patreon.svg %}
+            </a>
+          </div>
+        </div>
+        <div class="grid__item grid__item--lg3 grid__item--md4">
+          {% include components/link.html label='View project on GitHub' type='external' url='https://github.com/ArnaudDarre/pallote-css' %}
+          {% include components/link.html label='Link to my portfolio' type='external' url='https://arnaud-darre.com/' %}
+        </div>
+      </div>
     </div>
   </div>
 </footer>
