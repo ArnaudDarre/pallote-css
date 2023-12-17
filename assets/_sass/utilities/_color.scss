@@ -11,11 +11,11 @@
 
   @each $i in $colors {
     .fill--#{nth($i, 1)} {
-      color: nth($i, 3);
-      background-color: nth($i, 2);
+      color: nth($i, 3) !important;
+      background-color: nth($i, 2) !important;
 
       .card__title {
-        color: nth($i, 3);
+        color: nth($i, 3) !important;
       }
     }
   }
@@ -72,7 +72,7 @@
 @mixin stroke($colors...) {
   @each $i in $colors {
     .stroke--#{nth($i, 1)} {
-      border: 1px solid nth($i, 2);
+      border: 1px solid nth($i, 2) !important;
     }
   }
 }
