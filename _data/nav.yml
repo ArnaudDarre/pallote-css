@@ -3,8 +3,6 @@
 - title: Documentation
   slug: doc
   url: _doc/introduction.html
-- title: Examples
-  url: examples.html
 - title: Github
   url: https://github.com/ArnaudDarre/pallote-css
   external: true

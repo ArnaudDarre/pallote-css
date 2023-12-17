@@ -142,7 +142,9 @@
   '--success' $success $success-contrast,
   '--info' $info $info-contrast,
   '--warning' $warning $warning-contrast,
-  '--error' $error $error-contrast
+  '--error' $error $error-contrast,
+  '--default' $text $text-contrast,
+  '--contrast' $background-default $text
 );
 
 // —————————————————————————————————————————————————————————————————

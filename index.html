@@ -1,7 +1,17 @@
 ---
 layout: default
-title: Home
+landing: true
+title: Introducing Pallote CSS
+subtitle: Pallote CSS is an handcrafted CSS component library, built with passion to be lightweight, simple and stylish.
 ---
 
-<h1>{{ site.title }}</h1>
-<p>{{ site.description }}</p>
+<div class="buttons buttons--portrait">
+  <a href="{% link _doc/introduction.html %}" class="button button--lg">
+    Read the documentation
+    {% svg assets/icons/phosphor/files.svg %}
+  </a>
+  <a href="" class="button button--stroke button--lg">
+    Support the project
+    {% svg assets/icons/phosphor/coffee.svg %}
+  </a>
+</div>

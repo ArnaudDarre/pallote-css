@@ -29,6 +29,8 @@
 {% include components/navbar.html %}
 
 <div class="page__container">
+{% if page.url contains '/doc/' %}
 {% include components/sidebar.html %}
+{% endif %}
 <main class="page__content">
 

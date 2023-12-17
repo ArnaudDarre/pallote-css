@@ -55,6 +55,27 @@ example: |-
 %}
 
 <!-- ---------------------------------------------- -->
+<!-- fullWidth -->
+<!-- ---------------------------------------------- -->
+
+{% capture buttons-fullWidth %}
+{% include modules/component-class.html code='class="buttons buttons--fullWidth"'
+  component = '
+    <div class="buttons buttons--fullWidth w-percent-100">
+      <a href="#" class="button">Full width</a>
+      <a href="#" class="button">Full width</a>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Full width'
+  subtitle = 'Makes the child buttons 100% of the parent width, and automatically stacks them.'
+  content = buttons-fullWidth
+%}
+
+<!-- ---------------------------------------------- -->
 <!-- wide -->
 <!-- ---------------------------------------------- -->
 

@@ -36,10 +36,6 @@
     font-weight: $font-bold;
     position: relative;
     display: inline-flex;
-
-    & + & {
-      margin-top: $spacing-sm;
-    }
   }
 
   &__trigger {

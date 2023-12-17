@@ -1,15 +1,16 @@
+{% assign landing = include.landing %}
 {% assign label = include.label %}
 {% assign title = include.title %}
 {% assign subtitle = include.subtitle %}
 {% assign content = include.content %}
 
-<div class="section section--header">
+<div class="section{% if landing == true %} section--landing{% else %} section--header{% endif %}">
   <div class="section__container">
     <div class="section__header">
       {% if label %}
-      <p class="caption section__label">{{ label }}</p>
+      <p class="section__label">{{ label }}</p>
       {% endif %}
-      <h1 class="h2 section__title">{{ title }}</h1>
+      <h1 class="section__title">{{ title }}</h1>
       {% if subtitle %}
       <div class="section__subtitle editor">{{ subtitle | markdownify }}</div>
       {% endif %}

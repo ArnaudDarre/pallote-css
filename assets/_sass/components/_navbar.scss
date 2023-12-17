@@ -28,7 +28,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-top: $spacing-xs;
+    padding-top: 0;
     padding-bottom: 0;
 
     @include responsive(up, tablet) {

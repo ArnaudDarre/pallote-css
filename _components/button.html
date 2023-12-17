@@ -19,7 +19,7 @@ example: |-
 
 {% capture button-icon %}
 <button type="button" class="button button--icon">
-  {% svg assets/icons/phosphor/star.svg %}
+  {% svg assets/icons/phosphor/coffee.svg %}
 </button>
 {% endcapture %}
 
@@ -148,6 +148,16 @@ example: |-
     <div class="grid__item grid__item--md6 grid--aiStart">
       {% include modules/component-class.html code='class="button button--error"'
         component = '<button type="button" class="button button--error">Error</button>'
+      %}
+    </div>
+    <div class="grid__item grid__item--md6 grid--aiStart">
+      {% include modules/component-class.html code='class="button button--default"'
+        component = '<button type="button" class="button button--default">Default</button>'
+      %}
+    </div>
+    <div class="grid__item grid__item--md6 grid--aiStart">
+      {% include modules/component-class.html code='class="button button--contrast"'
+        component = '<button type="button" class="button button--contrast">Contrast</button>'
       %}
     </div>
   </div>

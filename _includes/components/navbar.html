@@ -6,7 +6,10 @@
     <div class="navbar__main">
       <div class="navbar__logo text--bold">
         <h1 class="text--primary">
-          <a href="{% link index.html %}">{{ site.title }}</a>
+          <a href="{% link index.html %}">
+            {% svg assets/icons/rabbit.svg class="logo--rabbit" %}
+            {{ site.title }}
+          </a>
         </h1>
       </div>
     </div>

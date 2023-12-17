@@ -19,6 +19,16 @@
 // library specific styles
 // ——————————————————————————————————————————————————
 
+// icon in navbar
+
+.logo--rabbit {
+  float: left;
+  transform: translateY(-2px);
+  margin-right: $spacing-sm;
+}
+
+// subsections on doc pages
+
 .box {
 
   & + & {
@@ -31,6 +41,8 @@
     flex-basis: 50%;
   }
 }
+
+// color boxes on doc utilities and styles
 
 .swatch {
   width: 160px;
