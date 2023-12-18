@@ -15,7 +15,8 @@
     padding: $spacing-xs $spacing-sm;
 
     a & {
-      color: #D29132;
+      color: $primary-text;
+      background-color: $primary-light;
     }
   }
 

@@ -4,17 +4,17 @@ label: Layout
 title: Card
 subtitle: Cards are surfaces that display content and actions for a single element. They are one of the most used layout elements.
 description: |-
-  The card component is composed of several elements. Check out the corresponding pages for more information on each child component. Children can be used in whichever order.
+  The component is composed of multiple elements. Check out the corresponding pages for more information on each child component. Children can be used in whichever order.
 
   - `card` the wrapper
-    - `card__media` the wrapper of an optional image element
+    - [`card__media`](/doc/components/card-media) the wrapper of an optional image element
       - `card__mediaInner` the image
-    - `card__header` the title element
+    - [`card__header`](/doc/components/card-header) the title element
       - `card__label` optional caption element, usually for category placeholder (text style is automated)
       - `card__title` the title (text style is automated)
       - `card__subtitle` optional subtitle (text style is automated)
-    - `card__content` some content. Cards can have multiple instances of that element
-    - `card__actions` optional ctas. See [card action](/dic/components/card-actions) component for more information
+    - [`card__content`](/doc/components/card-content) some content. Cards can have multiple instances of that element
+    - [`card__actions`](/doc/components/card-actions) optional ctas
 
 example: |-
   <div class="card">
@@ -26,7 +26,7 @@ example: |-
       <p class="card__subtitle">Card subtitle</p>
     </div>
     <div class="card__content">
-      This is the card content, it can be anything from text to image to a table.
+      This is the card content, it can be anything.
     </div>
     <div class="card__actions">
       <button type="button" class="button">Action</button>
@@ -168,7 +168,7 @@ example: |-
 
 {% include modules/component-property.html
   title = 'Color'
-  subtitle = 'You can use the [color](/doc/utilities/color) utility classes to change the background or border color and text color of the component and content. Here are some examples.'
+  subtitle = 'You can use the [color](/doc/utilities/color) utility classes to change the background or border color and text color of the component and content. If you do not add any class, the default is `fill--paper`. Here are some examples.'
   content = card-color
 %}
 
@@ -290,7 +290,7 @@ example: |-
 
 {% include modules/component-property.html
   title = 'Transparent'
-  subtitle = 'Remove padding around the card (not between card children). Also removes the background colour.'
+  subtitle = 'Remove padding around the card (not between card children) and background colour.'
   content = card-transparent
 %}
 

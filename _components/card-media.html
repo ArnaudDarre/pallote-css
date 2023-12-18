@@ -1,0 +1,43 @@
+---
+layout: component
+label: Layout
+title: Card media
+subtitle: Container for an image illustrating the card.
+description: |-
+  The component is always a child of the [`card`]({% link _/doc/components/card.html %}) component. It is composed of multiple elements. This structure is necessary for the component properties to work.
+
+  - `card__media` the wrapper
+    - `card__mediaInner` the image
+
+example: |-
+  <div class="card">
+    <div class="card__media">
+      <div class="card__mediaInner"></div>
+    </div>
+  </div>
+---
+
+<!-- ---------------------------------------------- -->
+<!-- fullWidth -->
+<!-- ---------------------------------------------- -->
+
+{% capture card-media-fullWidth %}
+{% include modules/component-class.html code='class="card__media card__media--fullWidth"'
+  component = '
+    <div class="card">
+      <div class="card__media card__media--fullWidth">
+        <div class="card__mediaInner"></div>
+      </div>
+      <div class="card__header">
+        <p class="card__title">Full width image</p>
+      </div>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Full width'
+  subtitle = 'Removes the bleed around the image.'
+  content = card-media-fullWidth
+%}
