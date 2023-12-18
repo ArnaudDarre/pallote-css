@@ -7,14 +7,14 @@ description: |-
   The component is composed of multiple elements. Check out the corresponding pages for more information on each child component. Children can be used in whichever order.
 
   - `card` the wrapper
-    - [`card__media`](/doc/components/card-media) the wrapper of an optional image element
+    - [`card__media`]({% link _components/card-media.html %}) the wrapper of an optional image element
       - `card__mediaInner` the image
-    - [`card__header`](/doc/components/card-header) the title element
+    - [`card__header`]({% link _components/card-header.html %}) the title element
       - `card__label` optional caption element, usually for category placeholder (text style is automated)
       - `card__title` the title (text style is automated)
       - `card__subtitle` optional subtitle (text style is automated)
-    - [`card__content`](/doc/components/card-content) some content. Cards can have multiple instances of that element
-    - [`card__actions`](/doc/components/card-actions) optional ctas
+    - [`card__content`]({% link _components/card-content.html %}) some content. Cards can have multiple instances of that element
+    - [`card__actions`]({% link _components/card-actions.html %}) optional ctas
 
 example: |-
   <div class="card">
@@ -166,9 +166,13 @@ example: |-
 </div>
 {% endcapture %}
 
+{% capture card-color-subtitle %}
+You can use the [color]({% link _utilities/color.html %}) utility classes to change the background or border color and text color of the component and content. If you do not add any class, the default is `fill--paper`. Here are some examples.
+{% endcapture %}
+
 {% include modules/component-property.html
   title = 'Color'
-  subtitle = 'You can use the [color](/doc/utilities/color) utility classes to change the background or border color and text color of the component and content. If you do not add any class, the default is `fill--paper`. Here are some examples.'
+  subtitle = card-color-subtitle
   content = card-color
 %}
 

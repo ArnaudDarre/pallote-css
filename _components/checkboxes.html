@@ -2,14 +2,14 @@
 layout: component
 label: Form
 title: Checkboxes
-subtitle: This component is the component for a form field with multiple checkboxes. If used as a standalone checkbox, see [checkbox](/components/checkbox) component.
+subtitle: This component is the component for a form field with multiple checkboxes. If used as a standalone checkbox, see [checkbox]({% link _components/checkbox.html %}) component.
 description: |-
   This component is composed of two elements:
 
   - `checkboxes` the wrapper
     - its child `checkbox` elements
 
-  You can wrap it inside an `input` component (see [input](/components/input) components) when used as a form field. The `checkboxes` class is associated with `input__control`.
+  You can wrap it inside an `input` component (see [input]({% link _components/input.html %}) components) when used as a form field. The `checkboxes` class is associated with `input__control`.
 
   - `input` the wrapper
     - `input__label` field label
@@ -109,9 +109,13 @@ example: |-
 %}
 {% endcapture %}
 
+{% capture checkboxes-disabled-subtitle %}
+When used as a form field, you can add the `input--disabled` to the wrapper like you would for an [input]({% link _components/input.html %}) component to disable the whole field.
+{% endcapture %}
+
 {% include modules/component-property.html
   title = 'Disabled'
-  subtitle = 'When used as a form field, you can add the `input--disabled` to the wrapper like you would for an [input](/components/input) component to disabled the whole field.'
+  subtitle = checkboxes-disabled-subtitle
   content = checkboxes-disabled
 %}
 
@@ -139,8 +143,12 @@ example: |-
 %}
 {% endcapture %}
 
+{% capture checkboxes-required-subtitle %}
+When used as a form field, you can add the `input--required` to the wrapper like you would for an [input]({% link _components/input.html %}) component.
+{% endcapture %}
+
 {% include modules/component-property.html
   title = 'Required'
-  subtitle = 'When used as a form field, you can add the `input--required` to the wrapper like you would for an [input](/components/input) component.'
+  subtitle = checkboxes-required-subtitle
   content = checkboxes-required
 %}

@@ -75,10 +75,14 @@ Style files are located in the assets/_sass folder. You don't need to run any ad
 
 ### Jekyll plugins
 
+#### Compress
+
+A Jekyll layout that compresses HTML ([documentation](http://jch.penibelst.de/)).
+
 #### Jekyll Inline SVG
 
 SVG optimizer and inliner for jekyll ([documentation](https://github.com/sdumetz/jekyll-inline-svg)).
 
-#### Compress
+#### Liquify
 
-A Jekyll layout that compresses HTML ([documentation](http://jch.penibelst.de/)).
+A Jekyll filter that can parse Liquid in front matter ([documentation](https://github.com/gemfarmer/jekyll-liquify)).

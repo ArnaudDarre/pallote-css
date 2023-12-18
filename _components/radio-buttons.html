@@ -9,7 +9,7 @@ description: |-
   - `radios` the wrapper
     - its child `radio` elements
 
-  You can wrap it inside an `input` component (see [input](/components/input) components) when used as a form field. The `radios` class is associated with `input__control`.
+  You can wrap it inside an `input` component (see [input]({% link _components/input.html %}) components) when used as a form field. The `radios` class is associated with `input__control`.
 
   - `input` the wrapper
     - `input__label` field label
@@ -109,9 +109,13 @@ example: |-
 %}
 {% endcapture %}
 
+{% capture radios-disabled-subtitle %}
+When used as a form field, you can add the `input--disabled` to the wrapper like you would for an [input]({% link _components/input.html %}) component to disable the whole field.
+{% endcapture %}
+
 {% include modules/component-property.html
   title = 'Disabled'
-  subtitle = 'When used as a form field, you can add the `input--disabled` to the wrapper like you would for an [input](/components/input) component to disabled the whole field.'
+  subtitle = radios-disabled-subtitle
   content = radios-disabled
 %}
 
@@ -139,8 +143,12 @@ example: |-
 %}
 {% endcapture %}
 
+{% capture radios-required-subtitle %}
+When used as a form field, you can add the `input--required` to the wrapper like you would for an [input]({% link _components/input.html %}) component.
+{% endcapture %}
+
 {% include modules/component-property.html
   title = 'Required'
-  subtitle = 'When used as a form field, you can add the `input--required` to the wrapper like you would for an [input](/components/input) component.'
+  subtitle = radios-required-subtitle
   content = radios-required
 %}
