@@ -70,7 +70,7 @@ GEM
     rexml (3.2.6)
     rouge (4.2.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.63.6-x86_64-darwin)
+    sass-embedded (1.69.5-x86_64-darwin)
       google-protobuf (~> 3.23)
     svg_optimizer (0.3.0)
       nokogiri
@@ -81,6 +81,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
   execjs (= 2.7)
