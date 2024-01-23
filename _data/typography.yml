@@ -3,22 +3,26 @@
     - properties:
       - name: |-
           `$font`
-        value: "'Barlow', Arial, sans-serif"
-        class: text--default
+        value: |-
+          `'Barlow', Arial, sans-serif`
+        class: This is the default text
 - title: Weight
   subcategories:
     - properties:
       - name: |-
           `$font-regular`
-        value: 400
+        value: |-
+          `400`
         class: text--regular
       - name: |-
           `$font-bold`
-        value: 700
+        value: |-
+          `700`
         class: text--bold
       - name: |-
           `$font-black`
-        value: 900
+        value: |-
+          `900`
         class: text--black
 - title: Styles
   subcategories:

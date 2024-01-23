@@ -2,6 +2,7 @@
 // elements
 // color
 // notice
+// bar
 // dense
 // noIcon
 // —————————————————————————————————————————————————————————————————
@@ -24,7 +25,7 @@ $spacing-alert: $spacing-sm;
   min-width: $spacing-xxl*2;
   z-index: 200;
 
-  &:not(.alert--notice) {
+  &:not(.alert--bar) {
     padding-left: $spacing-lg + $spacing-sm;
   }
 
@@ -90,7 +91,7 @@ $spacing-alert: $spacing-sm;
   background-color: $color-light;
   color: $color-text;
 
-  &:not(.alert--notice):before {
+  &:not(.alert--bar):before {
 
     @if $color == success { content: url('../icons/phosphor/check-circle.svg'); }
     @else if $color == info { content: url('../icons/phosphor/info.svg'); }
@@ -115,8 +116,21 @@ $spacing-alert: $spacing-sm;
   
   &--notice {
     position: relative;
+    max-width: none;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// bar
+// —————————————————————————————————————————————————————————————————
+
+.alert {
+  
+  &--bar {
+    position: absolute;
     top: 0;
     right: 0;
+    bottom: 0;
     max-width: none;
     width: 100%; // needed for small devices to not overflow the container
     z-index: 1;
@@ -139,7 +153,7 @@ $spacing-alert: $spacing-sm;
     width: $spacing-md*1.25;
   }
 
-  &:not(.alert--notice) {
+  &:not(.alert--bar) {
     padding-left: $spacing-md*1.75;
   }
 

@@ -12,7 +12,7 @@
       {% endif %}
       <h1 class="section__title">{{ title }}</h1>
       {% if subtitle %}
-      <div class="section__subtitle editor">{{ subtitle | markdownify }}</div>
+      <div class="section__subtitle editor">{{ subtitle | liquify | markdownify }}</div>
       {% endif %}
     </div>
     {% if content %}

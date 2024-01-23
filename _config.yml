@@ -14,8 +14,8 @@ collections:
     output: true
     permalink: /doc/:path
     order:
-      - introduction.html
-      - customise.html
+      - introduction.md
+      - customise.md
   variables:
     output: true
     permalink: /doc/variables/:path

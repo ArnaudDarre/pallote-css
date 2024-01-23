@@ -1,7 +1,7 @@
 ---
 layout: variables
 title: Color palette
-subtitle: These are the color variables used in the framework. You can override them to match your own design system (see [Customise]({% link _doc/customise.html %}) for more information on how to override variables).
+subtitle: These are the color variables used in the framework. You can override them to match your own design system (see [Customise]({% link _doc/customise.md %}) for more information on how to override variables).
 ---
 
 {% for category in site.data.colors %}
@@ -34,7 +34,9 @@ subtitle: These are the color variables used in the framework. You can override 
                 <td class="w-percent-40">
                   <span class="language-plaintext highlighter-rouge">${{ color.name }}</span>
                 </td>
-                <td class="w-percent-40">{% if color.value_sass %}{{ color.value_sass }}{% else %}{{ color.value }}{% endif %}</td>
+                <td class="w-percent-40">
+                  <span class="language-plaintext highlighter-rouge">{% if color.value_sass %}{{ color.value_sass }}{% else %}{{ color.value }}{% endif %}</span>
+                </td>
                 <td class="w-percent-20{% if color.hasContrast == true %} fill--paper{% endif %}">
                   <span class="swatch__color" style="background-color: {{ color.value }}"></span>
                 </td>

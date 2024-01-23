@@ -91,8 +91,29 @@ example: |-
 
 {% include modules/component-property.html
   title = 'Notice'
-  subtitle = 'Add the following class to override the default absolute positioning to display the alert as a notice at the bottom of the page. The notice alert does not have an icon.'
+  subtitle = 'Add the following class to override the default absolute positioning to display the alert in the content.'
   content = alert-notice
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- bar -->
+<!-- ---------------------------------------------- -->
+
+{% capture alert-bar %}
+{% include modules/component-class.html code='class="alert alert--success alert--bar"'
+  component = '
+    <div class="alert alert--success alert--bar">
+      <p class="alert__title">Notice</p>
+      <p class="alert__subtitle">Alert content</p>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Bar'
+  subtitle = 'Add the following class to override the default absolute positioning to display the alert as a bar at the bottom of the page. This variant does not have an icon.'
+  content = alert-bar
 %}
 
 <!-- ---------------------------------------------- -->

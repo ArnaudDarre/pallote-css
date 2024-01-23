@@ -15,18 +15,16 @@
   h4 { @extend %h5; }
   h5 { @extend %h6; }
   h6 { @extend %subtitle; }
-  blockquote { @extend %h6; }
+  blockquote { @extend %subtitle; }
 
   h2 {
-
-    &:not(:first-child) { margin-top: $spacing-md; }
-    &:not(:last-child) { margin-bottom: $spacing-md; }
+    color: $primary;
   }
 
-  h3 {
-
-    &:not(:first-child) { margin-top: $spacing-md; }
-    &:not(:last-child) { margin-bottom: $spacing-md; }
+  h2, h3, h4, h5, h6 {
+    
+    &:not(:first-child) { margin-top: 1.5em; }
+    &:not(:last-child) { margin-bottom: .75em; }
   }
 
   p,
@@ -34,6 +32,11 @@
   p + a, a + p {
 
     &:not(:first-child) { margin-top: 0.75em; }
+  }
+
+  .highlighter-rouge {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   a {
@@ -51,20 +54,20 @@
 
   blockquote {
     position: relative;
+    background-color: $background-paper;
+    padding: $spacing-md $spacing-lg;
+    border-radius: $border-radius-md;
 
     &:before {
       @include pseudo-element('”', -$spacing-md, auto, auto, -$spacing-sm, auto, auto);
-      z-index: -1;
-      font-size: 20rem;
-      color: rgba($primary, 0.1);
+      font-size: $spacing-xxl;
+      color: $primary;
+      line-height: 1;
     }
 
     &:not(:first-child) {
-      margin-top: 1rem;
-    }
-
-    p:not(.caption) {
-      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -144,7 +147,7 @@
 
   td,
   th {
-    padding: $spacing-xs $spacing-sm;
+    padding: $spacing-xs $spacing-sm $spacing-sm;
     border-top: $border;
 
     &:not(:first-child) {
