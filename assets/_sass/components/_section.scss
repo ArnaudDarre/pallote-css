@@ -69,6 +69,10 @@
     .section__title + & {
       margin-top: $spacing-lg - $spacing-md;
     }
+
+    & + & {
+      margin-top: $spacing-md;
+    }
   }
 
   &__actions {

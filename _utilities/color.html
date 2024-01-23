@@ -1,5 +1,5 @@
 ---
-layout: styles
+layout: variables
 title: Color
 subtitle: Use these classes to apply a custom background color or stroke colour to an element.
 ---
@@ -12,7 +12,7 @@ subtitle: Use these classes to apply a custom background color or stroke colour 
   <div class="section__content">
     <div class="grid grid--spacing3">
       {% for category in site.data.colors %}
-      {% if category.has_classes == true %}
+      {% if category.is_utilities == true %}
       <div class="grid grid--spacing2 grid__item">
         <h3 class="grid__item grid__item--12 subtitle text--bold">{{ category.title }}</h3>
         {% for subcategory in category.subcategories %}
@@ -43,7 +43,7 @@ subtitle: Use these classes to apply a custom background color or stroke colour 
   <div class="section__content">
     <div class="grid grid--spacing3">
       {% for category in site.data.colors %}
-      {% if category.has_classes == true %}
+      {% if category.is_utilities == true %}
       <div class="grid grid--spacing2 grid__item">
         <h3 class="grid__item grid__item--12 subtitle text--bold">{{ category.title }}</h3>
         {% for subcategory in category.subcategories %}

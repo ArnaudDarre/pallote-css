@@ -16,9 +16,9 @@ collections:
     order:
       - introduction.html
       - customise.html
-  styles:
+  variables:
     output: true
-    permalink: /doc/styles/:path
+    permalink: /doc/variables/:path
   utilities:
     output: true
     permalink: /doc/utilities/:path

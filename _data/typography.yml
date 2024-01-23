@@ -1,24 +1,78 @@
-- title: Headings
-  styles:
-    - name: h1
-      content: Heading 1
-    - name: h2
-      content: Heading 2
-    - name: h3
-      content: Heading 3
-    - name: h4
-      content: Heading 4
-    - name: h5
-      content: Heading 5
-    - name: h6
-      content: Heading 6
-- title: Body styles
-  styles:
-    - name: subtitle
-      content: This is an emphasised text style, usually used for lead text in section header.
-    - name: body
-      content: This is the default text size
-    - name: caption
-      content: This is a smaller text style, usually used for form labels or captions.
-    - name: overline
-      content: This is the smallest text style, used with caution.
+- title: Typeface
+  subcategories:
+    - properties:
+      - name: |-
+          `$font`
+        value: "'Barlow', Arial, sans-serif"
+        class: text--default
+- title: Weight
+  subcategories:
+    - properties:
+      - name: |-
+          `$font-regular`
+        value: 400
+        class: text--regular
+      - name: |-
+          `$font-bold`
+        value: 700
+        class: text--bold
+      - name: |-
+          `$font-black`
+        value: 900
+        class: text--black
+- title: Styles
+  subcategories:
+    - title: Headings
+      properties:
+        - name: |-
+            `$h1-size`<br>`$h1-weight`<br>`h1-line-height`
+          value: |-
+            `3rem`<br>`$font-black`<br>`1.25`
+          class: h1
+        - name: |-
+            `$h2-size`<br>`$h2-weight`<br>`h2-line-height`
+          value: |-
+            `2.5rem`<br>`$font-black`<br>`1.25`
+          class: h2
+        - name: |-
+            `$h3-size`<br>`$h3-weight`<br>`h3-line-height`
+          value: |-
+            `2rem`<br>`$font-bold`<br>`1.25`
+          class: h3
+        - name: |-
+            `$h4-size`<br>`$h4-weight`<br>`h4-line-height`
+          value: |-
+            `1.75rem`<br>`$font-bold`<br>`1.25`
+          class: h4
+        - name: |-
+            `$h5-size`<br>`$h5-weight`<br>`h5-line-height`
+          value: |-
+            `1.5rem`<br>`$font-bold`<br>`1.25`
+          class: h5
+        - name: |-
+            `$h6-size`<br>`$h6-weight`<br>`h6-line-height`
+          value: |-
+            `1.25rem`<br>`$font-bold`<br>`1.25`
+          class: h6
+    - title: Body styles
+      properties:
+        - name: |-
+            `$subtitle-size`<br>`$subtitle-weight`<br>`$subtitle-line-height`
+          value: |-
+            `1.125rem`<br>`$font-regular`<br>`1.5`
+          class: subtitle
+        - name: |-
+            `$body-size`<br>`$body-weight`<br>`$body-line-height`
+          value: |-
+            `1rem`<br>`$font-regular`<br>`1.5`
+          class: body
+        - name: |-
+            `$caption-size`<br>`$caption-weight`<br>`$caption-line-height`
+          value: |-
+            `0.875rem`<br>`font-regular`<br>`1.5`
+          class: caption
+        - name: |-
+            `$overline-size`<br>`$overline-weight`<br>`$overline-line-height`
+          value: |-
+            `0.75rem`<br>`$font-regular`<br>`1.5`
+          class: overline

@@ -1,5 +1,5 @@
 - title: Common
-  has_classes: true
+  is_utilities: true
   subcategories:
     - colors:
       - name: white
@@ -10,7 +10,7 @@
         value: "#000a1e"
         hasContrast: true
 - title: Greys
-  has_classes: true
+  is_utilities: true
   subcategories:
     - colors:
       - name: grey-90
@@ -49,23 +49,29 @@
       colors:
         - name: text
           value: "#FFFFFF"
+          value_sass: "$white"
         - name: text-alt
           value: "rgba(255, 255, 255, 0.5)"
+          value_sass: "rgba($text, 0.5)"
         - name: text-disabled
           value: "rgba(255, 255, 255, 0.25)"
+          value_sass: "rgba($text, 0.25)"
     - title: Text contrast
       colors:
         - name: text-contrast
           value: "#000A1E"
+          value_sass: "$black"
           hasContrast: true
         - name: text-contrast-alt
           value: "rgba(0, 10, 30, 0.6)"
+          value_sass: "rgba($text-contrast, 0.6)"
           hasContrast: true
         - name: text-contrast-disabled
           value: "rgba(0, 10, 30, 0.3)"
+          value_sass: "rgba($text-contrast, 0.3)"
           hasContrast: true
 - title: Brand
-  has_classes: true
+  is_utilities: true
   subcategories:
     - title: Primary
       colors: 
@@ -80,6 +86,7 @@
           value: "#00DBA9"
         - name: primary-text
           value: "#000A1E"
+          value_sass: "$text-contrast"
           hasContrast: true
     - title: Secondary
       colors:
@@ -94,6 +101,7 @@
           value: "#3D4971"
         - name: secondary-text
           value: "#FFFFFF"
+          value_sass: "$text"
     - title: Highlight
       colors:
         - name: highlight-light
@@ -107,9 +115,10 @@
           value: "#EF7910"
         - name: highlight-text
           value: "#000A1E"
+          value_sass: "$text-contrast"
           hasContrast: true
 - title: Feedback
-  has_classes: true
+  is_utilities: true
   subcategories:
     - title: Success
       colors:
@@ -126,6 +135,7 @@
           value: "#155F34"
         - name: success-contrast
           value: "#FFFFFF"
+          value_sass: "$text"
     - title: Info
       colors:
         - name: info-light
@@ -141,6 +151,7 @@
           value: "#0D5A72"
         - name: info-contrast
           value: "#FFFFFF"
+          value_sass: "$text"
     - title: Warning
       colors:
         - name: warning-light
@@ -156,6 +167,7 @@
           value: "#685400"
         - name: warning-contrast
           value: "#000A1E"
+          value_sass: "$text-contrast"
           hasContrast: true
     - title: Error
       colors:
@@ -172,26 +184,32 @@
           value: "#9C1212"
         - name: error-contrast
           value: "#FFFFFF"
+          value_sass: "$text"
 - title: Background
-  has_classes: true
+  is_utilities: true
   subcategories:
     - colors:
       - name: background-default
         class: default
         value: "#000A1E"
+        value_sass: "$black"
         hasContrast: true
       - name: background-paper
         class: paper
         value: "#1A2335"
+        value_sass: "$grey-90"
 - title: Misc
-  has_classes: true
+  is_utilities: true
   subcategories:
     - colors:
-      - name: border
+      - name: border-color
         class: border
         value: "rgba(255, 255, 255, 0.2)"
+        value_sass: "rgba($text, 0.2)"
       - name: hover
         value: "rgba(255, 255, 255, 0.12)"
-      - name: overlay
+        value_sass: "rgba($text, 0.12)"
+      - name: backdrop
         value: "rgba(0, 10, 30, 0.8)"
+        value_sass: "rgba($text-contrast, 0.8)"
         hasContrast: true

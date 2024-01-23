@@ -1,0 +1,52 @@
+---
+layout: variables
+title: Typography
+subtitle: Typography is at the core of every design system. As text is the most present element on screen, it is decisive in how users will perceive your brand. Having consistent and harmonious font styles is paramount.
+lead: |-
+  This are the default typographic style. To learn how to manipulate and override the style guide, see the [Customise]({% link _doc/customise.html %}) section and the [Text]({% link _utilities/text.html %}) utility.
+---
+
+{% for category in site.data.typography %}
+<div class="box">
+  <div class="section__header section__header--dense">
+    <h2 class="section__title">{{ category.title }}</h2>
+    {% if category.subtitle %}
+    <div class="section__subtitle editor">{{ category.subtitle | markdownify }}</div>
+    {% endif %}
+  </div>
+  <div class="section__content">
+    <div class="grid grid--spacing3">
+      {% for subcategory in category.subcategories %}
+      <div class="grid grid--spacing2 grid__item">
+        {% if subcategory.title %}
+        <h3 class="grid__item grid__item--12 subtitle text--bold">{{ subcategory.title }}</h3>
+        {% endif %}
+        <div class="grid__item editor">
+          <table>
+            <thead>
+              <tr>
+                <th>Variable name</th>
+                <th>Default value</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for property in subcategory.properties %}
+              <tr>
+                <td class="w-percent-30">{{ property.name | markdownify }}</td>
+                <td class="w-percent-30">{{ property.value | markdownify }}</td>
+                <td class="w-percent-40">
+                  <span class="{{ property.class }} pos-absolute">{{ property.class | remove: "text--" | capitalize }}</span>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+

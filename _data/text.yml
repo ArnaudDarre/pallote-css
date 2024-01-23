@@ -1,3 +1,26 @@
+- title: Variant
+  subcategories:
+    - properties:
+      - class: h1
+        description: Heading 1
+      - class: h2
+        description: Heading 2
+      - class: h3
+        description: Heading 3
+      - class: h4
+        description: Heading 4
+      - class: h5
+        description: Heading 5
+      - class: h6
+        description: Heading 6
+      - class: subtitle
+        description: This is an emphasised text style, usually used for lead text in section header.
+      - class: body
+        description: This is the default text size
+      - class: caption
+        description: This is a smaller text style, usually used for form labels or captions.
+      - class: overline
+        description: This is the smallest text style, used with caution.
 - title: Color
   subcategories:
     - properties:

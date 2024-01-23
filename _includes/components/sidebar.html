@@ -13,8 +13,8 @@
         {% endfor %}
       </ul>
       <ul class="nav__group">
-        <li class="nav__title">Styles</li>
-        {% for item in site.styles %}
+        <li class="nav__title">Variables</li>
+        {% for item in site.variables %}
         <li class="nav__item">
           <a href="{% link {{ item.path }} %}"
             class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
