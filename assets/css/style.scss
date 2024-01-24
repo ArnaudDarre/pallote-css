@@ -64,6 +64,30 @@
   }
 }
 
+// index cover
+
+.cover {
+  z-index: -1;
+  position: absolute;
+  top: -$spacing-md;
+  right: -$spacing-xxl;
+  transform: rotate(-4deg);
+  pointer-events: none;
+
+  &:after {
+    @include pseudo-element();
+    background-image: linear-gradient(90deg, $background-default 25%, rgba($background-default, 0.5) 100%);
+  }
+
+  &__item {
+    padding: $spacing-sm;
+  }
+
+  .alert {
+    z-index: 0;
+  }
+}
+
 // —————————————————————————————————————————————————————————————————
 // alert
 // —————————————————————————————————————————————————————————————————

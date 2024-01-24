@@ -13,7 +13,7 @@ npm i pallote-css
 
 Then import the global style file in your SASS file like this:
 
-``` sass
+```scss
 @import '../node_modules/pallote-css/dist/css/pallote.css';
 ```
 
