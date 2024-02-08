@@ -1,13 +1,13 @@
 // —————————————————————————————————————————————————————————————————
-// color
+// color palette
 // spacing
-// font
+// typography
 // breakpoints
 // misc
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
-// color
+// color palette
 // —————————————————————————————————————————————————————————————————
 
 // main
@@ -31,12 +31,12 @@ $grey-5: #F2F3F4 !default;
 // text
 
 $text: $white !default;
-$text-alt: rgba($white, 0.5) !default;
-$text-disabled: rgba($white, 0.25) !default;
+$text-alt: rgba($text, 0.5) !default;
+$text-disabled: rgba($text, 0.25) !default;
 
 $text-contrast: $black !default;
-$text-contrast-alt: rgba($black, 0.6) !default;
-$text-contrast-disabled: rgba($black, 0.3) !default;
+$text-contrast-alt: rgba($text-contrast, 0.6) !default;
+$text-contrast-disabled: rgba($text-contrast, 0.3) !default;
 
 // brand
 
@@ -115,7 +115,7 @@ $max-width-subtitle: $spacing-xxl*4 !default;
 $navbar-height: 4rem !default;
 
 // —————————————————————————————————————————————————————————————————
-// font
+// typography
 // —————————————————————————————————————————————————————————————————
 
 // typefaces

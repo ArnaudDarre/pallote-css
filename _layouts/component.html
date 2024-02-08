@@ -26,7 +26,7 @@ layout: compress
         <div class="grid__item">
           <div class="section__content">
 {% highlight html %}
-{{ page.example }}
+{{ page.example | liquify }}
 {% endhighlight %}
             <div class="mt-2">
               {{ page.example | liquify }}

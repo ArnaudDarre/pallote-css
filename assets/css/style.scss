@@ -45,17 +45,46 @@
 // color boxes on doc utilities and styles
 
 .swatch {
-  width: 160px;
+  width: 200px;
   
   &__color {
-    width: 100%;
     height: $spacing-lg;
+    width: 100%;
     border-radius: $border-radius-sm;
     display: inline-flex;
     align-items: center;
     padding: 0 $spacing-sm;
     padding-bottom: 0.2em;
     margin-bottom: $spacing-xs;
+    
+    td & {
+      height: $spacing-md;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// index cover
+
+.cover {
+  z-index: -1;
+  position: absolute;
+  top: -$spacing-md;
+  right: -$spacing-xxl;
+  transform: rotate(-4deg);
+  pointer-events: none;
+
+  &:after {
+    @include pseudo-element();
+    background-image: linear-gradient(90deg, $background-default 25%, rgba($background-default, 0.5) 100%);
+  }
+
+  &__item {
+    padding: $spacing-sm;
+  }
+
+  .alert {
+    z-index: 0;
   }
 }
 

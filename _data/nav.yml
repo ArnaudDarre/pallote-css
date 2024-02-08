@@ -2,7 +2,7 @@
   url: index.html
 - title: Documentation
   slug: doc
-  url: _doc/introduction.html
+  url: _doc/introduction.md
 - title: Github
   url: https://github.com/ArnaudDarre/pallote-css
   external: true

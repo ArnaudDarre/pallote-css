@@ -1,0 +1,10 @@
+{% assign focused = include.focused %}
+
+<fieldset class="input{% if focused == true %} input--focused{% endif %} select">
+  <label for="example" class="input__label">Select</label>
+  <select name="example" id="example" class="input__control">
+    <option value=""></option>
+    <option value="Option 1">Option 1</option>
+    <option value="Option 2">Option 2</option>
+  </select>
+</fieldset>
