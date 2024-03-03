@@ -71,7 +71,7 @@ $step: 5;
   .w-percent-#{$value} { width: $value + 0% !important; }
 }
 
-@for $i from 1 through 20 {
+@for $i from 1 through 40 {
 
 	.w-rem-#{$i} { width: $i*$spacing-sm !important; }
 }

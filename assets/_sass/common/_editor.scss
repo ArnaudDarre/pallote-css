@@ -5,6 +5,7 @@
 // —————————————————————————————————————————————————————————————————
 
 .editor, %editor {
+  max-width: $max-width-editor;
 
   // —————————————————————————————————————————————————————————————————
   // text
@@ -34,9 +35,11 @@
     &:not(:first-child) { margin-top: 0.75em; }
   }
 
-  .highlighter-rouge {
+  .highlighter-rouge,
+  .alert {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    width: fit-content;
   }
 
   a {

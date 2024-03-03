@@ -10,7 +10,7 @@ Lightweight CSS component library
 
 - Run the website in development mode
 
-```
+```shell
 jekyll serve
 ```
 

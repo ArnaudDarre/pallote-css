@@ -19,7 +19,9 @@ Then import the global style file in your SASS file like this:
 
 You will then be able to override the different variables to match your own design system. To learn how to do it, go to [Customise]({% link _doc/customise.md %}) page.
 
-> It is important to note that Pallote CSS is powered with Sass, a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
+<div class="alert alert--info alert--notice">
+  <p class="alert__title">Pallote CSS is powered with Sass, a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).</p>
+</div>
 
 ## CDN
 
@@ -29,6 +31,6 @@ Alternatively, you can access Pallote CSS style files via a CDN. Simply copy/pas
 <link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/pallote-css@1.0.0/dist/css/pallote.css">
 ```
 
-<div class="alert alert--warning alert--notice">
+<div class="alert alert--info alert--notice">
   <p class="alert__title">Please note that for now, it is not possible to customise the library when using the CDN.</p>
 </div>
