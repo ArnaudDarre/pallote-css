@@ -1,10 +1,18 @@
 // —————————————————————————————————————————————————————————————————
+// dependencies
 // color palette
 // spacing
 // typography
 // breakpoints
 // misc
 // —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// dependencies
+// —————————————————————————————————————————————————————————————————
+
+$fonts-path: '../../assets/fonts/';
+$icons-path: '../../assets/icons/';
 
 // —————————————————————————————————————————————————————————————————
 // color palette
@@ -40,44 +48,44 @@ $text-contrast-disabled: rgba($text-contrast, 0.3) !default;
 
 // brand
 
-$primary-light: #C2F9FF !default;
-$primary: #00D2FC !default;
-$primary-dark: #009BC3 !default;
+$primary: #00F3FF !default;
+$primary-light: lighten($primary, 30%) !default;
+$primary-dark: darken($primary, 20%) !default;
 $primary-text: $text-contrast !default;
 
-$secondary-light: #B1B9D4 !default;
-$secondary: #4D5C8D !default;
-$secondary-dark: #3D4971 !default;
-$secondary-text: $text !default;
+$secondary: #e7fc00 !default;
+$secondary-light: lighten($secondary, 30%) !default;
+$secondary-dark: darken($secondary, 20%) !default;
+$secondary-text: $text-contrast !default;
 
-$highlight-light: #F9D7B8 !default;
-$highlight: #F2994A !default;
-$highlight-dark: #EF7910 !default;
+$highlight: #FF74E6 !default;
+$highlight-light: lighten($highlight, 30%) !default;
+$highlight-dark: darken($highlight, 20%) !default;
 $highlight-text: $text-contrast !default;
 
 // feedback
 
-$success-light: #E7F9EE !default;
-$success: #27AE60 !default;
-$success-dark: #1C7C44 !default;
+$success: #27ae60 !default;
+$success-light: lighten($success, 30%) !default;
+$success-dark: darken($success, 30%) !default;
 $success-text: #155F34 !default;
 $success-contrast: $text !default;
 
-$info-light: #E9F8FD !default;
-$info: #17A0CC !default;
-$info-dark: #117798 !default;
+$info: #17a0cc !default;
+$info-light: lighten($info, 30%) !default;
+$info-dark: darken($info, 30%) !default;
 $info-text: #0D5A72 !default;
 $info-contrast: $text !default;
 
-$warning-light: #FFFAE5 !default;
-$warning: #FFDC46 !default;
-$warning-dark: #E5BA00 !default;
+$warning: #ffdc46 !default;
+$warning-light: lighten($warning, 30%) !default;
+$warning-dark: darken($warning, 30%) !default;
 $warning-text: #685400 !default;
 $warning-contrast: $text-contrast !default;
 
-$error-light: #FCE7E7 !default;
 $error: #EB5757 !default;
-$error-dark: #D31919 !default;
+$error-light: lighten($error, 30%) !default;
+$error-dark: darken($error, 30%) !default;
 $error-text: #9C1212 !default;
 $error-contrast: $text !default;
 
@@ -120,7 +128,6 @@ $navbar-height: 4rem !default;
 // —————————————————————————————————————————————————————————————————
 
 // typefaces
-
 $font: "Barlow", Arial, sans-serif !default;
 
 // weight

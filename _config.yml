@@ -9,7 +9,12 @@ timezone: Europe/London
 permalink: /:title
 
 # permalinks config
+collections_dir: _docs
 collections:
+  pages:
+    collections_dir: _pages
+    output: true
+    permalink: /:path
   doc:
     output: true
     permalink: /doc/:path
@@ -51,7 +56,7 @@ autoprefixer:
   - last 10 versions
 # sass
 sass:
-  sass_dir: assets/_sass
+  sass_dir: assets/styles
   style: compressed
 
 # Exclude from processing

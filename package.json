@@ -1,0 +1,33 @@
+{
+  "name": "pallote-css",
+  "version": "0.1.0",
+  "description": "CSS component library",
+  "main": "dist/styles/pallote.css",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "dev": "onchange 'dist/**/*.scss' 'dist/**/*.js' -- npm run build & bundle exec jekyll serve",
+    "build": "sass dist/styles/pallote.scss dist/styles/pallote.css --style=compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArnaudDarre/pallote-css.git"
+  },
+  "keywords": [
+    "CSS library",
+    "CSS Components",
+    "SASS"
+  ],
+  "author": "Nocheke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArnaudDarre/pallote-css/issues"
+  },
+  "homepage": "https://github.com/ArnaudDarre/pallote-css#readme",
+  "devDependencies": {
+    "onchange": "^7.1.0",
+    "sass": "^1.71.1"
+  }
+}

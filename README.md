@@ -1,88 +1,91 @@
 # Pallote CSS
 
-Lightweight CSS component library
+Welcome to Pallote CSS! This library is designed to provide a collection of reusable and customizable CSS components to streamline the development of web applications.
 
-## Run and deploy
+## Usage
 
-### Run the website locally
+### Installation
 
-- Install [Jekyll](https://jekyllrb.com/). Jekyll is a Ruby Gem that can be installed on most systems ([Installation manual](https://jekyllrb.com/docs/installation/)).
+#### NPM
 
-- Run the website in development mode
+To install Pallote CSS via npm use:
 
-```shell
-jekyll serve
+```bash
+npm install pallote-css
 ```
 
-### Branches and environments
+Then import the global style file in your SASS file like this if you are using SASS:
 
-| Environment | Branch | URL |
-| --- | --- | --- |
-| Local | | [localhost:4000](http://localhost:4000) |
-| Staging | `develop` | [develop.pallote.com](https://develop.pallote.com/) |
-| Production | `production` | [pallote.com](https://pallote.com/) |
-
-### Deployment
-
-We use git flow for versioning and version tagging. On branch develop:
-
-- Pull the latest changes
-
-```shell
-git pull | git pull origin production
+```scss
+@import '../node_modules/pallote-css/dist/styles/pallote.scss';
 ```
 
-- Initiate your feature
+Or like this if you are using regular CSS:
 
-```shell
-git flow feature start my-feature
+```html
+<link rel="stylesheet" href="../node_modules/pallote-css/dist/styles/pallote.scss">
 ```
 
-- This will automatically create a new branch to work on your feature
-- Once the feature/update is done, close the feature
+#### CDN
 
-```shell
-git flow feature finish my-feature
+Alternatively, you can import the CSS file into your HTML via a CDN. Simply copy/paste this code in between the `head` tag of your website.
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/pallote-css@1.0.0/dist/styles/pallote.css">
 ```
 
-- push the changes to the remote `develop` branch, to test on the staging environment
+### Using Components
 
-```shell
-git push
+Once the CSS file is imported, you can start using the components by adding appropriate class names to your HTML elements. Refer to the [documentation](https://pallote.com) for each component to understand its usage and available customisation options.
+
+```html
+<button class="button button--primary">Primary Button</button>
 ```
 
-- Once the tests have passed, publish the release (adding the version tag at the end)
+### Customisation
 
-```shell
-git flow release start x.x.x
-git flow release finish x.x.x
+Pallote CSS allows for easy customisation of components to match your project's design.
+
+#### Custom variables
+
+The framework has a set of built-in variables that create the design look and feel. To override them, add a variable with the same name in your Sass style file. To see the full list of variables, see [documentation](https://pallote.com).
+
+```scss
+$primary: #007A1E;
+
+@import '../node_modules/pallote-css/dist/styles/index.scss';
 ```
 
-- push the changes
+#### Custom components styles
 
-```shell
-git push | git push origin develop | git push --tags
+To change a component style, see the documentation for each component and add create an instance of the class with new properties in your style file.
+
+```scss
+@import '../node_modules/pallote-css/dist/styles/index.scss';
+
+.button {
+  text-decoration: underline;
+}
 ```
 
-Deployment is automated with Netlify. The production and staging environments are deployed automatically when the corresponding branches are pushed.
+You can also override default styles by defining custom CSS rules in your project's stylesheet.
 
-## Dependencies & Methodologies
+```css
+.custom-button {
+  text-decoration: underline;
+}
+```
 
-### SASS
+## Documentation
 
-Styling is powered with Sass, a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
-Style files are located in the assets/_sass folder. You don't need to run any additional command to compile, it does it automatically with `jekyll serve` ([installation manual](https://sass-lang.com/install)).
+For detailed documentation on each component and customisation options, please refer to the documentation website: [pallote.com](https://pallote.com).
 
-### Jekyll plugins
+The documentation is built with Jekyll. For more information on how to run the repo, see README.md file in the `_docs` folder.
 
-#### Compress
+## Contributing
 
-A Jekyll layout that compresses HTML ([documentation](http://jch.penibelst.de/)).
+Contributions are welcome! If you find any bugs or have suggestions for new features, feel free to open an issue or submit a pull request.
 
-#### Jekyll Inline SVG
+## License
 
-SVG optimizer and inliner for jekyll ([documentation](https://github.com/sdumetz/jekyll-inline-svg)).
-
-#### Liquify
-
-A Jekyll filter that can parse Liquid in front matter ([documentation](https://github.com/gemfarmer/jekyll-liquify)).
+This project is licensed under the MIT License - see the LICENSE file for details.
