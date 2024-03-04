@@ -10,7 +10,7 @@ The framework has a set of built-in variables that create the design look and fe
 ```scss
 $primary: #007A1E;
 
-@import '../node_modules/shroomio/dist/styles/index.scss';
+@import '../node_modules/pallote-css/dist/styles/index.scss';
 ```
 
 <div class="alert alert--warning alert--notice">
@@ -22,7 +22,7 @@ $primary: #007A1E;
 To change a component style, see the documentation for each component and add create an instance of the class with new properties in your style file.
 
 ```scss
-@import '../node_modules/shroomio/dist/styles/index.scss';
+@import '../node_modules/pallote-css/dist/styles/index.scss';
 
 .link {
   text-decoration: none;
