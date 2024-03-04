@@ -2228,28 +2228,28 @@ header {
   color: #155F34;
 }
 .alert--success:not(.alert--bar):before {
-  content: url("../icons/phosphor/check-circle.svg");
+  content: url("../../assets/icons//phosphor/check-circle.svg");
 }
 .alert--info {
   background-color: #8ad9f2;
   color: #0D5A72;
 }
 .alert--info:not(.alert--bar):before {
-  content: url("../icons/phosphor/info.svg");
+  content: url("../../assets/icons//phosphor/info.svg");
 }
 .alert--warning {
   background-color: #fff9df;
   color: #685400;
 }
 .alert--warning:not(.alert--bar):before {
-  content: url("../icons/phosphor/warning.svg");
+  content: url("../../assets/icons//phosphor/warning.svg");
 }
 .alert--error {
   background-color: #fbe0e0;
   color: #9C1212;
 }
 .alert--error:not(.alert--bar):before {
-  content: url("../icons/phosphor/x-circle.svg");
+  content: url("../../assets/icons//phosphor/x-circle.svg");
 }
 
 .alert--notice {

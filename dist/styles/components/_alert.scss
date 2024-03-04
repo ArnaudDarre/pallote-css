@@ -93,10 +93,10 @@ $spacing-alert: $spacing-sm;
 
   &:not(.alert--bar):before {
 
-    @if $color == success { content: url('../icons/phosphor/check-circle.svg'); }
-    @else if $color == info { content: url('../icons/phosphor/info.svg'); }
-    @else if $color == warning { content: url('../icons/phosphor/warning.svg'); }
-    @else if $color == error { content: url('../icons/phosphor/x-circle.svg'); }
+    @if $color == success { content: url($icons-path + '/phosphor/check-circle.svg'); }
+    @else if $color == info { content: url($icons-path + '/phosphor/info.svg'); }
+    @else if $color == warning { content: url($icons-path + '/phosphor/warning.svg'); }
+    @else if $color == error { content: url($icons-path + '/phosphor/x-circle.svg'); }
   }
 }
 
