@@ -9,6 +9,7 @@ timezone: Europe/London
 permalink: /:title
 
 # permalinks config
+collections_dir: _docs
 collections:
   doc:
     output: true
