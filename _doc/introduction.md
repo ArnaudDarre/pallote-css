@@ -14,7 +14,7 @@ npm i pallote-css
 Then import the global style file in your SASS file like this:
 
 ```scss
-@import '../node_modules/pallote-css/dist/css/pallote.css';
+@import '../node_modules/pallote-css/dist/pallote.css';
 ```
 
 You will then be able to override the different variables to match your own design system. To learn how to do it, go to [Customise]({% link _doc/customise.md %}) page.
@@ -28,7 +28,7 @@ You will then be able to override the different variables to match your own desi
 Alternatively, you can access Pallote CSS style files via a CDN. Simply copy/paste this code in between the `head` tag of your website. This is the latest version of Pallote CSS.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/pallote-css@1.0.0/dist/css/pallote.css">
+<link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/pallote-css@1.0.0/dist/pallote.css">
 ```
 
 <div class="alert alert--info alert--notice">
