@@ -11,6 +11,10 @@ permalink: /:title
 # permalinks config
 collections_dir: _docs
 collections:
+  pages:
+    collections_dir: _pages
+    output: true
+    permalink: /:path
   doc:
     output: true
     permalink: /doc/:path

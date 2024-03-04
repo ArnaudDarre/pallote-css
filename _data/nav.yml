@@ -1,5 +1,5 @@
 - title: Home
-  url: index.html
+  url: _pages/index.html
 - title: Documentation
   slug: doc
   url: _doc/introduction.md
