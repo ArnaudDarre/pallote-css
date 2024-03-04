@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev": "onchange 'dist/**/*.scss' 'dist/**/*.js' -- npm run build & bundle exec jekyll serve",
-    "build": "sass dist/styles/pallote.scss dist/styles/pallote.css",
+    "build": "sass dist/styles/pallote.scss dist/styles/pallote.css --style=compressed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
