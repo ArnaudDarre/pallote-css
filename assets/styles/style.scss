@@ -5,7 +5,9 @@
   "../../dist/styles/common/_variables",
   "../../dist/styles/common/_mixins",
 
-  "../../dist/styles/modules/_cookie"
+  "../../dist/styles/modules/_cookie",
+
+  "./variables/color-palette.scss"
 ;
 
 // —————————————————————————————————————————————————————————————————
@@ -39,28 +41,6 @@
 
   > .grid--wrap > .grid__item {
     flex-basis: 50%;
-  }
-}
-
-// color boxes on doc utilities and styles
-
-.swatch {
-  width: 200px;
-  
-  &__color {
-    height: $spacing-lg;
-    width: 100%;
-    border-radius: $border-radius-sm;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 $spacing-sm;
-    padding-bottom: 0.2em;
-    margin-bottom: $spacing-xs;
-    
-    td & {
-      height: $spacing-md;
-      margin-bottom: 0;
-    }
   }
 }
 

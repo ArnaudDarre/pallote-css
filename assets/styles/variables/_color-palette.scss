@@ -1,0 +1,95 @@
+.swatch {
+  width: 200px;
+  
+  &__color {
+    height: $spacing-lg;
+    width: 100%;
+    border-radius: $border-radius-sm;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 $spacing-sm;
+    padding-bottom: 0.2em;
+    margin-bottom: $spacing-xs;
+    
+    td & {
+      height: $spacing-md;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin fill($colors...) {
+
+  @each $i in $colors {
+    .swatch__color--#{nth($i, 1)} {
+      background-color: nth($i, 2) !important;
+    }
+  }
+}
+
+@include fill (
+  "white" $white,
+  "black" $black,
+
+  "grey-90" $grey-90,
+  "grey-80" $grey-80,
+  "grey-70" $grey-70,
+  "grey-60" $grey-60,
+  "grey-50" $grey-50,
+  "grey-40" $grey-40,
+  "grey-30" $grey-30,
+  "grey-20" $grey-20,
+  "grey-10" $grey-10,
+  "grey-5" $grey-5,
+
+  "text" $text,
+  "text-alt" $text-alt,
+  "text-disabled" $text-disabled,
+
+  "text-contrast" $text-contrast,
+  "text-contrast-alt" $text-contrast-alt,
+  "text-contrast-disabled" $text-contrast-disabled,
+
+  "primary" $primary,
+  "primary-light" $primary-light,
+  "primary-dark" $primary-dark,
+  "primary-text" $primary-text,
+  "secondary" $secondary,
+  "secondary-light" $secondary-light,
+  "secondary-dark" $secondary-dark,
+  "secondary-text" $secondary-text,
+  "highlight" $highlight,
+  "highlight-light" $highlight-light,
+  "highlight-dark" $highlight-dark,
+  "highlight-text" $highlight-text,
+
+  "success" $success,
+  "success-light" $success-light,
+  "success-dark" $success-dark,
+  "success-text" $success-text,
+  "success-contrast" $success-contrast,
+  "info" $info,
+  "info-light" $info-light,
+  "info-dark" $info-dark,
+  "info-text" $info-text,
+  "info-contrast" $info-contrast,
+  "warning" $warning,
+  "warning-light" $warning-light,
+  "warning-dark" $warning-dark,
+  "warning-text" $warning-text,
+  "warning-contrast" $warning-contrast,
+  "error" $error,
+  "error-light" $error-light,
+  "error-dark" $error-dark,
+  "error-text" $error-text,
+  "error-contrast" $error-contrast,
+
+  "background-default" $background-default,
+  "background-paper" $background-paper,
+
+  "border-color" $border-color,
+  "border" $border,
+  "hover" $hover,
+  "backdrop" $backdrop,
+  "backdrop-contrast" $backdrop-contrast
+);

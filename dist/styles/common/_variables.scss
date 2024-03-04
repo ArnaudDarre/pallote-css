@@ -65,19 +65,19 @@ $highlight-text: $text-contrast !default;
 
 // feedback
 
-$success: #27AE60 !default;
+$success: #27ae60 !default;
 $success-light: lighten($success, 30%) !default;
 $success-dark: darken($success, 30%) !default;
 $success-text: #155F34 !default;
 $success-contrast: $text !default;
 
-$info: #17A0CC !default;
+$info: #17a0cc !default;
 $info-light: lighten($info, 30%) !default;
 $info-dark: darken($info, 30%) !default;
 $info-text: #0D5A72 !default;
 $info-contrast: $text !default;
 
-$warning: #FFDC46 !default;
+$warning: #ffdc46 !default;
 $warning-light: lighten($warning, 30%) !default;
 $warning-dark: darken($warning, 30%) !default;
 $warning-text: #685400 !default;
