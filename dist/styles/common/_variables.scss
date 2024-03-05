@@ -101,8 +101,8 @@ $border: 1px solid $border-color !default;
 
 $hover: rgba($text, 0.12) !default;
 
-$backdrop: rgba($text-contrast, 0.8) !default;
-$backdrop-contrast: rgba($text, 0.2) !default;
+$overlay: rgba($text-contrast, 0.8) !default;
+$overlay-contrast: rgba($text, 0.2) !default;
 
 // —————————————————————————————————————————————————————————————————
 // spacing

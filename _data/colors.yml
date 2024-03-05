@@ -193,6 +193,6 @@
         value: "rgba($text, 0.2)"
       - name: hover
         value: "rgba($text, 0.12)"
-      - name: backdrop
+      - name: overlay
         value: "rgba($text-contrast, 0.8)"
         hasContrast: true

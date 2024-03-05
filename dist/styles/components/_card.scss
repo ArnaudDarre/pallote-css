@@ -31,12 +31,12 @@
       background-position: center center;
       width: 100%;
       height: 100%;
-      background-color: $backdrop;
+      background-color: $overlay;
       overflow: hidden;
       padding-bottom: 50%;
       
       .card--transparent & {
-        background-color: $backdrop-contrast;
+        background-color: $overlay-contrast;
       }
     }
   }
