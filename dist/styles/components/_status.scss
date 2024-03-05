@@ -1,0 +1,58 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// color
+// dense
+// —————————————————————————————————————————————————————————————————
+
+$spacing-status: $spacing-sm;
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.status {
+
+  &:before {
+    content: "";
+    display: inline-block;
+    height: $spacing-status;
+    width: $spacing-status;
+    background-color: $text-alt;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    transform: translateY(-0.05em);
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// color
+// —————————————————————————————————————————————————————————————————
+
+@mixin color($color) {
+
+  &:before {
+    background-color: $color;
+  }
+}
+
+.status {
+
+  &--success { @include color($success); }
+  &--info { @include color($info); }
+  &--warning { @include color($warning); }
+  &--error { @include color($error); }
+}
+
+// —————————————————————————————————————————————————————————————————
+// dense
+// —————————————————————————————————————————————————————————————————
+
+.status--dense {
+  @extend %caption;
+
+  &:before {
+    height: $spacing-status*0.75;
+    width: $spacing-status*0.75;
+    margin-right: $spacing-status*0.75;
+  }
+}
