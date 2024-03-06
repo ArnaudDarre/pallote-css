@@ -1,6 +1,5 @@
 .cookie {
 
-  
   &.section {
     @include transition($transition-md, transform);
     position: fixed;
@@ -14,6 +13,7 @@
     .section__container {
       padding-top: 10px;
       padding-bottom: 9px;
+      display: flex;
       flex-direction: row;
       align-items: baseline;
       justify-content: flex-start;
@@ -26,6 +26,7 @@
   }
 
   &__text {
+    width: 100%;
     display: inline;
     margin-right: $spacing-xs;
   }
