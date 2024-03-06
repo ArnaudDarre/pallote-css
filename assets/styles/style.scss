@@ -56,7 +56,7 @@
 
   &:after {
     @include pseudo-element();
-    background-image: linear-gradient(90deg, $background-default 25%, rgba($background-default, 0.5) 100%);
+    background-image: linear-gradient(90deg, $background-default 25%, rgba($background-default, 0) 100%);
   }
 
   &__item {
