@@ -1,0 +1,35 @@
+---
+layout: component
+label: Navigation
+title: Breadcrumbs
+description: |-
+  The component is composed of multiple elements:
+
+  - `breadcrumbs` the wrapper
+    - `breadcrumbs__item` a link
+
+example: |-
+  {% include ui/breadcrumbs.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- arrow -->
+<!-- ---------------------------------------------- -->
+
+{% capture breadcrumbs-arrow %}
+{% include modules/component-class.html code='class="breadcrumbs breadcrumbs--arrow"'
+  component = '
+    <div class="breadcrumbs breadcrumbs--arrow">
+      <a href="#" class="text breadcrumbs__item">Step 1</a>
+      <a href="#" class="text caption breadcrumbs__item">Step 2</a>
+      <a href="#" class="text caption breadcrumbs__item">Step 3</a>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Arrow'
+  subtitle = 'Use an arrow as link separator.'
+  content = breadcrumbs-arrow
+%}
