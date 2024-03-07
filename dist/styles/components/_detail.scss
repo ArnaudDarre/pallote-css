@@ -1,47 +1,39 @@
 // —————————————————————————————————————————————————————————————————
 // elements
-// separator
+// bold
+// dense
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
 // elements
 // —————————————————————————————————————————————————————————————————
 
-.breadcrumbs {
-  display: inline-flex;
-  align-items: baseline;
+.detail {
+  display: flex;
+  align-items: center;
 
-  @include responsive(down, tablet) {
-    flex-direction: column;
+  & + & {
+    margin-top: $spacing-sm;
   }
 
-  &__item {
-    cursor: pointer;
-
-    &:not(:first-child) {
-      margin-left: $spacing-xs;
-
-      &:before {
-        content: "/";
-        margin-right: $spacing-xs;
-        color: $text-alt;
-        display: inline-block; // required to remove underline on hover for before element
-      }
-    }
-
-    @include hover {
-      text-decoration: underline;
-    }
+  &__icon {
+    display: flex;
+    align-items: center;
+    width: 1em;
+    height: 1em;
+    margin-right: $spacing-sm;
   }
 }
 
 // —————————————————————————————————————————————————————————————————
-// separator
+// bold
 // —————————————————————————————————————————————————————————————————
 
-.breadcrumbs--arrow .breadcrumbs__item:not(:first-child):before {
-  content: "\2039";
-  transform: rotate(180deg);
-  font-size: 1.5em;
-  float: left;
+.detail--bold {
+  @extend %text--bold;
+
+  .detail__icon,
+  .detail__icon * {
+    stroke-width: 24;
+  }
 }
