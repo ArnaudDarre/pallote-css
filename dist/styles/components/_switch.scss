@@ -1,0 +1,72 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+$spacing-switch: $spacing-sm*1.5;
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.switch {
+  display: flex;
+  align-items: baseline;
+
+  &__input {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    
+    &:checked + .switch__switch {
+      background-color: $primary-light;
+      
+      .switch__toggle {
+        @include calc(left, '100% -'($spacing-switch));
+        background-color: $primary;
+      }
+    }
+  }
+
+  &__label {
+    
+    &:first-child { margin-right: $spacing-switch; }
+    &:last-child { margin-left: $spacing-switch; }
+  }
+
+  &__switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: $spacing-switch*2;
+    height: $spacing-switch;
+    background: $grey-10;
+    border-radius: $spacing-md;
+    position: relative;
+    
+    &:nth-child(2) { margin-left: $spacing-xs; }
+  }
+
+  &__toggle {
+    position: absolute;
+    left: -$spacing-xs;
+    width: $spacing-md;
+    height: $spacing-md;
+    border-radius: $spacing-md;
+    background: $grey-20;
+  }
+}
+  
+// —————————————————————————————————————————————————————————————————
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+.switch--disabled {
+  opacity: 0.4;
+
+  * { 
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,40 @@
+---
+layout: component
+label: Feedback
+title: Switch
+subtitle: A collection of collapsible elements.
+description: |-
+  The component is composed of multiple elements:
+
+  - `switch` the wrapper
+    - `switch__item` a collapsible element, composed of a header (the trigger) and some content
+      - `switch__control` the trigger element, containing some text; the expand/collapse icon is added automatically
+      - `switch__content` the content of the item, displayed when expanded
+
+example: |-
+  {% include ui/switch.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- disabled -->
+<!-- ---------------------------------------------- -->
+
+{% capture switch-disabled %}
+{% include modules/component-class.html code='class="switch switch--disabled"'
+  component = '
+    <div class="switch switch--disabled">
+      <p class="text body switch__label">Switch</p>
+      <input class="switch__input" type="checkbox" name="switch" id="switch">
+      <label class="switch__switch" for="switch">
+        <div class="switch__toggle"></div>
+      </label>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Disabled'
+  subtitle = 'Add this class to signal users the field is disabled. Include `pallote.js` file to your project to automatically add the `disabled` attribute.'
+  content = switch-disabled
+%}
