@@ -14,7 +14,7 @@ npm i pallote-css
 Then import the global style file in your SASS file like this:
 
 ```scss
-@import '../node_modules/pallote-css/dist/styles/pallote.css';
+@import '../node_modules/pallote-css/dist/styles/pallote.scss';
 ```
 
 You will then be able to override the different variables to match your own design system. To learn how to do it, go to [Customise]({% link _doc/customise.md %}) page.
