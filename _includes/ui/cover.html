@@ -1,35 +1,39 @@
 <div class="cover grid">
-  <div class="grid grid--row grid--aiEnd grid--jcEnd">
-    <div class="grid" style="width: 280px;">
+  <div class="grid__item grid grid--row grid--aiEnd grid--jcEnd">
+    <div class="grid__item grid" style="width: 280px;">
       <div class="grid__item cover__item">{% include ui/input.html %}</div>
-      <div class="grid grid--row">
+      <div class="grid__item grid grid--row">
         <div class="grid__item cover__item">{% include ui/checkboxes.html direction="portrait" %}</div>
-        <div class="grid">
+        <div class="grid__item grid">
           <div class="grid__item cover__item">{% include ui/status.html %}</div>
-          <div class="grid__item cover__item">NavItem</div>
+          <div class="grid__item cover__item">{% include ui/nav-dropdown.html %}</div>
         </div>
       </div>
     </div>
-    <div class="grid" style="width: 400px;">
-      <div class="grid__item cover__item">{% include ui/checkboxes.html %}</div>
+    <div class="grid__item grid" style="width: 400px;">
       <div class="grid__item cover__item">{% include ui/snippet.html %}</div>
-      <div class="grid grid--row">
+      <div class="grid__item grid grid--row">
         <div class="grid__item cover__item">{% include ui/link.html %}</div>
         <div class="grid__item cover__item">{% include ui/radio.html %}</div>
       </div>
-      <div class="grid__item cover__item">NavItem</div>
     </div>
-    <div class="grid__item cover__item" style="width: 240px;">NavGroup</div>
   </div>
-  <div class="grid grid--row grid--jcEnd">
-    <div class="grid__item cover__item" style="width: 400px;">NavDropdown</div>
-    <div class="grid" style="width: 520px;">
-      <div class="grid grid--row">
+  <div class="grid__item grid grid--row grid--jcEnd">
+    <div class="grid__item grid" style="width: 240px;">
+      <div class="grid__item cover__item">
+        <div class="nav__item nav__item--dropdown">
+          <button class="nav__trigger">Dropdown</button>
+        </div>
+      </div>
+      <div class="grid__item cover__item">{% include ui/input.html %}</div>
+    </div>
+    <div class="grid__item grid" style="width: 520px;">
+      <div class="grid__item grid grid--row">
         <div class="grid__item cover__item">{% include ui/status.html %}</div>
       </div>
       <div class="grid__item cover__item">{% include ui/tabs.html %}</div>
-      <div class="grid grid--row">
-        <div class="grid">
+      <div class="grid__item grid grid--row">
+        <div class="grid__item grid">
           <div class="grid__item cover__item">{% include ui/checkbox.html %}</div>
           <div class="grid__item cover__item">{% include ui/switch.html %}</div>
         </div>
@@ -37,19 +41,18 @@
       </div>
     </div>
   </div>
-  <div class="grid grid--row grid--aiEnd grid--jcEnd">
-    <div class="grid" style="width: 360px;">
+  <div class="grid__item grid grid--row grid--aiEnd grid--jcEnd">
+    <div class="grid__item grid" style="width: 360px;">
       <div class="grid__item cover__item">{% include ui/breadcrumbs.html %}</div>
-      <div class="grid__item cover__item">NavBar</div>
     </div>
-    <div class="grid" style="width: 120px;">
+    <div class="grid__item grid" style="width: 120px;">
       <div class="grid__item cover__item">{% include ui/tag.html %}</div>
       <div class="grid__item cover__item">{% include ui/button.html %}</div>
     </div>
     <div class="grid__item cover__item" style="width: 160px;">{% include ui/input.html %}</div>
     <div class="grid__item cover__item" style="width: 480px;">{% include ui/accordion.html %}</div>
   </div>
-  <div class="grid grid--row grid--jcEnd">
+  <div class="grid__item grid grid--row grid--jcEnd">
     <div class="grid__item cover__item" style="width: 320px;">{% include ui/card-actions.html %}</div>
     <div class="grid__item cover__item" style="width: auto;">{% include ui/alert.html %}</div>
     <div class="grid__item cover__item" style="width: 320px;">{% include ui/card-header.html %}</div>
