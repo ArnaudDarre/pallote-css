@@ -8,10 +8,9 @@ description: |-
 
   - `nav` the wrapper
     - `nav__group` wrappers to group lists of similar nav items
-      - `nav__item` a clickable link
-      - `nav__dropdown` a dropdown element, in case there is need to wrap some items into a submenu
-        - `nav__trigger` the trigger element
-        - `nav__target` the target element, usually composed of a list of `nav__item` elements
+      - `nav__item` wrapper for a clickable link. This is necessary for styling and responsiveness. You can add the `nav__item--dropdown` class to make it a submenu dropdown
+        - `nav__trigger` a clickable link or trigger element in the case of a dropdown
+        - `nav__target` the target element in the case of a dropdown, usually composed of a list of `nav__item` elements
   
 example: |-
   {% include ui/nav.html %}
@@ -28,13 +27,13 @@ example: |-
       component = '
         <nav class="nav">
           <ul class="nav__group">
-            <li><a href="" class="nav__item">Landscape 1</a></li>
-            <li><a href="" class="nav__item">Landscape 2</a></li>
-            <li class="nav__dropdown">
+            <li class="nav__item"><a href="" class="nav__trigger">Landscape 1</a></li>
+            <li class="nav__item"><a href="" class="nav__trigger">Landscape 2</a></li>
+            <li class="nav__item nav__item--dropdown">
               <button class="nav__trigger">Dropdown</button>
               <ul class="nav__target">
-                <li><a href="" class="nav__item">Landscape 1</a></li>
-                <li><a href="" class="nav__item">Landscape 2</a></li>
+                <li class="nav__item"><a href="" class="nav__trigger">Landscape 1</a></li>
+                <li class="nav__item"><a href="" class="nav__trigger">Landscape 2</a></li>
               </ul>
             </li>
           </ul>
@@ -47,13 +46,13 @@ example: |-
       component = '
         <nav class="nav nav--portrait">
           <ul class="nav__group">
-            <li><a href="" class="nav__item">Portrait 1</a></li>
-            <li><a href="" class="nav__item">Portrait 2</a></li>
-            <li class="nav__dropdown">
+            <li class="nav__item"><a href="" class="nav__trigger">Portrait 1</a></li>
+            <li class="nav__item"><a href="" class="nav__trigger">Portrait 2</a></li>
+            <li class="nav__item nav__item--dropdown">
               <button class="nav__trigger">Dropdown</button>
               <ul class="nav__target">
-                <li><a href="" class="nav__item">Portrait 1</a></li>
-                <li><a href="" class="nav__item">Portrait 2</a></li>
+                <li class="nav__item"><a href="" class="nav__trigger">Portrait 1</a></li>
+                <li class="nav__item"><a href="" class="nav__trigger">Portrait 2</a></li>
               </ul>
             </li>
           </ul>
@@ -79,13 +78,13 @@ example: |-
   component = '
     <nav class="nav nav--dense">
       <ul class="nav__group">
-        <li><a href="" class="nav__item">Dense 1</a></li>
-        <li><a href="" class="nav__item">Dense 2</a></li>
-        <li class="nav__dropdown">
+        <li class="nav__item"><a href="" class="nav__trigger">Dense 1</a></li>
+        <li class="nav__item"><a href="" class="nav__trigger">Dense 2</a></li>
+        <li class="nav__item nav__item--dropdown">
           <button class="nav__trigger">Dropdown</button>
           <ul class="nav__target">
-            <li><a href="" class="nav__item">Dense 1</a></li>
-            <li><a href="" class="nav__item">Dense 2</a></li>
+            <li class="nav__item"><a href="" class="nav__trigger">Dense 1</a></li>
+            <li class="nav__item"><a href="" class="nav__trigger">Dense 2</a></li>
           </ul>
         </li>
       </ul>

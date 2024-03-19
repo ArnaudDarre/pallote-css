@@ -16,16 +16,16 @@
     <nav class="navbar__nav nav">
       <ul class="nav__container">
         {% for item in site.data.nav %}
-        <li class="{% if item.dropdown == true %}nav__dropdown{% endif %}">
+        <li class="nav__item{% if item.dropdown == true %} nav__item--dropdown{% endif %}">
           {% if item.dropdown == true %}
-          <button class="nav__trigger{% if page.path == item.url or page.url contains item.id %} js-active{% endif %}">
+          <button class="nav__trigger{% if page.path == item.url or page.url contains item.id %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </button>
           <ul class="nav__target" id="{{ item.id }}">
             {% for item in item.items %}
-            <li>
+            <li class="nav__item">
               <a href="{% link {{ item.url }} %}"
-                class="nav__item{% if page.path == item.url or page.url contains item.id %} js-active{% endif %}">
+                class="nav__trigger{% if page.path == item.url or page.url contains item.id %} nav__trigger--active{% endif %}">
                 {{ item.title }}
               </a>
             </li>
@@ -34,7 +34,7 @@
           {% else %}
           <a href="{% if item.url %}{% if item.external == true %}{{ item.url }}{% else %}{% link {{ item.url }} %}{% endif %}{% endif %}"
             {% if item.external == true %}target="_blank" rel="external"{% endif %}
-            class="nav__item{% if page.path == item.url or page.url contains item.id %} js-active{% endif %}">
+            class="nav__trigger{% if page.path == item.url or page.url contains item.id %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </a>
           {% endif %}

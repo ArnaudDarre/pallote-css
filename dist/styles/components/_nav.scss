@@ -11,25 +11,9 @@
 // elements
 // —————————————————————————————————————————————————————————————————
 
-.nav,
-.nav__dropdown {
-
-  ul {
-    list-style: none;
-  }
-  
-  li {
-    display: flex;
-    margin-left: 0;
-    padding-top: 0;
-  }
-}
-
-.nav {
-
-  li:not(:first-child) {
-    margin-left: $spacing-xs;
-  }
+.nav ul,
+.nav__target {
+  list-style: none;
 }
 
 .nav {
@@ -41,73 +25,73 @@
   }
 
   &__item,
-  &__trigger,
-  &__dropdown {
+  &__trigger {
     border-radius: $border-radius-md;
   }
-  
-  &__item,
+
+  &__item {
+    margin: 0;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: $spacing-xs;
+      padding-top: 0;
+    }
+
+    &--dropdown {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   &__trigger {
     @extend %caption;
     font-weight: $font-bold;
     white-space: nowrap;
     cursor: pointer;
-    display: inline-flex;
-    position: relative;
-    line-height: 1;
     height: $nav-item*2;
     padding: $nav-item*0.5 $nav-item;
-    // override ul & li styling
-    margin-left: 0;
-    width: 100%;
-
-    &:hover { background-color: $hover; }
-  }
-
-  &__dropdown {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    // override ul & li styling
-    padding-top: 0;
+    align-items: center;
+    justify-content: space-between;
 
-    li:not(:first-child) {
-      margin-left: 0;
-      margin-top: $spacing-xs;
+    &:hover {
+      background-color: $hover;
+    }
+
+    .nav__item--dropdown > & {
+      
+      &:after {
+        content: '';
+        border: solid $text;
+        border-width: 0 $spacing-xxs $spacing-xxs 0;
+        padding: $spacing-xxs;
+        transform: rotate(45deg);
+        margin-left: $nav-item*0.5;
+      }
     }
   }
 
-  &__trigger {
-    padding-right: $nav-item*2;
-    
-    &:after {
-      @include calc(top, '50% -' $spacing-xxs);
-      content: '';
-      display: inline-block;
-      position: absolute;
-      right: $nav-item*0.75;
-      border: solid $text;
-      border-width: 0 $spacing-xxs $spacing-xxs 0;
-      padding: $spacing-xxs;
-      transform: rotate(45deg) translateX(-50%);
-    }
-  }
-  
   &__target {
     display: none;
-    text-align: left;
     flex-direction: column;
-    padding: 0 $nav-item*0.5 $nav-item*0.5 $nav-item*0.5;
+    padding: $nav-item*0.25 $nav-item*0.5 $nav-item*0.5 $nav-item*0.5;
 
-    .nav__item {
-      border-radius: $border-radius-sm;
-      padding-right: $nav-item*0.5;
-      padding-left: $nav-item*0.5;
+    .nav {
+
+      &__item {
+
+        &:not(:first-child) {
+          margin-top: $spacing-xs;
+          margin-left: 0;
+        }
+      }
       
-      &:after, 
-      &:before { display: none; }
-
-      &:not(:first-child) { margin-top: $spacing-xs; }
+      &__trigger {
+        padding-right: $nav-item*0.5;
+        padding-left: $nav-item*0.5;        
+        border-radius: $border-radius-sm;
+      }
     }
   }
 }
@@ -116,15 +100,11 @@
 // active
 // —————————————————————————————————————————————————————————————————
 
-.js-active.nav {
+.nav__trigger--active {
+  color: $primary;
+  background-color: $hover;
 
-  &__item,
-  &__trigger {
-    color: $primary;
-    background-color: $hover;
-  }
-
-  .nav__dropdown &__trigger:after {
+  .nav__item--dropdown &:after {
     border-color: $primary;
   }
 }
@@ -133,12 +113,14 @@
 // show
 // —————————————————————————————————————————————————————————————————
 
-.nav__dropdown.js-show {
+.nav__item--dropdown.js-show {
+  height: auto;
   background-color: $hover;
 
   > .nav {
 
-    &__trigger {
+    &__trigger--active,
+    &__trigger:hover {
       background-color: transparent;
     }
 
@@ -156,26 +138,21 @@
   width: 100%;
   flex-direction: column;
 
-  li:not(:first-child) {
-    margin-left: 0;
-    margin-top: $spacing-xs;
-  }
-
   .nav {
+    
+    &__item:not(:first-child) {
+      margin-left: 0;
+      margin-top: $spacing-xs;
+    }
 
     &__group {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      list-style: none;
 
       &:not(:first-child) {
         margin-top: $nav-item;
       }  
-    }
-  
-    &__trigger {
-      width: 100%;
     }
   }
 }
@@ -186,47 +163,32 @@
 
 .nav--dense {
 
-  &.nav--dense {
-
-    li:not(:first-child) {
-      margin-top: $spacing-xxs;
-    }
+  &.nav--portrait .nav__item:not(:first-child) {
+    margin-top: $spacing-xxs;
   }
 
   .nav {
 
     &__item,
-    &__trigger,
-    &__dropdown {
+    &__trigger {
       border-radius: $border-radius-sm;
     }
-
-    &__item,
+  
     &__trigger {
-      padding: $spacing-xs $spacing-sm;
+      padding: $nav-item*0.25 $nav-item*0.5;
       height: $nav-item*1.5;
     }
 
-    &__dropdown .nav {
+    &__item--dropdown {
     
-      &__trigger:after {
-        right: $nav-item*0.5;
-      }
-    
-      &__target {
+      .nav__target {
         padding: 0 $nav-item*0.25 $nav-item*0.25 $nav-item*0.25;
-   
-        .nav__item {
+
+        .nav__trigger {
           padding-right: $nav-item*0.25;
           padding-left: $nav-item*0.25;
-    
-          &:not(:first-child) { margin-top: $spacing-xs; }
         }
       }
-    }
-
-    &__trigger {
-      padding-right: $nav-item*1.5;
     }
   }
 }
@@ -238,11 +200,9 @@
 .navbar {
 
   .nav {
-    width: auto;
 
-    @include responsive(up, tablet) {
-      height: 100%;
-    }
+    @include responsive(up, tablet) { height: 100%; }
+    @include responsive(down, tablet) { width: 100%; }
 
     &__container {
 
@@ -253,7 +213,7 @@
 
       @include responsive(down, tablet) {
         @include calc(max-height, '100vh - '$spacing-xl*3);
-        align-items: flex-start;
+        align-items: stretch;
         overflow: scroll;
         width: 100%;
         margin-top: $nav-item;
@@ -263,42 +223,15 @@
       }
     }
 
-    &__item,
-    &__trigger {
+    &__item:not(:first-child) {
 
       @include responsive(down, tablet) {
-        height: auto;
-        padding-top: $nav-item*0.75;
-        padding-bottom: $nav-item*0.75;
+        margin-top: $spacing-xs;
+        margin-left: 0;
       }
     }
 
-    &__item {
-
-      @include responsive(down, tablet) {
-
-        &.js-active {
-          background-color: $hover;
-        }
-      }
-
-      .js-active:before {
-        
-        @include responsive(up, tablet) {
-          content: "";
-          position: absolute;
-          bottom: -$nav-item;
-          left: 0;
-          width: 100%;
-          height: $spacing-xs;
-          background-color: $primary;
-          border-top-left-radius: $border-radius-sm;
-          border-top-right-radius: $border-radius-sm;
-        }
-      }
-    }
-
-    &__dropdown {
+    &__item--dropdown {
 
       @include responsive(up, tablet) {
         
@@ -313,6 +246,13 @@
           z-index: 1;              
           background-color: $background-paper;
         }
+      }
+    }
+
+    &__trigger {
+
+      @include responsive(down, tablet) {
+        height: auto;
       }
     }
   }

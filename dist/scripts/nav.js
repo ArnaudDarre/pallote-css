@@ -13,7 +13,7 @@ dropdownTriggers.forEach(trigger => {
 
 // Add click event listener to document to close dropdowns when clicking outside
 document.addEventListener('click', function(e) {
-  const dropdowns = document.querySelectorAll('.nav__dropdown');
+  const dropdowns = document.querySelectorAll('.nav__item--dropdown');
   dropdowns.forEach(dropdown => {
     if (!dropdown.contains(e.target)) {
       dropdown.classList.remove('js-show'); // Close dropdown

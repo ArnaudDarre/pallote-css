@@ -4,9 +4,8 @@
       <ul class="nav__group">
         <li class="sidebar__title">Getting started</li>
         {% for item in site.doc %}
-        <li>
-          <a href="{% link {{ item.path }} %}"
-            class="nav__item{% if page.name == item.name %} js-active{% endif %}">
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}" class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </a>
         </li>
@@ -15,9 +14,8 @@
       <ul class="nav__group">
         <li class="sidebar__title">Variables</li>
         {% for item in site.variables %}
-        <li>
-          <a href="{% link {{ item.path }} %}"
-            class="nav__item{% if page.name == item.name %} js-active{% endif %}">
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}" class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </a>
         </li>
@@ -26,9 +24,8 @@
       <ul class="nav__group">
         <li class="sidebar__title">Utilities</li>
         {% for item in site.utilities %}
-        <li>
-          <a href="{% link {{ item.path }} %}"
-            class="nav__item{% if page.name == item.name %} js-active{% endif %}">
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}" class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </a>
         </li>
@@ -37,9 +34,8 @@
       <ul class="nav__group">
         <li class="sidebar__title">Components</li>
         {% for item in site.components %}
-        <li>
-          <a href="{% link {{ item.path }} %}"
-            class="nav__item{% if page.name == item.name %} js-active{% endif %}">
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}" class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
             {{ item.title }}
           </a>
         </li>
