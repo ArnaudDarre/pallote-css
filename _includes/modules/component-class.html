@@ -2,10 +2,12 @@
 {% assign isDefault = include.isDefault %}
 {% assign component = include.component %}
 
+{% if code %}
 <div class="highlight language-plaintext mb-1">
   {{ code }}
   {% if isDefault == true %}
   <span class="tag tag--grey tag--dense">Default</span>
   {% endif %}
 </div>
-{{ component }}
+{% endif %}
+{{ component | liquify }}

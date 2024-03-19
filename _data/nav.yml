@@ -1,8 +1,17 @@
 - title: Home
   url: _pages/index.html
 - title: Documentation
-  slug: doc
-  url: _doc/introduction.md
+  dropdown: true
+  id: doc
+  items:
+    - title: Introduction
+      url: _doc/introduction.md
+    - title: Variables
+      url: _variables/color-palette.html
+    - title: Utilities
+      url: _utilities/color.html
+    - title: Components
+      url: _components/accordion.html
 - title: Github
   url: https://github.com/ArnaudDarre/pallote-css
   external: true

@@ -83,10 +83,10 @@ $spacing-alert: $spacing-sm;
 // —————————————————————————————————————————————————————————————————
 
 @mixin color($color, $color-light: $info-light, $color-text: $info-text) {
-  @if $color == success { $color-light: $success-light; $color-text: $success-text; } 
-  @else if $color == info { $color-light: $info-light; $color-text: $info-text; } 
-  @else if $color == warning { $color-light: $warning-light; $color-text: $warning-text; } 
-  @else if $color == error { $color-light: $error-light; $color-text: $error-text; } 
+  @if $color == success { $color-light: $success; $color-text: $success-contrast; } 
+  @else if $color == info { $color-light: $info; $color-text: $info-contrast; } 
+  @else if $color == warning { $color-light: $warning; $color-text: $warning-contrast; } 
+  @else if $color == error { $color-light: $error; $color-text: $error-contrast; } 
 
   background-color: $color-light;
   color: $color-text;

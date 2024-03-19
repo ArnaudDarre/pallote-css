@@ -1,0 +1,91 @@
+---
+layout: component
+label: Interactions
+title: Nav dropdown
+subtitle: 
+description: |-
+  The component is always a child of the [`nav`]({% link _components/nav.html %}) component. It is composed of multiple elements:
+
+  - `nav__dropdown` the wrapper
+    - `nav__trigger` the trigger element
+    - `nav__target` the target element, usually composed of a list of `nav__item` elements
+
+example: |-
+  {% include ui/nav-dropdown.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- show -->
+<!-- ---------------------------------------------- -->
+
+{% capture dropdown-show %}
+{% include modules/component-class.html code='class="nav__dropdown js-show"'
+  component = '
+    <div class="nav__dropdown nav__dropdown js-show">
+      <button class="nav__trigger">Show</button>
+      <ul class="nav__target">
+        <li><a href="" class="nav__item">Dropdown 1</a></li>
+        <li><a href="" class="nav__item">Dropdown 2</a></li>
+      </ul>
+    </div>   
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Show'
+  subtitle = 'Open a specific dropdown by default'
+  content = dropdown-show
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- dense -->
+<!-- ---------------------------------------------- -->
+
+{% capture dropdown-dense %}
+{% include modules/component-class.html
+  component = '
+    <div class="nav nav--dense">
+      <div class="nav__dropdown">
+        <button class="nav__trigger">Dense</button>
+        <ul class="nav__target">
+          <li><a href="" class="nav__item">Dropdown 1</a></li>
+          <li><a href="" class="nav__item">Dropdown 2</a></li>
+        </ul>
+      </div>   
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Dense'
+  subtitle = 'If the dropdown is included in a `nav`component with the `nav--dense` modifier, it will automatically style it accordingly.'
+  content = dropdown-dense
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- nav -->
+<!-- ---------------------------------------------- -->
+
+{% capture dropdown-navbar %}
+{% include modules/component-class.html
+  component = '
+    <div class="navbar navbar--example">
+      <div class="nav__dropdown">
+        <button class="nav__trigger">Navbar</button>
+        <ul class="nav__target">
+          <li><a href="" class="nav__item">Dropdown 1</a></li>
+          <li><a href="" class="nav__item">Dropdown 2</a></li>
+        </ul>
+      </div>   
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Navbar'
+  subtitle = 'Automated specific style when the dropdown is used in the `navbar` component. You do not need to add any specific class'
+  content = dropdown-navbar
+%}

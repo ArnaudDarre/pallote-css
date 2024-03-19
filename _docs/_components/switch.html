@@ -7,9 +7,12 @@ description: |-
   The component is composed of multiple elements:
 
   - `switch` the wrapper
-    - `switch__item` a collapsible element, composed of a header (the trigger) and some content
-      - `switch__control` the trigger element, containing some text; the expand/collapse icon is added automatically
-      - `switch__content` the content of the item, displayed when expanded
+    - `switch__label` the text associated with the toggle (optionnal)
+    - `switch__input` the input, hidden
+    - `switch__switch` the clickable element
+      - `switch__toggle` the round element that toggles to indicate if the switch is on or not
+
+  The `for` attribute of the label should have the same value as the `id` attribute of the input
 
 example: |-
   {% include ui/switch.html %}
