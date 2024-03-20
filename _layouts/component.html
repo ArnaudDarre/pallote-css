@@ -12,29 +12,27 @@ layout: compress
 
 <div class="section">
   <div class="section__container">
-    <div class="box">
-      <div class="grid grid--spacing5 grid--wrap grid--aiBaseline">
-        <div class="grid__item">
-          <div class="section__header">
-            <h2 class="section__title">Elements</h2>
-            <div class="section__subtitle editor">
-              {{ page.description | liquify | markdownify }}
-            </div>
+    <div class="grid grid--spacing5 grid--wrap grid--aiBaseline box">
+      <div class="grid__item">
+        <div class="section__header">
+          <h2 class="section__title">Elements</h2>
+          <div class="section__subtitle editor">
+            {{ page.description | liquify | markdownify }}
           </div>
-        </div>  
-        {% if page.example %}
-        <div class="grid__item">
-          <div class="section__content">
+        </div>
+      </div>  
+      {% if page.example %}
+      <div class="grid__item">
+        <div class="section__content">
 {% highlight html %}
 {{ page.example | liquify }}
 {% endhighlight %}
-            <div class="mt-2">
-              {{ page.example | liquify }}
-            </div>
+          <div class="mt-2">
+            {{ page.example | liquify }}
           </div>
-        </div>    
-        {% endif %}
-      </div>
+        </div>
+      </div>    
+      {% endif %}
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 .cookie {
+  z-index: 10;
 
   &.section {
     @include transition($transition-md, transform);

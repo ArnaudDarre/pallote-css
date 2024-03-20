@@ -3,6 +3,41 @@
 // alignement
 // —————————————————————————————————————————————————————————————————
 
+// button apparition
+@include keyframes(button-menu-opacity) {
+	0% 		{ opacity: 0; }
+	50% 	{ opacity: 0; }
+	100% 	{ opacity: 100%; }
+}
+
+// lines > close
+@include keyframes(button-menu-open-before) {
+	0% 		{ transform: translateY($spacing-xs*1.5); }
+	50% 	{ transform: translateY(0); 
+			  	transform: rotate(0); }
+	100% 	{ transform: rotate(45deg); }
+}
+@include keyframes(button-menu-open-after) {
+	0% 		{ transform: translateY(-$spacing-xs*1.5); }
+	50% 	{ transform: translateY(0); 
+			  	transform: rotate(0); }
+	100% 	{ transform: rotate(-45deg); }
+}
+
+// close > lines
+@include keyframes(button-menu-close-before) {
+	0% 		{ transform: rotate(45deg); }
+	50% 	{ transform: rotate(0); 
+			  	transform: translateY(0); }
+	100% 	{ transform: translateY($spacing-xs*1.5); }
+}
+@include keyframes(button-menu-close-after) {
+	0% 		{ transform: rotate(-45deg); }
+	50% 	{ transform: rotate(0); 
+			  	transform: translateY(0); }
+	100% 	{ transform: translateY(-$spacing-xs*1.5); }
+}
+
 // —————————————————————————————————————————————————————————————————
 // elements
 // —————————————————————————————————————————————————————————————————
@@ -13,9 +48,14 @@
   width: 100%;
   background-color: $background-paper;
   border-bottom: $border;
+  z-index: 13;
   
   @include responsive(up, tablet) {
     height: $navbar-height;
+  }
+
+  @include responsive(down, tablet) {
+    z-index: 11;
   }
   
   &.section {
@@ -42,35 +82,78 @@
     }
   }
 
-  &__button {
-    top: $spacing-md*1.5;
-    position: absolute;
-
-    @include responsive(up, tablet) {
-      display: none;
-    }
-  }
-
   &__main {
     display: flex;
     align-items: center;
 
     @include responsive(down, tablet) {
-      justify-content: space-between;
-      padding-left: $spacing-lg;
-      height: $spacing-xl - $spacing-md;
+      height: $navbar-height-sm;
     }
   }
-
+  
   &__logo {
     display: flex;
     align-items: baseline;
     font-weight: $font-bold;
-
+    flex-grow: 1;
+    
     > * {
       margin-right: $spacing-xs;
     }
   }
+  
+  &__button {
+    @include transition($transition-md, opacity);
+    animation: button-menu-opacity $transition-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    width: $spacing-md;
+    height: $spacing-md;
+    
+    @include responsive(up, tablet) {
+      display: none;
+    }
+
+    &:before,
+    &:after,
+    span {
+      background-color: $text;
+      border-radius: 0.15rem;
+    }
+  
+    &:before,
+    &:after {
+      @include pseudo-element('', auto, auto, auto, auto, $spacing-md, 2px);
+      @include transition($transition-md, transform);
+    }
+  
+    &:before {
+      transform: translateY($spacing-xs*1.5);
+      animation: button-menu-close-before $transition-lg;
+    }
+  
+    &:after {
+      transform: translateY(-$spacing-xs*1.5);
+      animation: button-menu-close-after $transition-lg;
+    }
+  
+    span {
+      @include transition($transition-md, opacity);
+      position: absolute;
+      width: $spacing-md;
+      height: 2px;
+    }
+  
+    &.js-opened {
+  
+      &:before { animation: button-menu-open-before $transition-lg forwards; }
+      &:after { animation: button-menu-open-after $transition-lg forwards; }
+      span { opacity: 0; }
+    }
+  }  
 
   &__nav {
 
@@ -91,6 +174,16 @@
 // alignement
 // —————————————————————————————————————————————————————————————————
 
-.navbar--right .section__container {
-  flex-direction: row-reverse;
+.navbar--right {
+
+  .section__container {
+
+    @include responsive(up, tablet) {
+      flex-direction: row-reverse;    
+    }
+  }
+
+  .navbar__main {
+    flex-direction: row-reverse;    
+  }
 }

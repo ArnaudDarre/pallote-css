@@ -43,6 +43,10 @@
   > .grid--wrap > .grid__item {
     flex-basis: 50%;
   }
+
+  @include responsive(down, laptop) {
+    flex-direction: column;
+  }
 }
 
 // index cover
@@ -102,6 +106,7 @@
 
   .page__content & {
     z-index: 1;
+    position: initial;
   }
 }
 

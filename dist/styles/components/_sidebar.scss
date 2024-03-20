@@ -1,21 +1,57 @@
+$sidebar-width: 200px;
+
 .sidebar {
+  transition: left $transition-md;
   @include calc(height, '100vh - '$navbar-height);
   position: sticky;
   flex-shrink: 0;
   border-right: $border;
-  width: 200px;
+  width: $sidebar-width;
   top: $navbar-height;
-  padding: $spacing-lg $spacing-md;
+  padding: $spacing-md;
   overflow-y: scroll;
-  scrollbar-color: light;
+  scrollbar-color: light;  
+  z-index: 11;
+  
+  &.js-opened {
+    left: 0;
+  }
+  
+  @include responsive(down, tablet) {
+    position: fixed;
+    height: 100vh;
+    background-color: $background-default;
+    top: 0;
+    left: -$sidebar-width;
+    padding-top: $navbar-height-sm;
+    z-index: 13;
+  }
 
-  // override ul & li styling
-  li { margin-left: 0; }
+  &__button {
+    content: '';
+    border: solid $text;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(-45deg);
+    margin-right: $spacing-md;
+
+    @include responsive(up, tablet) {
+      display: none;
+    }
+
+    &--close {
+      position: absolute;
+      top: $navbar-height-sm*0.5;
+      left: $navbar-height-sm*0.5;
+      transform: translateY(-50%) rotate(135deg);
+    }
+  }
 
   &__title {
     @extend %overline;
     color: $text-alt;
     font-weight: $font-bold;
     margin-bottom: $spacing-xs;
+    margin-left: 0;
   }
 }
