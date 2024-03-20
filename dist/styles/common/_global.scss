@@ -46,17 +46,17 @@ footer {
 // text selection
 ::-moz-selection {
 	background: $primary;
-	color: $primary-text;
+	color: $primary-contrast;
 }
 
 ::selection {
 	background: $primary;
-	color: $primary-text;
+	color: $primary-contrast;
 }
 
 ::-moz-selection {
 	background: $primary;
-	color: $primary-text;
+	color: $primary-contrast;
 }
 
 // remove autocomplete from webkit browsers

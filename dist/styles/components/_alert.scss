@@ -51,7 +51,7 @@ $spacing-alert: $spacing-sm;
   }
 
   &__title {
-    font-weight: $font-bold;
+    font-weight: $font-bold !important;
   }
 
   &__subtitle {

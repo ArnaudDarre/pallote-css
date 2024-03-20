@@ -49,44 +49,44 @@ $text-contrast-disabled: rgba($text-contrast, 0.3) !default;
 // brand
 
 $primary: #00F3FF !default;
-$primary-light: lighten($primary, 30%) !default;
-$primary-dark: darken($primary, 20%) !default;
-$primary-text: $text-contrast !default;
+$primary-light: mix($white, $primary, 70%) !default;
+$primary-dark: mix($black, $primary, 50%) !default;
+$primary-contrast: $text-contrast !default;
 
 $secondary: #e7fc00 !default;
-$secondary-light: lighten($secondary, 30%) !default;
-$secondary-dark: darken($secondary, 20%) !default;
-$secondary-text: $text-contrast !default;
+$secondary-light: mix($white, $secondary, 70%) !default;
+$secondary-dark: mix($black, $secondary, 50%) !default;
+$secondary-contrast: $text-contrast !default;
 
 $highlight: #FF74E6 !default;
-$highlight-light: lighten($highlight, 30%) !default;
-$highlight-dark: darken($highlight, 20%) !default;
-$highlight-text: $text-contrast !default;
+$highlight-light: mix($white, $highlight, 70%) !default;
+$highlight-dark: mix($black, $highlight, 50%) !default;
+$highlight-contrast: $text-contrast !default;
 
 // feedback
 
 $success: #27ae60 !default;
-$success-light: lighten($success, 30%) !default;
-$success-dark: darken($success, 30%) !default;
-$success-text: #155F34 !default;
+$success-light: mix($white, $success, 70%) !default;
+$success-dark: mix($black, $success, 50%) !default;
+$success-text: mix($black, $success, 70%) !default;
 $success-contrast: $text !default;
 
 $info: #17a0cc !default;
-$info-light: lighten($info, 30%) !default;
-$info-dark: darken($info, 30%) !default;
-$info-text: #0D5A72 !default;
+$info-light: mix($white, $info, 70%) !default;
+$info-dark: mix($black, $info, 50%) !default;
+$info-text: mix($black, $info, 70%) !default;
 $info-contrast: $text !default;
 
 $warning: #ffdc46 !default;
-$warning-light: lighten($warning, 30%) !default;
-$warning-dark: darken($warning, 30%) !default;
-$warning-text: #685400 !default;
+$warning-light: mix($white, $warning, 70%) !default;
+$warning-dark: mix($black, $warning, 50%) !default;
+$warning-text: mix($black, $warning, 70%) !default;
 $warning-contrast: $text-contrast !default;
 
 $error: #EB5757 !default;
-$error-light: lighten($error, 30%) !default;
-$error-dark: darken($error, 30%) !default;
-$error-text: #9C1212 !default;
+$error-light: mix($white, $error, 70%) !default;
+$error-dark: mix($black, $error, 50%) !default;
+$error-text: mix($black, $error, 70%) !default;
 $error-contrast: $text !default;
 
 // background

@@ -55,9 +55,9 @@
 }
 
 @include color('tag',
-  '' $primary $primary-text,
-  '--secondary' $secondary $secondary-text,
-  '--highlight' $highlight $highlight-text,
+  '' $primary $primary-contrast,
+  '--secondary' $secondary $secondary-contrast,
+  '--highlight' $highlight $highlight-contrast,
   '--grey' $text-disabled $text,
   '--success' $success $success-contrast,
   '--info' $info $info-contrast,

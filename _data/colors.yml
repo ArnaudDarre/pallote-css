@@ -74,11 +74,11 @@
           value: "#00F3FF"
         - name: primary-light
           class: primaryLight
-          value: "lighten($primary, 30%)"
+          value: "mix(white, $primary, 70%)"
         - name: primary-dark
           class: primaryDark
-          value: "darken($primary, 20%)"
-        - name: primary-text
+          value: "mix(white, $primary, 50%)"
+        - name: primary-contrast
           value: "$text-contrast"
           hasContrast: true
     - title: Secondary
@@ -88,11 +88,11 @@
           value: "#e7fc00"
         - name: secondary-light
           class: secondaryLight
-          value: "lighten($secondary, 30%)"
+          value: "mix(white, $secondary, 70%)"
         - name: secondary-dark
           class: secondaryDark
-          value: "darken($secondary, 20%)"
-        - name: secondary-text
+          value: "mix(white, $secondary, 50%)"
+        - name: secondary-contrast
           value: "$text-contrast"
           hasContrast: true
     - title: Highlight
@@ -102,11 +102,11 @@
           value: "#FF74E6"
         - name: highlight-light
           class: highlightLight
-          value: "lighten($highlight, 30%)"
+          value: "mix(white, $highlight, 70%)"
         - name: highlight-dark
           class: highlightDark
-          value: "darken($highlight, 20%)"
-        - name: highlight-text
+          value: "mix(white, $highlight, 50%)"
+        - name: highlight-contrast
           value: "$text-contrast"
           hasContrast: true
 - title: Feedback
@@ -119,10 +119,10 @@
           value: "#27AE60"
         - name: success-light
           class: successLight
-          value: "lighten($success, 30%)"
+          value: "mix(white, $success, 70%)"
         - name: success-dark
           class: successDark
-          value: "darken($success, 30%)"
+          value: "mix(white, $success, 50%)"
         - name: success-text
           value: "#155F34"
         - name: success-contrast
@@ -134,10 +134,10 @@
           value: "#17A0CC"
         - name: info-light
           class: infoLight
-          value: "lighten($info, 30%)"
+          value: "mix(white, $info, 70%)"
         - name: info-dark
           class: infoDark
-          value: "darken($info, 30%)"
+          value: "mix(white, $info, 50%)"
         - name: info-text
           value: "#0D5A72"
         - name: info-contrast
@@ -149,10 +149,10 @@
           value: "#FFDC46"
         - name: warning-light
           class: warningLight
-          value: "lighten($warning, 30%)"
+          value: "mix(white, $warning, 70%)"
         - name: warning-dark
           class: warningDark
-          value: "darken($warning, 30%)"
+          value: "mix(white, $warning, 50%)"
         - name: warning-text
           value: "#685400"
         - name: warning-contrast
@@ -165,10 +165,10 @@
           value: "#EB5757"
         - name: error-light
           class: errorLight
-          value: "lighten($error, 30%)"
+          value: "mix(white, $error, 70%)"
         - name: error-dark
           class: errorDark
-          value: "darken($error, 30%)"
+          value: "mix(white, $error, 50%)"
         - name: error-text
           value: "#9C1212"
         - name: error-contrast

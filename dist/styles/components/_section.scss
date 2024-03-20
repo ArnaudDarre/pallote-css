@@ -118,7 +118,7 @@
 
   &--default { @include color($background-default); }
   &--paper { @include color($background-paper); }
-  &--primary { @include color($primary, $primary-text, $primary-text); }
+  &--primary { @include color($primary, $primary-contrast, $primary-contrast); }
   &--primaryLight { @include color($primary-light); }
 }
 
