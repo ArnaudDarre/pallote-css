@@ -57,7 +57,7 @@
 
 <body>
 
-<div class="page page--withSidebar page--{{ page.title | downcase | replace: " ", "-" }}">
+<div class="page{% if page.url contains 'doc/' %} page--withSidebar{% endif %}">
 
 {% include components/navbar.html %}
 
