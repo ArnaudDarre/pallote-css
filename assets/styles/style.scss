@@ -1,0 +1,122 @@
+---
+---
+
+@import
+  "../../dist/styles/common/_variables",
+  "../../dist/styles/common/_mixins",
+
+  "../../dist/styles/modules/_cookie",
+
+  "./variables/color-palette.scss"
+;
+
+// —————————————————————————————————————————————————————————————————
+// library specific styles
+// alert
+// link
+// navbar
+// section
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// library specific styles
+// —————————————————————————————————————————————————————————————————
+
+// icon in navbar
+
+.logo--rabbit {
+  float: left;
+  transform: translateY(-2px);
+  margin-right: $spacing-sm;
+}
+
+// subsections on doc pages
+
+.box {
+
+  & + & {
+    border-top: $border;
+    margin-top: $spacing-lg;
+    padding-top: $spacing-lg;
+  }
+
+  > .grid--wrap > .grid__item {
+    flex-basis: 50%;
+  }
+
+  @include responsive(down, laptop) {
+    flex-direction: column;
+  }
+}
+
+// index cover
+
+.cover {
+  z-index: -1;
+  position: absolute;
+  top: -2rem;
+  right: -3rem;
+  transform: rotate(-4deg);
+  pointer-events: none;
+
+  &:after {
+    @include pseudo-element();
+    background-image: linear-gradient(90deg, $background-default 25%, rgba($background-default, 0) 100%);
+  }
+
+  &__item {
+    padding: $spacing-sm;
+  }
+
+  .alert {
+    z-index: 0;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// alert
+// —————————————————————————————————————————————————————————————————
+
+.alert {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+// —————————————————————————————————————————————————————————————————
+// link
+// —————————————————————————————————————————————————————————————————
+
+.link {
+  width: 100%;
+}
+
+// —————————————————————————————————————————————————————————————————
+// navbar
+// —————————————————————————————————————————————————————————————————
+
+.navbar {
+  box-shadow: none;
+
+  &--example {
+    all: unset;
+    display: revert;
+  }
+
+  .page__content & {
+    z-index: 1;
+    position: initial;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// section
+// —————————————————————————————————————————————————————————————————
+
+.section {
+
+  & + & {
+    border-top: $border;
+  }
+}

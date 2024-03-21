@@ -1,0 +1,48 @@
+---
+layout: component
+label: Data
+title: Snippet
+subtitle: This component is used to display code.
+description: |-
+  The component is composed of one `snippet` element with a string inside.
+
+example: |-
+  {% include ui/snippet.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- default -->
+<!-- ---------------------------------------------- -->
+
+{% capture snippet-default %}
+{% include modules/component-class.html code='class="snippet snippet--default"'
+  component = '
+    <p class="snippet snippet--default">Default</p>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Default'
+  subtitle = 'Add a default tag to the snippet. This is used for instance in the documentation of the library.'
+  content = snippet-default
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- dense -->
+<!-- ---------------------------------------------- -->
+
+{% capture snippet-dense %}
+{% include modules/component-class.html code='class="snippet snippet--dense"'
+  component = '
+    <p class="snippet snippet--dense">Dense</p>
+    <p class="snippet snippet--dense snippet--default">Dense</p>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Dense'
+  subtitle = 'Make the snippet component smaller.'
+  content = snippet-dense
+%}

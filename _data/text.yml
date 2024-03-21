@@ -1,0 +1,82 @@
+- title: Variant
+  subcategories:
+    - properties:
+      - class: h1
+        description: Heading 1
+      - class: h2
+        description: Heading 2
+      - class: h3
+        description: Heading 3
+      - class: h4
+        description: Heading 4
+      - class: h5
+        description: Heading 5
+      - class: h6
+        description: Heading 6
+      - class: subtitle
+        description: This is an emphasised text style, usually used for lead text in section header.
+      - class: body
+        description: This is the default text size
+      - class: caption
+        description: This is a smaller text style, usually used for form labels or captions.
+      - class: overline
+        description: This is the smallest text style, used with caution.
+- title: Color
+  subcategories:
+    - properties:
+      - class: text--default
+        description: This is a default text
+      - class: text--alt
+        description: This is an alternate text
+      - class: text--disabled
+        description: This is a disabled text
+      - class: text--contrast
+        hasBackground: true
+        description: This is a default contrast text
+      - class: text--contrastAlt
+        hasBackground: true
+        description: This is an alternate contrast text
+      - class: text--contrastDisabled
+        hasBackground: true
+        description: This is a disabled contrast text
+      - class: text--primary
+        description: This is a primary text
+      - class: text--secondary
+        description: This is a secondary text
+      - class: text--highlight
+        description: This is a highlight text
+      - class: text--success
+        description: This is a success text
+      - class: text--info
+        description: This is an info text
+      - class: text--warning
+        description: This is a warning text
+      - class: text--error
+        description: This is an error text
+- title: Alignement
+  subcategories:
+    - properties:
+      - class: text--left
+        description: Left text
+      - class: text--center
+        description: Centered text
+      - class: text--right
+        description: Right text
+- title: Style
+  subcategories:
+    - properties:
+      - class: text--underline
+        description: Add a line below the text
+      - class: text--italic
+        description: Slant the text
+      - class: text--strikeThrough
+        description: Add a line through the text
+- title: Weight
+  subcategories:
+    - properties:
+      - class: text--light
+        description: Text with a light weight
+      - class: text--regular
+        description: Text with a regular weight (default for body styles)
+      - class: text--bold
+        description: Text with a bold weight

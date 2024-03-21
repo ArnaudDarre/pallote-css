@@ -1,0 +1,198 @@
+- title: Common
+  is_utilities: true
+  subcategories:
+    - colors:
+      - name: white
+        class: white
+        value: "#ffffff"
+      - name: black
+        class: black
+        value: "#000a1e"
+        hasContrast: true
+- title: Greys
+  is_utilities: true
+  subcategories:
+    - colors:
+      - name: grey-90
+        class: grey90
+        value: "#1A2335"
+      - name: grey-80
+        class: grey80
+        value: "#333B4B"
+      - name: grey-70
+        class: grey70
+        value: "#4D5462"
+      - name: grey-60
+        class: grey60
+        value: "#666C78"
+      - name: grey-50
+        class: grey50
+        value: "#7F848E"
+      - name: grey-40
+        class: grey40
+        value: "#999DA5"
+      - name: grey-30
+        class: grey30
+        value: "#B2B5BB"
+      - name: grey-20
+        class: grey20
+        value: "#CCCED2"
+      - name: grey-10
+        class: grey10
+        value: "#E5E6E8"
+      - name: grey-5
+        class: grey5
+        value: "#F2F3F4"
+- title: Text
+  subcategories:
+    - title: Text default
+      colors:
+        - name: text
+          value: "$white"
+        - name: text-alt
+          value: "rgba($text, 0.5)"
+        - name: text-disabled
+          value: "rgba($text, 0.25)"
+    - title: Text contrast
+      colors:
+        - name: text-contrast
+          value: "$black"
+          hasContrast: true
+        - name: text-contrast-alt
+          value: "rgba($text-contrast, 0.6)"
+          hasContrast: true
+        - name: text-contrast-disabled
+          value: "rgba($text-contrast, 0.3)"
+          hasContrast: true
+- title: Brand
+  is_utilities: true
+  subcategories:
+    - title: Primary
+      colors: 
+        - name: primary
+          class: primary
+          value: "#00F3FF"
+        - name: primary-light
+          class: primaryLight
+          value: "mix(white, $primary, 70%)"
+        - name: primary-dark
+          class: primaryDark
+          value: "mix(white, $primary, 50%)"
+        - name: primary-contrast
+          value: "$text-contrast"
+          hasContrast: true
+    - title: Secondary
+      colors:
+        - name: secondary
+          class: secondary
+          value: "#e7fc00"
+        - name: secondary-light
+          class: secondaryLight
+          value: "mix(white, $secondary, 70%)"
+        - name: secondary-dark
+          class: secondaryDark
+          value: "mix(white, $secondary, 50%)"
+        - name: secondary-contrast
+          value: "$text-contrast"
+          hasContrast: true
+    - title: Highlight
+      colors:
+        - name: highlight
+          class: highlight
+          value: "#FF74E6"
+        - name: highlight-light
+          class: highlightLight
+          value: "mix(white, $highlight, 70%)"
+        - name: highlight-dark
+          class: highlightDark
+          value: "mix(white, $highlight, 50%)"
+        - name: highlight-contrast
+          value: "$text-contrast"
+          hasContrast: true
+- title: Feedback
+  is_utilities: true
+  subcategories:
+    - title: Success
+      colors:
+        - name: success
+          class: success
+          value: "#27AE60"
+        - name: success-light
+          class: successLight
+          value: "mix(white, $success, 70%)"
+        - name: success-dark
+          class: successDark
+          value: "mix(white, $success, 50%)"
+        - name: success-text
+          value: "#155F34"
+        - name: success-contrast
+          value: "$text"
+    - title: Info
+      colors:
+        - name: info
+          class: info
+          value: "#17A0CC"
+        - name: info-light
+          class: infoLight
+          value: "mix(white, $info, 70%)"
+        - name: info-dark
+          class: infoDark
+          value: "mix(white, $info, 50%)"
+        - name: info-text
+          value: "#0D5A72"
+        - name: info-contrast
+          value: "$text"
+    - title: Warning
+      colors:
+        - name: warning
+          class: warning
+          value: "#FFDC46"
+        - name: warning-light
+          class: warningLight
+          value: "mix(white, $warning, 70%)"
+        - name: warning-dark
+          class: warningDark
+          value: "mix(white, $warning, 50%)"
+        - name: warning-text
+          value: "#685400"
+        - name: warning-contrast
+          value: "$text-contrast"
+          hasContrast: true
+    - title: Error
+      colors:
+        - name: error
+          class: error
+          value: "#EB5757"
+        - name: error-light
+          class: errorLight
+          value: "mix(white, $error, 70%)"
+        - name: error-dark
+          class: errorDark
+          value: "mix(white, $error, 50%)"
+        - name: error-text
+          value: "#9C1212"
+        - name: error-contrast
+          value: "$text"
+- title: Background
+  is_utilities: true
+  subcategories:
+    - colors:
+      - name: background-default
+        class: default
+        value: "$black"
+        hasContrast: true
+      - name: background-paper
+        class: paper
+        value: "$grey-90"
+- title: Misc
+  is_utilities: true
+  subcategories:
+    - colors:
+      - name: border-color
+        class: border
+        value: "rgba($text, 0.2)"
+      - name: hover
+        value: "rgba($text, 0.12)"
+      - name: overlay
+        value: "rgba($text-contrast, 0.8)"
+        hasContrast: true

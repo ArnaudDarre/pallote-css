@@ -1,0 +1,60 @@
+---
+layout: component
+label: Layout
+title: Card actions
+subtitle: Contains the card title. You can add an optional label or subtitle. The font sizes are automatically set. You can change them using the theme customisation.
+description: |-
+  The component is always a child of the [`card`]({% link _components/card.html %}) component. It is composed of tow elements:
+
+  - `card__actions` the wrapper
+    - its `button` children
+
+  The position of the buttons is automatically set:
+
+  - If one child, it will be on the right.
+  - If two children, they will be placed on both side of the card.
+
+example: |-
+  <div class="card">
+    {% include ui/card-actions.html %}
+  </div>
+---
+
+<!-- ---------------------------------------------- -->
+<!-- direction -->
+<!-- ---------------------------------------------- -->
+
+{% capture card-direction %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid--aiStart">
+    {% include modules/component-class.html code='class="card__actions card__actions--portrait"'
+      component = '
+        <div class="card">
+          <div class="card__actions card__actions--portrait">
+            <button type="button" class="button button--grey">Back</button>
+            <button type="button" class="button">Portrait</button>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid--aiStart">
+    {% include modules/component-class.html code='class="card__actions"' isDefault=true
+      component = '
+        <div class="card">
+          <div class="card__actions">
+            <button type="button" class="button button--grey">Back</button>
+            <button type="button" class="button">Landscape</button>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Direction'
+  subtitle = 'Change the direction of the component.'
+  content = card-direction
+%}

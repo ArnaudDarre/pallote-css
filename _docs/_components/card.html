@@ -1,0 +1,308 @@
+---
+layout: component
+label: Layout
+title: Card
+subtitle: Cards are surfaces that display content and actions for a single element. They are one of the most used layout elements.
+description: |-
+  The component is composed of multiple elements. Check out the corresponding pages for more information on each child component. Children can be used in whichever order.
+
+  - `card` the wrapper
+    - [`card__media`]({% link _components/card-media.html %}) the wrapper of an optional image element
+      - `card__mediaInner` the image
+    - [`card__header`]({% link _components/card-header.html %}) the title element
+      - `card__label` optional caption element, usually for category placeholder (text style is automated)
+      - `card__title` the title (text style is automated)
+      - `card__subtitle` optional subtitle (text style is automated)
+    - [`card__content`]({% link _components/card-content.html %}) some content. Cards can have multiple instances of that element
+    - [`card__actions`]({% link _components/card-actions.html %}) optional ctas
+
+example: |-
+  {% include ui/card.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- size -->
+<!-- ---------------------------------------------- -->
+
+{% capture card-size %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="card card--xs"'
+      component = '
+        <div class="card card--xs">
+          <div class="card__header">
+            <p class="card__title">XSmall</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="card card--sm"'
+      component = '
+        <div class="card card--sm">
+          <div class="card__header">
+            <p class="card__title">Small</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="card"' isDefault=true
+      component = '
+        <div class="card">
+          <div class="card__header">
+            <p class="card__title">Medium</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="card card--lg"'
+      component = '
+        <div class="card card--lg">
+          <div class="card__header">
+            <p class="card__title">Large</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid--aiStart">
+    {% include modules/component-class.html code='class="card card--xl"'
+      component = '
+        <div class="card card--xl">
+          <div class="card__header">
+            <p class="card__title">XLarge</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Size'
+  subtitle = 'Override the default size of the component.'
+  content = card-size
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- color -->
+<!-- ---------------------------------------------- -->
+
+{% capture card-color %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="card"' isDefault=true
+      component = '
+        <div class="card">
+          <div class="card__header">
+            <p class="card__title">Paper</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="card fill--primary"'
+      component = '
+        <div class="card fill--primary">
+          <div class="card__header">
+            <p class="card__title">Default</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="card fill--warning"'
+      component = '
+        <div class="card fill--warning">
+          <div class="card__header">
+            <p class="card__title">Primary</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="card fill--default stroke--primary"'
+      component = '
+        <div class="card fill--default stroke--primary">
+          <div class="card__header">
+            <p class="card__title">Primary</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% capture card-color-subtitle %}
+You can use the [color]({% link _utilities/color.html %}) utility classes to change the background or border color and text color of the component and content. If you do not add any class, the default is `fill--paper`. Here are some examples.
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Color'
+  subtitle = card-color-subtitle
+  content = card-color
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- direction -->
+<!-- ---------------------------------------------- -->
+
+{% capture card-direction %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="card"' isDefault=true
+      component = '
+        <div class="card">
+          <div class="card__media">
+            <div class="card__mediaInner"></div>
+          </div>
+          <div class="card__header">
+            <p class="card__title">Portrait</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid--aiStart">
+    {% include modules/component-class.html code='class="card card--landscape"'
+      component = '
+        <div class="card card--landscape">
+          <div class="card__media">
+            <div class="card__mediaInner w-rem-10"></div>
+          </div>
+          <div class="card__header">
+            <p class="card__title">Landscape</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Direction'
+  subtitle = 'Change the direction of the component.'
+  content = card-direction
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- alignement -->
+<!-- ---------------------------------------------- -->
+
+{% capture card-alignement %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid--aiStart">
+    {% include modules/component-class.html code='class="card"' isDefault=true
+      component = '
+        <div class="card">
+          <div class="card__header">
+            <p class="card__title">Left</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid--aiStart">
+    {% include modules/component-class.html code='class="card card--center"'
+      component = '
+        <div class="card card--center">
+          <div class="card__header">
+            <p class="card__title">Center</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid--aiStart">
+    {% include modules/component-class.html code='class="card card--right"'
+      component = '
+        <div class="card card--right">
+          <div class="card__header">
+            <p class="card__title">Right</p>
+            <p class="card__subtitle">This is a card subtitle</p>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Alignement'
+  subtitle = 'Change the text alignement of the component.'
+  content = card-alignement
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- transparent -->
+<!-- ---------------------------------------------- -->
+
+{% capture card-transparent %}
+{% include modules/component-class.html code='class="card card--transparent"'
+  component = '
+    <div class="card card--transparent">
+      <div class="card__media">
+        <div class="card__mediaInner"></div>
+      </div>
+      <div class="card__header">
+        <p class="card__title">Transparent</p>
+        <p class="card__subtitle">This is a card subtitle</p>
+      </div>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Transparent'
+  subtitle = 'Remove padding around the card (not between card children) and background colour.'
+  content = card-transparent
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- hasShadow -->
+<!-- ---------------------------------------------- -->
+
+{% capture card-hasShadow %}
+{% include modules/component-class.html code='class="card card--hasShadow"'
+  component = '
+    <div class="card card--hasShadow">
+      <div class="card__header">
+        <p class="card__title">Has shadow</p>
+        <p class="card__subtitle">This is a card subtitle</p>
+      </div>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Has shadow'
+  subtitle = 'Add a `box-shadow` to the element'
+  content = card-hasShadow
+%}

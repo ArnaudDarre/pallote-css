@@ -1,0 +1,63 @@
+// —————————————————————————————————————————————————————————————————
+// color
+// alignement
+// style
+// weight
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// color
+// —————————————————————————————————————————————————————————————————
+
+@mixin color($prefix, $colors...) {
+	@each $i in $colors {
+		.#{$prefix}#{nth($i, 1)} {
+			color: nth($i, 2) !important;
+
+			.h1, .h2, .h3, .h4, .h5, .h6 {
+				color: nth($i, 2) !important;
+			}
+		}
+	}
+}
+
+@include color('text--',
+	'default' $text,
+	'alt' $text-alt,
+	'disabled' $text-disabled,
+	'contrast' $text-contrast,
+	'contrastAlt' $text-contrast-alt,
+	'contrastDisabled' $text-contrast-disabled,
+	'primary' $primary,
+	'secondary' $secondary,
+	'primary' $primary,
+	'highlight' $highlight,
+	'success' $success,
+	'info' $info,
+	'warning' $warning,
+	'error' $error,
+);
+
+// —————————————————————————————————————————————————————————————————
+// alignement
+// —————————————————————————————————————————————————————————————————
+
+.text--left, %text--left { text-align: left !important; }
+.text--center, %text--center { text-align: center !important; }
+.text--right, %text--right { text-align: right !important; }
+
+// —————————————————————————————————————————————————————————————————
+// style
+// —————————————————————————————————————————————————————————————————
+
+.text--italic, %text--italic { font-style: italic !important; }
+.text--underline, %text--underline { text-decoration: underline !important; }
+.text--strikeThrough, %text--strikeThrough { text-decoration: line-through !important; }
+
+// —————————————————————————————————————————————————————————————————
+// weight
+// —————————————————————————————————————————————————————————————————
+
+.text--regular, %text--regular { font-weight: $font-regular !important; }
+.text--bold, %text--bold { font-weight: $font-bold !important; }
+.text--black, %text--black { font-weight: $font-black !important; }

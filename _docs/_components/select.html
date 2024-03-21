@@ -1,0 +1,114 @@
+---
+layout: component
+label: Form
+title: Select
+subtitle: Styling for a select box. This component uses the same structure as the [input]({ % link _components/input.html}) component.
+description: |-
+  To use it, add a `select` class added to the `input` wrapper:
+
+  - `input select` the wrapper
+    - `input__label` field label
+    - `input__control` actual input
+    - `input__notice` optional notice (which can also be used to display error messages)
+
+example: |-
+  {% include ui/select.html focused=true %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- focused -->
+<!-- ---------------------------------------------- -->
+
+{% capture select-focused %}
+{% include modules/component-class.html code='class="input select input--focused"'
+  component = '
+    <fieldset class="input select input--focused">
+      <label for="focused" class="input__label">Focused</label>
+      <select name="focused" id="focused" class="input__control">
+        <option value=""></option>
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+      </select>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Focused'
+  subtitle = 'Focus a specific input on page load.'
+  content = select-focused
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- error -->
+<!-- ---------------------------------------------- -->
+
+{% capture select-error %}
+{% include modules/component-class.html code='class="input select js--error"'
+  component = '
+    <fieldset class="input select js-error">
+      <label for="error" class="input__label">Error</label>
+      <select name="error" id="error" class="input__control">
+        <option value=""></option>
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+      </select>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Error'
+  subtitle = 'Notify users that the field has an error.'
+  content = select-error
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- disabled -->
+<!-- ---------------------------------------------- -->
+
+{% capture select-disabled %}
+{% include modules/component-class.html code='class="input select input--disabled"'
+  component = '
+    <fieldset class="input select input--disabled">
+      <label for="disabled" class="input__label">Disabled</label>
+      <select name="disabled" id="disabled" class="input__control">
+        <option value=""></option>
+      </select>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Disabled'
+  subtitle = 'Add this class to signal users the field is disabled. Include `pallote.js` file to your project to automatically add the `disabled` attribute.'
+  content = select-disabled
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- required -->
+<!-- ---------------------------------------------- -->
+
+{% capture select-required %}
+{% include modules/component-class.html code='class="input select input--required"'
+  component = '
+    <fieldset class="input select input--required">
+      <label for="required" class="input__label">Required</label>
+      <select name="required" id="required" class="input__control">
+        <option value=""></option>
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+      </select>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Required'
+  subtitle = 'Add this class to signal users the field is required. Include `pallote.js` file to your project to automatically add the `required` attribute.'
+  content = select-required
+%}

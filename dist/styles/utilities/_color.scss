@@ -1,0 +1,122 @@
+// —————————————————————————————————————————————————————————————————
+// fill
+// stroke
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// fill
+// —————————————————————————————————————————————————————————————————
+
+@mixin fill($colors...) {
+
+  @each $i in $colors {
+    .fill--#{nth($i, 1)} {
+      color: nth($i, 3) !important;
+      background-color: nth($i, 2) !important;
+
+      .card__title {
+        color: nth($i, 3) !important;
+      }
+    }
+  }
+}
+
+@include fill (
+  "white" $white $text-contrast,
+  "black" $black $text,
+
+  "grey90" $grey-90 $text,
+  "grey80" $grey-80 $text,
+  "grey70" $grey-70 $text,
+  "grey60" $grey-60 $text,
+  "grey50" $grey-50 $text,
+  "grey40" $grey-40 $text-contrast,
+  "grey30" $grey-30 $text-contrast,
+  "grey20" $grey-20 $text-contrast,
+  "grey10" $grey-10 $text-contrast,
+  "grey5" $grey-5 $text-contrast,
+
+  "primaryLight" $primary-light $text-contrast,
+  "primary" $primary $primary-contrast,
+  "primaryDark" $primary-dark $primary-contrast,
+  "secondaryLight" $secondary-light $text-contrast,
+  "secondary" $secondary $secondary-contrast,
+  "secondaryDark" $secondary-dark $secondary-contrast,
+  "highlightLight" $highlight-light $text-contrast,
+  "highlight" $highlight $highlight-contrast,
+  "highlightDark" $highlight-dark $highlight-contrast,
+
+  "successLight" $success-light $text-contrast,
+  "success" $success $success-contrast,
+  "successDark" $success-dark $success-contrast,
+  "infoLight" $info-light $text-contrast,
+  "info" $info $info-contrast,
+  "infoDark" $info-dark $info-contrast,
+  "warningLight" $warning-light $text-contrast,
+  "warning" $warning $warning-contrast,
+  "warningDark" $warning-dark $warning-contrast,
+  "errorLight" $error-light $text-contrast,
+  "error" $error $error-contrast,
+  "errorDark" $error-dark $error-contrast,
+
+  "default" $background-default $text,
+  "paper" $background-paper $text,
+
+  "border" $border-color $text
+);
+
+// —————————————————————————————————————————————————————————————————
+// stroke
+// —————————————————————————————————————————————————————————————————
+
+@mixin stroke($colors...) {
+  @each $i in $colors {
+    .stroke--#{nth($i, 1)} {
+      border: 1px solid nth($i, 2) !important;
+    }
+  }
+}
+
+@include stroke (
+  "black" $black,
+  "white" $white,
+
+  "grey90" $grey-90,
+  "grey80" $grey-80,
+  "grey70" $grey-70,
+  "grey60" $grey-60,
+  "grey50" $grey-50,
+  "grey40" $grey-40,
+  "grey30" $grey-30,
+  "grey20" $grey-20,
+  "grey10" $grey-10,
+  "grey5" $grey-5 ,
+
+  "primaryLight" $primary-light,
+  "primary" $primary,
+  "primaryDark" $primary-dark,
+  "secondaryLight" $secondary-light,
+  "secondary" $secondary,
+  "secondaryDark" $secondary-dark,
+  "highlightLight" $highlight-light,
+  "highlight" $highlight,
+  "highlightDark" $highlight-dark,
+
+  "successLight" $success-light,
+  "success" $success,
+  "successDark" $success-dark,
+  "infoLight" $info-light,
+  "info" $info,
+  "infoDark" $info-dark,
+  "warningLight" $warning-light,
+  "warning" $warning,
+  "warningDark" $warning-dark,
+  "errorLight" $error-light,
+  "error" $error,
+  "errorDark" $error-dark,
+
+  "default" $background-default,
+  "paper" $background-paper,
+  
+  "border" $border-color
+);

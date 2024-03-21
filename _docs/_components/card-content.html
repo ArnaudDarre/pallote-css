@@ -1,0 +1,38 @@
+---
+layout: component
+label: Layout
+title: Card content
+subtitle: Content of the card. Cards can have multiple instances of the component.
+description: |-
+  The component is always a child of the [`card`]({% link _components/card.html %}) component. It is composed of one element, `card__content`.
+
+example: |-
+  <div class="card">
+    {% include ui/card-content.html %}
+  </div>
+---
+
+<!-- ---------------------------------------------- -->
+<!-- fullWidth -->
+<!-- ---------------------------------------------- -->
+
+{% capture card-content-fullWidth %}
+{% include modules/component-class.html code='class="card__content card__content--fullWidth"'
+  component = '
+    <div class="card">
+      <div class="card__header">
+        <p class="card__title">Full width content</p>
+      </div>
+      <div class="card__content card__content--fullWidth">
+        <p>Sustainability is a social goal for people to co-exist on Earth over a long time. Specific definitions of this term are disputed and have varied with literature, context, and time.</p>
+      </div>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Full width'
+  subtitle = 'Removes the bleed around the image.'
+  content = card-content-fullWidth
+%}

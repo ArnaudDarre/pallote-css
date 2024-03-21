@@ -1,0 +1,63 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// direction
+// fullWidth
+// wide
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap; // set on multiple lines if wider than parent width
+  margin: -$spacing-xs;
+
+  .button { margin: $spacing-xs; }
+  .buttons { padding: $spacing-xs; }
+  
+  // larger spacing on small and touch devices
+  @include responsive(down, mobile) {
+    margin: -$spacing-sm;
+
+    .button { margin: $spacing-sm; }
+  }
+
+  @include responsive-touch {
+    margin: -$spacing-sm;
+
+    .button { margin: $spacing-sm; }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// direction
+// —————————————————————————————————————————————————————————————————
+
+.buttons {
+
+  &--portrait {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// fullWidth
+// —————————————————————————————————————————————————————————————————
+
+.buttons--fullWidth {
+
+  .button {
+    width: 100%;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// wide
+// —————————————————————————————————————————————————————————————————
+
+.buttons--wide {
+  justify-content: space-between;
+}

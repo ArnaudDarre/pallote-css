@@ -1,0 +1,69 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// default
+// dense
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.snippet {
+  @extend %caption;
+  font-family: "Roboto Mono", Courier, monospace;
+  word-wrap: break-word;
+  width: 100%;
+  position: relative;
+  border-radius: $border-radius-sm;
+  margin: 0;
+  padding: $spacing-sm $spacing-sm*1.5;
+  background-color: $grey-90;
+  
+  & + & {
+    margin-top: $spacing-sm;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// default
+// —————————————————————————————————————————————————————————————————
+
+.snippet--default {
+
+  &:after {
+    @extend %overline;
+    content: "Default";
+    font-family: $font;
+    float: right;
+    margin-top: 1px;
+    margin-right: -$spacing-xs;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: $font-bold;
+    border-radius: $border-radius-sm;
+    white-space: nowrap; // prevent text to go on multiple lines
+    position: absolute;
+    top: $spacing-sm;
+    right: $spacing-md*0.75;
+    height: $spacing-md;
+    padding-right: $spacing-xs;
+    padding-left: $spacing-xs;
+    padding-bottom: 0.1em;
+    background-color: $text-disabled;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// dense
+// —————————————————————————————————————————————————————————————————
+
+.snippet--dense {
+  @extend %overline;
+  padding: $spacing-xs $spacing-xs*1.5 !important;
+
+  &.snippet--default:after {
+    top: $spacing-xs;
+    right: $spacing-sm;
+  }
+}

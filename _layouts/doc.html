@@ -1,0 +1,21 @@
+---
+layout: compress
+---
+
+{% include containers/header.html %}
+
+{% include components/page-header.html
+  label = page.label
+  title = page.title
+  subtitle = page.subtitle
+%}
+
+<div class="section">
+  <div class="section__container">
+    <div class="section__content editor">
+      {{ page.content | markdownify }}
+    </div>
+  </div>
+</div>
+
+{% include containers/footer.html %}

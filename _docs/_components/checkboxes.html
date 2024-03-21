@@ -1,0 +1,142 @@
+---
+layout: component
+label: Form
+title: Checkboxes
+subtitle: This component is the component for a form field with multiple checkboxes. If used as a standalone checkbox, see [checkbox]({% link _components/checkbox.html %}) component.
+description: |-
+  This component is composed of two elements:
+
+  - `checkboxes` the wrapper
+    - its child `checkbox` elements
+
+  You can wrap it inside an `input` component (see [input]({% link _components/input.html %}) components) when used as a form field. The `checkboxes` class is associated with `input__control`.
+
+  - `input` the wrapper
+    - `input__label` field label
+    - `input__control checkboxes` the component
+    - `input__notice` optional notice (which can also be used to display error messages)
+
+example: |-
+  {% include ui/checkboxes.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- direction -->
+<!-- ---------------------------------------------- -->
+
+{% capture checkboxes-direction %}
+  <div class="grid grid--spacing2">
+    <div class="grid__item grid--aiStart">
+      {% include modules/component-class.html code='class="checkboxes"' isDefault=true
+        component = '
+          <fieldset class="input">
+            <legend class="input__label">Landscape</legend>
+            <div class="input__control checkboxes">
+              <div class="checkbox">
+                <input type="checkbox" name="landscape" id="landscape_1" value="landscape_1" class="checkbox__control" />
+                <label for="landscape_1" class="checkbox__label">Landscape 1</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" name="landscape" id="landscape_2" value="landscape_2" class="checkbox__control" />
+                <label for="landscape_2" class="checkbox__label">Landscape 2</label>
+              </div>
+            </div>
+          </fieldset>
+        '
+      %}
+    </div>
+    <div class="grid__item grid--aiStart">
+      {% include modules/component-class.html code='class="checkboxes checkboxes--portrait"'
+        component = '
+          <fieldset class="input">
+            <legend class="input__label">Portrait</legend>
+            <div class="input__control checkboxes checkboxes--portrait">
+              <div class="checkbox">
+                <input type="checkbox" name="portrait" id="portrait_1" value="portrait_1" class="checkbox__control" />
+                <label for="portrait_1" class="checkbox__label">Portrait 1</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" name="portrait" id="portrait_2" value="portrait_2" class="checkbox__control" />
+                <label for="portrait_2" class="checkbox__label">Portrait 2</label>
+              </div>
+            </div>
+          </fieldset>
+        '
+      %}
+    </div>
+  </div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Direction'
+  subtitle = 'Change the direction of the component.'
+  content = checkboxes-direction
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- disabled -->
+<!-- ---------------------------------------------- -->
+
+{% capture checkboxes-disabled %}
+{% include modules/component-class.html code='class="input select input--disabled"'
+  component = '
+    <fieldset class="input input--disabled">
+      <legend class="input__label">Disabled</legend>
+      <div class="input__control checkboxes">
+        <div class="checkbox">
+          <input type="checkbox" id="disabled_1" value="disabled_1" class="checkbox__control" />
+          <label for="disabled_1" class="checkbox__label">Disabled 1</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="disabled_2" value="disabled_2" class="checkbox__control" />
+          <label for="disabled_2" class="checkbox__label">Disabled 2</label>
+        </div>
+      </div>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% capture checkboxes-disabled-subtitle %}
+When used as a form field, you can add the `input--disabled` to the wrapper like you would for an [input]({% link _components/input.html %}) component to disable the whole field.
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Disabled'
+  subtitle = checkboxes-disabled-subtitle
+  content = checkboxes-disabled
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- required -->
+<!-- ---------------------------------------------- -->
+
+{% capture checkboxes-required %}
+{% include modules/component-class.html code='class="input select input--required"'
+  component = '
+    <fieldset class="input input--required">
+      <legend class="input__label">Required</legend>
+      <div class="input__control checkboxes">
+        <div class="checkbox">
+          <input type="checkbox" id="required_1" value="required_1" class="checkbox__control" />
+          <label for="required_1" class="checkbox__label">Required 1</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="required_2" value="required_2" class="checkbox__control" />
+          <label for="required_2" class="checkbox__label">Required 2</label>
+        </div>
+      </div>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% capture checkboxes-required-subtitle %}
+When used as a form field, you can add the `input--required` to the wrapper like you would for an [input]({% link _components/input.html %}) component.
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Required'
+  subtitle = checkboxes-required-subtitle
+  content = checkboxes-required
+%}

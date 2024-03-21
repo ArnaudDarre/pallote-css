@@ -1,0 +1,100 @@
+---
+layout: component
+label: Feedback
+title: Nav
+subtitle: A collection of collapsible elements.
+description: |-
+  The component is composed of multiple elements:
+
+  - `nav` the wrapper
+    - `nav__group` wrappers to group lists of similar nav items
+      - `nav__item` wrapper for a clickable link. This is necessary for styling and responsiveness. You can add the `nav__item--dropdown` class to make it a submenu dropdown
+        - `nav__trigger` a clickable link or trigger element in the case of a dropdown
+        - `nav__target` the target element in the case of a dropdown, usually composed of a list of `nav__item` elements
+  
+example: |-
+  {% include ui/nav.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- direction -->
+<!-- ---------------------------------------------- -->
+
+{% capture nav-direction %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="nav"' isDefault=true
+      component = '
+        <nav class="nav">
+          <ul class="nav__group">
+            <li class="nav__item"><a href="" class="nav__trigger">Landscape 1</a></li>
+            <li class="nav__item"><a href="" class="nav__trigger">Landscape 2</a></li>
+            <li class="nav__item nav__item--dropdown">
+              <button class="nav__trigger">Dropdown</button>
+              <ul class="nav__target">
+                <li class="nav__item"><a href="" class="nav__trigger">Landscape 1</a></li>
+                <li class="nav__item"><a href="" class="nav__trigger">Landscape 2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="nav nav--portrait"'
+      component = '
+        <nav class="nav nav--portrait">
+          <ul class="nav__group">
+            <li class="nav__item"><a href="" class="nav__trigger">Portrait 1</a></li>
+            <li class="nav__item"><a href="" class="nav__trigger">Portrait 2</a></li>
+            <li class="nav__item nav__item--dropdown">
+              <button class="nav__trigger">Dropdown</button>
+              <ul class="nav__target">
+                <li class="nav__item"><a href="" class="nav__trigger">Portrait 1</a></li>
+                <li class="nav__item"><a href="" class="nav__trigger">Portrait 2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Direction'
+  subtitle = 'Changes the direction of the nav.'
+  content = nav-direction
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- dense -->
+<!-- ---------------------------------------------- -->
+
+{% capture nav-dense %}
+{% include modules/component-class.html code='class="nav nav--dense"'
+  component = '
+    <nav class="nav nav--dense">
+      <ul class="nav__group">
+        <li class="nav__item"><a href="" class="nav__trigger">Dense 1</a></li>
+        <li class="nav__item"><a href="" class="nav__trigger">Dense 2</a></li>
+        <li class="nav__item nav__item--dropdown">
+          <button class="nav__trigger">Dropdown</button>
+          <ul class="nav__target">
+            <li class="nav__item"><a href="" class="nav__trigger">Dense 1</a></li>
+            <li class="nav__item"><a href="" class="nav__trigger">Dense 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Dense'
+  subtitle = 'Make the `nav__item` elements smaller.'
+  content = nav-dense
+%}

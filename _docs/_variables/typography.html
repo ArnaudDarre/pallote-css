@@ -1,0 +1,50 @@
+---
+layout: variables
+title: Typography
+subtitle: As typography is at the core of every design system, having consistent and harmonious font styles is paramount. These are the default typographic style, which you can override them to match your own design system (see [Customise]({% link _doc/customise.md %}) for more information on how to override variables).
+---
+
+{% for category in site.data.typography %}
+<div class="box">
+  <div class="section__header section__header--dense">
+    <h2 class="section__title">{{ category.title }}</h2>
+    {% if category.subtitle %}
+    <div class="section__subtitle editor">{{ category.subtitle | markdownify }}</div>
+    {% endif %}
+  </div>
+  <div class="section__content">
+    <div class="grid grid--spacing3">
+      {% for subcategory in category.subcategories %}
+      <div class="grid grid--spacing2 grid__item">
+        {% if subcategory.title %}
+        <h3 class="grid__item grid__item--12 subtitle text--bold">{{ subcategory.title }}</h3>
+        {% endif %}
+        <div class="grid__item editor">
+          <table>
+            <thead>
+              <tr>
+                <th>Variable name</th>
+                <th>Default value</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for property in subcategory.properties %}
+              <tr>
+                <td class="w-percent-30">{{ property.name | markdownify }}</td>
+                <td class="w-percent-30">{{ property.value | markdownify }}</td>
+                <td class="w-percent-40">
+                  <span class="{{ property.class }} pos-absolute">{{ property.class | remove: "text--" | capitalize }}</span>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+

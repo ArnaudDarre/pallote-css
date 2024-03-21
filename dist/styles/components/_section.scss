@@ -1,0 +1,158 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// alignement
+// color
+// size
+// variants
+// overrides
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.section {
+  @include clamp(padding-right, $spacing-md, 4vw, $spacing-xl);
+  @include clamp(padding-left, $spacing-md, 4vw, $spacing-xl);
+  overflow: hidden; // prevent horizontal scroll on mobile
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    @include clamp(padding-top, $spacing-lg, 8vw, $spacing-xl);
+    @include clamp(padding-bottom, $spacing-lg, 8vw, $spacing-xl);
+    width: 100%;
+    max-width: $desktop;
+    position: relative; // needed to have the content over section--landing:before
+  }
+
+  &__header {
+
+    & + .section__content { @include clamp(padding-top, $spacing-lg, 8vw, $spacing-xl); }
+    &--dense + .section__content { padding-top: $spacing-lg; }
+  }
+
+  &__content {
+    width: 100%;
+
+    & + & {
+      margin-top: $spacing-lg;
+    }
+  }
+
+  &__label {
+    color: $text-alt;
+    font-weight: $font-bold;
+  }
+  
+  &__title {
+    @extend %h3;
+    color: $primary;
+    max-width: $desktop*0.75;
+    
+    .section__label + & {
+      margin-top: $spacing-sm;
+    }
+
+    .section__header--dense & {
+      color: inherit;
+      @extend %h4;
+    }
+  }
+  
+  &__subtitle {
+    @extend %body;
+    max-width: $max-width-subtitle;
+    
+    .section__title + & {
+      margin-top: $spacing-lg - $spacing-md;
+    }
+
+    & + & {
+      margin-top: $spacing-md;
+    }
+  }
+
+  &__actions {
+
+    .section__title + &,
+    .section__subtitle + & {
+      margin-top: $spacing-lg;
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// alignement
+// —————————————————————————————————————————————————————————————————
+
+.section {
+
+  &--left { align-items: flex-start; text-align: left; }
+  &--center { align-items: center; text-align: center; }
+  &--right { align-items: flex-end; text-align: right; }
+}
+
+// —————————————————————————————————————————————————————————————————
+// color
+// —————————————————————————————————————————————————————————————————
+
+@mixin color($background-color, $color-title: $primary, $color: $text) {
+  background-color: $background-color;
+  color: $color;
+
+  & + & {
+
+    .section__container {
+      padding-top: 0;
+    }
+  }
+
+  .section__title { color: $color-title; }
+  .button--stroke { color: $color; }
+}
+
+.section {
+
+  &--default { @include color($background-default); }
+  &--paper { @include color($background-paper); }
+  &--primary { @include color($primary, $primary-contrast, $primary-contrast); }
+  &--primaryLight { @include color($primary-light); }
+}
+
+// —————————————————————————————————————————————————————————————————
+// size
+// —————————————————————————————————————————————————————————————————
+
+.section__content {
+
+  &--mobile { max-width: $mobile; }
+}
+
+// —————————————————————————————————————————————————————————————————
+// variants
+// —————————————————————————————————————————————————————————————————
+
+.section--landing {
+  align-items: center;
+
+  .section__title { @extend %h1; max-width: $desktop*0.5; }
+  .section__subtitle { @extend %h5; }
+}
+
+// first section of the page for page title
+.section--header {
+
+  .section__title { @extend %h2; }
+  .section__subtitle { @extend %subtitle; }
+}
+
+// —————————————————————————————————————————————————————————————————
+// overrides
+// —————————————————————————————————————————————————————————————————
+
+.footer {
+  border-top: $border;
+}

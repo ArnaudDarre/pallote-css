@@ -1,0 +1,118 @@
+---
+layout: component
+label: Interactions
+title: Tabs
+subtitle: 
+description: |-
+  The component is composed of multiple elements:
+
+  - `tabs` the wrapper
+    - `tabs__controls` the wrapper of the controls elements
+      - `tabs__item` a single trigger element
+    - `tabs__content` the wrapper of the tabs contents
+      - `tabs__panel a single content element
+
+example: |-
+  {% include ui/tabs.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- direction -->
+<!-- ---------------------------------------------- -->
+
+{% capture tabs-direction %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="tabs"' isDefault=true
+      component = '
+        <div class="tabs">
+          <div class="tabs__controls" role="tablist">
+            <button role="tab" aria-controls="tab_1" class="tabs__item">Landscape 1</button>
+            <button role="tab" aria-controls="tab_2" class="tabs__item">Landscape 2</button>
+          </div>
+          <div class="tabs__content">
+            <div class="tabs__panel" id="tab_1" role="tabpanel">Content 1</div>
+            <div class="tabs__panel" id="tab_2" role="tabpanel">Content 2</div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="tabs tabs--portrait"'
+    component = '
+        <div class="tabs tabs--portrait">
+          <div class="tabs__controls" role="tablist">
+            <button role="tab" aria-controls="tab_1" class="tabs__item">Portrait 1</button>
+            <button role="tab" aria-controls="tab_2" class="tabs__item">Portrait 2</button>
+          </div>
+          <div class="tabs__content">
+            <div class="tabs__panel" id="tab_1" role="tabpanel">Content 1</div>
+            <div class="tabs__panel" id="tab_2" role="tabpanel">Content 2</div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Direction'
+  subtitle = 'Changes the direction of the tabs (padding around elements).'
+  content = tabs-direction
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- dense -->
+<!-- ---------------------------------------------- -->
+
+{% capture tabs-dense %}
+{% include modules/component-class.html code='class="tabs tabs--dense"'
+  component = '
+    <div class="tabs tabs--dense">
+      <div class="tabs__controls" role="tablist">
+        <button role="tab" aria-controls="tab_1" class="tabs__item">Dense 1</button>
+        <button role="tab" aria-controls="tab_2" class="tabs__item">Dense 2</button>
+      </div>
+      <div class="tabs__content">
+        <div class="tabs__panel" id="tab_1" role="tabpanel">Content 1</div>
+        <div class="tabs__panel" id="tab_2" role="tabpanel">Content 2</div>
+      </div>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Dense'
+  subtitle = 'Remove the background color.'
+  content = tabs-dense
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- default -->
+<!-- ---------------------------------------------- -->
+
+{% capture tabs-default %}
+{% include modules/component-class.html code='class="tabs__item tabs--default"'
+  component = '
+    <div class="tabs tabs--default">
+      <div class="tabs__controls" role="tablist">
+        <button role="tab" aria-controls="tab_1" class="tabs__item">Dense 1</button>
+        <button role="tab" aria-controls="tab_2" class="tabs__item tabs__item--default">Dense 2</button>
+      </div>
+      <div class="tabs__content">
+        <div class="tabs__panel" id="tab_1" role="tabpanel">Content 1</div>
+        <div class="tabs__panel" id="tab_2" role="tabpanel">Content 2</div>
+      </div>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Default'
+  subtitle = 'Add a class to a `tab__item` element to change the default opened tab.'
+  content = tabs-default
+%}

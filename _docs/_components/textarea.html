@@ -1,0 +1,100 @@
+---
+layout: component
+label: Form
+title: Textarea
+subtitle: Styling for a textarea field. This component uses the same structure as the [input]({% link _components/input.html %}) component.
+description: |-
+  To use it, add a `textarea` class added to the `input` wrapper:
+
+  - `input textarea` the wrapper
+    - `input__label` field label
+    - `input__control` actual input
+    - `input__notice` optional notice (which can also be used to display error messages)
+
+example: |-
+  {% include ui/textarea.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- focused -->
+<!-- ---------------------------------------------- -->
+
+{% capture textarea-focused %}
+{% include modules/component-class.html code='class="input textarea input--focused"'
+  component = '
+    <fieldset class="input textarea input--focused">
+      <label for="focused" class="input__label">Focused</label>
+      <textarea name="focused" id="focused" rows="4" class="input__control"></textarea>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Focused'
+  subtitle = 'Focus a specific input on page load.'
+  content = textarea-focused
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- error -->
+<!-- ---------------------------------------------- -->
+
+{% capture textarea-error %}
+{% include modules/component-class.html code='class="input textarea js--error"'
+  component = '
+    <fieldset class="input textarea js-error">
+      <label for="error" class="input__label">Error</label>
+      <textarea name="error" id="error" rows="4" class="input__control"></textarea>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Error'
+  subtitle = 'Notify users that the field has an error.'
+  content = textarea-error
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- disabled -->
+<!-- ---------------------------------------------- -->
+
+{% capture textarea-disabled %}
+{% include modules/component-class.html code='class="input textarea input--disabled"'
+  component = '
+    <fieldset class="input textarea input--disabled">
+      <label for="disabled" class="input__label">Disabled</label>
+      <textarea name="disabled" id="disabled" rows="4" class="input__control"></textarea>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Disabled'
+  subtitle = 'Add this class to signal users the field is disabled. Include `pallote.js` file to your project to automatically add the `disabled` attribute.'
+  content = textarea-disabled
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- required -->
+<!-- ---------------------------------------------- -->
+
+{% capture textarea-required %}
+{% include modules/component-class.html code='class="input textarea input--required"'
+  component = '
+    <fieldset class="input textarea input--required">
+      <label for="required" class="input__label">Required</label>
+      <textarea name="required" id="required" rows="4" class="input__control"></textarea>
+    </fieldset>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Required'
+  subtitle = 'Add this class to signal users the field is required. Include `pallote.js` file to your project to automatically add the `required` attribute.'
+  content = textarea-required
+%}

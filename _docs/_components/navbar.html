@@ -1,0 +1,84 @@
+---
+layout: component
+label: Feedback
+title: Navbar
+subtitle: The header of the website which includes navigation.
+description: |-
+  The component is composed of multiple elements:
+
+  - `navbar` the wrapper
+    - `navbar__button` The hamburger icon button to open the menu on small devices
+    - `navbar__main` the main element of the navbar, which usually includes the logo
+    - `navbar__nav` the navigation elements
+
+  It is paramount to follow that patern and include the navigation elements in the `navbar__nav` element, as it drives the responsiveness of the menu.
+example: |-
+  {% include ui/navbar.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- alignement -->
+<!-- ---------------------------------------------- -->
+
+{% capture navbar-alignement %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="navbar"' isDefault=true
+      component = '
+        <header class="section navbar">
+          <div class="section__container">
+            <div class="navbar__main">
+              <div class="navbar__logo">
+                <h1>Left</h1>
+              </div>
+              <button aria-label="Open mobile menu" class="navbar__button">
+                <span></span>
+              </button>
+            </div>
+            <nav class="navbar__nav nav">
+              <div class="nav__container">
+                <ul class="nav__group">
+                  <li class="nav__item"><a href="" class="nav__trigger">Nav 1</a></li>
+                  <li class="nav__item"><a href="" class="nav__trigger">Nav 2</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </header>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="navbar navbar--right"'
+      component = '
+        <header class="section navbar navbar--right">
+          <div class="section__container">
+            <div class="navbar__main">
+              <div class="navbar__logo">
+                <h1>Right</h1>
+              </div>
+              <button aria-label="Open mobile menu" class="navbar__button">
+                <span></span>
+              </button>
+            </div>
+            <nav class="navbar__nav nav">
+              <div class="nav__container">
+                <ul class="nav__group">
+                  <li class="nav__item"><a href="" class="nav__trigger">Nav 1</a></li>
+                  <li class="nav__item"><a href="" class="nav__trigger">Nav 2</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </header>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Alignement'
+  subtitle = 'Change the position of the logo on the navbar'
+  content = navbar-alignement
+%}

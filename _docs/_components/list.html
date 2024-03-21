@@ -1,0 +1,37 @@
+---
+layout: component
+label: Data
+title: List
+subtitle: Display a list of items, usually used for a list of links
+description: |-
+  The component is composed of multiple elements:
+
+  - `list` the wrapper
+    - `list__item` the children.
+      - `list__itemIcon` an optional icon for the list item. Has to be placed before the text
+
+example: |-
+  {% include ui/list.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- dense -->
+<!-- ---------------------------------------------- -->
+
+{% capture list-dense %}
+{% include modules/component-class.html code='class="list list--success list--dense"'
+  component = '
+    <div class="list list--dense">
+      <p class="list__item">List dense</p>
+      <p class="list__item">List dense</p>
+      <p class="list__item">List dense</p>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Dense'
+  subtitle = 'Make the space between list items smaller'
+  content = list-dense
+%}

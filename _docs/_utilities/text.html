@@ -1,0 +1,57 @@
+---
+layout: variables
+title: Text
+subtitle: Use these classes to override the text style of an element.
+---
+
+{% for category in site.data.text %}
+<div class="box">
+  <div class="section__header section__header--dense">
+    <h2 class="section__title">{{ category.title }}</h2>
+    {% if category.subtitle %}
+    <div class="section__subtitle editor">{{ category.subtitle | markdownify }}</div>
+    {% endif %}
+  </div>
+  <div class="section__content">
+    <div class="grid grid--spacing3">
+      {% for subcategory in category.subcategories %}
+      <div class="grid grid--spacing2 grid__item">
+        {% if subcategory.title %}
+        <div class="grid__item grid__item--12">
+          <h3 class="subtitle text--bold">{{ subcategory.title }}</h3>
+          {% if subcategory.subtitle %}
+          <div class="editor mt-1">
+            {{ subcategory.subtitle | markdownify }}
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="grid__item editor">
+          <table>
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for property in subcategory.properties %}
+              <tr>
+                {% capture property_class %}`{{ property.class }}`{% endcapture %}
+                <td>{{ property_class | markdownify }}</td>
+                <td>
+                  <p class="{{ property.class }}{% if property.hasBackground == true %} fill--white{% endif %}">
+                    {{ property.description }}
+                  </p>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endfor %}

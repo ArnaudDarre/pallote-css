@@ -1,0 +1,91 @@
+---
+layout: component
+label: Interactions
+title: Buttons
+subtitle: Wrap several buttons inside a self-contained element to ensure consistent spacing, sufficient spacing on smaller devices, and define responsive wrapping behaviour.
+description: |-
+  The component is composed of two element:
+
+  - `buttons` the wrapper
+    - its child `button` elements. Can also be nested `buttons` elements.
+
+example: |-
+  {% include ui/buttons.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- direction -->
+<!-- ---------------------------------------------- -->
+
+{% capture button-direction %}
+  <div class="grid grid--spacing2">
+    <div class="grid__item grid__item--md6 grid--aiStart">
+      {% include modules/component-class.html code='class="buttons"' isDefault=true
+        component = '
+          <div class="buttons">
+            <a href="#" class="button">Landscape</a>
+            <a href="#" class="button">Landscape</a>
+          </div>
+        '
+      %}
+    </div>
+    <div class="grid__item grid__item--md6 grid--aiStart">
+      {% include modules/component-class.html code='class="buttons button--portrait"'
+        component = '
+          <div class="buttons buttons--portrait">
+            <a href="#" class="button">Portrait</a>
+            <a href="#" class="button">Portrait</a>
+          </div>
+        '
+      %}
+    </div>
+  </div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Direction'
+  subtitle = 'Change the direction of the component.'
+  content = button-direction
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- fullWidth -->
+<!-- ---------------------------------------------- -->
+
+{% capture buttons-fullWidth %}
+{% include modules/component-class.html code='class="buttons buttons--fullWidth"'
+  component = '
+    <div class="buttons buttons--fullWidth w-percent-100">
+      <a href="#" class="button">Full width</a>
+      <a href="#" class="button">Full width</a>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Full width'
+  subtitle = 'Makes the child buttons 100% of the parent width, and automatically stacks them.'
+  content = buttons-fullWidth
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- wide -->
+<!-- ---------------------------------------------- -->
+
+{% capture buttons-wide %}
+{% include modules/component-class.html code='class="buttons buttons--wide"'
+  component = '
+    <div class="buttons buttons--wide w-percent-100">
+      <a href="#" class="button">Wide</a>
+      <a href="#" class="button">Wide</a>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Wide'
+  subtitle = 'Uses the flexbox property `align-items: space-between` to place the children on both side of the parent container. Only works with the default landscape direction.'
+  content = buttons-wide
+%}

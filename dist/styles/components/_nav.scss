@@ -1,0 +1,259 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// active
+// show
+// direction
+// dense
+// navbar
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.nav ul,
+.nav__target {
+  list-style: none;
+}
+
+.nav {
+  width: fit-content;
+
+  &__container,
+  &__group {
+    display: flex;
+  }
+
+  &__item,
+  &__trigger {
+    border-radius: $border-radius-md;
+  }
+
+  &__item {
+    margin: 0;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: $spacing-xs;
+      padding-top: 0;
+    }
+
+    &--dropdown {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__trigger {
+    @extend %caption;
+    font-weight: $font-bold;
+    white-space: nowrap;
+    cursor: pointer;
+    height: $nav-item*2;
+    padding: $nav-item*0.5 $nav-item;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: $hover;
+    }
+
+    .nav__item--dropdown > & {
+      
+      &:after {
+        content: '';
+        border: solid $text;
+        border-width: 0 $spacing-xxs $spacing-xxs 0;
+        padding: $spacing-xxs;
+        transform: rotate(45deg);
+        margin-left: $nav-item*0.5;
+      }
+    }
+  }
+
+  &__target {
+    display: none;
+    flex-direction: column;
+    padding: $nav-item*0.25 $nav-item*0.5 $nav-item*0.5 $nav-item*0.5;
+
+    .nav {
+
+      &__item {
+
+        &:not(:first-child) {
+          margin-top: $spacing-xs;
+          margin-left: 0;
+        }
+      }
+      
+      &__trigger {
+        padding-right: $nav-item*0.5;
+        padding-left: $nav-item*0.5;        
+        border-radius: $border-radius-sm;
+      }
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// active
+// —————————————————————————————————————————————————————————————————
+
+.nav__trigger--active {
+  color: $primary;
+  background-color: $hover;
+
+  .nav__item--dropdown &:after {
+    border-color: $primary;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// show
+// —————————————————————————————————————————————————————————————————
+
+.nav__item--dropdown.js-show {
+  height: auto;
+  background-color: $hover;
+
+  > .nav {
+
+    &__trigger--active,
+    &__trigger:hover {
+      background-color: transparent;
+    }
+
+    &__target {
+      display: flex;
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// direction
+// —————————————————————————————————————————————————————————————————
+
+.nav--portrait {
+  width: 100%;
+  flex-direction: column;
+
+  .nav {
+    
+    &__item:not(:first-child) {
+      margin-left: 0;
+      margin-top: $spacing-xs;
+    }
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      &:not(:first-child) {
+        margin-top: $nav-item;
+      }  
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// dense
+// —————————————————————————————————————————————————————————————————
+
+.nav--dense {
+
+  &.nav--portrait .nav__item:not(:first-child) {
+    margin-top: $spacing-xxs;
+  }
+
+  .nav {
+
+    &__item,
+    &__trigger {
+      border-radius: $border-radius-sm;
+    }
+  
+    &__trigger {
+      padding: $nav-item*0.25 $nav-item*0.5;
+      height: $nav-item*1.5;
+    }
+
+    &__item--dropdown {
+    
+      .nav__target {
+        padding: 0 $nav-item*0.25 $nav-item*0.25 $nav-item*0.25;
+
+        .nav__trigger {
+          padding-right: $nav-item*0.25;
+          padding-left: $nav-item*0.25;
+        }
+      }
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// navbar
+// —————————————————————————————————————————————————————————————————
+
+.navbar {
+
+  .nav {
+
+    @include responsive(up, tablet) { height: 100%; }
+    @include responsive(down, tablet) { width: 100%; }
+
+    &__container {
+
+      @include responsive(up, tablet) {
+        height: 100%;
+        align-items: center;
+      }
+
+      @include responsive(down, tablet) {
+        @include calc(max-height, '100vh - '$spacing-xl*3);
+        align-items: stretch;
+        overflow: scroll;
+        width: 100%;
+        margin-top: $nav-item;
+        margin-bottom: $nav-item;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+
+    &__item:not(:first-child) {
+
+      @include responsive(down, tablet) {
+        margin-top: $spacing-xs;
+        margin-left: 0;
+      }
+    }
+
+    &__item--dropdown {
+
+      @include responsive(up, tablet) {
+        
+        .nav__target {
+          @include calc(top, '100% +' $nav-item*0.5);
+          position: absolute;
+          left: 0;
+          width: $spacing-xl*2.5;
+          padding: $nav-item*0.5;
+          border-radius: $border-radius-md;
+          border: $border;
+          z-index: 1;              
+          background-color: $background-paper;
+        }
+      }
+    }
+
+    &__trigger {
+
+      @include responsive(down, tablet) {
+        height: auto;
+      }
+    }
+  }
+}

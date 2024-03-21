@@ -1,0 +1,44 @@
+---
+layout: component
+label: Interactions
+title: Link
+description: |-
+  The component is composed of one `link` element with a string inside. You can also add an svg icon but it does not need a specific class.
+
+example: |-
+  {% include ui/link.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- color -->
+<!-- ---------------------------------------------- -->
+
+{% capture icon %}
+{% svg assets/icons/phosphor/arrow-right.svg %}
+{% endcapture %}
+
+{% capture link-color %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="link"' isDefault=true
+      component = '<a href="#" class="link link--primary">Primary</a>'
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="link link--secondary"'
+      component = '<a href="#" class="link link--secondary">Secondary</a>'
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="link link--highlight"'
+      component = '<a href="#" class="link link--highlight">Highlight</a>'
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Color'
+  subtitle = 'Changes the color to convey the severity of the link.'
+  content = link-color
+%}

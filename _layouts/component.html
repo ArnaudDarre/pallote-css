@@ -1,0 +1,52 @@
+---
+layout: compress
+---
+
+{% include containers/header.html %}
+
+{% include components/page-header.html
+  label = page.label
+  title = page.title
+  subtitle = page.subtitle
+%}
+
+<div class="section">
+  <div class="section__container">
+    <div class="grid grid--spacing5 grid--wrap grid--aiBaseline box">
+      <div class="grid__item">
+        <div class="section__header">
+          <h2 class="section__title">Elements</h2>
+          <div class="section__subtitle editor">
+            {{ page.description | liquify | markdownify }}
+          </div>
+        </div>
+      </div>  
+      {% if page.example %}
+      <div class="grid__item">
+        <div class="section__content">
+{% highlight html %}
+{{ page.example | liquify }}
+{% endhighlight %}
+          <div class="mt-2">
+            {{ page.example | liquify }}
+          </div>
+        </div>
+      </div>    
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section__container">
+    <div class="section__header">
+      <h2 class="section__title">Properties</h2>
+      <p class="section__subtitle">Add classes to the wrapper class to change the style of the component.</p>
+    </div>
+    <div class="section__content">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% include containers/footer.html %}

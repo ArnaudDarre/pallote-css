@@ -1,0 +1,79 @@
+---
+layout: component
+label: Feedback
+title: Status
+subtitle: A small component indicating the status of an another element in the UI.
+description: |-
+  The component is composed of one `status` element with a string inside. The color of the dot is handled with a modifier class.
+
+example: |-
+  {% include ui/status.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- color -->
+<!-- ---------------------------------------------- -->
+
+{% capture status-color %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="status status--success"'
+      component = '
+        <p class="status status--success">Success</p>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="status status--info"'
+      component = '
+        <p class="status status--info">Info</p>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="status status--warning"'
+      component = '
+        <p class="status status--warning">Warning</p>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="status status--error"'
+      component = '
+        <p class="status status--error">Error</p>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md6 grid--aiStart">
+    {% include modules/component-class.html code='class="status"' isDefault=true
+      component = '
+        <p class="status">Inactive</p>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Color'
+  subtitle = 'Changes the color to convey the severity of the status.'
+  content = status-color
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- dense -->
+<!-- ---------------------------------------------- -->
+
+{% capture status-dense %}
+{% include modules/component-class.html code='class="status status--dense"'
+  component = '
+    <p class="status status--dense">Dense</p>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Dense'
+  subtitle = 'Make the status component smaller.'
+  content = status-dense
+%}

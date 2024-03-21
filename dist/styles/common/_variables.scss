@@ -1,0 +1,222 @@
+// —————————————————————————————————————————————————————————————————
+// dependencies
+// color palette
+// spacing
+// typography
+// breakpoints
+// misc
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// dependencies
+// —————————————————————————————————————————————————————————————————
+
+$fonts-path: '../../assets/fonts/';
+$icons-path: '../../assets/icons/';
+
+// —————————————————————————————————————————————————————————————————
+// color palette
+// —————————————————————————————————————————————————————————————————
+
+// main
+
+$white: #ffffff !default;
+$black: #000a1e !default;
+
+// grey
+
+$grey-90: #1A2335 !default;
+$grey-80: #333B4B !default;
+$grey-70: #4D5462 !default;
+$grey-60: #666C78 !default;
+$grey-50: #7F848E !default;
+$grey-40: #999DA5 !default;
+$grey-30: #B2B5BB !default;
+$grey-20: #CCCED2 !default;
+$grey-10: #E5E6E8 !default;
+$grey-5: #F2F3F4 !default;
+
+// text
+
+$text: $white !default;
+$text-alt: rgba($text, 0.5) !default;
+$text-disabled: rgba($text, 0.25) !default;
+
+$text-contrast: $black !default;
+$text-contrast-alt: rgba($text-contrast, 0.6) !default;
+$text-contrast-disabled: rgba($text-contrast, 0.3) !default;
+
+// brand
+
+$primary: #00F3FF !default;
+$primary-light: mix($white, $primary, 70%) !default;
+$primary-dark: mix($black, $primary, 50%) !default;
+$primary-contrast: $text-contrast !default;
+
+$secondary: #e7fc00 !default;
+$secondary-light: mix($white, $secondary, 70%) !default;
+$secondary-dark: mix($black, $secondary, 50%) !default;
+$secondary-contrast: $text-contrast !default;
+
+$highlight: #FF74E6 !default;
+$highlight-light: mix($white, $highlight, 70%) !default;
+$highlight-dark: mix($black, $highlight, 50%) !default;
+$highlight-contrast: $text-contrast !default;
+
+// feedback
+
+$success: #27ae60 !default;
+$success-light: mix($white, $success, 70%) !default;
+$success-dark: mix($black, $success, 50%) !default;
+$success-text: mix($black, $success, 70%) !default;
+$success-contrast: $text !default;
+
+$info: #17a0cc !default;
+$info-light: mix($white, $info, 70%) !default;
+$info-dark: mix($black, $info, 50%) !default;
+$info-text: mix($black, $info, 70%) !default;
+$info-contrast: $text !default;
+
+$warning: #ffdc46 !default;
+$warning-light: mix($white, $warning, 70%) !default;
+$warning-dark: mix($black, $warning, 50%) !default;
+$warning-text: mix($black, $warning, 70%) !default;
+$warning-contrast: $text-contrast !default;
+
+$error: #EB5757 !default;
+$error-light: mix($white, $error, 70%) !default;
+$error-dark: mix($black, $error, 50%) !default;
+$error-text: mix($black, $error, 70%) !default;
+$error-contrast: $text !default;
+
+// background
+
+$background-default: $black !default;
+$background-paper: $grey-90 !default;
+
+// others
+
+$border-color: rgba($text, 0.2) !default;
+$border: 1px solid $border-color !default;
+
+$hover: rgba($text, 0.12) !default;
+
+$overlay: rgba($text-contrast, 0.8) !default;
+$overlay-contrast: rgba($text, 0.2) !default;
+
+// —————————————————————————————————————————————————————————————————
+// spacing
+// —————————————————————————————————————————————————————————————————
+
+$col: calc(100%/12);
+
+$spacing-xxs: 0.125rem !default;
+$spacing-xs: 0.25rem !default;
+$spacing-sm: 0.5rem !default;
+$spacing-md: 1rem !default;
+$spacing-lg: 2rem !default;
+$spacing-xl: 4rem !default;
+$spacing-xxl: 7rem !default;
+
+$max-width-subtitle: $spacing-xxl*4 !default;
+$max-width-editor: $spacing-xxl*6 !default;
+
+$navbar-height: 4rem !default;
+$navbar-height-sm: 3rem !default;
+$nav-item: $spacing-md !default;
+
+// —————————————————————————————————————————————————————————————————
+// typography
+// —————————————————————————————————————————————————————————————————
+
+// typefaces
+$font: "Barlow", Arial, sans-serif !default;
+
+// weight
+
+$font-regular: 400 !default;
+$font-bold: 700 !default;
+$font-black: 900 !default;
+
+// styles
+
+$h1-size: 3rem !default;
+$h1-weight: $font-black !default;
+$h1-line-height: 1.25 !default;
+
+$h2-size: 2.5rem !default;
+$h2-weight: $font-black !default;
+$h2-line-height: 1.25 !default;
+
+$h3-size: 2rem !default;
+$h3-weight: $font-bold !default;
+$h3-line-height: 1.25 !default;
+
+$h4-size: 1.75rem !default;
+$h4-weight: $font-bold !default;
+$h4-line-height: 1.25 !default;
+
+$h5-size: 1.5rem !default;
+$h5-weight: $font-bold !default;
+$h5-line-height: 1.25 !default;
+
+$h6-size: 1.25rem !default;
+$h6-weight: $font-bold !default;
+$h6-line-height: 1.25 !default;
+
+$subtitle-size: 1.125rem !default;
+$subtitle-weight: $font-regular !default;
+$subtitle-line-height: 1.5 !default;
+
+$body-size: 1rem !default;
+$body-weight: $font-regular !default;
+$body-line-height: 1.5 !default;
+
+$caption-size: 0.875rem !default;
+$caption-weight:$font-regular !default;
+$caption-line-height:  1.5 !default;
+
+$overline-size: 0.75rem !default;
+$overline-weight: $font-regular !default;
+$overline-line-height: 1.5 !default;
+
+// —————————————————————————————————————————————————————————————————
+// breakpoints
+// —————————————————————————————————————————————————————————————————
+
+$desktop-lg: 1440px !default;
+$desktop-lg-down: calc(#{$desktop-lg} - 0.02px);
+
+$desktop: 1280px !default;
+$desktop-down: calc(#{$desktop} - 0.02px);
+
+$laptop: 1024px !default;
+$laptop-down: calc(#{$laptop} - 0.02px);
+
+$tablet: 768px !default;
+$tablet-down: calc(#{$tablet} - 0.02px);
+
+$mobile: 568px !default;
+$mobile-down: calc(#{$mobile} - 0.02px);
+
+$mobile-sm: 350px !default;
+$mobile-sm-down: calc(#{$mobile-sm} - 0.02px);
+
+// —————————————————————————————————————————————————————————————————
+// misc
+// —————————————————————————————————————————————————————————————————
+
+// box-shadow
+
+$box-shadow: 0 0 $spacing-sm 0 rgba($text, 0.2) !default;
+
+// transition
+
+$transition-md: 0.4s ease 0s !default;
+$transition-lg: 0.8s ease 0s !default;
+
+// border-radius
+
+$border-radius-sm: $spacing-xs !default;
+$border-radius-md: $spacing-sm !default;
+$border-radius-lg: $spacing-md !default;

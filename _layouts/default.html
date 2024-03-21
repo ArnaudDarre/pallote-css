@@ -4,6 +4,12 @@ layout: compress
 
 {% include containers/header.html %}
 
-{{ content }}
+{% include components/page-header.html
+  landing = page.landing
+  label = page.label
+  title = page.title
+  subtitle = page.subtitle
+  content = content
+%}
 
 {% include containers/footer.html %}

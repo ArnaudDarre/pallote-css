@@ -1,0 +1,36 @@
+---
+layout: component
+label: Form
+title: Checkbox
+subtitle: This component is a standalone checkbox. If used for a form field with mutiple checkboxes, see [checkboxes]({% link _components/checkboxes.html %}) component.
+description: |-
+  The component is composed of multiple elements:
+
+  - `checkbox` the wrapper
+    - `checkbox__control` tick box
+    - `checkbox__label` clickable label
+
+example: |-
+  {% include ui/checkbox.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- disabled -->
+<!-- ---------------------------------------------- -->
+
+{% capture checkbox-disabled %}
+{% include modules/component-class.html code='class="checkbox checkbox--disabled"'
+  component = '
+    <div class="checkbox checkbox--disabled">
+      <input type="checkbox" id="disabled" value="disabled" class="checkbox__control" />
+      <label for="disabled" class="checkbox__label">Disabled</label>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Disabled'
+  subtitle = 'Add this class to signal users the field is disabled. Include `pallote.js` file to your project to automatically add the `disabled` attribute.'
+  content = checkbox-disabled
+%}

@@ -1,0 +1,68 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// dense
+// card
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.form {
+	width: 100%;
+
+	&__title,
+	&__content,
+	&__actions {
+
+		&:not(:last-child) {
+			margin-bottom: $spacing-md;
+		}
+	}
+
+	&__title {
+		@extend %subtitle;
+		font-weight: $font-bold;
+	}
+}
+
+// —————————————————————————————————————————————————————————————————
+// dense
+// —————————————————————————————————————————————————————————————————
+
+.form--dense {
+
+	&__title,
+	&__content,
+	&__actions {
+
+		&:not(:last-child) {
+			margin-bottom: $spacing-sm;
+		}
+	}
+
+  .input:not(:last-child) {
+    margin-bottom: $spacing-sm;
+  }
+
+	&.form--card {
+		padding: $spacing-md;
+		border-radius: $spacing-md;
+	}
+}
+
+// —————————————————————————————————————————————————————————————————
+// card
+// —————————————————————————————————————————————————————————————————
+
+.form--card {
+	padding: $spacing-lg;
+	border-radius: $spacing-lg;
+	box-shadow: $box-shadow;
+
+	@include responsive(down, mobile) {
+		padding: 0;
+		background-color: transparent;
+		box-shadow: none;
+	}
+}

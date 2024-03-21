@@ -1,20 +1,44 @@
 <header class="section navbar">
   <div class="section__container">
-    <button aria-label="Open mobile menu" class="navbar__button js-button-menu button--menu show-tablet">
-      <i class="button__inner"></i>
-    </button>
     <div class="navbar__main">
+      <button aria-label="Toggle drawer" class="sidebar__button"></button>
       <div class="navbar__logo text--bold">
         <h1 class="text--primary">
-          <a href="{% link index.html %}">{{ site.title }}</a>
+          <a href="{% link _pages/index.html %}">
+            {% svg assets/icons/rabbit.svg class="logo--rabbit" %}
+            {{ site.title }}
+          </a>
         </h1>
       </div>
+      <button aria-label="Open mobile menu" class="navbar__button">
+        <span></span>
+      </button>
     </div>
     <nav class="navbar__nav nav">
       <ul class="nav__container">
         {% for item in site.data.nav %}
-        <li class="nav__item">
-          <a href="{% link {{ item.url }} %}" class="nav__trigger{% if page.title == item.title %} nav__trigger--active{% endif %}">{{ item.title }}</a>
+        <li class="nav__item{% if item.dropdown == true %} nav__item--dropdown{% endif %}">
+          {% if item.dropdown == true %}
+          <button class="nav__trigger{% if page.path == item.url or page.url contains item.id %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </button>
+          <ul class="nav__target" id="{{ item.id }}">
+            {% for item in item.items %}
+            <li class="nav__item">
+              <a href="{% link {{ item.url }} %}"
+                class="nav__trigger{% if page.path == item.url or page.url contains item.id %} nav__trigger--active{% endif %}">
+                {{ item.title }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <a href="{% if item.url %}{% if item.external == true %}{{ item.url }}{% else %}{% link {{ item.url }} %}{% endif %}{% endif %}"
+            {% if item.external == true %}target="_blank" rel="external"{% endif %}
+            class="nav__trigger{% if page.path == item.url or page.url contains item.id %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </a>
+          {% endif %}
         </li>
         {% endfor %}
       </ul>

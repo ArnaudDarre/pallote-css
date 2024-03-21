@@ -1,0 +1,112 @@
+- title: Responsive
+  subcategories:
+    - title: Show
+      properties:
+        - class: show-desktop
+          description: Show element if viewport is smaller than 1280px
+        - class: show-laptop
+          description: Show element if viewport is smaller than 1024px
+        - class: show-tablet
+          description: Show element if viewport is smaller than 768px
+        - class: show-mobile
+          description: Show element if viewport is smaller than 568px
+        - class: show-mobileSm
+          description: Show element if viewport is smaller than 350px
+        - class: show-touch
+          description: Show elements on touch devices
+    - title: Hide
+      properties:
+        - class: hide-desktop
+          description: Hide element if viewport is smaller than 1280px
+        - class: hide-laptop
+          description: Hide element if viewport is smaller than 1024px
+        - class: hide-tablet
+          description: Hide element if viewport is smaller than 768px
+        - class: hide-mobile
+          description: Hide element if viewport is smaller than 568px
+        - class: hide-mobileSm
+          description: Hide element if viewport is smaller than 350px
+        - class: hide-touch
+          description: Hide elements on touch devices
+- title: Spacing and size
+  subcategories:
+    - title: Margin
+      properties:
+        - class: m-05
+          description: Apply margin around (half the `$spacing-sm` variable)
+        - class: m-X
+          description: Apply margin around, multiple of the `$spacing-sm variable (from 1 to 20)
+        - class: mt-05
+          description: Apply top margin (half the `$spacing-sm` variable)
+        - class: mt-X
+          description: Apply top margin, multiple of the `$spacing-sm variable (from 1 to 20)
+        - class: mr-05
+          description: Apply right margin (half the `$spacing-sm` variable)
+        - class: mr-X
+          description: Apply right margin, multiple of the `$spacing-sm variable (from 1 to 20)
+        - class: mb-05
+          description: Apply bottom margin (half the `$spacing-sm` variable)
+        - class: mb-X
+          description: Apply bottom margin, multiple of the `$spacing-sm variable (from 1 to 20)
+        - class: ml-05
+          description: Apply left margin (half the `$spacing-sm` variable)
+        - class: ml-X
+          description: Apply left margin, multiple of the `$spacing-sm variable (from 1 to 20)
+    - title: Padding
+      properties:
+        - class: p-05
+          description: Apply padding around (half the `$spacing-sm` variable)
+        - class: p-X
+          description: Apply padding around, multiple of the `$spacing-sm variable (from 1 to 20)
+        - class: pt-05
+          description: Apply top padding (half the `$spacing-sm` variable)
+        - class: pt-X
+          description: Apply top padding, multiple of the `$spacing-sm variable (from 1 to 20)
+        - class: pr-05
+          description: Apply right padding (half the `$spacing-sm` variable)
+        - class: pr-X
+          description: Apply right padding, multiple of the `$spacing-sm variable (from 1 to 20)
+        - class: pb-05
+          description: Apply bottom padding (half the `$spacing-sm` variable)
+        - class: pb-X
+          description: Apply bottom padding, multiple of the `$spacing-sm variable (from 1 to 20)
+        - class: pl-05
+          description: Apply left padding (half the `$spacing-sm` variable)
+        - class: pl-X
+          description: Apply left padding, multiple of the `$spacing-sm variable (from 1 to 20)
+    - title: Width
+      properties:
+        - class: w-percent-X
+          description: Apply a custom width, in percentage of the parent width (increments of 5%)
+        - class: w-rem-X
+          description: Apply a custom width, multiple of the `$spacing-sm variable (from 1 to 20)
+- title: Display
+  subcategories:
+    - title: General display
+      subtitle: Override the display propery of an element.
+      properties:
+        - class: d-flex
+          description: "Apply `display: flex` property"
+        - class: d-inlineFlex
+          description: "Apply `display: inline-flex` property"
+        - class: d-block
+          description: "Apply `display: block` property"
+        - class: d-inlineBlock
+          description: "Apply `display: inline-block` property"
+    - title: Flexbox
+      subtitle: This framework used mainly flexbox for positionning elements (see Grid component). If your element has a `flex` or `inline-flex` property applied, you can use the following classes to override flexbox properties.
+      properties:
+        - class: fb-content
+          description: "Applye `flex-basis: content` property"
+        - class: fb-0
+          description: "Applye `flex-basis: 0` property"
+        - class: fb-1
+          description: "Applye `flex-basis: 1` property"
+        - class: fg-0
+          description: "Applye `flex-grow: 0` property"
+        - class: fg-1
+          description: "Applye `flex-grow: 1` property"
+        - class: fs-0
+          description: "Applye `flex-shrink: 0` property"
+        - class: fs-1
+          description: "Applye `flex-shrink: 1` property"

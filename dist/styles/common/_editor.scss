@@ -1,0 +1,166 @@
+// —————————————————————————————————————————————————————————————————
+// text
+// lists
+// table
+// —————————————————————————————————————————————————————————————————
+
+.editor, %editor {
+  max-width: $max-width-editor;
+
+  // —————————————————————————————————————————————————————————————————
+  // text
+  // —————————————————————————————————————————————————————————————————
+
+  h2 { @extend %h3; }
+  h3 { @extend %h4; }
+  h4 { @extend %h5; }
+  h5 { @extend %h6; }
+  h6 { @extend %subtitle; }
+  blockquote { @extend %subtitle; }
+
+  h2 {
+    color: $primary;
+  }
+
+  h2, h3, h4, h5, h6 {
+    
+    &:not(:first-child) { margin-top: 1.5em; }
+    &:not(:last-child) { margin-bottom: .75em; }
+  }
+
+  p,
+  ol, ul,
+  p + a, a + p {
+
+    &:not(:first-child) { margin-top: 0.75em; }
+  }
+
+  .highlighter-rouge,
+  .alert {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  strong {
+    font-weight: $font-bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  blockquote {
+    position: relative;
+    background-color: $background-paper;
+    padding: $spacing-md $spacing-lg;
+    border-radius: $border-radius-md;
+
+    &:before {
+      @include pseudo-element('”', -$spacing-md, auto, auto, -$spacing-sm, auto, auto);
+      font-size: $spacing-xxl;
+      color: $primary;
+      line-height: 1;
+    }
+
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  // —————————————————————————————————————————————————————————————————
+  // lists
+  // —————————————————————————————————————————————————————————————————
+
+  ol,
+  ul {
+    margin-left: $spacing-md;
+  }
+
+  ol { list-style: decimal; }
+  ul { list-style: disc; }
+
+  li + li { margin-top: $spacing-xs; }
+
+  li {
+
+    > ul {
+      margin-top: 0.25rem !important;
+      margin-left: 0;
+
+      li + li { margin-top: 0; }
+    }
+
+    &:not(:last-child) {
+
+      > ul {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+
+  // —————————————————————————————————————————————————————————————————
+  // table
+  // —————————————————————————————————————————————————————————————————
+
+  table {
+    border-collapse: separate;
+    border: $border;
+    border-radius: $border-radius-sm;
+
+    &.table--dense {
+
+      th { font-size: 0.65rem; }
+      td { font-size: 0.75rem;; }
+      td, th { padding: 1px $spacing-xs; }
+    }
+  }
+
+  thead {
+    background-color: $background-paper;
+
+    tr:first-child {
+
+      th {
+        border-top: none;
+
+        &:first-of-type { border-top-left-radius: $border-radius-sm; }
+        &:last-of-type { border-top-right-radius: $border-radius-sm; }
+      }
+    }
+  }
+
+  tbody {
+
+    tr:last-child {
+
+      th, td {
+
+        &:first-of-type { border-bottom-left-radius: $border-radius-sm; }
+        &:last-of-type { border-bottom-right-radius: $border-radius-sm; }
+      }
+    }
+  }
+
+  td,
+  th {
+    padding: $spacing-xs $spacing-sm $spacing-sm;
+    border-top: $border;
+
+    &:not(:first-child) {
+      border-left: $border;
+    }
+  }
+
+  th {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: $text-alt;
+  }
+}

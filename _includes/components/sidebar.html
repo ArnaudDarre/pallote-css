@@ -1,0 +1,47 @@
+<aside class="sidebar">
+  <div class="sidebar__container">
+    <button aria-label="Toggle drawer" class="sidebar__button sidebar__button--close"></button>
+    <div class="nav nav--dense nav--portrait">
+      <ul class="nav__group">
+        <li class="sidebar__title">Getting started</li>
+        {% for item in site.doc %}
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}" class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="nav__group">
+        <li class="sidebar__title">Variables</li>
+        {% for item in site.variables %}
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}" class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="nav__group">
+        <li class="sidebar__title">Utilities</li>
+        {% for item in site.utilities %}
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}" class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="nav__group">
+        <li class="sidebar__title">Components</li>
+        {% for item in site.components %}
+        <li class="nav__item">
+          <a href="{% link {{ item.path }} %}" class="nav__trigger{% if page.name == item.name %} nav__trigger--active{% endif %}">
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</aside>

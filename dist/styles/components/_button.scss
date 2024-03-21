@@ -1,0 +1,162 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// kind
+// variant
+// size
+// color
+// disabled
+// animate
+// menu
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.button {
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius-md;
+  position: relative;
+  line-height: 0;
+  text-transform: uppercase;
+  font-weight: $font-bold;
+  padding-bottom: 0.15em;
+  white-space: nowrap;
+}
+
+// —————————————————————————————————————————————————————————————————
+// kind
+// —————————————————————————————————————————————————————————————————
+
+// This property is handled by the size mixin
+
+// —————————————————————————————————————————————————————————————————
+// variant
+// —————————————————————————————————————————————————————————————————
+
+// This property is handled by the color mixin
+
+// —————————————————————————————————————————————————————————————————
+// size
+// —————————————————————————————————————————————————————————————————
+
+@mixin size($value, $size) {
+  height: $size;
+  padding-right: $size*.33;
+  padding-left: $size*.33;
+
+  @if $value == sm { @extend %caption; }
+  @else if $value == lg { @extend %subtitle; }
+
+  svg {
+    width: calc($size/1.75);
+    height: calc($size/1.75);
+  }
+
+  &:not(.button--icon) {
+
+    svg {
+      margin-top: 0.15em;
+  
+      &:first-child {
+        margin-right: calc($size/4);
+        margin-left: calc(-1 * $size/10);
+      }
+  
+      &:last-child {
+        margin-right: calc(-1 * $size/10);
+        margin-left: calc($size/4);
+      }
+    }
+  }
+
+  &.button--icon {
+    width: $size;
+    padding: 0;
+  }
+}
+
+.button {
+
+  @include size(md, $spacing-lg);
+  &--sm { @include size(sm, $spacing-md*1.5); }
+  &--lg { @include size(lg, $spacing-lg*1.25); }
+}
+
+// —————————————————————————————————————————————————————————————————
+// color
+// —————————————————————————————————————————————————————————————————
+
+@mixin color($prefix, $colors...) {
+
+  @each $i in $colors {
+    .#{$prefix}#{nth($i, 1)} {
+      background-color: nth($i, 2);
+      color: nth($i, 3);
+
+      @include hover {
+
+        &:not(.button--disabled) {
+          background-color: mix(black, nth($i, 2), 20%);
+        }
+      }
+
+      svg { fill: nth($i, 3); }
+      
+      &.button--stroke {
+        background-color: transparent;
+        border: 1px solid nth($i, 2);
+        color: $text;
+
+        @include hover {
+
+          &:not(.button--disabled) {
+            background-color: $hover;
+          }
+        }
+
+        svg { fill: $text; }
+      }
+      
+      &.button--transparent {
+        background-color: transparent;
+        color: nth($i, 2);
+
+        @include hover { background-color: $hover; }
+        svg { fill: nth($i, 2); }
+      }
+    }
+  }
+}
+
+@include color('button',
+  '' $primary $primary-contrast,
+  '--secondary' $secondary $secondary-contrast,
+  '--highlight' $highlight $highlight-contrast,
+  '--default' $background-default $primary,
+  '--grey' $text-disabled $text,
+  '--success' $success $success-contrast,
+  '--info' $info $info-contrast,
+  '--warning' $warning $warning-contrast,
+  '--error' $error $error-contrast,
+  '--default' $text $text-contrast,
+  '--contrast' $background-default $text
+);
+
+// —————————————————————————————————————————————————————————————————
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+button {
+
+  &.button--disabled,
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    outline: none;
+  }
+}
