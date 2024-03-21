@@ -4,6 +4,7 @@
   font-family: monospace;
   font-size: 0.75rem;
   background-color: $background-paper;
+  border: $border;
   color: #EFF0F2;
   padding: $spacing-md;
   border-radius: $border-radius-md;
@@ -22,6 +23,7 @@
 
   .highlight {
     padding: 0;
+    border: 0;
   }
 
   pre {
