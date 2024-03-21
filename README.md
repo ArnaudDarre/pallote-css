@@ -121,7 +121,7 @@ git checkout -b feature-name-of-branch
 
 - Write your code. There are two locations for the style files:
   - `dist/styles` folder, which are the core styles of the library
-  - `assets/styles` folder, which are the documentation website specific styles
+  - `assets/styles` folder, which are the documentation specific styles
 
 > You don't need to run any additional command to compile sass files, it does it automatically with `npm run dev`
 

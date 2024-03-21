@@ -12,6 +12,7 @@ $sidebar-width: 200px;
   overflow-y: scroll;
   scrollbar-color: light;  
   z-index: 11;
+  background-color: $background-paper;
   
   &.js-opened {
     left: 0;
@@ -20,7 +21,6 @@ $sidebar-width: 200px;
   @include responsive(down, tablet) {
     position: fixed;
     height: 100vh;
-    background-color: $background-default;
     top: 0;
     left: -$sidebar-width;
     padding-top: $navbar-height-sm;
