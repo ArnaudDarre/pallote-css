@@ -1,0 +1,51 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// direction
+// size
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.divider {
+  display: inline-block;
+  background-color: $border-color;
+  height: 1px;
+  width: 100%;
+}
+
+// —————————————————————————————————————————————————————————————————
+// direction
+// —————————————————————————————————————————————————————————————————
+
+.divider {
+
+  &--portrait {
+    height: 100%;
+    width: 1px;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// size
+// —————————————————————————————————————————————————————————————————
+
+@mixin size($size) {
+  margin-top: $size;
+  margin-bottom: $size;
+
+  &.divider--portrait {
+    margin-top: 0;
+    margin-right: $size;
+    margin-bottom: 0;
+    margin-left: $size;
+  }
+}
+
+.divider {
+  @include size($spacing-md);
+
+  &--sm { @include size($spacing-sm); }
+  &--lg { @include size($spacing-lg); }
+}

@@ -1,0 +1,66 @@
+---
+layout: component
+label: Layout
+title: Divider
+subtitle: A divider line item
+description: |-
+  The component is composed of one `divider` element.
+
+example: |-
+  {% include ui/divider.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- direction -->
+<!-- ---------------------------------------------- -->
+
+{% capture divider-direction %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="divider"' isDefault=true
+      component = '<span class="divider"></span>'
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="divider divider--portrait"'
+      component = '<span class="divider divider--portrait"></span>'
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Size'
+  subtitle = 'Changes the direction of the divider.'
+  content = divider-direction
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- size -->
+<!-- ---------------------------------------------- -->
+
+{% capture divider-size %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="divider divider--sm"'
+      component = '<span class="divider divider--sm"></span>'
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="divider"' isDefault=true
+      component = '<span class="divider"></span>'
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="divider divider--lg"'
+      component = '<span class="divider divider--lg"></span>'
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Size'
+  subtitle = 'Changes the size of the divider (margin around line).'
+  content = divider-size
+%}
