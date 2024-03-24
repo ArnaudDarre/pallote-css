@@ -20,21 +20,21 @@ To install Pallote CSS via npm use:
 npm install pallote-css
 ```
 
-Then import the global style file in your SASS file like this if you are using SASS:
+Then import the global style file in your SASS file, like this if you are using SASS:
 
 ```scss
 @import '../node_modules/pallote-css/dist/styles/pallote.scss';
 ```
 
-Or like this if you are using regular CSS:
+Or if you are using regular CSS, locate the file, copy/paste them into your project and import them into you `<head>`.
 
 ```html
-<link rel="stylesheet" href="../node_modules/pallote-css/dist/styles/pallote.scss">
+<link rel="stylesheet" href="link/to/file/pallote.css">
 ```
 
 #### CDN
 
-Alternatively, you can import the CSS file into your HTML via a CDN. Simply copy/paste this code in between the `head` tag of your website. Make sure to add the version number, as next version could introduce breaking changes.
+Alternatively, you can link via a CDN. Simply copy/paste this code in between the `head` tag of your website. Make sure to add the version number, as next version could introduce breaking changes.
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/pallote-css@1.0.0/dist/styles/pallote.css">
