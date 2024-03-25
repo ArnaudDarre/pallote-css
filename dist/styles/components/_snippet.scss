@@ -18,9 +18,15 @@
   margin: 0;
   padding: $spacing-sm $spacing-sm*1.5;
   background-color: $grey-90;
+  border: $border;
   
   & + & {
     margin-top: $spacing-sm;
+  }
+
+  p > & {
+    margin-right: $spacing-xs;
+    margin-left: $spacing-xs;
   }
 }
 
@@ -60,7 +66,7 @@
 
 .snippet--dense {
   @extend %overline;
-  padding: $spacing-xs $spacing-xs*1.5 !important;
+  padding: $spacing-xs $spacing-sm !important;
 
   &.snippet--default:after {
     top: $spacing-xs;

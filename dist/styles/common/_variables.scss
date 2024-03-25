@@ -98,8 +98,11 @@ $background-paper: $grey-90 !default;
 
 $border-color: rgba($text, 0.2) !default;
 $border: 1px solid $border-color !default;
+$border-color-contrast: rgba($text-contrast, 0.2) !default;
+$border-contrast: 1px solid $border-color !default;
 
 $hover: rgba($text, 0.12) !default;
+$hover-contrast: rgba($text-contrast, 0.12) !default;
 
 $overlay: rgba($text-contrast, 0.8) !default;
 $overlay-contrast: rgba($text, 0.2) !default;

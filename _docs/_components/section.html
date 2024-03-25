@@ -1,0 +1,148 @@
+---
+layout: component
+label: Layout
+title: Section
+subtitle: A collection of collapsible elements.
+description: |-
+  The component is composed of multiple elements:
+
+  - `section` the wrapper
+    - `section__container` a second wrapper, used for responsive styling
+      - `section__header` the header element
+        - `section__label` optional caption element (text style is automated)
+        - `section__title` the title element (text style is automated)
+        - `section__subitle` optional subtitle (text style is automated)
+      - `section__content` some content (section can have multiple instances of that element)
+
+example: |-
+  {% include ui/section.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- alignement -->
+<!-- ---------------------------------------------- -->
+
+{% capture section-alignement %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="section"' isDefault=true
+      component = '
+        <div class="section">
+          <div class="section__container">
+            <div class="section__header">
+              <p class="section__title">Align left</p>
+              <p class="section__subtitle">Align all content and text to the left</p>
+            </div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="section section--center"'
+      component = '
+        <div class="section section--center">
+          <div class="section__container">
+            <div class="section__header">
+              <p class="section__title">Align center</p>
+              <p class="section__subtitle">Align all content and text to the center</p>
+            </div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="section section--right"'
+      component = '
+        <div class="section section--right">
+          <div class="section__container">
+            <div class="section__header">
+              <p class="section__title">Align right</p>
+              <p class="section__subtitle">Align all content and text to the right</p>
+            </div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Alignement'
+  subtitle = 'Changes the alignement of the section.'
+  content = section-alignement
+%}
+
+
+<!-- ---------------------------------------------- -->
+<!-- fill -->
+<!-- ---------------------------------------------- -->
+
+{% capture section-fill %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="section section--default"' isDefault=true
+      component = '
+        <div class="section section--default">
+          <div class="section__container">
+            <div class="section__header">
+              <p class="section__title">Background default</p>
+              <p class="section__subtitle">Use the <span class="snippet snippet--dense">$background-default</span> variable as background color</p>
+            </div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="section section--paper"'
+      component = '
+        <div class="section section--paper">
+          <div class="section__container">
+            <div class="section__header">
+              <p class="section__title">Background paper</p>
+              <p class="section__subtitle">Use the <span class="snippet snippet--dense">$background-paper</span> variable as background color</p>
+            </div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="section section--primary"'
+      component = '
+        <div class="section section--primary">
+          <div class="section__container">
+            <div class="section__header">
+              <p class="section__title">Background primary</p>
+              <p class="section__subtitle">Use the <span class="snippet snippet--dense">$background-primary</span> variable as background color</p>
+            </div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="section section--primaryLight"'
+      component = '
+        <div class="section section--primaryLight">
+          <div class="section__container">
+            <div class="section__header">
+              <p class="section__title">Background primary-light</p>
+              <p class="section__subtitle">Use the <span class="snippet snippet--dense">$primary-light</span> variable as background color</p>
+            </div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Fill'
+  subtitle = 'Changes the fill color of the section.'
+  content = section-fill
+%}
