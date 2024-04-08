@@ -2,13 +2,13 @@
 layout: component
 label: Layout
 title: Section
-subtitle: A collection of collapsible elements.
+subtitle: The highest level block element on the page, direct child of the page element.
 description: |-
   The component is composed of multiple elements:
 
   - `section` the wrapper
     - `section__container` a second wrapper, used for responsive styling
-      - `section__header` the header element
+      - [`section__header`]({% link _components/section-header.html %}) the header element
         - `section__label` optional caption element (text style is automated)
         - `section__title` the title element (text style is automated)
         - `section__subitle` optional subtitle (text style is automated)
@@ -145,4 +145,54 @@ example: |-
   title = 'Fill'
   subtitle = 'Changes the fill color of the section.'
   content = section-fill
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- landing -->
+<!-- ---------------------------------------------- -->
+
+{% capture section-landing %}
+{% include modules/component-class.html code='class="section section--landing"'
+  component = '
+    <div class="section section--landing">
+      <div class="section__container">
+        <div class="section__header">
+          <h1 class="section__title">Section landing</h1>
+          <p class="section__subtitle">Optional section subtitle</p>
+        </div>
+      </div>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Landing'
+  subtitle = 'Add the modifier class `section--landing` to automatically style the header for the website title on the homepage.'
+  content = section-landing
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- header -->
+<!-- ---------------------------------------------- -->
+
+{% capture section-header %}
+{% include modules/component-class.html code='class="section section--header"'
+  component = '
+    <div class="section section--header">
+      <div class="section__container">
+        <div class="section__header">
+          <h1 class="section__title">Section header</h1>
+          <p class="section__subtitle">Optional section subtitle</p>
+        </div>
+      </div>
+    </div>
+  '
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Landing'
+  subtitle = 'Add the modifier class `section--header` to automatically style the header for the page title (first section of the page).'
+  content = section-header
 %}

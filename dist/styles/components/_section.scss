@@ -3,7 +3,9 @@
 // alignement
 // fill
 // size
-// variants
+// landing (website title on homepage)
+// header (page title)
+// dense
 // overrides
 // —————————————————————————————————————————————————————————————————
 
@@ -55,11 +57,6 @@
     
     .section__label + & {
       margin-top: $spacing-sm;
-    }
-
-    .section__header--dense & {
-      color: inherit;
-      @extend %h4;
     }
   }
   
@@ -155,23 +152,39 @@
 }
 
 // —————————————————————————————————————————————————————————————————
-// variants
+// landing (website title on homepage)
 // —————————————————————————————————————————————————————————————————
 
-// homepage first section with website title
 .section--landing {
 
   .section__title { @extend %h1; max-width: $desktop*0.5; }
   .section__subtitle { @extend %h5; }
+  .section__title + .section__subtitle { margin-top: $spacing-lg; }
 }
 
-// first section of the page for page title
+// —————————————————————————————————————————————————————————————————
+// header (page title)
+// —————————————————————————————————————————————————————————————————
+
 .section--header {
 
   .section__title { @extend %h2; }
   .section__subtitle { @extend %subtitle; }
+  .section__title + .section__subtitle { margin-top: $spacing-lg; }
 }
 
+// —————————————————————————————————————————————————————————————————
+// dense
+// —————————————————————————————————————————————————————————————————
+
+.section__header--dense {
+
+  .section {
+
+    &__label { @extend %caption; font-weight: $font-bold; }
+    &__title { color: inherit; @extend %h4; }
+  }
+}
 // —————————————————————————————————————————————————————————————————
 // overrides
 // —————————————————————————————————————————————————————————————————

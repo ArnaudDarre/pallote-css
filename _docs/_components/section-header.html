@@ -1,0 +1,61 @@
+---
+layout: component
+label: Layout
+title: Section header
+subtitle: Contains the section title. You can add an optional label or subtitle. The font sizes are automatically set. You can change them using the theme customisation.
+description: |-
+  The component is always a child of the [`section`]({% link _components/section.html %}) component. It is composed of multiple elements:
+
+  - `section__header` the wrapper
+    - `section__label`
+    - `section__title`
+    - `section__subtitle`
+
+example: |-
+  {% include ui/section-header.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- dense -->
+<!-- ---------------------------------------------- -->
+
+{% capture section-header-dense %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="section__header"' isDefault=true
+      component = '
+        <div class="section">
+          <div class="section__container">
+            <div class="section__header">
+              <p class="section__label">Section label</p>
+              <h1 class="section__title">Section title</h1>
+              <p class="section__subtitle">Optional section subtitle</p>
+            </div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+  <div class="grid__item grid__item--md12 grid--aiStart">
+    {% include modules/component-class.html code='class="section__header section__header--dense"'
+      component = '
+        <div class="section">
+          <div class="section__container">
+            <div class="section__header section__header--dense">
+              <p class="section__label">Section label</p>
+              <h1 class="section__title">Section title</h1>
+              <p class="section__subtitle">Optional section subtitle</p>
+            </div>
+          </div>
+        </div>
+      '
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Dense'
+  subtitle = 'Makes the section header smaller (for a subsection header of the page)'
+  content = section-header-dense
+%}
