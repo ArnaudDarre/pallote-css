@@ -2,17 +2,21 @@
 {% assign label = include.label %}
 {% assign title = include.title %}
 {% assign subtitle = include.subtitle %}
+{% assign cover = include.cover %}
 {% assign content = include.content %}
 
 <div class="section{% if landing == true %} section--landing{% else %} section--header{% endif %}">
   <div class="section__container">
-    <div class="section__header">
+    <div class="section__header pos-relative">
       {% if label %}
       <p class="section__label">{{ label }}</p>
       {% endif %}
       <h1 class="section__title">{{ title }}</h1>
       {% if subtitle %}
       <div class="section__subtitle editor">{{ subtitle | liquify | markdownify }}</div>
+      {% endif %}
+      {% if cover == true %}
+      {% include ui/cover.html %}
       {% endif %}
     </div>
     {% if content %}

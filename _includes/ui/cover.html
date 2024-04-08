@@ -1,60 +1,77 @@
-<div class="cover grid">
-  <div class="grid__item grid grid--row grid--aiEnd grid--jcEnd">
-    <div class="grid__item grid" style="width: 280px;">
-      <div class="grid__item cover__item">{% include ui/input.html %}</div>
-      <div class="grid__item grid grid--row">
-        <div class="grid__item cover__item">{% include ui/checkboxes.html direction="portrait" %}</div>
-        <div class="grid__item grid">
-          <div class="grid__item cover__item">{% include ui/status.html %}</div>
-          <div class="grid__item cover__item">{% include ui/nav-dropdown.html %}</div>
+{% capture accordion %}{% include ui/accordion.html %}{% endcapture %}
+{% capture alert %}{% include ui/alert.html %}{% endcapture %}
+{% capture breadcrumbs %}{% include ui/breadcrumbs.html %}{% endcapture %}
+{% capture button %}{% include ui/button.html %}{% endcapture %}
+{% capture card-actions %}{% include ui/card-actions.html %}{% endcapture %}
+{% capture card-header %}{% include ui/card-header.html %}{% endcapture %}
+{% capture checkbox %}{% include ui/checkbox.html %}{% endcapture %}
+{% capture checkboxes %}{% include ui/checkboxes.html direction="portrait" %}{% endcapture %}
+{% capture input %}{% include ui/input.html %}{% endcapture %}
+{% capture link %}{% include ui/link.html %}{% endcapture %}
+{% capture list %}{% include ui/list.html %}{% endcapture %}
+{% capture nav-dropdown %}{% include ui/nav-dropdown.html %}{% endcapture %}
+{% capture radio-buttons %}{% include ui/radio-buttons.html direction="portrait" %}{% endcapture %}
+{% capture select %}{% include ui/select.html focused="false" %}{% endcapture %}
+{% capture snippet %}{% include ui/snippet.html %}{% endcapture %}
+{% capture status %}{% include ui/status.html %}{% endcapture %}
+{% capture switch %}{% include ui/switch.html %}{% endcapture %}
+{% capture tabs %}{% include ui/tabs.html %}{% endcapture %}
+{% capture tag %}{% include ui/tag.html %}{% endcapture %}
+{% capture textarea %}{% include ui/textarea.html focused="false" %}{% endcapture %}
+
+<div class="cover grid grid--spacing1 grid--jcEnd">
+  <div class="grid__item grid grid--spacing1 grid--row grid--jcEnd">
+    <div class="grid__item grid grid--spacing1">
+      {% include ui/cover-card.html width='320' component=input %}
+      <div class="grid__item grid grid--spacing1 grid--row">
+        {% include ui/cover-card.html width='160' component=checkboxes %}
+        <div class="grid__item grid grid--spacing1">
+          {% include ui/cover-card.html width='160' component=status %}
+          {% include ui/cover-card.html width='160' %}
         </div>
       </div>
     </div>
-    <div class="grid__item grid" style="width: 400px;">
-      <div class="grid__item cover__item">{% include ui/snippet.html %}</div>
-      <div class="grid__item grid grid--row">
-        <div class="grid__item cover__item">{% include ui/link.html %}</div>
-        <div class="grid__item cover__item">{% include ui/radio.html %}</div>
+    <div class="grid__item grid grid--spacing1">
+      {% include ui/cover-card.html width='360' component=snippet %}
+      <div class="grid__item grid grid--spacing1 grid--row">
+        {% include ui/cover-card.html width='180' component=link %}
+        {% include ui/cover-card.html width='180' component=radio-buttons %}
       </div>
     </div>
   </div>
-  <div class="grid__item grid grid--row grid--jcEnd">
-    <div class="grid__item grid" style="width: 240px;">
-      <div class="grid__item cover__item">
-        <div class="nav__item nav__item--dropdown">
-          <button class="nav__trigger">Dropdown</button>
+  <div class="grid__item grid grid--spacing1 grid--row grid--jcEnd">
+    <div class="grid__item grid grid--spacing1">
+      {% include ui/cover-card.html width='240' height='160' component=nav-dropdown %}
+      <div class="grid__item grid grid--spacing1 grid--row">
+        <div class="grid__item grid grid--spacing1">
+          {% include ui/cover-card.html width='280' component=card-actions %}
+          {% include ui/cover-card.html width='280' component=card-header %}      
         </div>
+        {% include ui/cover-card.html width='240' component=textarea %}
       </div>
-      <div class="grid__item cover__item">{% include ui/input.html %}</div>
     </div>
-    <div class="grid__item grid" style="width: 520px;">
-      <div class="grid__item grid grid--row">
-        <div class="grid__item cover__item">{% include ui/status.html %}</div>
-      </div>
-      <div class="grid__item cover__item">{% include ui/tabs.html %}</div>
-      <div class="grid__item grid grid--row">
-        <div class="grid__item grid">
-          <div class="grid__item cover__item">{% include ui/checkbox.html %}</div>
-          <div class="grid__item cover__item">{% include ui/switch.html %}</div>
+    <div class="grid__item grid grid--spacing1">
+      {% include ui/cover-card.html width='520' component=status %}
+      {% include ui/cover-card.html width='520' component=tabs %}
+      <div class="grid__item grid grid--spacing1 grid--row">
+        <div class="grid__item grid grid--spacing1">
+          {% include ui/cover-card.html width='260' component=checkbox %}
+          {% include ui/cover-card.html width='260' component=switch %}
         </div>
-        <div class="grid__item cover__item">{% include ui/select.html focused="false" %}</div>
+        {% include ui/cover-card.html width='260' component=select %}
       </div>
     </div>
   </div>
-  <div class="grid__item grid grid--row grid--aiEnd grid--jcEnd">
-    <div class="grid__item grid" style="width: 360px;">
-      <div class="grid__item cover__item">{% include ui/breadcrumbs.html %}</div>
+  <div class="grid__item grid grid--spacing1 grid--row grid--jcEnd">
+    {% include ui/cover-card.html width='320' component=alert %}
+    {% include ui/cover-card.html width='260' component=list %}
+    {% include ui/cover-card.html width='320' component=accordion %}
+    <div class="grid__item grid grid--spacing1">
+      {% include ui/cover-card.html width='260' component=breadcrumbs %}
+      <div class="grid__item grid grid--spacing1 grid--row">
+        {% include ui/cover-card.html width='130' component=tag %}
+        {% include ui/cover-card.html width='130' component=button %}
+      </div>
     </div>
-    <div class="grid__item grid" style="width: 120px;">
-      <div class="grid__item cover__item">{% include ui/tag.html %}</div>
-      <div class="grid__item cover__item">{% include ui/button.html %}</div>
-    </div>
-    <div class="grid__item cover__item" style="width: 160px;">{% include ui/input.html %}</div>
-    <div class="grid__item cover__item" style="width: 480px;">{% include ui/accordion.html %}</div>
-  </div>
-  <div class="grid__item grid grid--row grid--jcEnd">
-    <div class="grid__item cover__item" style="width: 320px;">{% include ui/card-actions.html %}</div>
-    <div class="grid__item cover__item" style="width: auto;">{% include ui/alert.html %}</div>
-    <div class="grid__item cover__item" style="width: 320px;">{% include ui/card-header.html %}</div>
   </div>
 </div>

@@ -124,7 +124,6 @@ git checkout -b feature-name-of-branch
   - `assets/styles` folder, which are the documentation specific styles
 
 > You don't need to run any additional command to compile sass files, it does it automatically with `npm run dev`
-
 > Remember to add any new class or property to the doc
 
 ### Submit your code

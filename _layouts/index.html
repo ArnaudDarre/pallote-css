@@ -1,0 +1,38 @@
+---
+layout: compress
+---
+
+{% include containers/header.html %}
+
+<div class="section section--landing">
+  <div class="section__container">
+    <div class="grid grid--row">
+      <div class="grid__item homepage__title">
+        <div class="section__header">
+          <h1 class="section__title">{{ page.title }}</h1>
+          <p class="section__subtitle editor">{{ page.subtitle }}</p>
+        </div>
+        <div class="section__content">
+          <div class="grid grid--spacing2 grid--row grid--aiCenter grid--jcStart">
+            <div class="grid__item fb-0" style="white-space: nowrap;">
+              <span class="snippet">npm i pallote-css</span>
+            </div>
+            <div class="grid__item" style="width: fit-content;">
+              <a href="{% link _doc/introduction.md %}" class="button button--lg">
+                Get started
+                {% svg assets/icons/phosphor/files.svg %}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid__item">
+        {% include ui/cover.html %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ content }}
+
+{% include containers/footer.html %}

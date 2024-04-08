@@ -41,14 +41,16 @@
     }
   }
 
+  &__label,
   &__title {
-    @extend %h6;
     @extend %text--bold;
+  }
+
+  &__title {
     line-height: 1.25;
   }
   
   &__subtitle {
-    @extend %subtitle;
     @extend %text--regular;
   }
   
@@ -139,9 +141,18 @@
 
   .card {
 
+    &__label {
+      @if $value == xs { @extend %overline; }
+      @else if $value == sm { @extend %overline; }
+      @else if $value == md { @extend %overline; }
+      @else if $value == lg { @extend %caption; }
+      @else if $value == xl { @extend %body; }
+    }
+
     &__title {
       @if $value == xs { @extend %body; }
       @else if $value == sm { @extend %subtitle; }
+      @else if $value == md { @extend %h6; }
       @else if $value == lg { @extend %h5; }
       @else if $value == xl { @extend %h4; }
     }
@@ -149,6 +160,7 @@
     &__subtitle {
       @if $value == xs { @extend %caption; }
       @else if $value == sm { @extend %body; }
+      @else if $value == md { @extend %subtitle; }
       @else if $value == lg { @extend %h6; }
       @else if $value == xl { @extend %h5; }
       margin-top: calc($size / 3);
@@ -214,10 +226,10 @@
 
 .card {
   @include size(md, $spacing-md+$spacing-sm);
-  &--xs { @include size(xs, $spacing-sm+$spacing-xs); }
-  &--sm { @include size(sm, $spacing-md); }
-  &--lg { @include size(lg, $spacing-lg); }
-  &--xl { @include size(xl, $spacing-lg+$spacing-sm); }
+  &--xs.card { @include size(xs, $spacing-sm+$spacing-xs); }
+  &--sm.card { @include size(sm, $spacing-md); }
+  &--lg.card { @include size(lg, $spacing-lg); }
+  &--xl.card { @include size(xl, $spacing-lg+$spacing-sm); }
 }
 
 // —————————————————————————————————————————————————————————————————

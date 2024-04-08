@@ -1,25 +1,57 @@
 ---
-layout: default
+layout: index
 permalink: /
-landing: true
 title: Introducing Pallote CSS
 subtitle: Pallote CSS is an handcrafted, simple and stylish CSS component library, built with passion and care.
+cover: true
 ---
 
-{% include ui/cover.html %}
-
-<div class="buttons buttons--portrait">
-  <a href="{% link _doc/introduction.md %}" class="button button--lg">
-    Read the documentation
-    {% svg assets/icons/phosphor/files.svg %}
-  </a>
-  <!-- <a href="" class="button button--stroke button--lg">
-    Support the project
-    {% svg assets/icons/phosphor/coffee.svg %}
-  </a> -->
+<div class="section section--landscape">
+  <div class="section__container">
+    <div class="section__header">
+      <h1 class="section__title">Install the library</h1>
+      <p class="section__subtitle">You can install Pallote CSS in multiple ways. It's fast ans easy, everything you'd expect from a CSS library.</p>
+      <div class="section__actions">
+        <a href="{% link _doc/introduction.md %}" class="button button--primary">Read the full doc</a>
+      </div>
+    </div>
+    <div class="section__content">
+      <div class="grid grid--spacing2">
+        <div class="grid__item">
+          <div class="card card--sm card--transparent">
+            <div class="card__header">
+              <h2 class="card__title">Install the latest version with NPM</h2>
+            </div>
+            <div class="card__content">
+              <div class="editor">{{ site.data.variables.npm | markdownify }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid__item">
+          <div class="card card--sm card--transparent">
+            <div class="card__header">
+              <h2 class="card__title">
+                Include with CDN
+              </h2>
+            </div>
+            <div class="card__content">
+              <div class="editor">{{ site.data.variables.cdn | markdownify }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<p class="text--bold mt-4 mb-1">
-  Install in one line
-  <span class="highlighter-rouge ml-2">npm i pallote-css</span>
-</p>
+<div class="section section--primary">
+  <div class="section__container">
+    <div class="section__header">
+      <h1 class="section__title">Contribute and supprt</h1>
+      <p class="section__subtitle">Pallote is a passion project born of a love for coding and design. All contributions are welcome to help the project grow.</p>
+      <div class="section__actions">
+        <a href="{% link _doc/introduction.md %}" class="button button--contrast">Contribute on GitHub</a>
+      </div>
+    </div>
+  </div>
+</div>

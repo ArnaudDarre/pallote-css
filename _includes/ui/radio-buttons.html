@@ -1,6 +1,8 @@
+{% assign direction = include.direction %}
+
 <fieldset class="input">
   <legend class="input__label">Label</legend>
-  <div class="input__control radios">
+  <div class="input__control radios{% if direction %} radios--{{ direction}}{% endif %}">
     <div class="radio">
       <input type="radio" name="example" id="example_1" value="example_1" class="radio__control" />
       <label for="example_1" class="radio__label">Radio 1</label>

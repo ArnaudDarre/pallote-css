@@ -1,6 +1,7 @@
 // —————————————————————————————————————————————————————————————————
 // elements
 // alignement
+// direction
 // fill
 // size
 // landing (website title on homepage)
@@ -86,12 +87,37 @@
 // alignement
 // —————————————————————————————————————————————————————————————————
 
-.section {
+.section__container {
   align-items: flex-start;
   text-align: left;
 
-  &--center { align-items: center; text-align: center; }
-  &--right { align-items: flex-end; text-align: right; }
+  .section--center & { align-items: center; text-align: center; }
+  .section--right & { align-items: flex-end; text-align: right; }
+}
+
+// —————————————————————————————————————————————————————————————————
+// direction
+// —————————————————————————————————————————————————————————————————
+
+.section--landscape {
+
+  .section {
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-xl;
+    }
+
+    &__header {
+      flex-basis: 40%;
+    }
+    
+    &__content {
+      padding-top: 0;
+      flex-basis: 60%;
+    }
+  }
 }
 
 // —————————————————————————————————————————————————————————————————
@@ -118,7 +144,6 @@
   .section__title { color: $title-color; }
   .button--stroke { color: $color; }
   .snippet {
-    background-color: $paper-color;
     border-color: $border-color;
   }
 }

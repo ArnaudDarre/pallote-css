@@ -1,0 +1,10 @@
+{% assign height = include.height %}
+{% assign width = include.width %}
+{% assign label = include.label %}
+{% assign component = include.component %}
+
+<div class="grid__item"{% if width or height %} style="{% if width %}width: {{ width }}px;{% endif %}{% if height %} height: {{ height }}px{% endif %}"{% endif %}>
+  <div class="cover__item card card--xs stroke--border fill--default">
+    <div class="card__content">{{ component |liquify }}</div>
+  </div>
+</div>
