@@ -7,8 +7,10 @@
     "dist/*"
   ],
   "scripts": {
-    "dev": "onchange 'dist/**/*.scss' 'dist/**/*.js' -- npm run build & bundle exec jekyll serve",
-    "build": "sass dist/styles/pallote.scss dist/styles/pallote.css --style=compressed",
+    "dev": "bundle exec jekyll serve & onchange 'dist/styles/**/*.scss' 'dist/scripts/**/*.js' -- npm run build",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "sass dist/pallote.scss dist/pallote.min.css --style=compressed",
+    "build:js": "uglifyjs dist/scripts/*.js -o dist/pallote.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +30,7 @@
   "homepage": "https://github.com/ArnaudDarre/pallote-css#readme",
   "devDependencies": {
     "onchange": "^7.1.0",
-    "sass": "^1.71.1"
+    "sass": "^1.71.1",
+    "uglify-js": "^3.17.4"
   }
 }

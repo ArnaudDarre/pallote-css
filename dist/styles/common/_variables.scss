@@ -20,8 +20,8 @@ $icons-path: '../../assets/icons/';
 
 // main
 
-$white: #ffffff !default;
-$black: #000a1e !default;
+$white: #FFFFFF !default;
+$black: #000A1E !default;
 
 // grey
 
@@ -53,7 +53,7 @@ $primary-light: mix($white, $primary, 70%) !default;
 $primary-dark: mix($black, $primary, 50%) !default;
 $primary-contrast: $text-contrast !default;
 
-$secondary: #e7fc00 !default;
+$secondary: #E7FC00 !default;
 $secondary-light: mix($white, $secondary, 70%) !default;
 $secondary-dark: mix($black, $secondary, 50%) !default;
 $secondary-contrast: $text-contrast !default;
@@ -65,28 +65,28 @@ $highlight-contrast: $text-contrast !default;
 
 // feedback
 
-$success: #27ae60 !default;
+$success: #27AE60 !default;
 $success-light: mix($white, $success, 70%) !default;
 $success-dark: mix($black, $success, 50%) !default;
-$success-text: mix($black, $success, 70%) !default;
+$success-background: mix($black, $success, 80%) !default;
 $success-contrast: $text !default;
 
-$info: #17a0cc !default;
+$info: #17A0CC !default;
 $info-light: mix($white, $info, 70%) !default;
 $info-dark: mix($black, $info, 50%) !default;
-$info-text: mix($black, $info, 70%) !default;
+$info-background: mix($black, $info, 80%) !default;
 $info-contrast: $text !default;
 
-$warning: #ffdc46 !default;
+$warning: #FFDC46 !default;
 $warning-light: mix($white, $warning, 70%) !default;
 $warning-dark: mix($black, $warning, 50%) !default;
-$warning-text: mix($black, $warning, 70%) !default;
+$warning-background: mix($black, $warning, 80%) !default;
 $warning-contrast: $text-contrast !default;
 
 $error: #EB5757 !default;
 $error-light: mix($white, $error, 70%) !default;
 $error-dark: mix($black, $error, 50%) !default;
-$error-text: mix($black, $error, 70%) !default;
+$error-background: mix($black, $error, 80%) !default;
 $error-contrast: $text !default;
 
 // background

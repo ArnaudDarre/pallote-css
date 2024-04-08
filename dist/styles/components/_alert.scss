@@ -15,8 +15,8 @@ $spacing-alert: $spacing-sm;
 
 .alert {
   border-radius: $spacing-sm;
-  background-color: $info-light;
-  color: $info-text;
+  background-color: $info-background;
+  color: $text;
   padding: $spacing-alert;
   position: fixed;
   top: $spacing-md;
@@ -82,14 +82,15 @@ $spacing-alert: $spacing-sm;
 // color
 // —————————————————————————————————————————————————————————————————
 
-@mixin color($color, $color-light: $info-light, $color-text: $info-text) {
-  @if $color == success { $color-light: $success-light; $color-text: $success-text; } 
-  @else if $color == info { $color-light: $info-light; $color-text: $info-text; } 
-  @else if $color == warning { $color-light: $warning-light; $color-text: $warning-text; } 
-  @else if $color == error { $color-light: $error-light; $color-text: $error-text; } 
+@mixin color($color, $background-color: $info-background, $border-color: $info) {
+  @if $color == success { $background-color: $success-background; $border-color: $success; } 
+  @else if $color == info { $background-color: $info-background; $border-color: $info; } 
+  @else if $color == warning { $background-color: $warning-background; $border-color: $warning; } 
+  @else if $color == error { $background-color: $error-background; $border-color: $error; } 
 
-  background-color: $color-light;
-  color: $color-text;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  color: $text;
 
   &:not(.alert--bar):before {
 
@@ -136,6 +137,8 @@ $spacing-alert: $spacing-sm;
     width: 100%; // needed for small devices to not overflow the container
     z-index: 1;
     border-radius: 0;
+    border-left: 0;
+    border-right: 0;
     text-align: center;
   }
 }

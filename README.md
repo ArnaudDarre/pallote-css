@@ -23,7 +23,7 @@ npm install pallote-css
 Then import the global style file in your SASS file, like this if you are using SASS:
 
 ```scss
-@import '../node_modules/pallote-css/dist/styles/pallote.scss';
+@import '../node_modules/pallote-css/dist/pallote.scss';
 ```
 
 Or if you are using regular CSS, locate the file, copy/paste them into your project and import them into you `<head>`.
@@ -37,7 +37,7 @@ Or if you are using regular CSS, locate the file, copy/paste them into your proj
 Alternatively, you can link via a CDN. Simply copy/paste this code in between the `head` tag of your website. Make sure to add the version number, as next version could introduce breaking changes.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/pallote-css@1.0.0/dist/styles/pallote.css">
+<link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/pallote-css@1.0.0/dist/pallote.min.css">
 ```
 
 ### Using Components
@@ -59,7 +59,7 @@ The framework has a set of built-in variables that create the design look and fe
 ```scss
 $primary: #007A1E;
 
-@import '../node_modules/pallote-css/dist/styles/index.scss';
+@import '../node_modules/pallote-css/dist/pallote.scss';
 ```
 
 #### Custom components styles
@@ -67,7 +67,7 @@ $primary: #007A1E;
 To change a component style, see the documentation for each component and add create an instance of the class with new properties in your style file.
 
 ```scss
-@import '../node_modules/pallote-css/dist/styles/index.scss';
+@import '../node_modules/pallote-css/dist/pallote.scss';
 
 .button {
   text-decoration: underline;
