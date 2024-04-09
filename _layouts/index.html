@@ -14,8 +14,9 @@ layout: compress
         </div>
         <div class="section__content">
           <div class="grid grid--spacing2 grid--row grid--aiCenter grid--jcStart">
+            {% capture npm %}{% include snippets/npm.md %}{% endcapture %}
             <div class="grid__item fb-0" style="white-space: nowrap;">
-              <span class="snippet">npm i pallote-css</span>
+              {{ npm | markdownify }}
             </div>
             <div class="grid__item" style="width: fit-content;">
               <a href="{% link _doc/introduction.md %}" class="button button--lg">

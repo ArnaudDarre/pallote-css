@@ -16,7 +16,7 @@ Welcome to Pallote CSS! Pallote CSS is an open-source CSS library aimed at provi
 
 To install Pallote CSS via npm use:
 
-```bash
+```shell
 npm install pallote-css
 ```
 

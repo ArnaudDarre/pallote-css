@@ -22,9 +22,8 @@ cover: true
             <div class="card__header">
               <h2 class="card__title">Install the latest version with NPM</h2>
             </div>
-            <div class="card__content">
-              <div class="editor">{{ site.data.variables.npm | markdownify }}</div>
-            </div>
+            {% capture npm %}{% include snippets/npm.md %}{% endcapture %}
+            <div class="card__content">{{ npm | markdownify }}</div>
           </div>
         </div>
         <div class="grid__item">
@@ -34,9 +33,8 @@ cover: true
                 Include with CDN
               </h2>
             </div>
-            <div class="card__content">
-              <div class="editor">{{ site.data.variables.cdn | markdownify }}</div>
-            </div>
+            {% capture cdn %}{% include snippets/cdn.md %}{% endcapture %}
+            <div class="card__content">{{ cdn | markdownify }}</div>
           </div>
         </div>
       </div>

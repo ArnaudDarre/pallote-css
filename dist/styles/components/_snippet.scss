@@ -28,6 +28,13 @@
     margin-right: $spacing-xs;
     margin-left: $spacing-xs;
   }
+
+  .tag {
+    font-family: $font;
+    float: right;
+    margin-top: 1px;
+    margin-right: -$spacing-xs;
+  }
 }
 
 // —————————————————————————————————————————————————————————————————

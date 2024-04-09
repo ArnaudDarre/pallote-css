@@ -157,17 +157,21 @@
 
   td,
   th {
-    padding: $spacing-xs $spacing-sm $spacing-sm;
     border-top: $border;
-
+    
     &:not(:first-child) {
       border-left: $border;
     }
   }
 
   th {
+    padding: $spacing-xs $spacing-sm;
     font-size: 0.875rem;
     font-weight: bold;
     color: $text-alt;
+  }
+
+  td {
+    padding: $spacing-xs $spacing-sm $spacing-sm;
   }
 }

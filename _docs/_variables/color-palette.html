@@ -33,10 +33,10 @@ subtitle: These are the color variables used in the framework. You can override 
                 {% for color in subcategory.colors %}
                 <tr>
                   <td class="w-percent-40">
-                    <span class="language-plaintext highlighter-rouge">${{ color.name }}</span>
+                    <code class="language-plaintext highlighter-rouge">${{ color.name }}</code>
                   </td>
                   <td class="w-percent-40">
-                    <span class="language-plaintext highlighter-rouge">{{ color.value }}</span>
+                    <code class="language-plaintext highlighter-rouge">{{ color.value }}</code>
                   </td>
                   <td class="w-percent-20{% if color.hasContrast == true %} fill--paper{% endif %}">
                     <span class="swatch__color swatch__color--{{ color.name }}"></span>
