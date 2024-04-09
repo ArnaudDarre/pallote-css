@@ -182,6 +182,10 @@
 
 .section--landing {
 
+  .section__container {
+    @include clamp(padding-top, $spacing-lg, 10vw, $spacing-xxl);
+    @include clamp(padding-bottom, $spacing-lg, 10vw, $spacing-xxl);
+  }
   .section__title { @extend %h1; max-width: $desktop*0.5; }
   .section__subtitle { @extend %h5; }
   .section__title + .section__subtitle { margin-top: $spacing-lg; }
