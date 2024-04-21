@@ -1,82 +1,51 @@
 // —————————————————————————————————————————————————————————————————
 // elements
-// default
-// dense
+// direction
+// size
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
 // elements
 // —————————————————————————————————————————————————————————————————
 
-.snippet {
-  @extend %caption;
-  font-family: "Roboto Mono", Courier, monospace;
-  word-wrap: break-word;
+.divider {
+  display: inline-block;
+  background-color: $border-color;
+  height: 1px;
   width: 100%;
-  position: relative;
-  border-radius: $border-radius-sm;
-  margin: 0;
-  padding: $spacing-sm $spacing-sm*1.5;
-  background-color: $hover;
-  border: $border;
-  
-  & + & {
-    margin-top: $spacing-sm;
-  }
+}
 
-  p > & {
-    margin-right: $spacing-xs;
-    margin-left: $spacing-xs;
-  }
+// —————————————————————————————————————————————————————————————————
+// direction
+// —————————————————————————————————————————————————————————————————
 
-  .tag {
-    font-family: $font;
-    float: right;
-    margin-top: 1px;
-    margin-right: -$spacing-xs;
+.divider {
+
+  &--portrait {
+    height: 100%;
+    width: 1px;
   }
 }
 
 // —————————————————————————————————————————————————————————————————
-// default
+// size
 // —————————————————————————————————————————————————————————————————
 
-.snippet--default {
+@mixin size($size) {
+  margin-top: $size;
+  margin-bottom: $size;
 
-  &:after {
-    @extend %overline;
-    content: "Default";
-    font-family: $font;
-    float: right;
-    margin-top: 1px;
-    margin-right: -$spacing-xs;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: $font-bold;
-    border-radius: $border-radius-sm;
-    white-space: nowrap; // prevent text to go on multiple lines
-    position: absolute;
-    top: $spacing-sm;
-    right: $spacing-md*0.75;
-    height: $spacing-md;
-    padding-right: $spacing-xs;
-    padding-left: $spacing-xs;
-    padding-bottom: 0.1em;
-    background-color: $text-disabled;
+  &.divider--portrait {
+    margin-top: 0;
+    margin-right: $size;
+    margin-bottom: 0;
+    margin-left: $size;
   }
 }
 
-// —————————————————————————————————————————————————————————————————
-// dense
-// —————————————————————————————————————————————————————————————————
+.divider {
+  @include size($spacing-md);
 
-.snippet--dense {
-  @extend %overline;
-  padding: $spacing-xs $spacing-sm !important;
-
-  &.snippet--default:after {
-    top: $spacing-xs;
-    right: $spacing-sm;
-  }
+  &--sm { @include size($spacing-sm); }
+  &--lg { @include size($spacing-lg); }
 }

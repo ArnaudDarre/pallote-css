@@ -20,30 +20,32 @@ subtitle: These are the color variables used in the framework. You can override 
         <h3 class="grid__item grid__item--12 subtitle text--bold">{{ subcategory.title }}</h3>
         {% endif %}
         <div class="grid__item editor">
-          <table>
-            <thead>
-              <tr>
-                <th>Variable name</th>
-                <th>Default value</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for color in subcategory.colors %}
-              <tr>
-                <td class="w-percent-40">
-                  <span class="language-plaintext highlighter-rouge">${{ color.name }}</span>
-                </td>
-                <td class="w-percent-40">
-                  <span class="language-plaintext highlighter-rouge">{{ color.value }}</span>
-                </td>
-                <td class="w-percent-20{% if color.hasContrast == true %} fill--paper{% endif %}">
-                  <span class="swatch__color swatch__color--{{ color.name }}"></span>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Variable name</th>
+                  <th>Default value</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for color in subcategory.colors %}
+                <tr>
+                  <td class="w-percent-40">
+                    <code class="language-plaintext highlighter-rouge">${{ color.name }}</code>
+                  </td>
+                  <td class="w-percent-40">
+                    <code class="language-plaintext highlighter-rouge">{{ color.value }}</code>
+                  </td>
+                  <td class="w-percent-20{% if color.hasContrast == true %} fill--paper{% endif %}">
+                    <span class="swatch__color swatch__color--{{ color.name }}"></span>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       {% endfor %}

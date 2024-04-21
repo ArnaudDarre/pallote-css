@@ -27,27 +27,29 @@ subtitle: Use these classes to override the text style of an element.
         </div>
         {% endif %}
         <div class="grid__item editor">
-          <table>
-            <thead>
-              <tr>
-                <th>Class</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for property in subcategory.properties %}
-              <tr>
-                {% capture property_class %}`{{ property.class }}`{% endcapture %}
-                <td>{{ property_class | markdownify }}</td>
-                <td>
-                  <p class="{{ property.class }}{% if property.hasBackground == true %} fill--white{% endif %}">
-                    {{ property.description }}
-                  </p>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for property in subcategory.properties %}
+                <tr>
+                  {% capture property_class %}`{{ property.class }}`{% endcapture %}
+                  <td>{{ property_class | markdownify }}</td>
+                  <td>
+                    <p class="{{ property.class }}{% if property.hasBackground == true %} fill--white{% endif %}">
+                      {{ property.description }}
+                    </p>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       {% endfor %}

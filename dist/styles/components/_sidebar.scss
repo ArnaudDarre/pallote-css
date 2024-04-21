@@ -34,10 +34,10 @@ $sidebar-width: 200px;
     padding: 4px;
     transform: rotate(-45deg);
     margin-right: $spacing-md;
+    display: none;
 
-    @include responsive(up, tablet) {
-      display: none;
-    }
+    .page--withSidebar & { display: initial; }
+    @include responsive(up, tablet) { display: none !important; }
 
     &--close {
       position: absolute;

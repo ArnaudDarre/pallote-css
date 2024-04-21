@@ -28,7 +28,6 @@ $checkbox-width: $spacing-md*1.25;
 		@include transition($transition-md, color);
 		@extend %caption;
 		font-weight: $font-bold;
-		color: $text-alt;
 		text-overflow: ellipsis;
 		cursor: pointer;
 		display: block;
@@ -45,10 +44,10 @@ $checkbox-width: $spacing-md*1.25;
 		width: 100%;
     border-radius: $border-radius-md !important;
     padding: $spacing-xs*1.5 $spacing-sm;
-		background-color: $background-paper;
+		background-color: $hover;
 		
 		@include responsive(down, mobile) {
-      background-color: $background-paper;
+      background-color: $hover;
 		}
     
     &:not(textarea) {

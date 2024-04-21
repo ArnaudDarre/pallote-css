@@ -7,12 +7,15 @@
 
   "../../dist/styles/modules/_cookie",
 
-  "./variables/color-palette.scss"
+  "./variables/_color-palette",
+
+  "./plugins/_highlighter-theme"
 ;
 
 // —————————————————————————————————————————————————————————————————
 // library specific styles
 // alert
+// divider
 // link
 // navbar
 // section
@@ -49,28 +52,67 @@
   }
 }
 
-// index cover
+// homepage
+
+.homepage {
+
+  &__title {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    
+    @include responsive(down, desktop) {
+      padding-right: 15rem;
+      padding-bottom: 20rem;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -$spacing-xl;
+        background-image: 
+        linear-gradient(135deg, $background-default 35%, rgba($background-default, 0) 50%);
+      }
+    }
+    
+    @include responsive(down, tablet) {
+      width: 100%;
+      padding-right: 0;
+      
+      &:before {
+        background-image: 
+        linear-gradient(180deg, $background-default 30%, rgba($background-default, 0) 100%);
+      }
+    }
+
+    .section__header {
+      position: relative; // prevent pseudo element to go over content
+    }
+  }
+}
 
 .cover {
-  z-index: -1;
-  position: absolute;
-  top: -2rem;
-  right: -3rem;
-  transform: rotate(-4deg);
-  pointer-events: none;
 
-  &:after {
-    @include pseudo-element();
-    background-image: linear-gradient(90deg, $background-default 25%, rgba($background-default, 0) 100%);
+  @include responsive(down, tablet) {
+    margin-top: 15rem;
   }
 
   &__item {
-    padding: $spacing-sm;
+    height: 100%;
+    background-color: background-default !important;
   }
 
-  .alert {
-    z-index: 0;
+  .grid__item {
+    justify-content: flex-end;
+    width: min-content;
   }
+  
+  .alert { z-index: 0; max-width: none; }
+  .nav__item { width: 100%; }
 }
 
 // —————————————————————————————————————————————————————————————————
@@ -82,6 +124,14 @@
   top: 0;
   right: 0;
   z-index: 1;
+}
+
+// —————————————————————————————————————————————————————————————————
+// divider
+// —————————————————————————————————————————————————————————————————
+
+.divider--portrait {
+  height: $spacing-xxl;
 }
 
 // —————————————————————————————————————————————————————————————————
@@ -118,5 +168,22 @@
 
   & + & {
     border-top: $border;
+  }
+
+  &--landing {
+    background-size: cover;
+    // background: radial-gradient(circle at 1.8% 4.8%, $background-paper 0%, $background-default 90%);
+    background-image: 
+      radial-gradient(18% 28% at 24% 50%, rgba($background-paper, 1) 7%, rgba($background-default, 0) 100%),
+      radial-gradient(18% 28% at 18% 71%, rgba($background-default, 1) 6%, rgba($background-default, 0) 100%),
+      radial-gradient(70% 53% at 36% 76%, rgba($background-paper, 1) 0%, rgba($background-default, 0) 100%),
+      radial-gradient(42% 53% at 15% 94%, rgba($background-paper, 1) 7%, rgba($background-default, 0) 100%),
+      radial-gradient(42% 53% at 34% 72%, rgba($background-paper, 1) 7%, rgba($background-default, 0) 100%),
+      radial-gradient(18% 28% at 35% 87%, rgba($background-paper, 1) 7%, rgba($background-default, 0) 100%),
+      radial-gradient(31% 43% at 7% 98%, rgba($background-paper, 1) 24%, rgba($background-default, 0) 100%),
+      radial-gradient(21% 37% at 72% 23%, rgba($background-paper, 0.7) 24%, rgba($background-default, 0) 100%),
+      radial-gradient(35% 56% at 91% 74%, rgba($background-default, 1) 9%, rgba($background-default, 0) 100%),
+      radial-gradient(74% 86% at 67% 38%, rgba($background-default, 1) 24%, rgba($background-default, 0) 100%),
+      linear-gradient(125deg, $background-default 0%, $background-paper 100%);
   }
 }

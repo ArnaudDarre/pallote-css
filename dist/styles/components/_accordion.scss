@@ -14,7 +14,7 @@
 
   &__item {
     position: relative;
-    background-color: $background-paper;
+    background-color: $hover;
     width: 100%;
   }
 
@@ -109,8 +109,8 @@
     will-change: background-color, margin;
     background-color: transparent;
 
-    @include hover { background-color: $background-paper; }
-    &--active { background-color: $background-paper; }
+    @include hover { background-color: $hover; }
+    &--active { background-color: $hover; }
     
     &:not(:last-child):not(.accordion__item--active) {
       margin-bottom: 0;

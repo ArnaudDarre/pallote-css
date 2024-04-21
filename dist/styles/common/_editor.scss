@@ -40,6 +40,7 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     width: fit-content;
+    white-space: nowrap;
   }
 
   a {
@@ -109,10 +110,16 @@
   // table
   // —————————————————————————————————————————————————————————————————
 
+  .table {
+    width: 100%;
+    overflow: scroll;
+  }
+
   table {
     border-collapse: separate;
     border: $border;
     border-radius: $border-radius-sm;
+    width: 100%;
 
     &.table--dense {
 
@@ -150,17 +157,21 @@
 
   td,
   th {
-    padding: $spacing-xs $spacing-sm $spacing-sm;
     border-top: $border;
-
+    
     &:not(:first-child) {
       border-left: $border;
     }
   }
 
   th {
+    padding: $spacing-xs $spacing-sm;
     font-size: 0.875rem;
     font-weight: bold;
     color: $text-alt;
+  }
+
+  td {
+    padding: $spacing-xs $spacing-sm $spacing-sm;
   }
 }

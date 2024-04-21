@@ -20,26 +20,28 @@ subtitle: As typography is at the core of every design system, having consistent
         <h3 class="grid__item grid__item--12 subtitle text--bold">{{ subcategory.title }}</h3>
         {% endif %}
         <div class="grid__item editor">
-          <table>
-            <thead>
-              <tr>
-                <th>Variable name</th>
-                <th>Default value</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for property in subcategory.properties %}
-              <tr>
-                <td class="w-percent-30">{{ property.name | markdownify }}</td>
-                <td class="w-percent-30">{{ property.value | markdownify }}</td>
-                <td class="w-percent-40">
-                  <span class="{{ property.class }} pos-absolute">{{ property.class | remove: "text--" | capitalize }}</span>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Variable name</th>
+                  <th>Default value</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for property in subcategory.properties %}
+                <tr>
+                  <td class="w-percent-30">{{ property.name | markdownify }}</td>
+                  <td class="w-percent-40">{{ property.value | markdownify }}</td>
+                  <td class="w-percent-40">
+                    <span class="{{ property.class }}">{{ property.class | remove: "text--" | capitalize }}</span>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       {% endfor %}

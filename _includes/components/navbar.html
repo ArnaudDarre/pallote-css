@@ -1,7 +1,9 @@
 <header class="section navbar">
   <div class="section__container">
     <div class="navbar__main">
-      <button aria-label="Toggle drawer" class="sidebar__button"></button>
+      {% if page.url contains '/doc/' %}
+      <button aria-label="Open drawer" class="sidebar__button"></button>
+      {% endif %}
       <div class="navbar__logo text--bold">
         <h1 class="text--primary">
           <a href="{% link _pages/index.html %}">

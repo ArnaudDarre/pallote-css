@@ -31,4 +31,8 @@
     display: inline;
     margin-right: $spacing-xs;
   }
+
+  .link {
+    flex-basis: 0;
+  }
 }
