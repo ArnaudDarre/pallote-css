@@ -17,11 +17,11 @@ $spacing-alert: $spacing-sm;
   border-radius: $spacing-sm;
   background-color: $info-background;
   color: $text;
-  padding: $spacing-alert;
+  padding: $spacing-alert $spacing-alert*2;
   position: fixed;
   top: $spacing-md;
   right: $spacing-md;
-  width: 100%;
+  width: fit-content;
   max-width: $spacing-xxl*3;
   z-index: 20;
 
@@ -119,6 +119,8 @@ $spacing-alert: $spacing-sm;
     position: relative;
     max-width: none;
     z-index: 1;
+    top: 0;
+    right: 0;  
   }
 }
 
@@ -129,10 +131,9 @@ $spacing-alert: $spacing-sm;
 .alert {
   
   &--bar {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
     max-width: none;
     width: 100%; // needed for small devices to not overflow the container
     z-index: 1;
@@ -148,7 +149,7 @@ $spacing-alert: $spacing-sm;
 // —————————————————————————————————————————————————————————————————
 
 .alert--dense {
-  padding: $spacing-alert*0.5;
+  padding: $spacing-alert*0.5 $spacing-alert;
 
   &:before {
     top: $spacing-alert*0.5;

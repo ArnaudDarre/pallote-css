@@ -11,8 +11,8 @@
 // dependencies
 // —————————————————————————————————————————————————————————————————
 
-$fonts-path: '../../assets/fonts/';
-$icons-path: '../../assets/icons/';
+$fonts-path: '../../assets/fonts/' !default;
+$icons-path: '../../assets/icons/' !default;
 
 // —————————————————————————————————————————————————————————————————
 // color palette
