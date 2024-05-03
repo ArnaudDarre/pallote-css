@@ -1,6 +1,6 @@
 {
   "name": "pallote-css",
-  "version": "0.2.5",
+  "version": "0.2.8",
   "description": "CSS component library",
   "main": "dist/styles/pallote.css",
   "files": [
@@ -30,6 +30,7 @@
   "homepage": "https://github.com/ArnaudDarre/pallote-css#readme",
   "devDependencies": {
     "onchange": "^7.1.0",
+    "pallote-css": "^0.2.7",
     "sass": "^1.71.1",
     "uglify-js": "^3.17.4"
   }

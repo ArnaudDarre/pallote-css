@@ -4,9 +4,8 @@
 // variant
 // size
 // color
+// fullWidth
 // disabled
-// animate
-// menu
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
@@ -49,8 +48,11 @@
   padding-right: $size*.33;
   padding-left: $size*.33;
 
-  @if $value == sm { @extend %caption; }
-  @else if $value == lg { @extend %subtitle; }
+  @if $value == xs or $value == sm {
+    @extend %overline;
+    border-radius: $border-radius-sm;
+  }
+  @if $value == lg { @extend %subtitle; }
 
   svg {
     width: calc($size/1.75);
@@ -83,6 +85,7 @@
 .button {
 
   @include size(md, $spacing-lg);
+  &--xs { @include size(xs, $spacing-md); }
   &--sm { @include size(sm, $spacing-md*1.5); }
   &--lg { @include size(lg, $spacing-lg*1.25); }
 }
@@ -105,7 +108,7 @@
         }
       }
 
-      svg { fill: nth($i, 3); }
+      svg { stroke: nth($i, 3); }
       
       &.button--stroke {
         background-color: transparent;
@@ -119,7 +122,7 @@
           }
         }
 
-        svg { fill: $text; }
+        svg { stroke: $text; }
       }
       
       &.button--transparent {
@@ -127,7 +130,7 @@
         color: nth($i, 2);
 
         @include hover { background-color: $hover; }
-        svg { fill: nth($i, 2); }
+        svg { stroke: nth($i, 2); }
       }
     }
   }
@@ -146,6 +149,14 @@
   '--default' $text $text-contrast,
   '--contrast' $background-default $text
 );
+
+// —————————————————————————————————————————————————————————————————
+// fullWidth
+// —————————————————————————————————————————————————————————————————
+
+.button--fullWidth {
+  width: 100%;
+}
 
 // —————————————————————————————————————————————————————————————————
 // disabled

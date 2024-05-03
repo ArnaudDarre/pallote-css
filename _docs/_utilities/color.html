@@ -14,7 +14,7 @@ subtitle: Use these classes to apply a custom background color or stroke colour 
       {% for category in site.data.colors %}
       {% if category.is_utilities == true %}
       <div class="grid grid--spacing2 grid__item">
-        <h3 class="grid__item grid__item--12 subtitle text--bold">{{ category.title }}</h3>
+        <h3 class="grid__item grid--12 subtitle text--bold">{{ category.title }}</h3>
         {% for subcategory in category.subcategories %}
         <div class="grid grid--spacing2 grid__item">
           {% for color in subcategory.colors %}
@@ -45,7 +45,7 @@ subtitle: Use these classes to apply a custom background color or stroke colour 
       {% for category in site.data.colors %}
       {% if category.is_utilities == true %}
       <div class="grid grid--spacing2 grid__item">
-        <h3 class="grid__item grid__item--12 subtitle text--bold">{{ category.title }}</h3>
+        <h3 class="grid__item grid--12 subtitle text--bold">{{ category.title }}</h3>
         {% for subcategory in category.subcategories %}
         <div class="grid grid--spacing2 grid__item">
           {% for color in subcategory.colors %}

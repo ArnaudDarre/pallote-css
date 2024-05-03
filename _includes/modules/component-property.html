@@ -2,14 +2,14 @@
 {% assign subtitle = include.subtitle %}
 {% assign content = include.content %}
 
-<div class="grid grid--spacing5 grid--wrap grid--aiBaseline box">
+<div class="grid grid--spacing5 grid--wrap grid--ai-baseline box">
   <div class="grid__item">
     <h3 class="h5 mb-2">{{ title }}</h3>
     {% if subtitle %}
     <div class="editor">{{ subtitle | markdownify }}</div>
     {% endif %}
   </div>
-  <div class="grid__item grid--aiStart">
+  <div class="grid__item grid--ai-start">
     {{ content }}
   </div>
 </div>

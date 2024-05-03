@@ -25,12 +25,12 @@ example: |-
 
 {% capture button-kind %}
   <div class="grid grid--spacing2">
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button"' isDefault=true
         component = '<button type="button" class="button">Button</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--icon"'
         component = button-icon
       %}
@@ -50,17 +50,17 @@ example: |-
 
 {% capture button-variant %}
   <div class="grid grid--spacing2">
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button"' isDefault=true
         component = '<button type="button" class="button">Fill</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--stroke"'
         component = '<button type="button" class="button button--stroke">Stroke</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--transparent"'
         component = '<button type="button" class="button button--transparent">Transparent</button>'
       %}
@@ -80,17 +80,22 @@ example: |-
 
 {% capture button-size %}
   <div class="grid grid--spacing2">
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
+      {% include modules/component-class.html code='class="button button--xs"'
+        component = '<button type="button" class="button button button--xs">XSmall</button>'
+      %}
+    </div>
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--sm"'
         component = '<button type="button" class="button button button--sm">Small</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button"' isDefault=true
         component = '<button type="button" class="button">Medium</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--lg"'
         component = '<button type="button" class="button button--lg">Large</button>'
       %}
@@ -110,52 +115,52 @@ example: |-
 
 {% capture button-color %}
   <div class="grid grid--spacing2">
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button"' isDefault=true
         component = '<button type="button" class="button">Primary</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--secondary"'
         component = '<button type="button" class="button button--secondary">Secondary</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--highlight"'
         component = '<button type="button" class="button button--highlight">Highlight</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--grey"'
         component = '<button type="button" class="button button--grey">Grey</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--success"'
         component = '<button type="button" class="button button--success">Success</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--info"'
         component = '<button type="button" class="button button--info">Info</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--warning"'
         component = '<button type="button" class="button button--warning">Warning</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--error"'
         component = '<button type="button" class="button button--error">Error</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--default"'
         component = '<button type="button" class="button button--default">Default</button>'
       %}
     </div>
-    <div class="grid__item grid__item--md6 grid--aiStart">
+    <div class="grid__item grid--md6 grid--ai-start">
       {% include modules/component-class.html code='class="button button--contrast"'
         component = '<button type="button" class="button button--contrast">Contrast</button>'
       %}
@@ -167,6 +172,22 @@ example: |-
   title = 'Color'
   subtitle = 'Override the default color of the component.'
   content = button-color
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- fullWidth -->
+<!-- ---------------------------------------------- -->
+
+{% capture button-fullWidth %}
+  {% include modules/component-class.html code='class="button button--fullWidth"'
+    component = '<button type="button" class="button button--fullWidth">full width</button>'
+  %}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Disabled'
+  subtitle = 'Prevent users from clicking the button and change its styling and hover state accordingly.'
+  content = button-fullWidth
 %}
 
 <!-- ---------------------------------------------- -->
