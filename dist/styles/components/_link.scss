@@ -12,6 +12,7 @@
   align-items: center;
   font-weight: $font-regular;
   text-decoration: underline;
+  text-underline-offset: 0.1em;
   white-space: nowrap;
 
   svg {
@@ -36,7 +37,7 @@
       text-decoration: underline rgba(nth($i, 2), 0.5);
       
       @include hover {
-        text-decoration: underline;
+        text-decoration: underline 0.125em;
       }
     }
   }
