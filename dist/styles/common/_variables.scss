@@ -134,6 +134,7 @@ $nav-item: $spacing-md !default;
 
 // typefaces
 $font: "Barlow", Arial, sans-serif !default;
+$font-code: monospace !default;
 
 // weight
 
@@ -176,8 +177,8 @@ $body-weight: $font-regular !default;
 $body-line-height: 1.5 !default;
 
 $caption-size: 0.875rem !default;
-$caption-weight:$font-regular !default;
-$caption-line-height:  1.5 !default;
+$caption-weight: $font-regular !default;
+$caption-line-height: 1.5 !default;
 
 $overline-size: 0.75rem !default;
 $overline-weight: $font-regular !default;

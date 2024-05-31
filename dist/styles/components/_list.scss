@@ -1,6 +1,7 @@
 // —————————————————————————————————————————————————————————————————
 // elements
 // dense
+// list item - bold
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
@@ -21,9 +22,10 @@
     }
 
     &Icon {
-      margin-right: $spacing-sm;
-      height: $spacing-md;
-      width: $spacing-md;
+      display: flex;
+      margin-right: 0.5em;
+      height: 1em;
+      width: 1em;
     }
   }
 }
@@ -32,9 +34,25 @@
 // dense
 // —————————————————————————————————————————————————————————————————
 
-.list--dense {
+.list--dense .list__item,
+.list__item--dense {
+  @extend %caption;
+  margin-top: 0 !important;
 
-  .list__item:not(:last-child) {
+  &:not(:last-child) {
     margin-bottom: $spacing-xs;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// list item - bold
+// —————————————————————————————————————————————————————————————————
+
+.list__item--bold {
+  @extend %text--bold;
+
+  .list__itemIcon * {
+    stroke: currentColor;
+    stroke-width: 0.5rem;
   }
 }

@@ -1,0 +1,38 @@
+---
+layout: component
+label: data
+title: List item
+subtitle: A small list item with an icon
+description: |-
+  The component is composed of multiple elements:
+
+  - `list__item` the wrapper. Add a text style class to change the size of the icon and the text.
+    - `list__itemIcon` An optional icon
+    - a `p` element with the content
+
+example: |-
+  {% include ui/list-item.html %}
+---
+
+<!-- ---------------------------------------------- -->
+<!-- bold -->
+<!-- ---------------------------------------------- -->
+
+{% capture list__item %}
+<div class="list__item list__item--bold">
+  {% svg assets/icons/phosphor/coffee.svg class="list__itemIcon" %}
+  <p>Bold</p>
+</div>
+{% endcapture %}
+
+{% capture list__item-bold %}
+{% include modules/component-class.html code='class="list__item list__item--bold"'
+  component = list__item
+%}
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'bold'
+  subtitle = 'Change the weight of the text and the icon'
+  content = list__item-bold
+%}

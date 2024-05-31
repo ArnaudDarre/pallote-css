@@ -1,9 +1,60 @@
 // —————————————————————————————————————————————————————————————————
-// color
-// alignement
+// align
 // style
 // weight
+// color
 // —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// align
+// —————————————————————————————————————————————————————————————————
+
+.text--left, %text--left { text-align: left !important; }
+.text--center, %text--center { text-align: center !important; }
+.text--right, %text--right { text-align: right !important; }
+
+// —————————————————————————————————————————————————————————————————
+// weight
+// —————————————————————————————————————————————————————————————————
+
+.text--regular, %text--regular { font-weight: $font-regular !important; }
+.text--bold, %text--bold { font-weight: $font-bold !important; }
+.text--black, %text--black { font-weight: $font-black !important; }
+
+// —————————————————————————————————————————————————————————————————
+// transform
+// —————————————————————————————————————————————————————————————————
+
+.text--none, %text--none { text-transform: none; }
+.text--capitalize, %text--capitalize { text-transform: capitalize; }
+.text--uppercase, %text--uppercase { text-transform: uppercase; }
+.text--lowercase, %text--lowercase { text-transform: lowercase; }
+.text--initial, %text--initial { text-transform: initial; }
+.text--inherit, %text--inherit { text-transform: inherit; }
+
+// —————————————————————————————————————————————————————————————————
+// italic
+// —————————————————————————————————————————————————————————————————
+
+.text--italic, %text--italic { font-style: italic !important; }
+
+// —————————————————————————————————————————————————————————————————
+// italic
+// —————————————————————————————————————————————————————————————————
+
+.text--code, %text--code { font-family: $font-code !important; }
+
+// —————————————————————————————————————————————————————————————————
+// underline
+// —————————————————————————————————————————————————————————————————
+
+.text--underline, %text--underline { text-decoration: underline !important; }
+
+// —————————————————————————————————————————————————————————————————
+// strikeThrough
+// —————————————————————————————————————————————————————————————————
+
+.text--strikeThrough, %text--strikeThrough { text-decoration: line-through !important; }
 
 // —————————————————————————————————————————————————————————————————
 // color
@@ -37,27 +88,3 @@
 	'warning' $warning,
 	'error' $error,
 );
-
-// —————————————————————————————————————————————————————————————————
-// alignement
-// —————————————————————————————————————————————————————————————————
-
-.text--left, %text--left { text-align: left !important; }
-.text--center, %text--center { text-align: center !important; }
-.text--right, %text--right { text-align: right !important; }
-
-// —————————————————————————————————————————————————————————————————
-// style
-// —————————————————————————————————————————————————————————————————
-
-.text--italic, %text--italic { font-style: italic !important; }
-.text--underline, %text--underline { text-decoration: underline !important; }
-.text--strikeThrough, %text--strikeThrough { text-decoration: line-through !important; }
-
-// —————————————————————————————————————————————————————————————————
-// weight
-// —————————————————————————————————————————————————————————————————
-
-.text--regular, %text--regular { font-weight: $font-regular !important; }
-.text--bold, %text--bold { font-weight: $font-bold !important; }
-.text--black, %text--black { font-weight: $font-black !important; }

@@ -3,7 +3,7 @@
 // spacing and size
 // position
 // display
-// misc
+// border-radius
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
@@ -118,5 +118,9 @@ $step: 5;
 }
 
 // —————————————————————————————————————————————————————————————————
-// misc
+// border-radius
 // —————————————————————————————————————————————————————————————————
+
+.br-sm { border-radius: $border-radius-sm; }
+.br-md { border-radius: $border-radius-md; }
+.br-lg { border-radius: $border-radius-lg; }

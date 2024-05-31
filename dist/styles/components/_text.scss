@@ -6,6 +6,10 @@
 	font-size: $font-size;
 	font-weight: $font-weight;
 	line-height: $line-height;
+
+	& + & {
+		margin-top: 0.5em;
+	}
 }
 
 .h1, %h1 {
@@ -86,4 +90,8 @@
 		$overline-weight,
 		$overline-line-height
 	);
+}
+
+.paragraph .text + .text {
+  margin-top: 0.75em;
 }
