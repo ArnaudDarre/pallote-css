@@ -29,7 +29,7 @@ example: |-
     <div class="grid__item grid--ai-start">
       {% include modules/component-class.html code='class="radios"' isDefault=true
         component = '
-          <fieldset class="input">
+          <div class="input">
             <legend class="input__label">Landscape</legend>
             <div class="input__control radios">
               <div class="radio">
@@ -41,14 +41,14 @@ example: |-
                 <label for="landscape_2" class="radio__label">Landscape 2</label>
               </div>
             </div>
-          </fieldset>
+          </div>
         '
       %}
     </div>
     <div class="grid__item grid--ai-start">
       {% include modules/component-class.html code='class="radios radios--portrait"'
         component = '
-          <fieldset class="input">
+          <div class="input">
             <legend class="input__label">Portrait</legend>
             <div class="input__control radios radios--portrait">
               <div class="radio">
@@ -60,7 +60,7 @@ example: |-
                 <label for="portrait_2" class="radio__label">Portrait 2</label>
               </div>
             </div>
-          </fieldset>
+          </div>
         '
       %}
     </div>
@@ -80,7 +80,7 @@ example: |-
 {% capture radios-disabled %}
 {% include modules/component-class.html code='class="input select input--disabled"'
   component = '
-    <fieldset class="input input--disabled">
+    <div class="input input--disabled">
       <legend class="input__label">Disabled</legend>
       <div class="input__control radios">
         <div class="radio">
@@ -92,7 +92,7 @@ example: |-
           <label for="disabled_2" class="radio__label">Disabled 2</label>
         </div>
       </div>
-    </fieldset>
+    </div>
   '
 %}
 {% endcapture %}
@@ -114,7 +114,7 @@ When used as a form field, you can add the `input--disabled` to the wrapper like
 {% capture radios-required %}
 {% include modules/component-class.html code='class="input select input--required"'
   component = '
-    <fieldset class="input input--required">
+    <div class="input input--required">
       <legend class="input__label">Required</legend>
       <div class="input__control radios">
         <div class="radio">
@@ -126,7 +126,7 @@ When used as a form field, you can add the `input--disabled` to the wrapper like
           <label for="required_2" class="radio__label">Required 2</label>
         </div>
       </div>
-    </fieldset>
+    </div>
   '
 %}
 {% endcapture %}

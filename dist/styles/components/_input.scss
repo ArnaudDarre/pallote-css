@@ -9,7 +9,7 @@
 // required
 // —————————————————————————————————————————————————————————————————
 
-$checkbox-width: $spacing-md*1.25;
+$checkbox-width: 1.5rem;
 
 // —————————————————————————————————————————————————————————————————
 // elements / default
@@ -34,7 +34,7 @@ $checkbox-width: $spacing-md*1.25;
 		overflow: hidden;
 		white-space: nowrap;
 		position: relative;
-		margin-bottom: $spacing-xs;
+		margin-bottom: 0.5rem;
   }
 
   &__control {
@@ -43,24 +43,38 @@ $checkbox-width: $spacing-md*1.25;
 		font-family: $font;
 		width: 100%;
     border-radius: $border-radius-md !important;
-    padding: $spacing-xs*1.5 $spacing-sm;
+    padding: 0.25rem 0.75rem;
 		background-color: $hover;
+    border: $border;
 		
 		@include responsive(down, mobile) {
       background-color: $hover;
 		}
     
     &:not(textarea) {
+      display: flex;
+      align-items: center;
       white-space: nowrap;
 		  text-overflow: ellipsis;
       line-height: 1;
-      height: $spacing-lg;
+      height: 2.5rem;
     }
   }
 
   &__notice {
 		@extend %caption;
 		margin-top: $spacing-xs;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 0.25rem;
+    right: 0.5rem;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 }
 
@@ -76,23 +90,20 @@ $checkbox-width: $spacing-md*1.25;
 .select {
 
   &:after {
-    content: "\2039";
-    transform: rotate(-90deg);
+    content: '';
+    border: solid $text;
+    border-width: 0 $spacing-xxs $spacing-xxs 0;
+    padding: .2rem;
+    transform: rotate(45deg);
+    margin-left: $nav-item*0.5;
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: $spacing-sm*1.5;
-    top: $spacing-lg;
-    height: $spacing-md;
-    width: $spacing-md;
-    font-size: 1.75rem;
-    line-height: 1;
+    bottom: 1.1rem;
+    right: 1rem;
   }
 
   .input__control {
     cursor: pointer;
-    padding-right: $spacing-md*1.5;
+    padding-right: 2rem;
   }
 }
 
@@ -111,6 +122,7 @@ textarea {
 .checkboxes,
 .radios {
   background-color: transparent;
+  border: 0;
   padding-right: 0;
   padding-left: 0;
   display: flex;
@@ -122,11 +134,12 @@ textarea {
 
   &--portrait {
     flex-direction: column;
+    align-items: flex-start !important;
     height: auto !important;
 
     .checkbox + .checkbox,
     .radio + .radio {  
-      margin-top: $spacing-sm;
+      margin-top: 0.75rem;
       margin-left: 0;
     }  
   }

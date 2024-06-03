@@ -22,14 +22,14 @@ example: |-
 {% capture select-focused %}
 {% include modules/component-class.html code='class="input select input--focused"'
   component = '
-    <fieldset class="input select input--focused">
+    <div class="input select input--focused">
       <label for="focused" class="input__label">Focused</label>
       <select name="focused" id="focused" class="input__control">
         <option value=""></option>
         <option value="Option 1">Option 1</option>
         <option value="Option 2">Option 2</option>
       </select>
-    </fieldset>
+    </div>
   '
 %}
 {% endcapture %}
@@ -47,14 +47,14 @@ example: |-
 {% capture select-error %}
 {% include modules/component-class.html code='class="input select js--error"'
   component = '
-    <fieldset class="input select js-error">
+    <div class="input select js-error">
       <label for="error" class="input__label">Error</label>
       <select name="error" id="error" class="input__control">
         <option value=""></option>
         <option value="Option 1">Option 1</option>
         <option value="Option 2">Option 2</option>
       </select>
-    </fieldset>
+    </div>
   '
 %}
 {% endcapture %}
@@ -72,12 +72,12 @@ example: |-
 {% capture select-disabled %}
 {% include modules/component-class.html code='class="input select input--disabled"'
   component = '
-    <fieldset class="input select input--disabled">
+    <div class="input select input--disabled">
       <label for="disabled" class="input__label">Disabled</label>
       <select name="disabled" id="disabled" class="input__control">
         <option value=""></option>
       </select>
-    </fieldset>
+    </div>
   '
 %}
 {% endcapture %}
@@ -95,14 +95,14 @@ example: |-
 {% capture select-required %}
 {% include modules/component-class.html code='class="input select input--required"'
   component = '
-    <fieldset class="input select input--required">
+    <div class="input select input--required">
       <label for="required" class="input__label">Required</label>
       <select name="required" id="required" class="input__control">
         <option value=""></option>
         <option value="Option 1">Option 1</option>
         <option value="Option 2">Option 2</option>
       </select>
-    </fieldset>
+    </div>
   '
 %}
 {% endcapture %}
