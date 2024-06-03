@@ -15,13 +15,15 @@
   text-underline-offset: 0.1em;
   white-space: nowrap;
 
-  svg {
-    @include transition($transition-md, stroke-width);
-    height: 1em;
-    width: 1em;
-    margin-top: 0.3em;
+  &__icon {
+    display: flex;
+    margin-top: 0.1em;
     margin-left: 0.25em;
-    stroke-width: 2;
+    
+    svg {
+      height: 1em;
+      width: 1em;
+    }
   }
 }
 
@@ -29,22 +31,13 @@
 // color
 // —————————————————————————————————————————————————————————————————
 
-@mixin color($prefix, $colors...) {
+// links color is handled by the color mixins in utilities/_text.scss
 
-  @each $i in $colors {
-    .#{$prefix}#{nth($i, 1)} {
-      color: nth($i, 2);
-      text-decoration: underline rgba(nth($i, 2), 0.5);
-      
-      @include hover {
-        text-decoration: underline 0.125em;
-      }
-    }
+.link {
+  color: $primary;
+  text-decoration: underline rgba($primary, 0.5);
+  
+  @include hover {
+    text-decoration: underline 0.125em;
   }
 }
-
-@include color('link',
-  '' $primary,
-  '--secondary' $secondary,
-  '--highlight' $highlight,
-);

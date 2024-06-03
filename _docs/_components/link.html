@@ -10,28 +10,53 @@ example: |-
 ---
 
 <!-- ---------------------------------------------- -->
-<!-- color -->
+<!-- icon -->
 <!-- ---------------------------------------------- -->
 
 {% capture icon %}
-{% svg assets/icons/phosphor/arrow-right.svg %}
+<a href="#" class="link">
+  Link with icon
+  <span class="link__icon">
+    {% svg assets/icons/phosphor/arrow-right.svg %}
+  </span>
+</a>
 {% endcapture %}
+
+{% capture link-icon %}
+<div class="grid grid--spacing2">
+  <div class="grid__item grid--md6 grid--ai-start">
+    {% include modules/component-class.html code='class="link"' isDefault=true
+      component = icon
+    %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Icon'
+  subtitle = 'Add an icon to the right of the link text'
+  content = link-icon
+%}
+
+<!-- ---------------------------------------------- -->
+<!-- color -->
+<!-- ---------------------------------------------- -->
 
 {% capture link-color %}
 <div class="grid grid--spacing2">
   <div class="grid__item grid--md6 grid--ai-start">
     {% include modules/component-class.html code='class="link"' isDefault=true
-      component = '<a href="#" class="link link--primary">Primary</a>'
+      component = '<a href="#" class="link">Primary</a>'
     %}
   </div>
   <div class="grid__item grid--md6 grid--ai-start">
-    {% include modules/component-class.html code='class="link link--secondary"'
-      component = '<a href="#" class="link link--secondary">Secondary</a>'
+    {% include modules/component-class.html code='class="link text--secondary"'
+      component = '<a href="#" class="link text--secondary">Secondary</a>'
     %}
   </div>
   <div class="grid__item grid--md6 grid--ai-start">
-    {% include modules/component-class.html code='class="link link--highlight"'
-      component = '<a href="#" class="link link--highlight">Highlight</a>'
+    {% include modules/component-class.html code='class="link text--highlight"'
+      component = '<a href="#" class="link text--highlight">Highlight</a>'
     %}
   </div>
 </div>

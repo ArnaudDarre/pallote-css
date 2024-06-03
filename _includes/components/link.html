@@ -4,13 +4,15 @@
 
 <a href="{% if type == null %}{% link {{ url }} %}{% else %}{{ url }}{% endif %}" {% if type == 'external' or type == 'download' %}target="_blank" rel="external"{% endif %} class="link">
   {{ label }}
-  {% if type == 'external' %}
-  {% svg assets/icons/phosphor/arrow-square-out.svg %}
-  {% elsif type == 'download' %}
-  {% svg assets/icons/phosphor/download-simple.svg %}
-  {% elsif type == 'email' %}
-  {% svg assets/icons/phosphor/envelope-simple.svg %}
-  {% else %}
-  {% svg assets/icons/phosphor/arrow-right.svg %}
-  {% endif %}
+  <span class="link__icon">
+    {% if type == 'external' %}
+    {% svg assets/icons/phosphor/arrow-square-out.svg %}
+    {% elsif type == 'download' %}
+    {% svg assets/icons/phosphor/download-simple.svg %}
+    {% elsif type == 'email' %}
+    {% svg assets/icons/phosphor/envelope-simple.svg %}
+    {% else %}
+    {% svg assets/icons/phosphor/arrow-right.svg %}
+    {% endif %}
+  </span>
 </a>

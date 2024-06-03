@@ -1,6 +1,6 @@
 // —————————————————————————————————————————————————————————————————
 // elements
-// alignement
+// align
 // direction
 // fill
 // size
@@ -33,6 +33,8 @@
   }
 
   &__header {
+    display: flex;
+    flex-direction: column;
 
     & + .section__content { @include clamp(padding-top, $spacing-lg, 8vw, $spacing-xl); }
     &--dense + .section__content { padding-top: $spacing-lg; }
@@ -84,15 +86,30 @@
 }
 
 // —————————————————————————————————————————————————————————————————
-// alignement
+// align
 // —————————————————————————————————————————————————————————————————
 
 .section__container {
   align-items: flex-start;
   text-align: left;
+}
 
-  .section--center & { align-items: center; text-align: center; }
-  .section--right & { align-items: flex-end; text-align: right; }
+.section--center {
+
+  .section__container,
+  .section__header {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.sectionrightcenter {
+
+  .section__container,
+  .section__header {
+    align-items: flex-end;
+    text-align: right;
+  }
 }
 
 // —————————————————————————————————————————————————————————————————
