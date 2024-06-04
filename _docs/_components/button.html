@@ -205,3 +205,42 @@ example: |-
   subtitle = 'Prevent users from clicking the button and change its styling and hover state accordingly.'
   content = button-disabled
 %}
+
+<!-- ---------------------------------------------- -->
+<!-- icons -->
+<!-- ---------------------------------------------- -->
+
+{% capture button-icon-left %}
+<button type="button" class="button">
+  {% svg assets/icons/phosphor/coffee.svg %}
+  Icon left
+</button>
+{% endcapture %}
+
+{% capture button-icon-right %}
+<button type="button" class="button">
+  Icon right
+  {% svg assets/icons/phosphor/coffee.svg %}
+</button>
+{% endcapture %}
+
+{% capture button-icons %}
+  <div class="grid grid--spacing2">
+    <div class="grid__item grid--md6 grid--ai-start">
+      {% include modules/component-class.html code='class="button"'
+      component = button-icon-left
+      %}
+    </div>
+    <div class="grid__item grid--md6 grid--ai-start">
+      {% include modules/component-class.html code='class="button"'
+        component = button-icon-right
+      %}
+    </div>
+  </div>
+{% endcapture %}
+
+{% include modules/component-property.html
+  title = 'Icons'
+  subtitle = 'You can add svg icons to the left or right of the content.'
+  content = button-icons
+%}
