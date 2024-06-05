@@ -44,11 +44,11 @@ $checkbox-width: 1.5rem;
 		width: 100%;
     border-radius: $border-radius-md !important;
     padding: 0.25rem 0.75rem;
-		background-color: $hover;
+		background-color: $input-background;
     border: $border;
 		
 		@include responsive(down, mobile) {
-      background-color: $hover;
+      background-color: $input-background;
 		}
     
     &:not(textarea) {
@@ -144,20 +144,30 @@ textarea {
     }  
   }
 }
-  
+
+input[type="checkbox"],
+input[type='radio'] {
+  all: revert;
+  accent-color: $primary;
+  outline-color: $primary;
+  width: $checkbox-width;
+  height: $checkbox-width;
+  margin: 0;
+  position: absolute;
+}
+
 .checkbox,
 .radio {
 
-  &__control {
-    position: absolute;
-  }
-
   &__label {
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    position: relative;
 
     &:before {
       @include transition($transition-md, border);
-      content: "✔";
+      content: "";
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -165,7 +175,7 @@ textarea {
       height: $checkbox-width;
       margin-right: $spacing-sm;
       border: $border;
-      color: transparent;
+      background-color: $input-background;
     }
   }
 }
@@ -187,7 +197,9 @@ textarea {
   &__label {
 
     &:before {
-      border-radius: $spacing-xs;
+      content: "✔";
+      color: transparent;
+      border-radius: 2px;
     }
   }
 }
@@ -203,12 +215,12 @@ textarea {
         border-width: $spacing-xs*1.5;
       }
     }
-  }
+  } 
 
   &__label {
 
     &:before {
-      border-radius: 50%;
+      border-radius: 0.65rem;
     }
   }
 }

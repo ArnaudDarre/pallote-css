@@ -67,15 +67,17 @@ textarea {
 a[href],
 area[href],
 input,
+input[type="checkbox"],
+input[type='radio'],
 select,
 textarea,
 button,
 iframe,
 [tabindex],
 [contentEditable=true] {
+  outline: revert;
 
   &:focus {
-    outline: revert;
     outline-color: $primary;
   }
 }
