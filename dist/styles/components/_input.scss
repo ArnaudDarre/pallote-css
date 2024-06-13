@@ -145,83 +145,49 @@ textarea {
   }
 }
 
-input[type="checkbox"],
-input[type='radio'] {
-  all: revert;
-  accent-color: $primary;
-  outline-color: $primary;
-  width: $checkbox-width;
-  height: $checkbox-width;
-  margin: 0;
-  position: absolute;
-}
-
 .checkbox,
 .radio {
+  display: flex;
+  align-items: center;
 
   &__label {
-    display: flex;
-    align-items: center;
     cursor: pointer;
-    position: relative;
-
-    &:before {
-      @include transition($transition-md, border);
-      content: "";
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: $checkbox-width;
-      height: $checkbox-width;
-      margin-right: $spacing-sm;
-      border: $border;
-      background-color: $input-background;
-    }
   }
 }
 
-.checkbox {
+input[type="checkbox"],
+input[type='radio'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $checkbox-width;
+  width: $checkbox-width;
+  background-color: $input-background;
+  border: $border;
+  margin-right: .5rem;
+}
 
-  &__control {
+input[type='checkbox'] { border-radius: $border-radius-sm; }
+input[type='radio'] { border-radius: 50%; }
 
-    &:checked {
+input[type='checkbox']:checked {
+  background-color: $primary;
 
-      ~ .checkbox__label:before {
-        border-color: $primary;
-        border-width: $checkbox-width*0.5;
-        color: $text-contrast;
-      }
-    }
-  }
-
-  &__label {
-
-    &:before {
-      content: "✔";
-      color: transparent;
-      border-radius: 2px;
-    }
+  &:after {
+    content: "✔";
+    font-size: 1rem;
+    color: $text-contrast;
   }
 }
 
-.radio {
+input[type='radio']:checked {
 
-  &__control {
-
-    &:checked {
-
-      ~ .radio__label:before {
-        border-color: $primary;
-        border-width: $spacing-xs*1.5;
-      }
-    }
-  } 
-
-  &__label {
-
-    &:before {
-      border-radius: 0.65rem;
-    }
+  &:after {
+    content: "";
+    height: $checkbox-width*.5;
+    width: $checkbox-width*.5;
+    background-color: $primary;
+    border-radius: 50%;
   }
 }
 

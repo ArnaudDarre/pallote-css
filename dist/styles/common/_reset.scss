@@ -10,6 +10,7 @@
 body,
 html {
   margin: 0;
+  accent-color: $primary;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -78,6 +79,6 @@ iframe,
   outline: revert;
 
   &:focus {
-    outline-color: $primary;
+    outline: 2px solid $primary;
   }
 }
