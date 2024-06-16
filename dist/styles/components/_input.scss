@@ -9,6 +9,7 @@
 // required
 // —————————————————————————————————————————————————————————————————
 
+$input-height: 2.5rem;
 $checkbox-width: 1.5rem;
 
 // —————————————————————————————————————————————————————————————————
@@ -29,7 +30,6 @@ $checkbox-width: 1.5rem;
 		@extend %caption;
 		font-weight: $font-bold;
 		text-overflow: ellipsis;
-		cursor: pointer;
 		display: block;
 		overflow: hidden;
 		white-space: nowrap;
@@ -43,21 +43,22 @@ $checkbox-width: 1.5rem;
 		font-family: $font;
 		width: 100%;
     border-radius: $border-radius-md !important;
-    padding: 0.25rem 0.75rem;
+    padding: .4rem .75rem .6rem;
 		background-color: $input-background;
     border: $border;
-		
+
 		@include responsive(down, mobile) {
       background-color: $input-background;
 		}
     
-    &:not(textarea) {
-      display: flex;
-      align-items: center;
+    &:not(textarea):not(.checkboxes):not(.radios) {
+      display: inline;
       white-space: nowrap;
 		  text-overflow: ellipsis;
-      line-height: 1;
-      height: 2.5rem;
+    }
+
+    &:not(textarea) {
+      height: $input-height;
     }
   }
 
@@ -68,12 +69,12 @@ $checkbox-width: 1.5rem;
 
   &__icon {
     position: absolute;
-    bottom: 0.25rem;
-    right: 0.5rem;
+    bottom: $input-height*.25;
+    right: $input-height*.25;
 
     svg {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: $input-height*.5;
+      height: $input-height*.5;
     }
   }
 }
@@ -88,7 +89,7 @@ $checkbox-width: 1.5rem;
 // —————————————————————————————————————————————————————————————————
 
 .select {
-
+  
   &:after {
     content: '';
     border: solid $text;
@@ -97,12 +98,13 @@ $checkbox-width: 1.5rem;
     transform: rotate(45deg);
     margin-left: $nav-item*0.5;
     position: absolute;
-    bottom: 1.1rem;
+    bottom: $input-height*.45;
     right: 1rem;
   }
-
+    
   .input__control {
-    cursor: pointer;
+    display: flex;
+    align-items: center;
     padding-right: 2rem;
   }
 }
@@ -121,11 +123,11 @@ textarea {
 
 .checkboxes,
 .radios {
+  display: flex;
   background-color: transparent;
   border: 0;
   padding-right: 0;
   padding-left: 0;
-  display: flex;
 
   .checkbox + .checkbox,
   .radio + .radio {
@@ -151,7 +153,6 @@ textarea {
   align-items: center;
 
   &__label {
-    cursor: pointer;
   }
 }
 
