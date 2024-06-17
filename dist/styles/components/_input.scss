@@ -34,7 +34,13 @@ $checkbox-width: 1.5rem;
 		overflow: hidden;
 		white-space: nowrap;
 		position: relative;
-		margin-bottom: 0.5rem;
+		margin-bottom: .5rem;
+  }
+
+  &__notice {
+		@extend %caption;
+    margin-top: -.25rem;
+		margin-bottom: .5rem;
   }
 
   &__control {
@@ -62,19 +68,17 @@ $checkbox-width: 1.5rem;
     }
   }
 
-  &__notice {
-		@extend %caption;
-		margin-top: $spacing-xs;
-  }
-
   &__icon {
     position: absolute;
     bottom: $input-height*.25;
     right: $input-height*.25;
+    width: $input-height*.5;
+    height: $input-height*.5;
+    pointer-events: none;
 
     svg {
-      width: $input-height*.5;
-      height: $input-height*.5;
+      width: 100%;
+      height: 100%;
     }
   }
 }
@@ -151,9 +155,6 @@ textarea {
 .radio {
   display: flex;
   align-items: center;
-
-  &__label {
-  }
 }
 
 input[type="checkbox"],
