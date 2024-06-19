@@ -1,6 +1,7 @@
 // —————————————————————————————————————————————————————————————————
 // custom (for IE)
 // The new CSS Reset - version 1.2.0 (last updated 23.7.2021)
+// Remove inputs icons
 // —————————————————————————————————————————————————————————————————
 
 // —————————————————————————————————————————————————————————————————
@@ -81,4 +82,59 @@ iframe,
   &:focus {
     outline: 2px solid $primary;
   }
+}
+
+// —————————————————————————————————————————————————————————————————
+// Remove inputs icons
+// —————————————————————————————————————————————————————————————————
+
+// Remove default arrow for input[type=number] in Webkit browsers (Chrome, Safari, etc.)
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 0;
+  margin: 0;
+}
+
+// Remove default arrow for input[type=number] in Firefox
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+// Remove default calendar and time picker icons in Webkit browsers
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+// Remove default calendar icon in Edge and IE
+input[type="date"]::-ms-clear,
+input[type="date"]::-ms-input-placeholder {
+  opacity: 0;
+}
+
+input[type="time"]::-ms-clear,
+input[type="time"]::-ms-input-placeholder {
+  opacity: 0;
+}
+
+// Remove default calendar and time picker icons in Mozilla Firefox
+input[type="date"] {
+  -moz-appearance: textfield;
+}
+
+input[type="time"] {
+  -moz-appearance: textfield;
+}
+
+// For additional browser support
+input[type="date"],
+input[type="time"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+// Hide the clear button in Edge
+input::-ms-clear {
+  opacity: 0;
 }

@@ -49,7 +49,7 @@ $checkbox-width: 1.5rem;
 		font-family: $font;
 		width: 100%;
     border-radius: $border-radius-md !important;
-    padding: .4rem .75rem .6rem;
+    padding: .5rem .5rem;
 		background-color: $input-background;
     border: $border;
 
@@ -58,9 +58,11 @@ $checkbox-width: 1.5rem;
 		}
     
     &:not(textarea):not(.checkboxes):not(.radios) {
-      display: inline;
+      display: inline-block;
+      align-items: center;
       white-space: nowrap;
 		  text-overflow: ellipsis;
+      line-height: 1.2;
     }
 
     &:not(textarea) {
@@ -109,7 +111,6 @@ $checkbox-width: 1.5rem;
   .input__control {
     display: flex;
     align-items: center;
-    padding-right: 2rem;
   }
 }
 
